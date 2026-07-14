@@ -8,7 +8,7 @@ docs_dir: docs
 
 # Repository
 repo_name: Bobchestrate-for-Partner
-repo_url: https://github.ibm.com/tech-garage-spgi/Bobchestrate-for-Partner
+repo_url: https://github.com/yobens5/Bobchestrate-for-Partner
 edit_uri: edit/main/docs/
 
 # Theme configuration
@@ -110,6 +110,6 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.ibm.com/tech-garage-spgi/Bobchestrate-for-Partner
+      link: https://github.com/yobens5/Bobchestrate-for-Partner
 
 # Made with Bob
