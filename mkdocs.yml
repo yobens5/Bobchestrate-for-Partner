@@ -1,7 +1,7 @@
-site_name: Bobchestrate Workshop
+site_name: Enable Partner Bobchestrate Workshop
 site_description: Hands-on workshop for building AI agents with IBM watsonx Orchestrate
 site_author: Workshop Team
-site_url: https://tech-garage-spgi.github.ibm.com/Bobchestrate-for-Partner/
+site_url: https://yobens5.github.io/Bobchestrate-for-Partner/
 
 # Documentation directory
 docs_dir: docs

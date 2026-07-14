@@ -1,4 +1,4 @@
-# Bobchestrate Workshop - Building AI Agents with watsonx Orchestrate and IBM Bob
+# Enable Partner Bobchestrate Workshop - Building AI Agents with watsonx Orchestrate and IBM Bob
 
 ![Workshop Logo](Bobchestrate_Workshop_logo_new.png)
 
@@ -212,7 +212,7 @@ By the end of this workshop, you will:
 
 ## Reporting issues and asking for enhancements
 
-If you have any issues or suggestions for improvement, please open an issue in the [Bobchestrate repository](https://github.com/juseljuk/bobchestrate-workshop/issues) - you'll need a GitHub account to do this. Cheers 🍻
+If you have any issues or suggestions for improvement, please open an issue in the [Bobchestrate repository](https://github.com/yobens5/Bobchestrate-for-Partner/issues) - you'll need a GitHub account to do this. Cheers 🍻
 
 ## Getting Started
 
