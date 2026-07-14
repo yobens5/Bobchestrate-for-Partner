@@ -1,20 +1,22 @@
 site_name: Bobchestrate Workshop
 site_description: Hands-on workshop for building AI agents with IBM watsonx Orchestrate
 site_author: Workshop Team
-site_url: https://juseljuk.github.io/bobchestrate-workshop/
+site_url: https://tech-garage-spgi.github.ibm.com/Bobchestrate-for-Partner/
 
 # Documentation directory
 docs_dir: docs
 
 # Repository
-repo_name: bobchestrate-workshop
-repo_url: https://github.com/juseljuk/bobchestrate-workshop
-edit_uri: edit/main/
+repo_name: Bobchestrate-for-Partner
+repo_url: https://github.ibm.com/tech-garage-spgi/Bobchestrate-for-Partner
+edit_uri: edit/main/docs/
 
 # Theme configuration
 theme:
   name: material
   language: en
+  logo: Bobchestrate_Workshop_logo_new.png
+  favicon: Bobchestrate_Workshop_logo_new.png
   palette:
     # Light mode
     - media: "(prefers-color-scheme: light)"
@@ -108,6 +110,6 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/yourusername/bobchestrate-workshop
+      link: https://github.ibm.com/tech-garage-spgi/Bobchestrate-for-Partner
 
 # Made with Bob
