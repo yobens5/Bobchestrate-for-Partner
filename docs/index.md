@@ -13,7 +13,7 @@ Welcome! This workshop will guide you through building AI agents using IBM watso
 
     - [ ] A GitHub account
     - [ ] An IBM partner account
-    - [ ] Access to TechZone — [reserve your watsonx Orchestrate environment](https://techzone.ibm.com/collection/6939fccc3fc778c2abfc1e25/environments?platform=69fe3e8a6a38f6a7c980166c)
+    - [ ] Access to TechZone — [reserve environment](https://techzone.ibm.com/collection/6939fccc3fc778c2abfc1e25/environments?platform=69fe3e8a6a38f6a7c980166c) · [watsonx overview collection](https://techzone.ibm.com/collection/69c6bb3c694109c9b9a8abac/journey-watsonx-overview?platform=69caeeed05954196b4ae266c)
     - [ ] Access to ticket creation — [request a Bob enterprise account](https://www.ibm.com/support/pages/node/7159462)
 
     → Full details in the [Prerequisites](part0-prerequisites/README.md) section.
