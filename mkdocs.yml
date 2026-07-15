@@ -69,7 +69,7 @@ markdown_extensions:
 # Navigation structure
 nav:
   - Home: index.md
-  - Partner Prerequisites:
+  - Prerequisites:
       - Overview: part0-prerequisites/README.md
   - Part 1 - Setup:
       - Overview: part1-setup/README.md
