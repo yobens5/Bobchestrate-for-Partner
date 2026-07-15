@@ -77,6 +77,14 @@ Each system builds on concepts from previous parts, teaching you to create incre
 
 ## Workshop Structure
 
+### [Prerequisites](part0-prerequisites/README.md)
+- Have a GitHub account
+- Have an IBM partner account
+- Have access to TechZone
+- Have access to ticket creation
+- Create a watsonx Orchestrate instance on TechZone
+- Request a Bob enterprise account
+
 ### [Part 1: Setup & Environment](part1-setup/README.md) (15 min)
 - Configure watsonx Orchestrate credentials
 - Verify Bob is working as your AI development partner
