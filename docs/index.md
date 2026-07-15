@@ -216,4 +216,4 @@ If you have any issues or suggestions for improvement, please open an issue in t
 
 ## Getting Started
 
-Let's get started! 🚀  Head to [Part 1: Setup](part1-setup/README.md) →
+Let's get started! 🚀  Head to [Partner Prerequisites](part0-prerequisites/README.md) →
