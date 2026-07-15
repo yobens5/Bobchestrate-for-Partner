@@ -8,6 +8,16 @@ Welcome! This workshop will guide you through building AI agents using IBM watso
 
 ## Workshop Overview
 
+!!! info "Partner Prerequisites"
+    Before starting this workshop, make sure you have:
+
+    - [ ] A GitHub account
+    - [ ] An IBM partner account
+    - [ ] Access to TechZone — [reserve your watsonx Orchestrate environment](https://techzone.ibm.com/collection/6939fccc3fc778c2abfc1e25/environments?platform=69fe3e8a6a38f6a7c980166c)
+    - [ ] Access to ticket creation — [request a Bob enterprise account](https://www.ibm.com/support/pages/node/7159462)
+
+    → Full details in the [Prerequisites](part0-prerequisites/README.md) section.
+
 **Duration:** 270-300 minutes (4.5-5 hours) for complete workshop
 
 This estimate includes:
