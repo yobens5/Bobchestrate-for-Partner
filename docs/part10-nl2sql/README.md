@@ -1,8 +1,8 @@
-# Part 10: NL2SQL Agent with the Accelerator
+# Part 10: NL2SQL Agent with the IBM CE Accelerator
 
 **Duration:** 30 min  
 **Level:** Intermediate  
-**Objective:** Use the IBM NL2SQL accelerator to generate a working Natural Language to SQL agent directly in watsonx Orchestrate — no coding required. Then pick up where the accelerator leaves off and continue developing the agent with Bob.
+**Objective:** Use the IBM Client Engineering NL2SQL accelerator to generate a working Natural Language to SQL agent directly in watsonx Orchestrate — no coding required. Then pick up where the accelerator leaves off and continue developing the agent with Bob.
 
 ---
 
@@ -27,129 +27,73 @@ The accelerator handles everything up to agent generation. Once the agent is liv
 
 ---
 
-## Step 1 — Connect Your Database & Run Data Discovery
+## Demo 1 — Query Your Data in Plain English
 
-The first step is connecting your database to the accelerator and running a data discovery to understand the schema.
+Before building the agent, here is what it can do once deployed: ask a business question in natural language (for example, checking which stores are open for an event) and get the answer directly from the database — without writing a single line of SQL. The agent translates the question into a SQL query, runs it, and returns a readable result.
 
-### 1.1 Open the accelerator
+<video controls width="100%" style="border-radius:6px; margin: 1rem 0;">
+  <source src="https://github.com/yobens5/Bobchestrate-for-Partner/releases/download/videos-v1/1-demo-open-stores.mov" type="video/quicktime">
+  Your browser does not support the video tag.
+</video>
 
-<!-- SCREENSHOT PLACEHOLDER: accelerator home screen -->
+---
 
-### 1.2 Add a new database connection
+## Demo 2 — Results with Charts
 
-Fill in your database credentials (host, port, database name, username, password).
+The agent is not limited to text answers — it can also generate visual charts from query results, making data easier to analyse and share with business users.
 
-<!-- SCREENSHOT PLACEHOLDER: database connection form -->
+<video controls width="100%" style="border-radius:6px; margin: 1rem 0;">
+  <source src="https://github.com/yobens5/Bobchestrate-for-Partner/releases/download/videos-v1/2-demo-graph.mov" type="video/quicktime">
+  Your browser does not support the video tag.
+</video>
 
-### 1.3 Run Data Discovery
+---
 
-Click **Run Discovery**. The accelerator scans your database and extracts:
+## Step 1 — Connect the Database & Run Data Discovery
 
-- Table names and descriptions
-- Column names, types, and sample values
-- Foreign key relationships
-- Query patterns
+The first step is connecting your source database to the accelerator. This connection triggers the **data discovery** phase: the accelerator scans the database schema (tables, columns, relationships) to understand the data structure. This understanding is what enables the agent to generate accurate SQL queries.
 
-<!-- SCREENSHOT PLACEHOLDER: discovery running -->
-
-### 1.4 Explore the discovery results
-
-Once complete, review the results screen by screen:
-
-**Tables overview** — all detected tables with row counts and descriptions.
-
-<!-- SCREENSHOT PLACEHOLDER: tables overview -->
-
-**Column details** — for each table, inspect column types, sample values, and nullable flags.
-
-<!-- SCREENSHOT PLACEHOLDER: column details -->
-
-**Relationships** — visualise the foreign key graph between tables.
-
-<!-- SCREENSHOT PLACEHOLDER: relationships graph -->
-
-**Query samples** — the accelerator suggests example natural language queries based on the schema.
-
-<!-- SCREENSHOT PLACEHOLDER: query samples -->
+<video controls width="100%" style="border-radius:6px; margin: 1rem 0;">
+  <source src="https://github.com/yobens5/Bobchestrate-for-Partner/releases/download/videos-v1/3-connect-db-discovery.mov" type="video/quicktime">
+  Your browser does not support the video tag.
+</video>
 
 !!! tip
-    Review and correct table/column descriptions at this stage — the better the metadata, the more accurate the generated SQL.
+    Review and correct table and column descriptions after discovery — the better the metadata, the more accurate the generated SQL.
 
 ---
 
-## Step 2 — Connect to the NL2SQL Asset & Configure watsonx Orchestrate
+## Step 2 — Connect the wxo API Key & Create the Agent
 
-Now connect the discovery output to the NL2SQL asset and point it at your watsonx Orchestrate instance.
+Once data discovery is complete, connect your watsonx Orchestrate API key to the accelerator. This allows the accelerator to deploy the agent directly onto the platform. Then launch the NL2SQL agent creation from the accelerator — it uses the discovery results to configure the agent automatically.
 
-### 2.1 Start a new NL2SQL asset
-
-From the discovery results, click **Create Agent**.
-
-<!-- SCREENSHOT PLACEHOLDER: create agent button -->
-
-### 2.2 Connect your watsonx Orchestrate instance
-
-Enter your watsonx Orchestrate credentials:
-
-| Field | Value |
-|---|---|
-| Instance URL | Your WXO instance URL (from TechZone or SaaS) |
-| API Key | Your WXO API key |
-
-<!-- SCREENSHOT PLACEHOLDER: wxo credentials form -->
-
-### 2.3 Explore the asset features
-
-Before generating, walk through what the asset offers:
-
-**Schema editor** — edit table/column descriptions to improve query accuracy.
-
-<!-- SCREENSHOT PLACEHOLDER: schema editor -->
-
-**SQL validation** — test natural language queries against the database before deploying.
-
-<!-- SCREENSHOT PLACEHOLDER: SQL validation -->
-
-**Agent configuration** — set the agent name, instructions, and which tables to expose.
-
-<!-- SCREENSHOT PLACEHOLDER: agent configuration -->
-
-**Access controls** — restrict which users or groups can query which tables.
-
-<!-- SCREENSHOT PLACEHOLDER: access controls -->
+<video controls width="100%" style="border-radius:6px; margin: 1rem 0;">
+  <source src="https://github.com/yobens5/Bobchestrate-for-Partner/releases/download/videos-v1/4-connect-wxo-create-agent.mov" type="video/quicktime">
+  Your browser does not support the video tag.
+</video>
 
 ---
 
-## Step 3 — Generate the Agent
+## Step 3 — The Agent is Ready on watsonx Orchestrate
 
-When you're happy with the configuration, click **Generate Agent**.
+The agent is now deployed and available on the watsonx Orchestrate platform. Users can start asking questions in natural language straight away — the agent queries the connected database and returns the answer, exactly as shown in Demos 1 and 2.
 
-<!-- SCREENSHOT PLACEHOLDER: generate agent button -->
-
-The accelerator:
-
-1. Creates the NL2SQL agent in your watsonx Orchestrate instance
-2. Configures it with the schema metadata
-3. Connects it to your database
-4. Makes it available in the Orchestrate chat interface
-
-<!-- SCREENSHOT PLACEHOLDER: generation complete confirmation -->
+<video controls width="100%" style="border-radius:6px; margin: 1rem 0;">
+  <source src="https://github.com/yobens5/Bobchestrate-for-Partner/releases/download/videos-v1/5-agent-ready.mov" type="video/quicktime">
+  Your browser does not support the video tag.
+</video>
 
 ---
 
-## Step 4 — Test the Agent (Quick Demo)
+## Summary
 
-Open watsonx Orchestrate and find your new NL2SQL agent. Try a few natural language queries:
-
-> *"How many orders were placed last month?"*
-
-> *"Show me the top 10 customers by revenue."*
-
-> *"What products have inventory below 50 units?"*
-
-<!-- SCREENSHOT PLACEHOLDER: agent responding to NL query in Orchestrate -->
-
-The agent translates your question into SQL, runs it against the database, and returns the results in plain language.
+| # | Step | Video |
+|---|---|---|
+| 1 | Demo: business question in natural language | Demo 1 — Open stores |
+| 2 | Demo: results with charts | Demo 2 — Graph |
+| 3 | Connect the database + data discovery | Step 1 |
+| 4 | Connect the wxo API key + create the agent | Step 2 |
+| 5 | Agent live on watsonx Orchestrate | Step 3 |
 
 ---
 
@@ -185,7 +129,3 @@ summary report.
 ✅ Data discovery gives the LLM the context it needs to generate accurate SQL  
 ✅ The agent is fully editable in watsonx Orchestrate once generated  
 ✅ Bob picks up exactly where the accelerator leaves off
-
----
-
-**Next:** [Part 9: Multi-Agent Orchestration](../part9-multi-agent-orchestration/README.md) ← or go back to any earlier part to deepen your knowledge.
