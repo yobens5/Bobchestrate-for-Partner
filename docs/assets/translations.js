@@ -293,34 +293,57 @@
   }
 
   /* ------------------------------------------------------------------ */
-  /*  TOGGLE FUNCTION (called by button onclick)                         */
+  /*  WIRE BUTTON — attach click listener to the button                  */
   /* ------------------------------------------------------------------ */
-  window.__langToggle = function () {
+  function wireButton() {
+    const btn = document.getElementById("lang-toggle-btn");
+    if (!btn) return;
+    // Remove any previous listener to avoid duplicates, then re-add
+    btn.removeEventListener("click", onToggleClick);
+    btn.addEventListener("click", onToggleClick);
+  }
+
+  function onToggleClick() {
     applyLang(currentLang === "en" ? "he" : "en");
-  };
+  }
 
   /* ------------------------------------------------------------------ */
-  /*  INIT — wire up button + restore persisted language                 */
+  /*  INIT                                                                */
   /* ------------------------------------------------------------------ */
   function init() {
-    // Wire up button click (in case onclick attr wasn't picked up)
-    const btn = document.getElementById("lang-toggle-btn");
-    if (btn) {
-      btn.addEventListener("click", window.__langToggle);
-    }
+    wireButton();
 
-    // Restore persisted language
+    // Restore persisted language on first load
     if (currentLang === "he") {
       applyLang("he");
     } else {
       updateButton("en");
     }
 
-    // Re-apply on MkDocs instant navigation (SPA page changes)
-    // Material fires a custom "location.changed" event for instant nav
-    document.addEventListener("DOMContentLoaded", function () {
-      if (currentLang === "he") applyLang("he");
+    // Re-wire button + re-apply language after MkDocs instant navigation.
+    // Material swaps page content via fetch; the header stays but the
+    // content area changes. We watch for URL changes via popstate +
+    // a MutationObserver as a reliable cross-browser fallback.
+    window.addEventListener("popstate", function () {
+      setTimeout(function () {
+        wireButton();
+        if (currentLang === "he") applyLang("he");
+      }, 100);
     });
+
+    // MutationObserver: catches Material's instant-nav content swaps
+    // (Material pushes state and replaces .md-content via fetch)
+    var lastHref = location.href;
+    var observer = new MutationObserver(function () {
+      if (location.href !== lastHref) {
+        lastHref = location.href;
+        setTimeout(function () {
+          wireButton();
+          if (currentLang === "he") applyLang("he");
+        }, 150);
+      }
+    });
+    observer.observe(document.body, { childList: true, subtree: false });
   }
 
   if (document.readyState === "loading") {
