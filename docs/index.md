@@ -179,6 +179,15 @@ Each system builds on concepts from previous parts, teaching you to create incre
 - Learn best practices for agent hierarchies
 - **Advanced standalone exercise** - Build a complete travel planning system
 
+### [Part 10: NL2SQL Agent with the Accelerator](part10-nl2sql/README.md) (30 min)
+- Connect a database and run automated data discovery
+- Explore schema, relationships, and query samples
+- Configure the NL2SQL asset and connect watsonx Orchestrate
+- Tour the accelerator features screen by screen
+- Generate a working NL2SQL agent in one click
+- Run a quick demo with natural language queries
+- **Continue developing the agent with Bob**
+
 ## How Bob Helps You
 
 Throughout this workshop, you'll use Bob to:
