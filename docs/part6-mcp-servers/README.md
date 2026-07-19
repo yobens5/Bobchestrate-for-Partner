@@ -366,12 +366,13 @@ Ypu can now close the new terminal and stop the server in the other terminal wit
 Create `product-catalog-toolkit.yaml`:
 
 ```yaml
+spec_version: v1
 kind: mcp
 name: product-catalog
 description: Product catalog tools for searching, viewing details, and checking inventory
-language: python
 package_root: ./
 command: python product_catalog_server.py
+env: []
 tools:
   - "*"  # Import all tools from the server
 ```
@@ -638,7 +639,7 @@ for env in draft live; do
     
     orchestrate connections set-credentials -a external-api \
       --env $env \
-      --entries '{"API_KEY": "your-api-key-here"}'
+      --entries "API_KEY=your-api-key-here"
 done
 ```
 

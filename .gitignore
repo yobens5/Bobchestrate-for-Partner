@@ -29,6 +29,12 @@ venv/
 ENV/
 
 # IDE
+
+# Bob IDE config (contains local machine paths — do not commit)
+.bob/mcp.json
+
+# Local workspace tooling config
+workspace_config.yaml
 .vscode/
 .idea/
 *.swp

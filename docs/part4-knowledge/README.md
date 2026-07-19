@@ -26,86 +26,50 @@ Let's create a simple FAQ knowledge base for our customer support agent. Choose 
 
 ### Option A: Manual YAML Creation
 
-Create FAQ content using the example provided below or create your own using Bob! Bob prompt provided after the example.
+Knowledge bases in watsonx Orchestrate must reference **external document files** — inline content is not supported. You need two files: a text file with the FAQ content, and a YAML file that points to it.
+
+**Step 1 — Create the FAQ document** (`knowledge_bases/customer-support-faq.txt`):
+
+A sample `customer-support-faq.txt` is already provided in `docs/part4-knowledge/`. Copy it to your `knowledge_bases/` directory, or create your own with content covering shipping, returns, payments, and account management.
+
+**Step 2 — Create the knowledge base YAML** (`knowledge_bases/customer-support-faq.yaml`):
 
 ```yaml
-# customer-suport-faq.yaml
+# customer-support-faq.yaml
+spec_version: v1
 kind: knowledge_base
 name: customer-support-faq
-description: Frequently asked questions for customer support
+description: Frequently asked questions for customer support including shipping, returns, payments, and account management
 
 documents:
-  - title: "Shipping Policy"
-    content: |
-      # Shipping Policy
-      
-      ## Domestic Shipping
-      - Standard shipping: 5-7 business days ($5.99)
-      - Express shipping: 2-3 business days ($12.99)
-      - Overnight shipping: 1 business day ($24.99)
-      
-      ## International Shipping
-      - International standard: 10-15 business days ($19.99)
-      - International express: 5-7 business days ($39.99)
-      
-      ## Free Shipping
-      Orders over $50 qualify for free standard shipping within the US.
-      
-  - title: "Return Policy"
-    content: |
-      # Return Policy
-      
-      ## Return Window
-      You can return most items within 30 days of delivery for a full refund.
-      
-      ## Return Process
-      1. Contact customer support to initiate a return
-      2. Receive a return authorization number
-      3. Ship the item back using the provided label
-      4. Refund processed within 5-7 business days after receipt
-      
-      ## Non-Returnable Items
-      - Opened software or digital products
-      - Personalized items
-      - Gift cards
-      
-  - title: "Payment Methods"
-    content: |
-      # Payment Methods
-      
-      We accept:
-      - Credit cards (Visa, MasterCard, American Express, Discover)
-      - Debit cards
-      - PayPal
-      - Apple Pay
-      - Google Pay
-      
-      ## Payment Security
-      All transactions are encrypted and secure. We never store your full
-      credit card information.
-      
-  - title: "Account Management"
-    content: |
-      # Account Management
-      
-      ## Creating an Account
-      Click "Sign Up" and provide your email and password.
-      
-      ## Resetting Password
-      Click "Forgot Password" on the login page and follow the email instructions.
-      
-      ## Updating Profile
-      Go to Account Settings to update your name, email, address, and preferences.
-      
-      ## Deleting Account
-      Contact customer support to request account deletion. This process takes
-      3-5 business days.
+  - path: customer-support-faq.txt
 
+vector_index:
+  embeddings_model_name: ibm/slate-125m-english-rtrvr-v2
+  chunk_size: 500
+  chunk_overlap: 50
+  extraction_strategy: standard
+
+conversational_search_tool:
+  generation:
+    prompt_instruction: "Answer customer questions based on the FAQ document. Provide clear and concise answers."
+    max_docs_passed_to_llm: 10
+    generated_response_length: Moderate
+    idk_message: "I don't have information about that in our FAQ. Please contact our customer support team for assistance."
+  confidence_thresholds:
+    retrieval_confidence_threshold: Low
+    response_confidence_threshold: Low
+  query_rewrite:
+    enabled: true
+  citations:
+    citations_shown: -1
 ```
+
+> **Important:** The `path:` value is relative to the YAML file. Both files must be in the same directory (e.g., `knowledge_bases/`).
 
 #### Ask Bob to Help:
 ```
-Bob, create a knowledge base YAML file with FAQs about shipping, returns, payments, and account management
+Bob, create a knowledge base YAML file and companion FAQ text file with content about shipping, returns, payments, and account management. Place both files in the knowledge_bases directory.
 ```
 
 ### Option B: Import PDF with Bob's Help

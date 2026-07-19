@@ -281,16 +281,20 @@ Create test case files in the `evaluation/datasets/` directory:
 }
 ```
 
-You can also use the CLI to generate datasets:
+You can also use the CLI to generate datasets from user stories:
 
 ```bash
-# Generate dataset from user stories
+# Generate dataset from a CSV of user stories and a Python tools definition file
+# -s / --stories-path : path to a CSV file with "story" and "agent" columns
+# -t / --tools-path   : path to the Python file defining your agent's @tool functions
+# -o / --output-dir   : directory where generated test cases are saved
 orchestrate evaluations generate \
-  -s evaluation/user-stories.txt \
-  -g . \
-  -t customer-support-agent \
+  -s evaluation/user-stories.csv \
+  -t tools/customer_support_tools.py \
   -o evaluation/datasets/
 ```
+
+> **Note:** User stories must be in a `.csv` file with `story` and `agent` columns. The tools path must point to a Python file using the `@tool` decorator — **not** an agent name.
 
 ### Ask Bob to Help:
 ```
@@ -625,13 +629,10 @@ Before deploying to production, verify:
 
 ### Step 2: Deploy to Draft Environment
 
-First, deploy to the draft environment for testing:
+First, import all artifacts into your active environment. All imported artifacts land in the **draft** state automatically:
 
 ```bash
-# Ensure you're in draft environment
-orchestrate env set draft
-
-# Import all components
+# Import all components (always targets draft state)
 orchestrate tools import -k python -f order_status_tool.py
 orchestrate tools import -k python -f refund_tool.py
 orchestrate knowledge-bases import -f faq-knowledge-base.yaml
@@ -648,20 +649,17 @@ orchestrate knowledge-bases list
 
 ### Step 3: Deploy to Live Environment (SaaS/On-Premises Only)
 
-Once testing is complete in draft, deploy to production:
+Once testing in draft is complete, promote the agent to live so end users can access it:
 
 ```bash
-# Switch to live environment
-orchestrate env set live
-
-# Import all components
+# Import all components first (if not already done in Step 2)
 orchestrate tools import -k python -f order_status_tool.py
 orchestrate tools import -k python -f refund_tool.py
 orchestrate knowledge-bases import -f faq-knowledge-base.yaml
 orchestrate agents import -f escalation-agent.yaml
 orchestrate agents import -f customer-support-agent.yaml
 
-# Deploy agent to live (makes it available to end users)
+# Deploy agent to live (promotes draft → live, makes it available to end users)
 orchestrate agents deploy --name customer-support-agent
 
 # Verify live deployment

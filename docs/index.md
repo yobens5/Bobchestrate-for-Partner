@@ -18,6 +18,10 @@ Welcome! This workshop will guide you through building AI agents using IBM watso
 
     → Full details in the [Prerequisites](part0-prerequisites/README.md) section.
 
+!!! note "Tested ADK Version"
+    All workshop content, CLI commands, and YAML examples in this lab have been verified against **IBM watsonx Orchestrate ADK version 2.12.0**.
+    If you are running a different version, consult the [ADK release notes](https://developer.watson-orchestrate.ibm.com/release/release) for any changes.
+
 **Duration:** 270-300 minutes (4.5-5 hours) for complete workshop
 
 This estimate includes:

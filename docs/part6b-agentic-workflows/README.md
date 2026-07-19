@@ -459,7 +459,7 @@ hidden: false
 orchestrate agents import -f agents/loan-processor-agent.yaml
 
 # Test in chat
-orchestrate chat -a loan_processor_agent
+orchestrate chat ask --agent-name loan_processor_agent
 ```
 
 **Test conversation:**
