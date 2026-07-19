@@ -109,20 +109,6 @@ Here are things you can do next with Bob:
 - **Add collaborators** — connect the NL2SQL agent to other specialist agents
 - **Add a knowledge base** — let the agent explain query results using business documentation
 
-### Ask Bob to help:
-
-```
-Bob, I have a NL2SQL agent in watsonx Orchestrate. Help me add a guardrail 
-that prevents queries on the 'users' table.
-```
-
-```
-Bob, add a custom tool to my NL2SQL agent that formats SQL results as a 
-summary report.
-```
-
----
-
 ## Key Takeaways
 
 ✅ The NL2SQL accelerator creates a production-ready agent without writing any code  
