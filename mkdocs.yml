@@ -15,6 +15,7 @@ edit_uri: edit/main/docs/
 theme:
   name: material
   language: en
+  custom_dir: overrides
   logo: Bobchestrate_Workshop_logo_new.png
   favicon: Bobchestrate_Workshop_logo_new.png
   palette:
