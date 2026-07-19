@@ -2,13 +2,9 @@
  * translations.js
  * EN ↔ HE language toggle for Bobchestrate Workshop (MkDocs Material site)
  *
- * Strategy:
- *  - Stores all Hebrew translations keyed by canonical English text.
- *  - On toggle, walks every visible text node and swaps EN ↔ HE.
- *  - Also swaps specific attribute text (placeholder, title, aria-label).
- *  - Sets <html dir="rtl"> / dir="ltr" for proper layout.
- *  - Persists choice in localStorage.
- *  - Injects the toggle button into the Material header nav row.
+ * The toggle button is rendered server-side in overrides/partials/header.html.
+ * This script wires up the click handler, translates text nodes, and handles
+ * RTL layout + localStorage persistence.
  */
 
 (function () {
@@ -44,9 +40,6 @@
     "An IBM partner account": "חשבון שותף IBM",
     "Access to TechZone": "גישה ל-TechZone",
     "Access to ticket creation": "גישה ליצירת כרטיסים",
-    "Full details in the": "פרטים מלאים ב-",
-    "Prerequisites": "דרישות מוקדמות",
-    "section.": "סעיף.",
     "Duration:": "משך הזמן:",
     "270-300 minutes (4.5-5 hours) for complete workshop":
       "270-300 דקות (4.5-5 שעות) לסדנה המלאה",
@@ -139,38 +132,7 @@
     "Part 10: NL2SQL Agent with the Accelerator":
       "חלק 10: סוכן NL2SQL עם המאיץ",
 
-    /* ---- How Bob helps ---- */
-    "How Bob Helps You": "כיצד Bob עוזר לך",
-    "Throughout this workshop, you'll use Bob to:":
-      "לאורך הסדנה תשתמש ב-Bob ל:",
-    "Generate code": "יצירת קוד",
-    "Debug issues": "איתור באגים",
-    "Explain concepts": "הסבר מושגים",
-    "Refactor code": "שיפוץ קוד",
-    "Create tests": "יצירת בדיקות",
-
-    /* ---- Learning objectives ---- */
-    "Learning Objectives": "מטרות הלמידה",
-    "By the end of this workshop, you will:":
-      "בסיום הסדנה תוכל:",
-
-    /* ---- Tips ---- */
-    "Tips for Success": "טיפים להצלחה",
-    "Ask Bob for help": "בקש עזרה מ-Bob",
-    "Experiment": "נסה בעצמך",
-    "Read error messages": "קרא הודעות שגיאה",
-    "Test incrementally": "בדוק בהדרגה",
-    "Use the documentation": "השתמש בתיעוד",
-
-    /* ---- Additional resources ---- */
-    "Additional Resources": "משאבים נוספים",
-    "Need Help?": "זקוק לעזרה?",
-    "Reporting issues and asking for enhancements":
-      "דיווח על בעיות ובקשת שיפורים",
-    "Getting Started": "תחילת עבודה",
-    "Let's get started! 🚀": "בואו נתחיל! 🚀",
-
-    /* ---- Part titles (nav) ---- */
+    /* ---- Part nav labels ---- */
     "Part 1 - Setup": "חלק 1 - התקנה",
     "Part 2 - First Agent": "חלק 2 - סוכן ראשון",
     "Part 2b - Bob Custom Rules": "חלק 2ב - חוקים מותאמים ל-Bob",
@@ -185,7 +147,7 @@
     "Part 9 - Multi-Agent Orchestration": "חלק 9 - תזמור רב-סוכני",
     "Part 10 - NL2SQL Accelerator": "חלק 10 - מאיץ NL2SQL",
 
-    /* ---- Common UI ---- */
+    /* ---- Common Material UI ---- */
     "Search": "חיפוש",
     "Search docs": "חפש בתיעוד",
     "Table of contents": "תוכן עניינים",
@@ -195,6 +157,7 @@
     "Back to top": "חזרה לראש הדף",
     "Switch to dark mode": "מעבר למצב כהה",
     "Switch to light mode": "מעבר למצב בהיר",
+    "Initializing search": "טוען חיפוש...",
 
     /* ---- Prerequisites page ---- */
     "Before starting the workshop, make sure you have the following:":
@@ -212,7 +175,6 @@
     "Submit your request here:": "שלח את בקשתך כאן:",
     "Details on the link.": "פרטים בקישור.",
     "Ready? Head to": "מוכן? עבור אל",
-    "Part 1: Setup & Environment": "חלק 1: התקנה וסביבה",
   };
 
   /* ------------------------------------------------------------------ */
@@ -232,20 +194,18 @@
   /* ------------------------------------------------------------------ */
   /*  TEXT-NODE WALKER                                                    */
   /* ------------------------------------------------------------------ */
-  /**
-   * Walk all text nodes under `root`, replace known phrases.
-   * We work on full trimmed node values (exact match first) then
-   * partial replacement for nodes that contain a known phrase.
-   */
   function translateNode(root, dict) {
     const walker = document.createTreeWalker(
       root,
       NodeFilter.SHOW_TEXT,
       {
         acceptNode(node) {
-          // Skip script/style/code content
           const tag = node.parentElement && node.parentElement.tagName;
+          // Skip code blocks, scripts, styles, and the button itself
           if (["SCRIPT", "STYLE", "CODE", "PRE", "KBD"].includes(tag))
+            return NodeFilter.FILTER_REJECT;
+          // Don't translate inside our own button
+          if (node.parentElement && node.parentElement.closest("#lang-toggle-btn"))
             return NodeFilter.FILTER_REJECT;
           if (node.textContent.trim() === "") return NodeFilter.FILTER_SKIP;
           return NodeFilter.FILTER_ACCEPT;
@@ -257,20 +217,21 @@
     let n;
     while ((n = walker.nextNode())) nodes.push(n);
 
+    // Sort keys longest-first to avoid partial-match conflicts
+    const keys = Object.keys(dict).sort((a, b) => b.length - a.length);
+
     for (const node of nodes) {
       const orig = node.textContent;
       const trimmed = orig.trim();
 
-      // Exact full-node match (most nav / heading items)
+      // Exact full-node match
       if (dict[trimmed] !== undefined) {
         node.textContent = orig.replace(trimmed, dict[trimmed]);
         continue;
       }
 
-      // Partial replacement — replace each known phrase inside the text
+      // Partial replacement
       let replaced = orig;
-      // Sort keys longest-first to avoid partial overlaps
-      const keys = Object.keys(dict).sort((a, b) => b.length - a.length);
       for (const phrase of keys) {
         if (replaced.includes(phrase)) {
           replaced = replaced.split(phrase).join(dict[phrase]);
@@ -286,135 +247,82 @@
   /*  ATTRIBUTE TRANSLATION                                               */
   /* ------------------------------------------------------------------ */
   function translateAttrs(dict) {
-    // placeholder, title, aria-label on common elements
-    const selectors = ["[placeholder]", "[title]", "[aria-label]"];
-    for (const sel of selectors) {
-      document.querySelectorAll(sel).forEach((el) => {
-        ["placeholder", "title", "aria-label"].forEach((attr) => {
-          const val = el.getAttribute(attr);
-          if (val && dict[val]) {
-            el.setAttribute(attr, dict[val]);
-          }
-        });
+    document.querySelectorAll("[placeholder],[title],[aria-label]").forEach((el) => {
+      // Don't touch our button
+      if (el.id === "lang-toggle-btn") return;
+      ["placeholder", "title", "aria-label"].forEach((attr) => {
+        const val = el.getAttribute(attr);
+        if (val && dict[val]) el.setAttribute(attr, dict[val]);
       });
+    });
+  }
+
+  /* ------------------------------------------------------------------ */
+  /*  UPDATE BUTTON LABEL                                                 */
+  /* ------------------------------------------------------------------ */
+  function updateButton(lang) {
+    const btn = document.getElementById("lang-toggle-btn");
+    if (!btn) return;
+    if (lang === "en") {
+      btn.innerHTML =
+        '<span class="lt-active">EN</span><span class="lt-sep"> | </span><span>HE</span>';
+      btn.title = "Switch to Hebrew (עברית)";
+    } else {
+      btn.innerHTML =
+        '<span>EN</span><span class="lt-sep"> | </span><span class="lt-active">HE</span>';
+      btn.title = "Switch to English";
     }
   }
 
   /* ------------------------------------------------------------------ */
-  /*  APPLY LANGUAGE                                                      */
+  /*  APPLY LANGUAGE TO PAGE                                             */
   /* ------------------------------------------------------------------ */
   function applyLang(lang) {
     const dict = lang === "he" ? HE : EN;
     const html = document.documentElement;
 
-    // Direction + lang attribute
     html.setAttribute("dir", lang === "he" ? "rtl" : "ltr");
     html.setAttribute("lang", lang === "he" ? "he" : "en");
 
-    // Translate all visible text
     translateNode(document.body, dict);
     translateAttrs(dict);
-
-    // Update button labels
     updateButton(lang);
 
-    // Persist
     localStorage.setItem(LS_KEY, lang);
     currentLang = lang;
   }
 
   /* ------------------------------------------------------------------ */
-  /*  BUTTON                                                              */
+  /*  TOGGLE FUNCTION (called by button onclick)                         */
   /* ------------------------------------------------------------------ */
-  function createButton() {
-    const btn = document.createElement("button");
-    btn.id = "lang-toggle-btn";
-    btn.setAttribute("aria-label", "Switch language EN / HE");
-    updateButton(currentLang, btn);
-
-    btn.addEventListener("click", () => {
-      const next = currentLang === "en" ? "he" : "en";
-      applyLang(next);
-    });
-
-    return btn;
-  }
-
-  function updateButton(lang, btn) {
-    const el = btn || document.getElementById("lang-toggle-btn");
-    if (!el) return;
-    if (lang === "en") {
-      el.innerHTML =
-        '<span class="lt-active">EN</span>' +
-        '<span class="lt-sep"> | </span>' +
-        '<span>HE</span>';
-      el.title = "Switch to Hebrew (עברית)";
-    } else {
-      el.innerHTML =
-        '<span>EN</span>' +
-        '<span class="lt-sep"> | </span>' +
-        '<span class="lt-active">HE</span>';
-      el.title = "Switch to English";
-    }
-  }
+  window.__langToggle = function () {
+    applyLang(currentLang === "en" ? "he" : "en");
+  };
 
   /* ------------------------------------------------------------------ */
-  /*  INJECT BUTTON INTO MATERIAL HEADER                                 */
-  /* ------------------------------------------------------------------ */
-  function injectButton() {
-    // Material v9 header inner row selectors (try several)
-    const targets = [
-      ".md-header__inner .md-header__options",  // v9.x
-      ".md-header__inner",                       // fallback – append to inner
-    ];
-
-    let container = null;
-    for (const sel of targets) {
-      container = document.querySelector(sel);
-      if (container) break;
-    }
-
-    if (!container) {
-      // Last resort: append to header
-      container = document.querySelector(".md-header");
-    }
-    if (!container) return;
-
-    // Don't inject twice (e.g. on SPA navigations)
-    if (document.getElementById("lang-toggle-btn")) return;
-
-    const btn = createButton();
-    container.appendChild(btn);
-  }
-
-  /* ------------------------------------------------------------------ */
-  /*  INIT                                                                */
+  /*  INIT — wire up button + restore persisted language                 */
   /* ------------------------------------------------------------------ */
   function init() {
-    injectButton();
+    // Wire up button click (in case onclick attr wasn't picked up)
+    const btn = document.getElementById("lang-toggle-btn");
+    if (btn) {
+      btn.addEventListener("click", window.__langToggle);
+    }
 
     // Restore persisted language
     if (currentLang === "he") {
       applyLang("he");
+    } else {
+      updateButton("en");
     }
 
-    // Re-inject button after MkDocs SPA navigations
-    // (Material uses pushState; header stays but inner content refreshes)
-    document.addEventListener("click", function (e) {
-      // If a nav link was clicked, re-inject button after page paints
-      if (e.target.closest("a[href]")) {
-        requestAnimationFrame(() => {
-          injectButton();
-          if (currentLang === "he") {
-            // Small delay to let MkDocs Material finish rendering
-            setTimeout(() => applyLang("he"), 80);
-          }
-        });
-      }
+    // Re-apply on MkDocs instant navigation (SPA page changes)
+    // Material fires a custom "location.changed" event for instant nav
+    document.addEventListener("DOMContentLoaded", function () {
+      if (currentLang === "he") applyLang("he");
     });
   }
 
-  /* Run after DOM ready */
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
   } else {
