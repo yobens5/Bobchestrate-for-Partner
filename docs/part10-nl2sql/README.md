@@ -34,14 +34,12 @@ The first step is connecting your database to the accelerator and running a data
 ### 1.1 Open the accelerator
 
 <!-- SCREENSHOT PLACEHOLDER: accelerator home screen -->
-![Accelerator home screen](images/step1-1-accelerator-home.png)
 
 ### 1.2 Add a new database connection
 
 Fill in your database credentials (host, port, database name, username, password).
 
 <!-- SCREENSHOT PLACEHOLDER: database connection form -->
-![Database connection form](images/step1-2-db-connection.png)
 
 ### 1.3 Run Data Discovery
 
@@ -53,7 +51,6 @@ Click **Run Discovery**. The accelerator scans your database and extracts:
 - Query patterns
 
 <!-- SCREENSHOT PLACEHOLDER: discovery running -->
-![Data discovery in progress](images/step1-3-discovery-running.png)
 
 ### 1.4 Explore the discovery results
 
@@ -62,22 +59,18 @@ Once complete, review the results screen by screen:
 **Tables overview** — all detected tables with row counts and descriptions.
 
 <!-- SCREENSHOT PLACEHOLDER: tables overview -->
-![Tables overview](images/step1-4-tables-overview.png)
 
 **Column details** — for each table, inspect column types, sample values, and nullable flags.
 
 <!-- SCREENSHOT PLACEHOLDER: column details -->
-![Column details](images/step1-5-column-details.png)
 
 **Relationships** — visualise the foreign key graph between tables.
 
 <!-- SCREENSHOT PLACEHOLDER: relationships graph -->
-![Relationships graph](images/step1-6-relationships.png)
 
 **Query samples** — the accelerator suggests example natural language queries based on the schema.
 
 <!-- SCREENSHOT PLACEHOLDER: query samples -->
-![Query samples](images/step1-7-query-samples.png)
 
 !!! tip
     Review and correct table/column descriptions at this stage — the better the metadata, the more accurate the generated SQL.
@@ -93,7 +86,6 @@ Now connect the discovery output to the NL2SQL asset and point it at your watson
 From the discovery results, click **Create Agent**.
 
 <!-- SCREENSHOT PLACEHOLDER: create agent button -->
-![Create agent](images/step2-1-create-agent.png)
 
 ### 2.2 Connect your watsonx Orchestrate instance
 
@@ -105,7 +97,6 @@ Enter your watsonx Orchestrate credentials:
 | API Key | Your WXO API key |
 
 <!-- SCREENSHOT PLACEHOLDER: wxo credentials form -->
-![WXO credentials](images/step2-2-wxo-credentials.png)
 
 ### 2.3 Explore the asset features
 
@@ -114,22 +105,18 @@ Before generating, walk through what the asset offers:
 **Schema editor** — edit table/column descriptions to improve query accuracy.
 
 <!-- SCREENSHOT PLACEHOLDER: schema editor -->
-![Schema editor](images/step2-3-schema-editor.png)
 
 **SQL validation** — test natural language queries against the database before deploying.
 
 <!-- SCREENSHOT PLACEHOLDER: SQL validation -->
-![SQL validation](images/step2-4-sql-validation.png)
 
 **Agent configuration** — set the agent name, instructions, and which tables to expose.
 
 <!-- SCREENSHOT PLACEHOLDER: agent configuration -->
-![Agent configuration](images/step2-5-agent-config.png)
 
 **Access controls** — restrict which users or groups can query which tables.
 
 <!-- SCREENSHOT PLACEHOLDER: access controls -->
-![Access controls](images/step2-6-access-controls.png)
 
 ---
 
@@ -138,7 +125,6 @@ Before generating, walk through what the asset offers:
 When you're happy with the configuration, click **Generate Agent**.
 
 <!-- SCREENSHOT PLACEHOLDER: generate agent button -->
-![Generate agent](images/step3-1-generate.png)
 
 The accelerator:
 
@@ -148,7 +134,6 @@ The accelerator:
 4. Makes it available in the Orchestrate chat interface
 
 <!-- SCREENSHOT PLACEHOLDER: generation complete confirmation -->
-![Generation complete](images/step3-2-complete.png)
 
 ---
 
@@ -163,7 +148,6 @@ Open watsonx Orchestrate and find your new NL2SQL agent. Try a few natural langu
 > *"What products have inventory below 50 units?"*
 
 <!-- SCREENSHOT PLACEHOLDER: agent responding to NL query in Orchestrate -->
-![NL2SQL agent demo](images/step4-demo.png)
 
 The agent translates your question into SQL, runs it against the database, and returns the results in plain language.
 
