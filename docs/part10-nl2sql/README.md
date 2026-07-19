@@ -32,7 +32,7 @@ The accelerator handles everything up to agent generation. Once the agent is liv
 Before building the agent, here is what it can do once deployed: ask a business question in natural language (for example, checking which stores are open for an event) and get the answer directly from the database — without writing a single line of SQL. The agent translates the question into a SQL query, runs it, and returns a readable result.
 
 <video controls width="100%" style="border-radius:6px; margin: 1rem 0;">
-  <source src="https://github.com/yobens5/Bobchestrate-for-Partner/releases/download/videos-v1/1-demo-open-stores.mov" type="video/quicktime">
+  <source src="videos/1-demo-open-stores.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -43,7 +43,7 @@ Before building the agent, here is what it can do once deployed: ask a business 
 The agent is not limited to text answers — it can also generate visual charts from query results, making data easier to analyse and share with business users.
 
 <video controls width="100%" style="border-radius:6px; margin: 1rem 0;">
-  <source src="https://github.com/yobens5/Bobchestrate-for-Partner/releases/download/videos-v1/2-demo-graph.mov" type="video/quicktime">
+  <source src="videos/2-demo-graph.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -54,7 +54,7 @@ The agent is not limited to text answers — it can also generate visual charts 
 The first step is connecting your source database to the accelerator. This connection triggers the **data discovery** phase: the accelerator scans the database schema (tables, columns, relationships) to understand the data structure. This understanding is what enables the agent to generate accurate SQL queries.
 
 <video controls width="100%" style="border-radius:6px; margin: 1rem 0;">
-  <source src="https://github.com/yobens5/Bobchestrate-for-Partner/releases/download/videos-v1/3-connect-db-discovery.mov" type="video/quicktime">
+  <source src="videos/3-connect-db-discovery.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -68,7 +68,7 @@ The first step is connecting your source database to the accelerator. This conne
 Once data discovery is complete, connect your watsonx Orchestrate API key to the accelerator. This allows the accelerator to deploy the agent directly onto the platform. Then launch the NL2SQL agent creation from the accelerator — it uses the discovery results to configure the agent automatically.
 
 <video controls width="100%" style="border-radius:6px; margin: 1rem 0;">
-  <source src="https://github.com/yobens5/Bobchestrate-for-Partner/releases/download/videos-v1/4-connect-wxo-create-agent.mov" type="video/quicktime">
+  <source src="videos/4-connect-wxo-create-agent.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -79,7 +79,7 @@ Once data discovery is complete, connect your watsonx Orchestrate API key to the
 The agent is now deployed and available on the watsonx Orchestrate platform. Users can start asking questions in natural language straight away — the agent queries the connected database and returns the answer, exactly as shown in Demos 1 and 2.
 
 <video controls width="100%" style="border-radius:6px; margin: 1rem 0;">
-  <source src="https://github.com/yobens5/Bobchestrate-for-Partner/releases/download/videos-v1/5-agent-ready.mov" type="video/quicktime">
+  <source src="videos/5-agent-ready.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -87,7 +87,7 @@ The agent is now deployed and available on the watsonx Orchestrate platform. Use
 
 ## Summary
 
-| # | Step | Video |
+| # | Step | Content |
 |---|---|---|
 | 1 | Demo: business question in natural language | Demo 1 — Open stores |
 | 2 | Demo: results with charts | Demo 2 — Graph |
