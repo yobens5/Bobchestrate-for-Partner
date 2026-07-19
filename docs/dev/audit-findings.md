@@ -18,6 +18,91 @@ Source of truth for CLI/API: official ADK docs via `watsonx-orchestrate-adk-docs
 
 ---
 
+## Planned Work
+
+The following items have been identified and agreed on. Each will be tracked as a separate task when picked up.
+
+---
+
+### Plan 1 — Content cleanup: remove unnecessary parts, keep the core
+
+**Status:** ⏳ TODO
+**Priority:** High — reduces cognitive load for workshop participants
+
+Remove or significantly trim any parts, sections, or steps that are not essential to understanding how to build agents with watsonx Orchestrate. Keep only what a participant must know to complete the workshop and walk away productive.
+
+**What to evaluate for removal or trimming:**
+- Parts or sections that duplicate content already covered elsewhere
+- Over-long explanations where a one-liner would do
+- Optional/advanced callout blocks that distract from the main flow
+- Any part that has no corresponding hands-on exercise
+
+**Outcome:** A leaner workshop that participants can complete in the stated time without skipping anything.
+
+---
+
+### Plan 2 — Theme adaptation: align content to insurance or retail industry
+
+**Status:** ⏳ TODO
+**Priority:** High — makes examples feel real and relevant to the audience
+
+The current agent and tool examples use generic "customer support" framing. The workshop should be adapted to a concrete industry vertical. Two candidate themes:
+
+- **Insurance:** Claims processing, policy lookup, coverage questions, escalation to human adjusters
+- **Retail:** Product catalog search, order status, returns, loyalty program — consistent with the NL2SQL retail videos already present in `docs/part10-nl2sql/`
+
+**Decision needed:** Confirm which vertical to use (insurance or retail). Retail is already partially set up via the NL2SQL videos.
+
+**Scope of changes when picked up:**
+- Agent names, tool names, and descriptions (e.g. `customer_support_agent` → `claims_agent` or `retail_support_agent`)
+- Sample data in tools and knowledge bases (shipping/returns FAQ → policy FAQ or product catalog)
+- Evaluation dataset stories and starting sentences
+- Screenshots and diagrams if any show generic placeholder names
+- `docs/part10-nl2sql/` retail videos are already aligned — use them as the anchor for the retail theme if that direction is chosen
+
+---
+
+### Plan 3 — Platform parity: validate macOS and Windows setup instructions
+
+**Status:** ⏳ TODO
+**Priority:** High — a broken setup step on Day 1 loses the participant entirely
+
+Audit all setup and installation steps assuming a **fresh machine** on both platforms. See full checklist below.
+
+#### macOS checklist
+- [ ] Python installation path covered (Homebrew / python.org / pyenv)
+- [ ] `python3` / `pip3` command naming (vs `python` / `pip`)
+- [ ] Virtual environment creation and activation (`. .venv/bin/activate`)
+- [ ] `orchestrate` CLI available on PATH after `pip install`
+- [ ] Shell assumed is zsh (macOS default) — any bash-specific syntax flagged
+
+#### Windows checklist
+- [ ] Python installation from python.org — "Add to PATH" checkbox called out explicitly
+- [ ] `python` / `py` launcher vs `python3` naming difference documented
+- [ ] Venv activation: `.venv\Scripts\activate` (CMD) or `.venv\Scripts\Activate.ps1` (PowerShell)
+- [ ] PowerShell execution policy: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`
+- [ ] `orchestrate` CLI accessible on PATH after install
+- [ ] Bash-only shell constructs identified and replaced or given Windows alternatives:
+  - `for env in draft live; do ... done` loop (Part 6, line ~633) → PowerShell equivalent provided
+  - Any use of `source`, `export`, `chmod` → Windows alternatives noted
+- [ ] Path separator differences (`/` vs `\`) in any CLI arguments flagged
+
+#### Acceptance criteria
+- A participant with zero prior Python experience on either platform can complete Part 1 without external help
+- Minimum Python version is stated explicitly at the top of Part 1
+- All shell blocks that behave differently across platforms have a clear platform note or split tab
+
+#### Primary files to audit
+- `docs/part1-setup/README.md` — full environment bootstrap
+- `docs/part6-mcp-servers/README.md` — bash loop on line ~633
+- Any other part using `source`, `export`, or multi-line shell scripts
+
+---
+
+## Closed & Dismissed Findings
+
+---
+
 ## Finding 1 — `orchestrate env activate -a <api-key>` flag
 
 **Part:** Part 1 (`docs/part1-setup/README.md`)
