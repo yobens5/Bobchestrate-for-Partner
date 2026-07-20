@@ -28,7 +28,7 @@ This estimate includes:<br>
 
 **Prerequisites:** 
 - Computer with internet access, Windows, macOS, or Linux operating system, at least 8GB RAM and 500 MB of free disk space
-- Basic Python knowledge and Python 3.11-3.13 installed (https://www.python.org/downloads/)
+- Basic Python knowledge and Python 3.12 installed (https://www.python.org/downloads/)
 - uv installed (https://pypi.org/project/uv/)
 - watsonx Orchestrate SaaS access (provided by your instructor or you can use your own)
 - IBM Bob IDE installed (trial or one provided by your instructor)

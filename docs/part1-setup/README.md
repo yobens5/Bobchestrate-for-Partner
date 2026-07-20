@@ -6,7 +6,7 @@
 ## Prerequisites Check
 
 Before starting, ensure you have:
-- [ ] Python 3.11–3.13 installed — see [Prerequisites](../part0-prerequisites/README.md#python-3113) for install instructions
+- [ ] Python 3.12 installed — see [Prerequisites](../part0-prerequisites/README.md#python-312) for install instructions
 - [ ] `uv` installed — see [Prerequisites](../part0-prerequisites/README.md#uv) for install instructions
 - [ ] IBM Bob IDE installed
 - [ ] watsonx Orchestrate access (SaaS or Developer Edition)
@@ -19,7 +19,7 @@ python --version   # Windows
 python3 --version  # macOS/Linux
 ```
 
-Expected output: `Python 3.11.x`, `3.12.x`, or `3.13.x`
+Expected output: `Python 3.12.x`
 
 ## Step 2: Verify uv Installation
 
@@ -115,7 +115,7 @@ Alternatively, you can check the MCP servers configuration:
 2. Type "MCP Servers" and select it
 3. Verify that the watsonx Orchestrate MCP servers are listed in the configuration and both of them marked with a green bullet point
 
-   <img src="images/image-5.png" alt="IBM Bob IDE File menu showing Open Folder option" width="650px">
+   <img src="images/image-5.png" alt="IBM Bob IDE MCP settings panel showing two watsonx Orchestrate MCP servers with green status indicators" width="650px">
 
 The MCP servers provide:
 - Access to watsonx Orchestrate documentation
@@ -131,9 +131,7 @@ Import a pre-configured custom mode specialized for building watsonx Orchestrate
 1. Download the mode configuration file:
    - The file is located at: [wxo-agent-architect-export.yaml](files/wxo-agent-architect-export.yaml)
 
-   - Click the **Download raw file** button
-
-      <img src="images/image-10.png" alt="Download the raw file" width="300px">
+   - The link opens the file in your browser — to save it, **right-click the link and choose "Save As…"**. Make sure the filename ends with **`.yaml`** before saving.
 
    - Save the file to your Downloads folder or a location you can easily access
 
@@ -171,12 +169,12 @@ Create a virtual environment for the workshop to keep dependencies isolated usin
 1. Open the Command Palette in IBM Bob IDE (press `Cmd+Shift+P` on Mac / `Ctrl+Shift+P` on Windows/Linux)
 2. Type "Python: Create Environment" and select it
 3. Choose "Venv" as the environment type
-4. Select your Python interpreter (Python 3.11-3.13)
+4. Select your Python interpreter (Python 3.12)
 5. Wait for the virtual environment to be created
 
 You can now see the .venv folder in your workspace explorer view.
 
-<img src="images/image-6.png" alt="IBM Bob IDE File menu showing Open Folder option" width="350px">
+<img src="images/image-6.png" alt="IBM Bob IDE Explorer showing the .venv folder in the workspace" width="350px">
 
 IBM Bob IDE will automatically:
 - Create a `.venv` folder in your workspace
@@ -212,7 +210,9 @@ Click on the red cross to install the ADK. This will open a couple of commands t
 
 <img src="images/image-8.png" alt="IBM Bob IDE Command Palette showing Install ADK command" width="500px">
 
-Wait for the installation to complete. After a while, you should see a notification and a green checkmark in the Status Bar with the latest version number of the ADK.
+Wait for the installation to complete. After a while, you should see a notification and a green checkmark in the Status Bar with the version number of the ADK.
+
+> **Note:** This workshop has been tested with **ADK version 2.12.0**. If a different version is installed, you may encounter differences in CLI commands or YAML schemas.
 
 <img src="images/image-9.png" alt="IBM Bob IDE Status Bar showing ADK installed" width="300px">
 
@@ -299,7 +299,7 @@ Now that you have watsonx Orchestrate MCP servers and the WXO Agent Architect mo
 
    >Note: You can also check the **Always allow** checkbox to always allow Bob to access the MCP server. One option is to enable **Auto-approval**. If you do this, you can specify the different options that you want to allow.
 
-      <img src="images/image-17.png" alt="Approve access to MCP server" width="350px">
+   <img src="images/image-17.png" alt="Approve access to MCP server" width="350px">
 
    >Note: Bob might ask you to approve the MCP server access multiple times. This is because Bob is trying to access the MCP server to get the more detailed information after first learning about the environment setup. Recommendation is to enable **Auto-approval** for the MCP servers to avoid granting the permission manually each time.
 
@@ -325,7 +325,7 @@ Now that you have watsonx Orchestrate MCP servers and the WXO Agent Architect mo
 
 8. Run the created script in your terminal to **add** your environment:
 
-   `./<name of your cerated script>, e.g. ./_add_wxo_env.sh`
+   `./<name of your created script>, e.g. ./_add_wxo_env.sh`
 
 9. When asked, provide name for your environment, e.g. `my-wxo-cloud`:
 

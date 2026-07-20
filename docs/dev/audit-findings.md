@@ -81,7 +81,7 @@ This contradicts the main flow (Step 10), which installs the ADK inside `.venv` 
 
 **Part:** Part 0 (`docs/part0-prerequisites/README.md`) and Part 1 (`docs/part1-setup/README.md`), lines 6–11
 **Status:** ✅ CLOSED
-**Problem:** The prerequisites checklist says _"Python 3.11–3.13 installed"_ but never explains how to install it. A participant starting from a fresh machine has no guidance.
+**Problem:** The prerequisites checklist says _"Python 3.12 installed"_ but never explains how to install it. A participant starting from a fresh machine has no guidance.
 
 **Fix needed:**
 - macOS: recommend Homebrew (`brew install python@3.12`) or python.org installer; note that `/usr/bin/python3` is Apple's system Python and should not be used
@@ -135,13 +135,13 @@ This contradicts the main flow (Step 10), which installs the ADK inside `.venv` 
 
 ---
 
-### Finding 17 — Part 6: Inconsistent Python version (`3.9+` vs `3.11–3.13`)
+### Finding 17 — Part 6: Inconsistent Python version (`3.9+` vs `3.12`)
 
 **Part:** Part 6 (`docs/part6-mcp-servers/README.md`), line 947
 **Status:** ✅ CLOSED
-**Problem:** Troubleshooting section says "Check Python version (3.9+)" but the workshop requires 3.11–3.13 (stated in Part 1, line 9). A participant checking this step would think their Python 3.10 install is fine when it isn't.
+**Problem:** Troubleshooting section says "Check Python version (3.9+)" but the workshop requires 3.12 (stated in Part 1, line 9). A participant checking this step would think their Python 3.10 install is fine when it isn't.
 
-**Fix:** Change `3.9+` → `3.11–3.13` to be consistent with the rest of the workshop.
+**Fix:** Change `3.9+` → `3.12` to be consistent with the rest of the workshop.
 
 ---
 

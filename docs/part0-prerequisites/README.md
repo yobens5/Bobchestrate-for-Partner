@@ -13,9 +13,9 @@ Before starting the workshop, make sure you have the following:
 
 ## Software Prerequisites
 
-### Python (3.11–3.13)
+### Python 3.12
 
-The workshop requires **Python 3.11, 3.12, or 3.13**. Python 3.10 and earlier are not supported.
+The workshop requires **Python 3.12**. Other versions are not tested and not supported.
 
 **macOS:**
 
