@@ -526,6 +526,7 @@ orchestrate --version
 ## Next Steps
 
 Once your setup is verified:
+
 1. ✅ You can connect to watsonx Orchestrate
 2. ✅ Bob is responding to your questions
 3. ✅ You understand the workshop structure
