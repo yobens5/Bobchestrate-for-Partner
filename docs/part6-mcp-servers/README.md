@@ -773,7 +773,8 @@ for env in draft live; do
     
     orchestrate connections set-credentials -a product-api-credentials \
       --env $env \
-      --entries '{"API_KEY": "your-api-key", "API_URL": "https://api.example.com"}'
+      -e "API_KEY=your-api-key" \
+      -e "API_URL=https://api.example.com"
 done
 ```
 
@@ -944,7 +945,7 @@ Then create an agent that uses both `product-catalog` and `shopping-cart` toolki
 **Symptoms**: Import fails or tools don't appear
 
 **Solutions:**
-1. Check Python version (3.9+)
+1. Check Python version (3.11–3.13)
 2. Verify `mcp` package is installed
 3. Test server locally first
 4. Check for syntax errors in server code
@@ -954,7 +955,7 @@ Then create an agent that uses both `product-catalog` and `shopping-cart` toolki
 **Symptoms**: Agent can't call tools or gets errors
 
 **Solutions:**
-1. Verify toolkit is imported: `orchestrate toolkit list`
+1. Verify toolkit is imported: `orchestrate toolkits list`
 2. Check agent YAML includes toolkit in `toolkits:` section
 3. Review tool input schema matches what agent sends
 4. Check server logs for errors

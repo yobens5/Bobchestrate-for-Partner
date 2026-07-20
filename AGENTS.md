@@ -62,3 +62,13 @@ Every update to workshop content — whether fixing a broken command, dismissing
 - **MCP toolkit imports**: `orchestrate toolkits import -f <spec.yaml>` (file-based) or `orchestrate toolkits add …` (CLI-based)
 - **Draft vs. live**: all `import` commands target draft automatically; use `orchestrate agents deploy --name <agent>` to promote to live
 - **Chat testing**: `orchestrate chat ask --agent-name <name>` (short: `-n`)
+
+## Verification Requirement
+
+Any stated gap, bug, issue, broken command, or incompatibility must be confirmed before it is documented or reported. Acceptable confirmation methods are:
+
+- Verification with the watsonx Orchestrate ADK MCP tools
+- Verification with web research using the Tavily MCP tools
+- Verification by running relevant local commands and checking the actual output
+
+Do not present unverified assumptions as findings. If something cannot be confirmed with one of the methods above, state that it is unverified and do not record it as a confirmed issue.

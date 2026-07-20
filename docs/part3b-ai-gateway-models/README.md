@@ -304,6 +304,8 @@ tools:
 
 Test createting some of the model related configurations with Bob.
 
+> **Windows users:** The prompts below generate `.sh` shell scripts. To run them you need **Git Bash** or **WSL**. Alternatively, ask Bob to generate the commands as individual `orchestrate` CLI calls instead of a script.
+
 1. Create a script to adds new connection definition to be used to import an external model from OpenAI
 
 ```

@@ -6,7 +6,8 @@
 ## Prerequisites Check
 
 Before starting, ensure you have:
-- [ ] Python 3.11-3.13 installed
+- [ ] Python 3.11–3.13 installed — see [Prerequisites](../part0-prerequisites/README.md#python-3113) for install instructions
+- [ ] `uv` installed — see [Prerequisites](../part0-prerequisites/README.md#uv) for install instructions
 - [ ] IBM Bob IDE installed
 - [ ] watsonx Orchestrate access (SaaS or Developer Edition)
 
@@ -14,10 +15,11 @@ Before starting, ensure you have:
 
 Open a terminal and run:
 ```bash
-python --version
-# or
-python3 --version
+python --version   # Windows
+python3 --version  # macOS/Linux
 ```
+
+Expected output: `Python 3.11.x`, `3.12.x`, or `3.13.x`
 
 ## Step 2: Verify uv Installation
 
@@ -25,6 +27,8 @@ Open a terminal and run:
 ```bash
 uv --version
 ```
+
+If `uv` is not installed, go back to [Prerequisites](../part0-prerequisites/README.md#uv) for install instructions.
 
 ## Step 3: Create Workshop Folder
 
@@ -183,6 +187,21 @@ IBM Bob IDE will automatically:
 
 > **_Note2:_** If you're wondering about the .bob folder, it was created automatically when you installed the MCP Servers for Orchestrate. This folder contains all the IBM Bob IDE configuration files for the MCP Servers for Orchestrate. It's safe to leave it there.
 
+> **_Manual activation (if needed):_** If you open a terminal outside of Bob IDE, or if the venv is not activated automatically, use the appropriate command for your platform:
+> ```bash
+> # macOS/Linux
+> source .venv/bin/activate
+> ```
+> ```cmd
+> # Windows CMD
+> .venv\Scripts\activate.bat
+> ```
+> ```powershell
+> # Windows PowerShell
+> .venv\Scripts\Activate.ps1
+> ```
+> If PowerShell blocks the script, run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once first, then retry.
+
 ## Step 10: Install watsonx Orchestrate SDK
 
 Since you have the watsonx Orchestrate ADK extension installed, you will see the ADK informaton in the bottom Status Bar. Since we just created a fresh Python virtual environment to our workspace, you should see just a red cross ❌ stating that you need to install the ADK.
@@ -263,6 +282,8 @@ Copy the **Service instance URL** from the API details information. This is the 
 > Authentication against a remote environment expires every two hours. After expiration, you need to run orchestrate env activate again. So, keep your API key avaiable and ready to use.
 
 #### Option B: Using Bob to help you 😃
+
+> **Windows users:** Option B generates a `.sh` shell script. To run it you need **Git Bash** or **WSL**. If you don't have either, use **Option A** (the manual CLI steps above) instead — it works on all platforms.
 
 Now that you have watsonx Orchestrate MCP servers and the WXO Agent Architect mode enabled, you can use Bob to help you with the setup.
 
@@ -440,11 +461,23 @@ Bob is your AI pair programmer for this workshop. Here's how to use Bob effectiv
 ## Troubleshooting
 
 ### Issue: "orchestrate: command not found"
-**Solution:** Make sure you installed the SDK and it's in your PATH:
+**Solution:** The ADK was installed inside your `.venv` in Step 10. Make sure the virtual environment is active and re-run the install if needed:
+
 ```bash
-pip install --user ibm-watsonx-orchestrate
-# Add ~/.local/bin to your PATH if needed
+# macOS/Linux — activate venv first
+source .venv/bin/activate
+pip install ibm-watsonx-orchestrate
+
+# Windows PowerShell — activate venv first
+.venv\Scripts\Activate.ps1
+pip install ibm-watsonx-orchestrate
+
+# Windows CMD — activate venv first
+.venv\Scripts\activate.bat
+pip install ibm-watsonx-orchestrate
 ```
+
+> **Note:** Do **not** use `pip install --user` — that installs outside the venv and the `orchestrate` command will not be visible in your workspace terminal.
 
 ### Issue: "Authentication failed"
 **Solution:** Check your environment configuration:

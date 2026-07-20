@@ -1001,6 +1001,8 @@ orchestrate agents import -f travel-concierge-agent.yaml
 ```
 Bob, create a shell script that imports all agents (flight specialist, hotel specialist, activty planner, budget advisor and finally tra) and their tools in the correct order. Make sure each agent is imported after its collaborators.
 ```
+> **Windows users:** The prompt above generates a `.sh` shell script. To run it you need **Git Bash** or **WSL**. Alternatively, ask Bob to generate the commands as individual `orchestrate` CLI calls instead of a script.
+
 >**NOTE**: Check the tools and agents importing syntax that Bob uses in the script that it generates. Even the information regrading the correct syntax is available in the custom development rule that we're using, sometimes Bob might fail to consult it before creating stuff.
 
 ### Test Simple Routing

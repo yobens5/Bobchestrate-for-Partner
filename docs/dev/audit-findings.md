@@ -18,6 +18,151 @@ Source of truth for CLI/API: official ADK docs via `watsonx-orchestrate-adk-docs
 
 ---
 
+## Cross-platform (macOS & Windows) Findings — Plan 3
+
+The items below were identified during the Plan 3 audit (July 2025, ADK 2.12.0).
+Each item is tracked with a status and will be fixed in order.
+
+---
+
+### Finding 9 — Part 6: `orchestrate toolkit list` missing `s` (typo)
+
+**Part:** Part 6 (`docs/part6-mcp-servers/README.md`), line 957
+**Status:** ✅ CLOSED
+**Command (was):**
+```bash
+orchestrate toolkit list
+```
+**Should be:**
+```bash
+orchestrate toolkits list
+```
+**Evidence:** Official ADK docs at `tools/toolkits/manage_toolkits` confirm `orchestrate toolkits list` is the correct command. `toolkit` (singular) is not a valid subcommand.
+
+---
+
+### Finding 10 — Part 6: Second `--entries` call still uses JSON object syntax
+
+**Part:** Part 6 (`docs/part6-mcp-servers/README.md`), line 776
+**Status:** ✅ CLOSED
+**Command (was):**
+```bash
+orchestrate connections set-credentials -a product-api-credentials \
+  --env $env \
+  --entries '{"API_KEY": "your-api-key", "API_URL": "https://api.example.com"}'
+```
+**Should be:**
+```bash
+orchestrate connections set-credentials -a product-api-credentials \
+  --env $env \
+  -e "API_KEY=your-api-key" \
+  -e "API_URL=https://api.example.com"
+```
+**Evidence:** Official ADK docs (`connections/build_connections#key-value-connections`) confirm the flag is `--entries / -e` with `key=value` format. Multiple keys require repeating `-e`. JSON object syntax is invalid. Finding 7 already fixed the first occurrence (line 642); this second block was missed.
+
+---
+
+### Finding 11 — Part 1: Troubleshooting `pip install --user` is the wrong recovery path
+
+**Part:** Part 1 (`docs/part1-setup/README.md`), line 445
+**Status:** ✅ CLOSED
+**Problem:** The "orchestrate: command not found" troubleshooting step says:
+```bash
+pip install --user ibm-watsonx-orchestrate
+# Add ~/.local/bin to your PATH if needed
+```
+This contradicts the main flow (Step 10), which installs the ADK inside `.venv` via the VS Code extension. Installing with `--user` puts the package in the global Python user site, outside the venv, and `~/.local/bin` is macOS/Linux only — Windows PATH is `%APPDATA%\Python\PythonXY\Scripts`.
+
+**Fix:** Replace with instructions to activate the venv and run `pip install ibm-watsonx-orchestrate`, plus platform-specific PATH notes.
+
+---
+
+### Finding 12 — Part 0 & Part 1: No Python installation instructions; only a "verify" step
+
+**Part:** Part 0 (`docs/part0-prerequisites/README.md`) and Part 1 (`docs/part1-setup/README.md`), lines 6–11
+**Status:** ✅ CLOSED
+**Problem:** The prerequisites checklist says _"Python 3.11–3.13 installed"_ but never explains how to install it. A participant starting from a fresh machine has no guidance.
+
+**Fix needed:**
+- macOS: recommend Homebrew (`brew install python@3.12`) or python.org installer; note that `/usr/bin/python3` is Apple's system Python and should not be used
+- Windows: python.org installer with explicit callout to check **"Add Python to PATH"** during setup — missing this checkbox is the #1 cause of `python not found` errors
+
+---
+
+### Finding 13 — Part 1: No `uv` installation step; only a "verify" step
+
+**Part:** Part 1 (`docs/part1-setup/README.md`), lines 22–27
+**Status:** ✅ CLOSED
+**Problem:** Step 2 says "verify `uv`" but never explains how to install it. On a fresh machine, `uv` will not be present.
+
+**Fix needed (before the verify step):**
+- macOS: `brew install uv` or `curl -LsSf https://astral.sh/uv/install.sh | sh`
+- Windows: `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`
+
+---
+
+### Finding 14 — Part 1: No manual venv activation fallback documented
+
+**Part:** Part 1 (`docs/part1-setup/README.md`), lines 177–184
+**Status:** ✅ CLOSED
+**Problem:** Step 9 uses the VS Code "Python: Create Environment" GUI command (cross-platform ✅). The note says Bob IDE will auto-activate the venv in new terminals. This is true inside Bob IDE terminals, but participants who open a standalone terminal, hit activation issues, or follow along outside the IDE have no fallback instructions.
+
+**Fix:** Add a callout note after Step 9:
+- macOS/Linux: `source .venv/bin/activate`
+- Windows CMD: `.venv\Scripts\activate.bat`
+- Windows PowerShell: `.venv\Scripts\Activate.ps1` (requires execution policy `RemoteSigned` if not already set)
+
+---
+
+### Finding 15 — Part 1: Option B shell script (`.sh`) is Unix-only; Windows users blocked
+
+**Part:** Part 1 (`docs/part1-setup/README.md`), lines 272–307
+**Status:** ✅ CLOSED
+**Problem:** Option B instructs participants to ask Bob to generate an `add_wxo_env.sh` shell script, then run it as `./<script>.sh`. On Windows without Git Bash or WSL, `.sh` files cannot be executed directly in CMD or PowerShell.
+
+**Fix:** Add a note before Step 1 of Option B:
+> **Windows users:** This option requires Git Bash or WSL to run `.sh` scripts. If you don't have either, use **Option A** (manual CLI steps) instead.
+
+---
+
+### Finding 16 — Part 3b & Part 9: Bob prompts generate `.sh` scripts with no Windows warning
+
+**Part:** Part 3b (`docs/part3b-ai-gateway-models/README.md`), lines 310, 318; Part 9 (`docs/part9-multi-agent-orchestration/README.md`), line 1002
+**Status:** ✅ CLOSED
+**Problem:** Bob prompts in these parts ask for `.sh` shell scripts that are then run directly. Same issue as Finding 15: Windows users without Git Bash/WSL cannot run them.
+
+**Fix:** Add a short note next to each `.sh` Bob prompt: _"Windows users: run in Git Bash or WSL, or run the generated commands individually in PowerShell."_
+
+---
+
+### Finding 17 — Part 6: Inconsistent Python version (`3.9+` vs `3.11–3.13`)
+
+**Part:** Part 6 (`docs/part6-mcp-servers/README.md`), line 947
+**Status:** ✅ CLOSED
+**Problem:** Troubleshooting section says "Check Python version (3.9+)" but the workshop requires 3.11–3.13 (stated in Part 1, line 9). A participant checking this step would think their Python 3.10 install is fine when it isn't.
+
+**Fix:** Change `3.9+` → `3.11–3.13` to be consistent with the rest of the workshop.
+
+---
+
+### Finding 18 — Part 6 & Part 6b: `command: python3` in YAML fails on Windows
+
+**Part:** Part 6 (`docs/part6-mcp-servers/README.md`), line 398; Part 6b (`docs/part6b-agentic-workflows/README.md`), line 273
+**Status:** ➖ DISMISSED
+**Original concern:** `command: python3` would fail on Windows because Windows does not create a `python3` alias by default.
+**Resolution:** The `command` field in a local MCP toolkit YAML is **not executed on the participant's machine**. Per official ADK docs (`tools/toolkits/overview`): _"Local MCP toolkits run **inside the watsonx Orchestrate runtime** using stdio transport."_ The platform runtime is always Linux, where `python3` is the correct command. The YAML `command` is correct as-is. The erroneous Windows note that was added has been reverted.
+
+---
+
+### Dismissed — `for env in draft live; do ... done` bash loops
+
+**Part:** Part 6 (`docs/part6-mcp-servers/README.md`), lines 634, 768
+**Status:** ➖ DISMISSED
+**Original concern (Plan 3):** These POSIX bash loops would fail on Windows CMD/PowerShell without Git Bash or WSL.
+**Resolution:** The **official ADK documentation** (`tools/toolkits/local_mcp_toolkits`, `connections/build_connections`) uses the exact same `for env in draft live; do ... done` pattern in all its code examples. Since the ADK docs set this as the canonical pattern, we defer to them — the loops are correct for macOS/Linux. Windows coverage is addressed by Finding 15/16 (adding a global note about Git Bash/WSL for shell scripts). No change to the loop syntax itself.
+
+---
+
 ## Planned Work
 
 The following items have been identified and agreed on. Each will be tracked as a separate task when picked up.
