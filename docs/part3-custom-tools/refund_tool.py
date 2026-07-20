@@ -4,22 +4,23 @@ Processes customer refund requests (simulated for workshop)
 """
 
 from ibm_watsonx_orchestrate.agent_builder.tools import tool
+from typing import Dict, Any
 from datetime import datetime
 import random
 
 @tool
-def process_refund(order_id: str, reason: str, amount: float) -> dict:
+def process_refund(order_id: str, reason: str, amount: float) -> Dict[str, Any]:
     """
     Processes a refund request for a customer order.
     Use this when customers request refunds or returns.
     
     Args:
-        order_id: The order ID to refund (format: ORD-XXXXX)
-        reason: Reason for the refund request (must be at least 10 characters)
-        amount: Refund amount in dollars (must be positive and under $10,000)
+        order_id (str): The order ID to refund (format: ORD-XXXXX)
+        reason (str): Reason for the refund request (must be at least 10 characters)
+        amount (float): Refund amount in dollars (must be positive and under $10,000)
         
     Returns:
-        Refund confirmation details including refund ID, status, and processing time
+        Dict[str, Any]: Refund confirmation details including refund ID, status, and processing time
     """
     # Validation
     if not order_id or not isinstance(order_id, str):

@@ -25,16 +25,17 @@ A watsonx Orchestrate Python tool has this structure:
 
 ```python
 from ibm_watsonx_orchestrate.agent_builder.tools import tool
+from typing import Dict, Any
 
 @tool
-def my_tool(param1: str) -> dict:
+def my_tool(param1: str) -> Dict[str, Any]:
     """Tool description that helps the agent understand when to use it.
     
     Args:
         param1 (str): What this parameter is for
         
     Returns:
-        dict: The result of the tool execution
+        Dict[str, Any]: The result of the tool execution
     """
     # Your code here
     return {
@@ -47,18 +48,19 @@ def my_tool(param1: str) -> dict:
 
 ```python
 from ibm_watsonx_orchestrate.agent_builder.tools import tool
+from typing import Dict, Any
 
 @tool(
     name="my_custom_tool",
     description="Tool description that helps the agent understand when to use it"
 )
-def my_tool(param1: str) -> dict:
+def my_tool(param1: str) -> Dict[str, Any]:
     """
     Args:
         param1 (str): What this parameter is for
         
     Returns:
-        dict: The result of the tool execution
+        Dict[str, Any]: The result of the tool execution
     """
     # Your code here
     return {
@@ -93,11 +95,12 @@ Or create it manually:
 ```python
 # order_status_tool.py
 from ibm_watsonx_orchestrate.agent_builder.tools import tool
+from typing import Dict, Any
 from datetime import datetime, timedelta
 import random
 
 @tool
-def check_order_status(order_id: str) -> dict:
+def check_order_status(order_id: str) -> Dict[str, Any]:
     """
     Retrieves the current status and details of a customer order by order ID.
     Use this when customers ask about their order status, delivery date, or order details.
@@ -106,7 +109,7 @@ def check_order_status(order_id: str) -> dict:
         order_id (str): The unique order identifier (e.g., ORD-12345)
         
     Returns:
-        dict: Dictionary with order details including status, items, dates, and tracking
+        Dict[str, Any]: Dictionary with order details including status, items, dates, and tracking
     """
     # Validate order ID format
     if not order_id.startswith("ORD-"):
@@ -155,11 +158,12 @@ An example what Bob might come up with:
 ```python
 # refund_tool.py
 from ibm_watsonx_orchestrate.agent_builder.tools import tool
+from typing import Dict, Any
 from datetime import datetime
 import random
 
 @tool
-def process_refund(order_id: str, reason: str, amount: float) -> dict:
+def process_refund(order_id: str, reason: str, amount: float) -> Dict[str, Any]:
     """
     Processes a refund request for a customer order.
     Use this when customers request refunds or returns.
@@ -170,7 +174,7 @@ def process_refund(order_id: str, reason: str, amount: float) -> dict:
         amount (float): Refund amount in dollars (must be positive and under $10,000)
         
     Returns:
-        dict: Refund confirmation details including refund ID, status, and processing time
+        Dict[str, Any]: Refund confirmation details including refund ID, status, and processing time
     """
     # Validation
     if not order_id.startswith("ORD-"):
@@ -266,6 +270,7 @@ You can also create your own agent definition if you prefer.
 spec_version: v1
 kind: native
 name: customer_support_agent_<your_initials_here>
+llm: groq/openai/gpt-oss-120b
 description: A customer support agent that can check orders and process refunds
 
 instructions: |
@@ -290,8 +295,6 @@ instructions: |
   
   Always be professional, empathetic, and helpful. If you encounter errors,
   explain them clearly and offer alternatives.
-
-llm: groq/openai/gpt-oss-120b
 
 # Specify which tools this agent can use
 tools:
@@ -373,47 +376,39 @@ Common issues:
 
 ## Advanced: Tools with External APIs
 
-Tools can call real APIs. Here's an example structure:
+Tools can call real APIs. Use `expected_credentials` in the `@tool` decorator to declare connections needed at runtime, and the `connections` module to access those credentials securely.
 
 ```python
 import requests
-from ibm_watsonx_orchestrate.agent_builder.tools import PythonTool
+from ibm_watsonx_orchestrate.agent_builder.tools import tool
+from ibm_watsonx_orchestrate.run import connections
+from ibm_watsonx_orchestrate.run.connections import ConnectionType
+from typing import Dict, Any
 
-class WeatherTool(PythonTool):
-    """Get weather information"""
-    
-    def __init__(self):
-        super().__init__(
-            name="get_weather",
-            description="Get current weather for a city",
-            parameters={
-                "city": {
-                    "type": "string",
-                    "description": "City name",
-                    "required": True
-                }
-            },
-            # Specify credentials needed
-            expect_credentials={
-                "api_key": "Weather API key"
-            }
-        )
-    
-    def run(self, city: str, credentials: dict = None) -> dict:
-        """Get weather data"""
-        api_key = credentials.get("api_key") if credentials else None
-        
-        if not api_key:
-            return {"error": "API key not configured"}
-        
-        # Call external API
-        response = requests.get(
-            f"https://api.weather.com/v1/current",
-            params={"city": city, "key": api_key}
-        )
-        
-        return response.json()
+@tool(
+    expected_credentials=[{"app_id": "weather_api", "type": ConnectionType.API_KEY_AUTH}]
+)
+def get_weather(city: str) -> Dict[str, Any]:
+    """Get current weather for a city.
+
+    Args:
+        city (str): City name to get weather for
+
+    Returns:
+        Dict[str, Any]: Current weather data including temperature and conditions
+    """
+    conn = connections.api_key("weather_api")
+    api_key = conn.api_key
+
+    response = requests.get(
+        "https://api.weather.com/v1/current",
+        params={"city": city, "key": api_key}
+    )
+
+    return response.json()
 ```
+
+> 📖 **Reference:** For the full connections API, see [Associating Connections to Python Tools](https://developer.watson-orchestrate.ibm.com/connections/associate_connection_to_tool/python_connections).
 
 ## Exercises
 

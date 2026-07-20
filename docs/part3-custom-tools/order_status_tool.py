@@ -4,20 +4,21 @@ Checks the status of customer orders (simulated for workshop)
 """
 
 from ibm_watsonx_orchestrate.agent_builder.tools import tool
+from typing import Dict, Any
 from datetime import datetime, timedelta
 import random
 
 @tool
-def check_order_status(order_id: str) -> dict:
+def check_order_status(order_id: str) -> Dict[str, Any]:
     """
     Retrieves the current status and details of a customer order by order ID.
     Use this when customers ask about their order status, delivery date, or order details.
     
     Args:
-        order_id: The unique order identifier (e.g., ORD-12345). Must start with 'ORD-' followed by numbers.
+        order_id (str): The unique order identifier (e.g., ORD-12345). Must start with 'ORD-' followed by numbers.
         
     Returns:
-        Dictionary with order details including status, items, dates, and tracking
+        Dict[str, Any]: Dictionary with order details including status, items, dates, and tracking
     """
     # Validate order ID format
     if not order_id or not isinstance(order_id, str):
