@@ -981,6 +981,16 @@ With unique names:
 
 ### Import All Agents and Tools
 
+### Option A: Ask Bob first
+```
+Bob, create a shell script that imports all agents (flight specialist, hotel specialist, activty planner, budget advisor and finally tra) and their tools in the correct order. Make sure each agent is imported after its collaborators.
+```
+Check Bob's output — every tool and agent should report as imported successfully, with the orchestrator imported last. If something fails partway through, note which imports already succeeded and finish the rest manually below.
+
+>**NOTE**: Check the tools and agents importing syntax that Bob uses. The correct syntax is available in the custom development rule that we're using, but Bob might occasionally fail to consult it before running commands.
+
+### Option B: Do it yourself (fallback)
+
 ```bash
 # Import all tools
 orchestrate tools import -k python -f tools/flight_tools.py
@@ -997,13 +1007,6 @@ orchestrate agents import -f agents/budget-advisor-agent.yaml
 # Import orchestrator (must be last, after collaborators exist)
 orchestrate agents import -f travel-concierge-agent.yaml
 ```
-**💡 Ask Bob:**
-```
-Bob, create a shell script that imports all agents (flight specialist, hotel specialist, activty planner, budget advisor and finally tra) and their tools in the correct order. Make sure each agent is imported after its collaborators.
-```
-> **Windows users:** The prompt above generates a `.sh` shell script. To run it you need **Git Bash** or **WSL**. Alternatively, ask Bob to generate the commands as individual `orchestrate` CLI calls instead of a script.
-
->**NOTE**: Check the tools and agents importing syntax that Bob uses in the script that it generates. Even the information regrading the correct syntax is available in the custom development rule that we're using, sometimes Bob might fail to consult it before creating stuff.
 
 ### Test Simple Routing
 

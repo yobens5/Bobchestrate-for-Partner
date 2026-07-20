@@ -34,7 +34,7 @@ Every agent MUST have these four fields:
 - **`spec_version`** (string): The specification version (e.g., "v1")
 - **`kind`** (string): The agent type - "native", "external", or "assistant" (default: "native")
 - **`name`** (string): Unique identifier for your agent
-- **`llm`** (string): The large language model that powers the agent (e.g., "watsonx/ibm/granite-3-8b-instruct" or "groq/openai/gpt-oss-120b")
+- **`llm`** (string): The large language model that powers the agent (e.g., "groq/openai/gpt-oss-120b")
 
 ### Core Optional Fields
 
@@ -42,8 +42,9 @@ These fields define your agent's behavior and capabilities:
 
 - **`description`** (string): Human-readable summary of the agent's purpose. This is visible in the UI and helps other agents understand its role when used as a collaborator
 - **`instructions`** (string): Natural language guidance that shapes the agent's behavior, persona, and how it uses tools and collaborators
-- **`style`** (string): Prompting structure - "default", "react", or "planner" (default: "default")
+- **`style`** (string): Prompting structure - "default", "react", "react_intrinsic", or "planner" (default: "default")
 - **`hide_reasoning`** (boolean): Whether to hide the agent's reasoning from users (default: false)
+- **`memory_enabled`** (boolean): Whether the agent retains conversation history across interactions within a session (default: false)
 
 ### Extending Agent Capabilities
 
@@ -60,6 +61,7 @@ These fields define your agent's behavior and capabilities:
   
 - **`restrictions`** (string): Whether the agent is "editable" or "non_editable" after import (default: "editable")
 - **`icon`** (string): SVG icon string for the agent (64-100px square, max 200KB)
+- **`is_schedulable`** (boolean): Whether the agent can be scheduled to run at specific times via Chat UI (default: false)
 
 ### Web Chat Features
 
@@ -73,7 +75,11 @@ These fields define your agent's behavior and capabilities:
 - **`chat_with_docs`** (object): Enable users to upload documents during chat
   - `enabled` (boolean): Activate document upload feature
   - `citations`: Configure how citations are displayed
+    - `citations_shown` (number): Maximum citations to display; use `-1` for all
   - `generation`: Fine-tune document handling behavior
+    - `idk_message` (string): Fallback message when the feature cannot answer
+  - `vector_index`: Document processing settings
+    - `extraction_strategy` (string): `"express"` (default, no OCR) or `"standard"` (enables OCR)
 
 ### Context Variables
 
@@ -93,7 +99,7 @@ Here's a comprehensive example showing all mandatory and optional fields:
 spec_version: v1
 kind: native
 name: complete-example-agent
-llm: watsonx/ibm/granite-3-8b-instruct
+llm: groq/openai/gpt-oss-120b
 
 # === CORE OPTIONAL FIELDS ===
 description: A comprehensive example agent demonstrating all configuration options available in watsonx Orchestrate
@@ -159,11 +165,11 @@ starter_prompts:
 chat_with_docs:
   enabled: true
   citations:
-    enabled: true
-    display_format: inline
+    citations_shown: -1
   generation:
-    max_tokens: 2000
-    temperature: 0.7
+    idk_message: "I don't have an answer based on the uploaded document."
+  vector_index:
+    extraction_strategy: express
 
 # === CONTEXT VARIABLES ===
 context_access_enabled: true

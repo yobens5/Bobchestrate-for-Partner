@@ -103,6 +103,16 @@ First, establish a connection to your external provider by configuring the neces
 
 > If you want to test this with OpenAI for example, you can get your api key from here: https://platform.openai.com/api-keys, you need to login / create your developer account first though. You can see the available OpenAI models here: https://developers.openai.com/api/docs/models/all
 
+##### Option A: Ask Bob first
+
+```
+Bob, create a shell script that adds a new connection definition for importing OpenAI LLM model with an API key to both draft and live environment. Connection app-id should be "openai". The script should be named "add_openai_connection.sh" and should be executable.
+```
+
+Check that the connection was created and configured for both environments. If not, use Option B below.
+
+##### Option B: Do it yourself (fallback)
+
 Example API Key connection configuration:
 ```bash
 orchestrate connections add -a openai
@@ -133,6 +143,16 @@ tags:
 - gpt
 model_type: chat
 ```
+
+##### Option A: Ask Bob first
+
+```
+Bob, create a shell script that imports an external model "openai/gpt-5-2025-08-07" from OpenAI using the connection definition "openai" to both draft and live enviroment. The script should be named "import_openai_model.sh" and should be executable.
+```
+
+Check that the model was imported for both environments. If not, use Option B below.
+
+##### Option B: Do it yourself (fallback)
 
 Import the model:
 ```bash
@@ -300,25 +320,6 @@ tools:
   - process_refund
 ```
 
-## Create with Bob
-
-Test createting some of the model related configurations with Bob.
-
-> **Windows users:** The prompts below generate `.sh` shell scripts. To run them you need **Git Bash** or **WSL**. Alternatively, ask Bob to generate the commands as individual `orchestrate` CLI calls instead of a script.
-
-1. Create a script to adds new connection definition to be used to import an external model from OpenAI
-
-```
-Bob, create a shell script that adds a new connection definition for importing OpenAI LLM model with an API key to both draft and live enviroment. Connection app-id should be "openai". The script should be named "add_openai_connection.sh" and should be executable.
-```
-
-> NOTE: When asking Bob to create something, it's best practice to be as specific as possible about what you want created. This helps Bob generate the most accurate and useful output.
-
-2. Create a script to import an external model from OpenAI
-
-```
-Bob, create a shell script that imports an external model "openai/gpt-5-2025-08-07" from OpenAI using the connection definition "openai" to both draft and live enviroment. The script should be named "import_openai_model.sh" and should be executable.
-```
 
 ## Best Practices
 

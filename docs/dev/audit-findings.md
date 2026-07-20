@@ -25,6 +25,96 @@ Each item is tracked with a status and will be fixed in order.
 
 ---
 
+
+## Part 2 Field Audit — Findings (2025-07, ADK 2.12.0)
+
+---
+
+### Finding 19 — Part 2: `hello-agent-EXAMPLE.yaml` missing `spec_version: v1`
+
+**File:** `docs/part2-first-agent/hello-agent-EXAMPLE.yaml`
+**Status:** ✅ CLOSED
+**Problem:** The example YAML file started with `kind: native` but omitted the required `spec_version: v1` top-level field. Every agent spec must include it.
+**Fix:** Added `spec_version: v1` as the first field.
+
+---
+
+### Finding 20 — Part 2: `chat_with_docs.citations` had invented sub-fields
+
+**File:** `docs/part2-first-agent/README.md`, complete-example YAML
+**Status:** ✅ CLOSED
+**Problem:** The example YAML used:
+```yaml
+citations:
+  enabled: true
+  display_format: inline
+```
+Neither `enabled` nor `display_format` exist in the official schema. The only supported field under `citations` is `citations_shown` (number).
+**Fix:** Replaced with `citations_shown: -1`.
+
+---
+
+### Finding 21 — Part 2: `chat_with_docs.generation` had invented sub-fields
+
+**File:** `docs/part2-first-agent/README.md`, complete-example YAML
+**Status:** ✅ CLOSED
+**Problem:** The example YAML used:
+```yaml
+generation:
+  max_tokens: 2000
+  temperature: 0.7
+```
+These fields belong to `llm_config`, not `chat_with_docs.generation`. The only documented field under `chat_with_docs.generation` in the YAML spec is `idk_message`.
+**Fix:** Replaced with `idk_message: "I don't have an answer based on the uploaded document."` and added correct `vector_index.extraction_strategy` sub-field.
+
+---
+
+### Finding 22 — Part 2: `chat_with_docs` field list missing `vector_index` and correct sub-field names
+
+**File:** `docs/part2-first-agent/README.md`, field reference section
+**Status:** ✅ CLOSED
+**Problem:** The bullet list for `chat_with_docs` did not document the `vector_index` sub-object or the correct sub-field names for `citations` and `generation`.
+**Fix:** Expanded the bullet list to include all three sub-objects with their correct fields and types matching official docs.
+
+---
+
+### Finding 23 — Part 2: `style` field missing `react_intrinsic` value
+
+**File:** `docs/part2-first-agent/README.md`
+**Status:** ✅ CLOSED
+**Problem:** The `style` field listed `"default"`, `"react"`, `"planner"` but omitted `"react_intrinsic"`, which is a valid and documented style value.
+**Fix:** Added `"react_intrinsic"` to the list of valid style values.
+
+---
+
+### Finding 24 — Part 2: `memory_enabled` field not documented
+
+**File:** `docs/part2-first-agent/README.md`
+**Status:** ✅ CLOSED
+**Problem:** The official native agent spec includes `memory_enabled` (boolean, default `false`) as an optional field, but it was absent from Part 2's field reference.
+**Fix:** Added `memory_enabled` under Core Optional Fields.
+
+---
+
+### Finding 25 — Part 2: `is_schedulable` field not documented
+
+**File:** `docs/part2-first-agent/README.md`
+**Status:** ✅ CLOSED
+**Problem:** The official native agent spec includes `is_schedulable` (boolean, default `false`) as an optional field, but it was absent from Part 2's field reference.
+**Fix:** Added `is_schedulable` under Advanced Configuration.
+
+---
+
+### Finding 26 — Part 2: LLM example used `watsonx/ibm/granite-3-8b-instruct`
+
+**File:** `docs/part2-first-agent/README.md`
+**Status:** ✅ CLOSED
+**Problem:** The mandatory fields description and the complete-example YAML both used `watsonx/ibm/granite-3-8b-instruct` as the example LLM. The workshop standard model is `groq/openai/gpt-oss-120b`.
+**Fix:** Replaced both occurrences with `groq/openai/gpt-oss-120b`.
+
+---
+
+
 ### Finding 9 — Part 6: `orchestrate toolkit list` missing `s` (typo)
 
 **Part:** Part 6 (`docs/part6-mcp-servers/README.md`), line 957

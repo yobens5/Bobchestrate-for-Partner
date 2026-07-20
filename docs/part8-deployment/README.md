@@ -350,8 +350,15 @@ n_runs: 1
 
 ### Step 3: Run Quick Evaluation
 
-Run a quick evaluation (reference-less) of your agent:
+Run a quick evaluation (reference-less) of your agent.
 
+### Option A: Ask Bob first
+```
+Bob, run an evaluation of my customer-support-agent using the evaluation dataset and show me the results
+```
+Check that Bob's output includes a results summary. If not, use Option B below.
+
+### Option B: Do it yourself (fallback)
 ```bash
 # Quick evaluation with config file (recommended)
 orchestrate evaluations quick-eval -c evaluation/config.yaml
@@ -370,11 +377,6 @@ orchestrate evaluations quick-eval \
 - **Hallucination** - Responses containing fabricated information
 
 **Note:** Metrics are automatically computed by the framework and cannot be configured in the YAML file.
-
-### Ask Bob to Help:
-```
-Bob, run an evaluation of my customer-support-agent using the evaluation dataset and show me the results
-```
 
 ### Step 4: Analyze Results
 
@@ -418,7 +420,15 @@ Red teaming involves testing your agent with:
 - **Malicious Inputs**: Testing with harmful or inappropriate content
 - **Edge Cases**: Unusual or unexpected input patterns
 
-#### Red Teaming Process (3 Steps)
+#### Red Teaming Process
+
+**Option A: Ask Bob first**
+```
+Bob, run vulnerability testing on my customer-support-agent and report any security issues found
+```
+Check that Bob's output reports the vulnerability testing results. If it fails partway through, or you want to run it yourself, use Option B below.
+
+**Option B: Do it yourself (fallback)**
 
 **Step 1: List Available Attacks**
 
@@ -508,10 +518,6 @@ red_team_cases = [
 ### Ask Bob to Help:
 ```
 Bob, create red team test cases for my customer support agent to test for prompt injection, jailbreaking, and data extraction vulnerabilities
-```
-
-```
-Bob, run vulnerability testing on my customer-support-agent and report any security issues found
 ```
 
 ### Step 6: Iterative Improvement
@@ -673,8 +679,15 @@ orchestrate agents list
 
 ### Step 4: Generate Webchat Embed Code
 
-Generate the webchat embed code for your website:
+Generate the webchat embed code for your website.
 
+### Option A: Ask Bob first
+```
+Bob, help me generate and customize the webchat embed code for my agent
+```
+Check that Bob's output includes the HTML/JavaScript snippet. If not, use Option B below.
+
+### Option B: Do it yourself (fallback)
 ```bash
 # For live environment (production)
 orchestrate channels webchat embed \
@@ -716,11 +729,6 @@ This will output HTML/JavaScript code like:
 4. Configure security (JWT tokens) for production use
 
 Add this to your website's HTML.
-
-### Ask Bob to Help:
-```
-Bob, help me generate and customize the webchat embed code for my agent
-```
 
 ## Monitoring and Observability
 

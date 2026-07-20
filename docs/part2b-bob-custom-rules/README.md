@@ -42,14 +42,24 @@ your-project/
 
 Let's examine the watsonx Orchestrate development rule that helps Bob work effectively with ADK projects.
 
+### Design Principle: Rules Carry What Retrieval Can't
+
+Your project already has the `watsonx-orchestrate-adk-docs` MCP server configured (see `.bob/mcp.json`), which gives Bob searchable access to the full, always-current ADK documentation. So the rule file should **not** duplicate reference material — CLI syntax, YAML schemas, and code examples belong to the docs MCP, which never goes stale.
+
+What the rule file *should* carry is what retrieval can't provide:
+
+- **Your project's conventions** — folder layout, naming, defaults the docs can't know
+- **A lookup policy** — telling Bob to search the docs MCP *before* writing ADK artifacts
+- **Known pitfalls** — mistakes an AI makes *confidently* (wrong env var names, wrong field usage). Bob will never search the docs for something it isn't uncertain about, so these must be in-context.
+
 ### Rule Structure
 
 A good custom rule includes:
 
-1. **Context**: When the rule applies
+1. **Knowledge policy**: Where to look things up, and what wins on conflict
 2. **Project Structure**: Folder conventions and organization
-3. **Key Patterns**: Code patterns and decorators to use
-4. **Tool Integration**: Which tools and servers to leverage
+3. **Core Conventions**: Naming, defaults, and key patterns
+4. **Known Pitfalls**: Specific mistakes to avoid — the "never do X" list
 
 ### Example: watsonx Orchestrate Development Rule
 
@@ -105,17 +115,15 @@ When working with IBM watsonx Orchestrate or watsonx Orchestrate ADK projects:
 
 ### What's in the Enhanced Rule File?
 
-The enhanced rule file includes comprehensive guidance on:
-- **Project Structure** - Complete directory organization
-- **Development Patterns** - Error handling, logging, connections
-- **Testing & QA** - Evaluation strategies and metrics
-- **Security & Guardrails** - Pre/post-invoke plugins, credential management
-- **Deployment & Channels** - Multi-channel deployment patterns
-- **MCP Integration** - Local and remote MCP server patterns
-- **Documentation Standards** - README templates, YAML documentation
-- **Troubleshooting** - Common errors and debugging strategies
-- **Performance Optimization** - Token usage, caching, model selection
-- **Quick Reference** - All CLI commands with correct syntax
+The enhanced rule file is deliberately compact (~80 lines) and works *together with* the docs MCP server rather than duplicating it:
+
+- **Knowledge policy** - Search the docs MCP first for schemas, CLI syntax, and examples; the MCP wins on any conflict with the rule
+- **Project Structure** - Complete directory organization for ADK projects
+- **Environment & Auth** - The three valid auth methods, plus env var names that look right but don't exist
+- **Core Conventions** - `snake_case` naming, default LLM, type hints, docstring format, when to use flows vs agents vs toolkits
+- **Known Pitfalls** - The mistakes an AI makes confidently: collaborators in the `tool:` field, missing `map_input`, unprefixed toolkit tool names, wrong plugin decorators, invalid eval config keys, and more
+
+Everything else — full CLI command reference, YAML schemas, workflow node types, code examples — is retrieved fresh from the docs MCP when needed, so it never goes stale as the ADK evolves.
 
 ## Step 3: Verify Bob Recognizes Your Rules
 
@@ -223,6 +231,7 @@ When working with [technology/framework]:
 ### Don'ts ❌
 - **Don't be vague**: Avoid "follow best practices" without specifics
 - **Don't overload**: Too many rules become hard to follow
+- **Don't duplicate retrieval**: If an MCP server can serve it fresh (API reference, CLI syntax, schemas), point to the server instead of copying it into the rule — copies go stale, and stale in-context text outcompetes fresh search results
 - **Don't contradict**: Ensure rules work together harmoniously
 - **Don't forget updates**: Keep rules current with project evolution
 

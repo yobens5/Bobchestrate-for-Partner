@@ -248,42 +248,9 @@ Copy the **Service instance URL** from the API details information. This is the 
 
 ### Configure the ADK Environment
 
-#### Option A: Using the ADK CLI - check out the Option B before deciding which option to use 😉
+#### Option A: Using Bob to help you 😃
 
-1. Open a terminal window within Bob IDE:
-
-   - From the Bob main menu bar, select **Terminal** > **New Terminal**
-
-      <img src="images/image-14.png" alt="Open terminal" width="500px">
-   
-   - This will open a terminal window in the Bob IDE - notice that your Python virtual environment is automatically activated
-
-      <img src="images/image-15.png" alt="Terminal window opened in Bob IDE" width="700px">
-
-2. Run the following command in your terminal to **add** your environment:
-
-   ```bash
-   orchestrate env add -n <your-env-name> -u <your-api-url>
-   ```
-   Where `<your-env-name>` is a name you choose for your environment (e.g., "my-wxo-cloud") and `<your-api-url>` is the URL you got in Step 10.
-   
-   After running the command, you should see a message: `[INFO] Environment '<your-env-name>' has been created`
-
-3. Run the following command to **activate** the environment:
-
-   ```bash
-   orchestrate env activate <your-env-name> -a <your-api-key>
-   ```
-   Where `<your-env-name>` is a name you choose for your environment (e.g., "my-wxo-cloud") and `<your-api-key>` is the API key you got in Step 10.
-   
-   After running the command, you should see a message: `[INFO] Environment '<your-env-name>' is now active`. This means your environment is now active and ready to use with the ADK. You can ignore the warning regarding the Auth Type.
-
-> [!IMPORTANT]
-> Authentication against a remote environment expires every two hours. After expiration, you need to run orchestrate env activate again. So, keep your API key avaiable and ready to use.
-
-#### Option B: Using Bob to help you 😃
-
-> **Windows users:** Option B generates a `.sh` shell script. To run it you need **Git Bash** or **WSL**. If you don't have either, use **Option A** (the manual CLI steps above) instead — it works on all platforms.
+> **Windows users:** Option A generates a `.sh` shell script. To run it you need **Git Bash** or **WSL**. If you don't have either, use **Option B** (the manual CLI steps below) instead — it works on all platforms.
 
 Now that you have watsonx Orchestrate MCP servers and the WXO Agent Architect mode enabled, you can use Bob to help you with the setup.
 
@@ -346,6 +313,39 @@ Now that you have watsonx Orchestrate MCP servers and the WXO Agent Architect mo
       ```
 
       If configured correctly, this command will list any agents in your environment (or show an empty list if you haven't created any agents yet).
+
+#### Option B: Using the ADK CLI (fallback)
+
+1. Open a terminal window within Bob IDE:
+
+   - From the Bob main menu bar, select **Terminal** > **New Terminal**
+
+      <img src="images/image-14.png" alt="Open terminal" width="500px">
+   
+   - This will open a terminal window in the Bob IDE - notice that your Python virtual environment is automatically activated
+
+      <img src="images/image-15.png" alt="Terminal window opened in Bob IDE" width="700px">
+
+2. Run the following command in your terminal to **add** your environment:
+
+   ```bash
+   orchestrate env add -n <your-env-name> -u <your-api-url>
+   ```
+   Where `<your-env-name>` is a name you choose for your environment (e.g., "my-wxo-cloud") and `<your-api-url>` is the URL you got in Step 10.
+   
+   After running the command, you should see a message: `[INFO] Environment '<your-env-name>' has been created`
+
+3. Run the following command to **activate** the environment:
+
+   ```bash
+   orchestrate env activate <your-env-name> -a <your-api-key>
+   ```
+   Where `<your-env-name>` is a name you choose for your environment (e.g., "my-wxo-cloud") and `<your-api-key>` is the API key you got in Step 10.
+   
+   After running the command, you should see a message: `[INFO] Environment '<your-env-name>' is now active`. This means your environment is now active and ready to use with the ADK. You can ignore the warning regarding the Auth Type.
+
+> [!IMPORTANT]
+> Authentication against a remote environment expires every two hours. After expiration, you need to run orchestrate env activate again. So, keep your API key avaiable and ready to use.
 
 ## Step 12: Understand the Workshop Structure
 

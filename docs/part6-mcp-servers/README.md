@@ -404,20 +404,20 @@ package_root: .
 
 ### Step 2: Import the MCP Server
 
-Use the watsonx Orchestrate CLI to import:
-
 **IMPORTANT: Since we're using one shared environment, please add your initials again as the postfix for the name of the toolkit. This is to avoid name conflicts. For example, if your initials are "JKJ", the name should be "product-catalog-JKJ". Remember to save changes to the file.**
 
 **ALSO IMPORTANT: Make sure that the python file that implements the MCP sever - product_catalog_server.py - is also in the <ins>toolkit</ins> folder, othewise the import will fail.** 
 
+### Option A: Ask Bob first
+```
+Bob, import the product-catalog-toolkit.yaml MCP server into the active wxO environment. Use the python .venv in the workspace.
+```
+Check Bob's output confirms the import succeeded. If not, use Option B below.
+
+### Option B: Do it yourself (fallback)
 ```bash
 # Import the MCP server as a toolkit
 orchestrate toolkits import -f toolkits/product-catalog-toolkit.yaml
-```
-
-Or use Bob:
-```
-Bob, import the product-catalog-toolkit.yaml MCP server into the active wxO environment. Use the python .venv in the workspace.
 ```
 
 ### Step 3: Verify Import

@@ -583,8 +583,16 @@ This shows all 15 attack types with descriptions and OWASP mappings.
 
 ### Step 2: Plan Attack Scenarios
 
-Generate attack scenarios based on your evaluation dataset:
+Generate attack scenarios based on your evaluation dataset.
 
+**Option A: Ask Bob first**
+```
+Bob, run the red-teaming plan command to generate attack scenarios for the
+product assistant agent using the datasets in evaluation/datasets/.
+```
+Check that Bob's output confirms the attack scenarios were generated. If not, use Option B below.
+
+**Option B: Do it yourself (fallback)**
 ```bash
 # Create attack scenarios
 orchestrate evaluations red-teaming plan \
@@ -604,12 +612,6 @@ orchestrate evaluations red-teaming plan \
 - `-t` - Target agent name
 - `-o` - Output directory for generated attacks
 - `-n` - Number of variants per attack type (default: 3)
-
-**💡 Ask Bob:**
-```
-Bob, run the red-teaming plan command to generate attack scenarios for the
-product assistant agent using the datasets in evaluation/datasets/.
-```
 
 ### Step 3: Run Attack Scenarios
 
