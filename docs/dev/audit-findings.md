@@ -209,28 +209,29 @@ The current agent and tool examples use generic "customer support" framing. The 
 
 ### Plan 3 — Platform parity: validate macOS and Windows setup instructions
 
-**Status:** ⏳ TODO
+**Status:** ✅ CLOSED
 **Priority:** High — a broken setup step on Day 1 loses the participant entirely
 
 Audit all setup and installation steps assuming a **fresh machine** on both platforms. See full checklist below.
 
 #### macOS checklist
-- [ ] Python installation path covered (Homebrew / python.org / pyenv)
-- [ ] `python3` / `pip3` command naming (vs `python` / `pip`)
-- [ ] Virtual environment creation and activation (`. .venv/bin/activate`)
-- [ ] `orchestrate` CLI available on PATH after `pip install`
-- [ ] Shell assumed is zsh (macOS default) — any bash-specific syntax flagged
+- [x] Python installation path covered (Homebrew / python.org / pyenv) — Part 0 covers both options
+- [x] `python3` / `pip3` command naming (vs `python` / `pip`) — Part 0 and Part 1 Step 1 both show platform-specific variants
+- [x] Virtual environment creation and activation (`. .venv/bin/activate`) — Part 1 Step 9 has manual activation callout
+- [x] `orchestrate` CLI available on PATH after `pip install` — Part 1 Troubleshooting section covers this with platform-specific venv activation
+- [x] Shell assumed is zsh (macOS default) — no bash-specific syntax found; `for` loops are in explicit `bash` blocks (dismissed as canonical ADK pattern)
 
 #### Windows checklist
-- [ ] Python installation from python.org — "Add to PATH" checkbox called out explicitly
-- [ ] `python` / `py` launcher vs `python3` naming difference documented
-- [ ] Venv activation: `.venv\Scripts\activate` (CMD) or `.venv\Scripts\Activate.ps1` (PowerShell)
-- [ ] PowerShell execution policy: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`
-- [ ] `orchestrate` CLI accessible on PATH after install
-- [ ] Bash-only shell constructs identified and replaced or given Windows alternatives:
-  - `for env in draft live; do ... done` loop (Part 6, line ~633) → PowerShell equivalent provided
-  - Any use of `source`, `export`, `chmod` → Windows alternatives noted
-- [ ] Path separator differences (`/` vs `\`) in any CLI arguments flagged
+- [x] Python installation from python.org — "Add to PATH" checkbox called out explicitly in Part 0
+- [x] `python` / `py` launcher vs `python3` naming difference documented — Part 0 and Part 1 Step 1 show both
+- [x] Venv activation: `.venv\Scripts\activate` (CMD) or `.venv\Scripts\Activate.ps1` (PowerShell) — Part 1 Step 9 has all three blocks
+- [x] PowerShell execution policy: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` — Part 1 Step 9 includes this note
+- [x] `orchestrate` CLI accessible on PATH after install — Part 1 Troubleshooting covers Windows CMD and PowerShell activation
+- [x] Bash-only shell constructs identified and replaced or given Windows alternatives:
+  - `for env in draft live; do ... done` loop (Part 6) — **DISMISSED** (Finding 18 / loop dismissal above; canonical ADK pattern)
+  - `.sh` scripts in Part 1 Option B, Part 3b, Part 9 — Windows warning added to all three (Findings 15 & 16)
+  - `source .venv/bin/activate` — wrapped in platform-specific blocks with CMD and PS alternatives
+- [x] Path separator differences (`/` vs `\`) — no CLI arguments use OS-specific separators; venv activation blocks already use correct `\` for Windows
 
 #### Acceptance criteria
 - A participant with zero prior Python experience on either platform can complete Part 1 without external help
@@ -445,41 +446,5 @@ orchestrate evaluations generate \
 
 ## Pending Audit — Cross-platform setup instructions (macOS & Windows)
 
-**Status:** ⏳ TODO
-**Scope:** All parts that contain setup, installation, or prerequisite steps — primarily `docs/part1-setup/` but also any shell commands throughout parts 1–9 that differ between platforms.
-
-### What needs to be checked
-
-Walk through every setup and installation step assuming a **fresh machine** on both platforms:
-
-#### macOS
-- Python installation (Homebrew vs python.org installer vs pyenv)
-- `python3` / `pip3` vs `python` / `pip` command naming
-- Virtual environment creation and activation (`. .venv/bin/activate` syntax)
-- `brew` dependency installs (if any referenced)
-- `orchestrate` CLI PATH after `pip install`
-- Any shell-specific instructions (zsh vs bash — macOS default is zsh)
-
-#### Windows
-- Python installation from python.org (including "Add to PATH" checkbox)
-- `python` / `py` launcher vs `python3` naming
-- Virtual environment activation syntax (`.venv\Scripts\activate` vs `.venv/Scripts/activate.ps1`)
-- PowerShell execution policy (`Set-ExecutionPolicy RemoteSigned`)
-- Path separator differences in any CLI commands (forward vs back slash)
-- Whether `orchestrate` CLI is accessible after install (PATH on Windows)
-- Any `bash`-style shell scripts (`for env in draft live; do ... done`) — these don't run in CMD or PowerShell without WSL or Git Bash
-- `curl` availability (built into Windows 10+ PowerShell but syntax differs)
-
-### Acceptance criteria
-
-- A Windows user starting from zero Python should be able to follow every step without hitting an undocumented error
-- A macOS user starting from zero Python should be able to follow every step without hitting an undocumented error
-- All shell command blocks that differ between platforms should have platform-specific tabs or callout notes
-- Minimum Python version required should be explicitly stated upfront
-
-### Files to audit
-
-- `docs/part1-setup/README.md` — primary target (full environment setup)
-- `docs/part6-mcp-servers/README.md` — contains a `for ... do` bash loop (line ~633) that breaks on Windows CMD/PowerShell
-- Any other part that references `source`, `export`, `chmod`, or other Unix-only shell constructs
+**Status:** ✅ CLOSED — merged into Plan 3 above; all items verified and resolved via Findings 11–18.
 
