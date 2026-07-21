@@ -84,7 +84,7 @@ uv --version
 Submit your request here:  
 [https://www.ibm.com/support/pages/node/7159462](https://www.ibm.com/support/pages/node/7159462)
 
-> Details on the link.
+[User Onboarding Request](https://supportcontent.ibm.com/support/pages/bob-enterprise-subscription-%E2%80%93-user-onboarding-request-0)
 
 ---
 
