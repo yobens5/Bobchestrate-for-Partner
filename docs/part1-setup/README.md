@@ -97,9 +97,10 @@ The extension provides:
 Install the watsonx Orchestrate MCP servers through the ADK extension:
 
 1. Open the Command Palette in IBM Bob IDE (press `Cmd+Shift+P` on Mac / `Ctrl+Shift+P` on Windows/Linux)
-2. Type "watsonx Orchestrate: Install MCP Servers" and select it
-3. Wait for the installation to complete
-4. You should see a confirmation message that the MCP servers have been installed successfully
+2. Type "watsonx Orchestrate: Install WXO MCP Servers" and select it
+3. When prompted for a version, type **`2.12.0`** and press Enter
+4. Wait for the installation to complete
+5. You should see a confirmation message that the MCP servers have been installed successfully
 
 **Verify the installation:**
 
@@ -112,6 +113,7 @@ To confirm the MCP servers are installed and working:
    - `watsonx-orchestrate-adk-docs` - Provides access to watsonx Orchestrate documentation
 
 Alternatively, you can check the MCP servers configuration:
+
 1. Open the Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`)
 2. Type "MCP Servers" and select it
 3. Verify that the watsonx Orchestrate MCP servers are listed in the configuration and both of them marked with a green bullet point
@@ -261,25 +263,21 @@ Now that you have watsonx Orchestrate MCP servers and the WXO Agent Architect mo
 
    <img src="images/image-16.png" alt="Create a script to add and activate new watsonx Orchestarte environment for the ADK" width="400px">
 
-2. When Bob starts working, it will be asking for a permissionm to access watsonx-orchestarte-adk-docs MCP server. Click on the **Aprove** button to allow Bob to access the documentation.
+2. When Bob starts working, it will ask for permission to access the `watsonx-orchestrate-adk-docs` MCP server. Click the **Approve** button to allow Bob to access the documentation.
 
-   >Note: You can also check the **Always allow** checkbox to always allow Bob to access the MCP server. One option is to enable **Auto-approval**. If you do this, you can specify the different options that you want to allow.
+   > **Note:** You can check the **Always allow** checkbox to always allow Bob to access the MCP server. You can also enable **Auto-approval** to avoid granting permission manually each time.
 
    <img src="images/image-17.png" alt="Approve access to MCP server" width="350px">
 
-   >Note: Bob might ask you to approve the MCP server access multiple times. This is because Bob is trying to access the MCP server to get the more detailed information after first learning about the environment setup. Recommendation is to enable **Auto-approval** for the MCP servers to avoid granting the permission manually each time.
-
 3. After Bob has created the script (e.g. _add_wxo_env.sh_ on macOS/Linux or _add_wxo_env.ps1_ on Windows), it will ask for permission to save it. Click the **Save** button to save the script.
 
-4. Next, Bob will create a documentation - an MD-file - for the script. Click on the **Save** button to save the documentation.
+4. After Bob has saved the script, it will ask for permission to make it executable. Click **Run** to execute the command.
 
-5. After Bob has saved the documentation, it will ask you to permission to make the script executable. Click on the **Run** to execute the command.
-
-6. Finally Bob will summarize the task for you.
+5. Finally Bob will summarize the task for you.
 
     <img src="images/image-18.png" alt="Task summary" width="350px">
 
-7. Open a terminal window within Bob IDE:
+6. Open a terminal window within Bob IDE:
 
    - From the Bob main menu bar, select **Terminal** > **New Terminal**
 
@@ -289,7 +287,7 @@ Now that you have watsonx Orchestrate MCP servers and the WXO Agent Architect mo
 
       <img src="images/image-15.png" alt="Terminal window opened in Bob IDE" width="700px">
 
-8. Run the created script in your terminal to **add** your environment:
+7. Run the created script in your terminal to **add** your environment:
 
    ```bash
    # macOS/Linux
@@ -300,19 +298,19 @@ Now that you have watsonx Orchestrate MCP servers and the WXO Agent Architect mo
    .\add_wxo_env.ps1
    ```
 
-9. When asked, provide name for your environment, e.g. `my-wxo-cloud`:
+8. When asked, provide name for your environment, e.g. `my-wxo-cloud`:
 
    <img src="images/image-19.png" alt="Env name" width="450px">
 
-10. When asked, provide the URL of your Orchestrate instance that you got earlier:
+9. When asked, provide the URL of your Orchestrate instance that you got earlier:
 
       <img src="images/image-20.png" alt="Env URL" width="700px">
 
-11. When asked, provide the API key of your Orchestrate instance that you got earlier. The script will then create a new environment and activate it:
+10. When asked, provide the API key of your Orchestrate instance that you got earlier. The script will then create a new environment and activate it:
 
       <img src="images/image-21.png" alt="Env API key" width="450px">
 
-12. Verify your connection is working. Run the following command in your Bob IDE terminal:
+11. Verify your connection is working. Run the following command in your Bob IDE terminal:
 
       ```bash
       orchestrate agents list
@@ -499,7 +497,8 @@ orchestrate env activate <name>
 ```
 
 ### Issue: Bob isn't responding
-**Solution:** 
+**Solution:**
+
 1. Restart Bob IDE
 2. Check the Bob output panel for errors
 
