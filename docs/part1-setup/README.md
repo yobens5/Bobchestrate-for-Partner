@@ -6,6 +6,7 @@
 ## Prerequisites Check
 
 Before starting, ensure you have:
+
 - [ ] Python 3.12 installed — see [Prerequisites](../part0-prerequisites/README.md#python-312) for install instructions
 - [ ] `uv` installed — see [Prerequisites](../part0-prerequisites/README.md#uv) for install instructions
 - [ ] IBM Bob IDE installed
