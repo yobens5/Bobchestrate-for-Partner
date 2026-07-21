@@ -6,6 +6,18 @@ This repository is the **Bobchestrate Workshop** — a hands-on learning experie
 
 Participants learn to create, configure, evaluate, and deploy agentic AI systems — from a simple "Hello World" agent to a full multi-agent orchestration system.
 
+## Workshop Schedule
+
+- **Dates:** 10–11 August 2025
+- **Format:** Two-day hands-on workshop
+
+## Language Requirements
+
+The workshop documentation is maintained in **both English and Hebrew**.
+
+- **Workflow:** Complete and approve the English version first, then update the Hebrew version.
+- Never update Hebrew content in parallel with English — always finish and approve English first.
+
 ## Tested ADK Version
 
 > **IBM watsonx Orchestrate ADK `2.12.0`**
@@ -52,6 +64,32 @@ Every update to workshop content — whether fixing a broken command, dismissing
 - The original content
 - The resolution (fixed / dismissed)
 - The ADK version the fix was verified against
+
+## Infrastructure & Provisioning
+
+### watsonx Orchestrate — Primary: IBM TechZone
+
+Orchestrate is provisioned for participants via **IBM TechZone**. Yohan has a Word document with step-by-step TechZone provisioning instructions — use it as the source of truth for the provisioning section of the workshop.
+
+### watsonx Orchestrate — Backup Option
+
+A backup provisioning path is needed in case TechZone is unavailable (e.g. trial account). **Open question: discuss backup options with Avi.**
+See `docs/dev/audit-findings.md` → Plan 4 for tracking.
+
+### IBM Bob IDE — Provisioning
+
+Bob is provisioned via a **support ticket submitted by an admin**. This eliminates the need to send individual invitation emails to each participant.
+
+- There is a link in the docs showing how participants can open a Bob ticket — this is confirmed present and correct.
+- For workshop delivery, the admin must raise the provisioning ticket **as early as possible** before the workshop date.
+
+## NL2SQL Module — Key Decisions
+
+The NL2SQL module (Part 10) is kept **separate from the main agent storyline** — the workshop agents (Parts 1–9) will **not** be adapted or renamed to fit the NL2SQL use case. This decision was made to avoid the high effort of a full theme merge.
+
+- The NL2SQL exercises use their own dedicated agents and database.
+- **Database:** Use Yohan's **PostgreSQL** database instance (not Db2); reprovision it before the workshop.
+- **Agent template:** Maria's NL2SQL agent template is hosted at https://data-agent-builder.1v4cskc77bqd.us-east.codeengine.appdomain.cloud/ — see `docs/dev/audit-findings.md` → Plan 5 for action items.
 
 ## Key Conventions
 

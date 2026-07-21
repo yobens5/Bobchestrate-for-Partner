@@ -297,6 +297,53 @@ The current agent and tool examples use generic "customer support" framing. The 
 
 ---
 
+### Plan 4 — Orchestrate provisioning: confirm backup path
+
+**Status:** ⏳ TODO
+**Priority:** High — workshop blocked if TechZone is unavailable on the day
+**Owner:** Igor / Avi
+
+Primary provisioning is via IBM TechZone. A backup path must be confirmed before 10 August.
+
+**Action:**
+- [ ] Discuss backup options with Avi (e.g. free trial account, SaaS trial, other IBM-internal path)
+- [ ] Document the agreed backup procedure in `docs/part0-prerequisites/README.md` or `docs/part1-setup/README.md` under a "Backup provisioning" callout
+- [ ] Test the backup path end-to-end at least once before the workshop
+
+---
+
+### Plan 5 — NL2SQL module: content and media refresh
+
+**Status:** ⏳ TODO
+**Priority:** High — workshop is 10–11 August; videos and template must be ready
+**Owner:** Igor / Yohan
+
+#### Video replacements
+
+The current NL2SQL videos in `docs/part10-nl2sql/videos/` are low quality. Replace with Yohan's locally recorded versions.
+
+- [ ] Obtain Yohan's local video files
+- [ ] Replace the five existing `.mp4` files in `docs/part10-nl2sql/videos/`
+- [ ] Record a new video showing the **final result of Parts 1–9** (the complete agent before NL2SQL) — this serves as a "where we are" orientation before Part 10
+- [ ] Verify all video embeds in `docs/part10-nl2sql/README.md` still work after replacement
+
+#### Agent template (Maria's NL2SQL template)
+
+Maria has shared a template for creating NL2SQL agents, hosted here:
+
+> **Template URL:** https://data-agent-builder.1v4cskc77bqd.us-east.codeengine.appdomain.cloud/
+
+- [ ] Review Maria's template and assess whether to include it directly in Part 10 instructions or link to it as a reference
+- [ ] Add screenshots for the NL2SQL template usage flow once Igor has tested it
+- [ ] Document any deviations from the template that the workshop version requires
+
+#### Database
+
+- [ ] Use Yohan's **PostgreSQL** database for the NL2SQL exercises (not Db2)
+- [ ] Reprovision Yohan's PostgreSQL database before the workshop and confirm connection details work end-to-end
+
+---
+
 ### Plan 3 — Platform parity: validate macOS and Windows setup instructions
 
 **Status:** ✅ CLOSED
