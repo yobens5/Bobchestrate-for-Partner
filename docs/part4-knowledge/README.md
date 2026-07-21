@@ -114,10 +114,6 @@ When naming your knowledge base, follow these best practices:
 
 ## Step 2: Import the Knowledge Base
 
-### IMPORTANT: Since the workshop participants will be using the same watsonx Orchestrate environment, RENAME your _knowledge-base_ in the yaml-file by adding your initials as a postfix. ###
-
->For example, `name: customer-support-faq` becomes `name: customer-support-faq-JKJ`.
-
 <img src="images/image-2.png" alt="" width="350px">
 
 ⬇︎
@@ -133,7 +129,7 @@ orchestrate knowledge-bases import -f knowledge_bases/customer-support-faq.yaml
 Check the status:
 ```bash
 orchestrate knowledge-bases list
-orchestrate knowledge-bases status -n customer-support-faq-<your_initials_here>
+orchestrate knowledge-bases status -n customer-support-faq
 ```
 
 <img src="images/image.png" alt="KB status" width="600px">
@@ -150,7 +146,7 @@ Update your _**customer support agent**_ to use the knowledge base. **Add the "k
 # customer-support-agent.yaml
 spec_version: v1
 kind: native
-name: customer_support_agent_<your_initials_here>
+name: customer_support_agent
 description: A customer support agent that can check orders, process refunds, and answer FAQs
 
 instructions: |
@@ -177,12 +173,12 @@ llm: groq/openai/gpt-oss-120b
 
 # Tools this agent can use
 tools:
-  - check_order_status_<your_initials_here>
-  - process_refund_<your_initials_here>
+  - check_order_status
+  - process_refund
 
 # Knowledge bases this agent can access
 knowledge_base:
-  - customer-support-faq-<your_initials_here>
+  - customer-support-faq
 
 ```
 
@@ -198,7 +194,7 @@ orchestrate agents import -f agents/customer-support-agent.yaml
 Test the agent with FAQ questions:
 
 ```bash
-orchestrate chat ask -n customer_support_agent_<your_initials_here>
+orchestrate chat ask -n customer_support_agent
 ```
 
 Try these questions:
@@ -213,13 +209,11 @@ The agent should retrieve and present information from the knowledge base!
 
 Now let's create a specialized agent for handling complex issues. Use the example below as a template and store it in `agents/escalation-agent.yaml`.
 
-**AGAIN**, remember to replace `<your_initials_here>` with your actual initials in all file names and references!
-
 ```yaml
 # escalation-agent.yaml
 spec_version: v1
 kind: native
-name: escalation_agent_<your_initials_here>
+name: escalation_agent
 description: Handles complex customer issues that require manager approval or special handling
 
 instructions: |
@@ -251,12 +245,12 @@ llm: groq/openai/gpt-oss-120b
 
 # This agent can use the same tools
 tools:
-  - check_order_status_<your_initials_here>
-  - process_refund_<your_initials_here>
+  - check_order_status
+  - process_refund
 
 # And access the same knowledge base
 knowledge_base:
-  - customer-support-faq-<your_initials_here>
+  - customer-support-faq
 
 ```
 
@@ -273,7 +267,7 @@ Update the main customer support agent to collaborate with the escalation agent:
 # customer-support-agent.yaml (updated)
 spec_version: v1
 kind: native
-name: customer_support_agent_<your_initials_here>
+name: customer_support_agent
 description: A customer support agent that can check orders, process refunds, and answer FAQs
 
 instructions: |
@@ -302,23 +296,23 @@ instructions: |
 llm: groq/openai/gpt-oss-120b
 
 tools:
-  - check_order_status_<your_initials_here>
-  - process_refund_<your_initials_here>
+  - check_order_status
+  - process_refund
 
 knowledge_base:
-  - customer-support-faq-<your_initials_here>
+  - customer-support-faq
 
 # Add the escalation agent as a collaborator
 collaborators:
-  - escalation_agent_<your_initials_here>
+  - escalation_agent
 
 ```
 
 ***The important parts:***
-- Add escalation_agent_<your_initials_here> to collaborators
+- Add `escalation_agent` to collaborators
 - Add instructions about when to escalate under your customer support agent's instructions
 ```
-When to escalate to escalation_agent_<your_initials_here>:
+When to escalate to escalation_agent:
   - Refund requests over $10,000
   - Customer is very upset or threatening legal action
   - Request requires policy exception
@@ -343,7 +337,7 @@ orchestrate agents import -f agents/customer-support-agent.yaml
 Test the collaboration:
 
 ```bash
-orchestrate chat ask -n customer_support_agent_<your_initials_here>
+orchestrate chat ask -n customer_support_agent
 ```
 
 Try these scenarios:
@@ -454,7 +448,7 @@ knowledge_base:
 ### Issue: Collaborator agent not accessible
 **Solution:**
 ```bash
-orchestrate agents list | grep -E "your_initials"
+orchestrate agents list
 # Verify both agents are imported
 ```
 

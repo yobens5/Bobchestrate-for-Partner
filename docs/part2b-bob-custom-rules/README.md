@@ -98,7 +98,12 @@ When working with IBM watsonx Orchestrate or watsonx Orchestrate ADK projects:
 
 1. **Create the rules directory structure:**
    ```bash
+   # macOS/Linux
    mkdir -p .bob/rules
+   ```
+   ```powershell
+   # Windows PowerShell
+   New-Item -ItemType Directory -Force -Path .bob\rules
    ```
 
 2. **Download the enhanced rule file:**
@@ -109,8 +114,12 @@ When working with IBM watsonx Orchestrate or watsonx Orchestrate ADK projects:
 
 3. **Place the file in your rules directory:**
    ```bash
-   # Move the downloaded file to your .bob/rules directory
+   # macOS/Linux — move from Downloads folder
    mv ~/Downloads/wxo-dev-rule-enhanced.md .bob/rules/
+   ```
+   ```powershell
+   # Windows PowerShell — move from Downloads folder
+   Move-Item "$env:USERPROFILE\Downloads\wxo-dev-rule-enhanced.md" .bob\rules\
    ```
 
 ### What's in the Enhanced Rule File?

@@ -1,6 +1,6 @@
 spec_version: v1
 kind: native
-name: support_agent_standard_<your_initials_here>
+name: support_agent_standard
 description: Standard customer support agent - recommended for most use cases
 
 instructions: |
@@ -19,7 +19,7 @@ instructions: |
 llm: groq/openai/gpt-oss-120b
 
 tools:
-  - check_order_status_<your_initials_here>
-  - process_refund_<your_initials_here>
+  - check_order_status
+  - process_refund
 
 # Made with Bob

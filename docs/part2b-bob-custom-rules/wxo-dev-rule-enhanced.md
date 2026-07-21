@@ -8,6 +8,31 @@ This file carries **project conventions and known pitfalls** — the things retr
 - To inspect the live platform (existing tools, agents, imports): use the `watsonx-orchestrate-adk` MCP server.
 - **If the docs MCP contradicts this file, the MCP wins.** The docs track the current ADK release; this file may lag.
 
+### Tool usage boundary — MCP vs CLI
+
+| Purpose | Use |
+|---|---|
+| Look up documentation, schemas, examples | `watsonx-orchestrate-adk-docs` MCP (`SearchIbmWatsonxOrchestrateAdk`) — **documentation only, cannot touch the live platform** |
+| Interact with the live Orchestrate platform (import, list, create, deploy) | `orchestrate` CLI commands, run inside the project venv |
+
+> **Rule:** The `watsonx-orchestrate-adk-docs` MCP is **documentation-only**. To actually import a tool, create an agent, deploy, or query the live platform, use `orchestrate` CLI commands run inside the project's **virtual environment**.
+
+**Running `orchestrate` CLI commands:** Always activate the project venv first so the correct ADK version is used:
+
+```bash
+# macOS / Linux
+source .venv/bin/activate
+orchestrate <subcommand> ...
+```
+
+```powershell
+# Windows (PowerShell)
+.venv\Scripts\Activate.ps1
+orchestrate <subcommand> ...
+```
+
+Never run `orchestrate` commands outside the venv — a system-wide install may be a different version or absent entirely.
+
 ## 1. Project Structure
 
 ```

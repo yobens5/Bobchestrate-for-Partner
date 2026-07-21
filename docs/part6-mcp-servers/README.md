@@ -404,9 +404,7 @@ package_root: .
 
 ### Step 2: Import the MCP Server
 
-**IMPORTANT: Since we're using one shared environment, please add your initials again as the postfix for the name of the toolkit. This is to avoid name conflicts. For example, if your initials are "JKJ", the name should be "product-catalog-JKJ". Remember to save changes to the file.**
-
-**ALSO IMPORTANT: Make sure that the python file that implements the MCP sever - product_catalog_server.py - is also in the <ins>toolkit</ins> folder, othewise the import will fail.** 
+**IMPORTANT: Make sure that the python file that implements the MCP server - product_catalog_server.py - is also in the <ins>toolkit</ins> folder, otherwise the import will fail.**
 
 ### Option A: Ask Bob first
 ```
@@ -425,7 +423,7 @@ orchestrate toolkits import -f toolkits/product-catalog-toolkit.yaml
 List toolkits to confirm:
 
 ```bash
-orchestrate toolkits list | grep -E "<your_initials>", e.g. orchestrate toolkits list | grep -E "JKJ"
+orchestrate toolkits list
 ```
 
 You should see `product-catalog` in the list with all 4 tools.
@@ -488,8 +486,6 @@ Bob should place the created agent YAML file in the `agents` directory and provi
 
 ### Step 2: Import the Agent
 
-**IMPORTANT: Since we're using one shared environment, please add your initials again as the postfix for the name of the agent in the yaml-file. This is to avoid name conflicts. For example, if your initials are "JKJ", the name should be "product_catalog_agent_JKJ". Remember to save changes to the file before importing it.**
-
 ```bash
 # Note that your agent might have been named differently
 orchestrate agents import -f agents/product-catalog-agent.yaml
@@ -501,7 +497,7 @@ Test with various queries:
 
 ```bash
 # Search for products
-orchestrate chat ask --agent-name product_catalog_agent_<your_initials> "Show me the gaming products you have"
+orchestrate chat ask --agent-name product_catalog_agent "Show me the gaming products you have"
 
 # And when the agent chat is open:
 "Tell me about LAPTOP-001"
@@ -541,15 +537,13 @@ In real-world scenarios, you'll often want to connect to **existing MCP servers*
 
 Let's connect to an existing remote MCP server. We'll use the **watsonx Orchestrate Documentation MCP Server** as an example.
 
-**IMPORTANT: Again, since we're all using the same wxO SaaS tenant, please add your initials to the MCP server name to avoid conflicts.**
-
 #### Step 1: Add Remote MCP Server Using CLI
 
 ```bash
 # Import the watsonx Orchestrate docs MCP server
 orchestrate toolkits add \
   --kind mcp \
-  --name wxo-docs-<your_initials> \
+  --name wxo-docs \
   --description "Search watsonx Orchestrate documentation" \
   --url "https://developer.watson-orchestrate.ibm.com/mcp" \
   --transport streamable_http \
@@ -568,7 +562,7 @@ Alternatively, create a YAML file for easier management:
 ```yaml
 spec_version: v1
 kind: mcp
-name: wxo-docs-<your_initials>
+name: wxo-docs
 description: Search watsonx Orchestrate documentation
 transport: streamable_http
 server_url: https://developer.watson-orchestrate.ibm.com/mcp

@@ -1,6 +1,6 @@
 spec_version: v1
 kind: native
-name: support_router_<your_initials_here>
+name: support_router
 description: Routes customer queries to appropriate support agent based on complexity
 
 instructions: |
@@ -9,20 +9,20 @@ instructions: |
   
   Routing Logic:
   
-  Route to support_agent_standard_<your_initials_here> for:
+  Route to support_agent_standard for:
   - Standard customer support requests (most queries)
   - Order status checks
   - FAQ questions
   - General refund requests
   - Most typical interactions
   
-  Route to support_agent_external_<your_initials_here> for:
+  Route to support_agent_external for:
   - Complex problem-solving requiring external model capabilities
   - Multi-faceted issues
   - Situations requiring deeper analysis
   - When external model provider is configured and available
   
-  Route to support_agent_anthropic_<your_initials_here> for:
+  Route to support_agent_anthropic for:
   - Most complex scenarios requiring premium model
   - Very upset or frustrated customers
   - VIP customers
@@ -40,8 +40,8 @@ instructions: |
 llm: groq/openai/gpt-oss-120b  # Fast, efficient model for routing decisions
 
 collaborators:
-  - support_agent_standard_<your_initials_here>
-  - support_agent_external_<your_initials_here>
-  - support_agent_anthropic_<your_initials_here>
+  - support_agent_standard
+  - support_agent_external
+  - support_agent_anthropic
 
 # Made with Bob

@@ -383,13 +383,17 @@ orchestrate evaluations quick-eval \
 Review the evaluation results in the output directory:
 
 ```bash
-# View results
+# macOS/Linux — view results
 ls -la evaluation/results/
 
 # Results include:
 # - Summary metrics (tool calls, success rate, schema mismatches)
 # - Detailed test case results
 # - Hallucination detection results
+```
+```powershell
+# Windows PowerShell — view results
+Get-ChildItem evaluation\results\
 ```
 
 **Example output structure:**

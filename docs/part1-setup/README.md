@@ -251,72 +251,39 @@ Copy the **Service instance URL** from the API details information. This is the 
 
 ### Configure the ADK Environment
 
-#### Option A: Using Bob to help you 😃
+#### Option A: Using the watsonx Orchestrate extension
 
-Now that you have watsonx Orchestrate MCP servers and the WXO Agent Architect mode enabled, you can use Bob to help you with the setup.
+Use the extension's **Environment Manager** to add and activate your environment directly from IBM Bob IDE.
 
-1. Make sure that you have the **WXO Agent Architect** mode selected for your Bob chat. Then ask Bob to create a script to add and activate new watsonx Orchestarte environment for the ADK:
+1. Open the **watsonx Orchestrate** extension from the Activity Bar.
 
-   ```
-   Create a script to add and activate a new watsonx Orchestrate SaaS environment for the ADK. I have the environment URL and API key ready. First detect my operating system, then generate a single script for my platform: a .sh file for macOS/Linux or a .ps1 file for Windows PowerShell. Do not require Git Bash or WSL.
-   ```
+2. In the **Environment Manager** section at the bottom of the extension view, click **Add**.
 
-   <img src="images/image-16.png" alt="Create a script to add and activate new watsonx Orchestarte environment for the ADK" width="400px">
+   <img src="images/environment-manager-add-dialog.png" alt="Environment Manager with Add button highlighted" width="500px">
 
-2. When Bob starts working, it will ask for permission to access the `watsonx-orchestrate-adk-docs` MCP server. Click the **Approve** button to allow Bob to access the documentation.
+3. In the add environment dialog, enter a name for your environment and paste the watsonx Orchestrate URL that you copied earlier.
 
-   > **Note:** You can check the **Always allow** checkbox to always allow Bob to access the MCP server. You can also enable **Auto-approval** to avoid granting permission manually each time.
+   <img src="images/environment-manager-activate-environment.png" alt="Add environment dialog showing name and URL fields" width="500px">
 
-   <img src="images/image-17.png" alt="Approve access to MCP server" width="350px">
+4. After the environment appears in the environment list, select it and click **Activate**.
 
-3. After Bob has created the script (e.g. _add_wxo_env.sh_ on macOS/Linux or _add_wxo_env.ps1_ on Windows), it will ask for permission to save it. Click the **Save** button to save the script.
+   <img src="images/environment-manager-api-key.png" alt="Environment list showing an environment selected with the Activate button" width="500px">
 
-4. After Bob has saved the script, it will ask for permission to make it executable. Click **Run** to execute the command.
+5. Confirm that the environment is active in the Environment Manager.
 
-5. Finally Bob will summarize the task for you.
+   <img src="images/environment-manager-active-environment.png" alt="Environment Manager showing an active environment" width="500px">
 
-    <img src="images/image-18.png" alt="Task summary" width="350px">
+6. When prompted, paste your API key. The extension will activate the environment for you.
 
-6. Open a terminal window within Bob IDE:
+   <img src="images/environment-manager-extension-view.png" alt="API key prompt for environment activation" width="300px">
 
-   - From the Bob main menu bar, select **Terminal** > **New Terminal**
-
-      <img src="images/image-14.png" alt="Open terminal" width="550px">
-   
-   - This will open a terminal window in the Bob IDE - notice that your Python environment is automatically activated
-
-      <img src="images/image-15.png" alt="Terminal window opened in Bob IDE" width="700px">
-
-7. Run the created script in your terminal to **add** your environment:
+7. Verify your connection is working. Open a terminal in IBM Bob IDE and run:
 
    ```bash
-   # macOS/Linux
-   ./add_wxo_env.sh
-   ```
-   ```powershell
-   # Windows PowerShell
-   .\add_wxo_env.ps1
+   orchestrate agents list
    ```
 
-8. When asked, provide name for your environment, e.g. `my-wxo-cloud`:
-
-   <img src="images/image-19.png" alt="Env name" width="450px">
-
-9. When asked, provide the URL of your Orchestrate instance that you got earlier:
-
-      <img src="images/image-20.png" alt="Env URL" width="700px">
-
-10. When asked, provide the API key of your Orchestrate instance that you got earlier. The script will then create a new environment and activate it:
-
-      <img src="images/image-21.png" alt="Env API key" width="450px">
-
-11. Verify your connection is working. Run the following command in your Bob IDE terminal:
-
-      ```bash
-      orchestrate agents list
-      ```
-
-      If configured correctly, this command will list any agents in your environment (or show an empty list if you haven't created any agents yet).
+   If configured correctly, this command will list any agents in your environment, or show an empty list if you have not created any agents yet.
 
 #### Option B: Using the ADK CLI (fallback)
 
@@ -348,90 +315,96 @@ Now that you have watsonx Orchestrate MCP servers and the WXO Agent Architect mo
    
    After running the command, you should see a message: `[INFO] Environment '<your-env-name>' is now active`. This means your environment is now active and ready to use with the ADK. You can ignore the warning regarding the Auth Type.
 
+#### Option C: Using Bob to help you 😃
+
+Now that you have watsonx Orchestrate MCP servers and the WXO Agent Architect mode enabled, you can use Bob to help you with the setup.
+
+1. Make sure that you have the **WXO Agent Architect** mode selected for your Bob chat. Then ask Bob to create a script to add and activate a new watsonx Orchestrate environment for the ADK:
+
+   ```
+   Create a script to add and activate a new watsonx Orchestrate SaaS environment for the ADK. I have the environment URL and API key ready. First detect my operating system, then generate a single script for my platform: a .sh file for macOS/Linux or a .ps1 file for Windows PowerShell. Do not require Git Bash or WSL.
+   ```
+
+   <img src="images/image-16.png" alt="Create a script to add and activate a new watsonx Orchestrate environment for the ADK" width="400px">
+
+2. When Bob starts working, it will ask for permission to access the `watsonx-orchestrate-adk-docs` MCP server. Click **Approve** to allow access.
+
+   > **Note:** You can check **Always allow** to skip approving access to this MCP server each time. You can also enable **Auto-approval**.
+
+   <img src="images/image-17.png" alt="Approve access to the MCP server" width="350px">
+
+3. After Bob creates the script, it will ask for permission to save it. Click **Save**.
+
+4. Bob may then ask for permission to make the script executable. Click **Run** to execute that command.
+
+5. Open a terminal window within IBM Bob IDE:
+
+   - From the Bob main menu bar, select **Terminal** > **New Terminal**
+
+      <img src="images/image-14.png" alt="Open terminal" width="550px">
+
+   - This opens a terminal window in IBM Bob IDE. Notice that your Python environment is automatically activated.
+
+      <img src="images/image-15.png" alt="Terminal window opened in IBM Bob IDE" width="700px">
+
+6. Run the script in the terminal to add your environment:
+
+   ```bash
+   # macOS/Linux
+   ./add_wxo_env.sh
+   ```
+   ```powershell
+   # Windows PowerShell
+   .\add_wxo_env.ps1
+   ```
+
+7. When prompted, provide a name for your environment, for example `my-wxo-cloud`.
+
+   <img src="images/image-19.png" alt="Prompt for environment name" width="450px">
+
+8. When prompted, provide the URL of your watsonx Orchestrate instance.
+
+   <img src="images/image-20.png" alt="Prompt for environment URL" width="700px">
+
+9. When prompted, provide the API key of your watsonx Orchestrate instance. The script then creates the environment and activates it.
+
+   <img src="images/image-21.png" alt="Prompt for environment API key" width="450px">
+
+10. Verify your connection is working:
+
+   ```bash
+   orchestrate agents list
+   ```
+
+   If configured correctly, this command will list any agents in your environment, or show an empty list if you have not created any agents yet.
+
 > [!IMPORTANT]
-> Authentication against a remote environment expires every two hours. After expiration, you need to run orchestrate env activate again. So, keep your API key avaiable and ready to use.
+> Authentication against a remote environment expires every two hours. After expiration, reactivate the environment from the extension or run `orchestrate env activate` again. Keep your API key available and ready to use.
 
-## Step 12: Understand the Workshop Structure
+## Step 12: Confirm Your Participant Workspace Structure
 
-Your workshop folder should look like this:
+After completing the setup, your workspace should look similar to this:
 
 ```
-bobchestrate-workshop/
-├── README.md                           # Main workshop guide
-├── .gitignore                          # Git ignore file
-├── .bob/                               # Bob IDE configuration
-├── bob-prompts/                        # Helpful Bob prompts
-│   └── helpful-prompts.md
-├── part1-setup/                        # You are here!
-│   ├── README.md
-│   ├── verify-setup.py
-│   ├── files/
-│   │   └── wxo-agent-architect-export.yaml
-│   └── images/                         # Screenshots for setup guide
-├── part2-first-agent/                  # Next: Build your first agent
-│   ├── README.md
-│   ├── exercises.md
-│   ├── hello-agent-EXAMPLE.yaml
-│   └── images/
-├── part2b-bob-custom-rules/            # Bob custom rules
-│   ├── README.md
-│   ├── wxo-dev-rule.md
-│   └── wxo-dev-rule-enhanced.md
-├── part3-custom-tools/                 # Create custom tools
-│   ├── README.md
-│   ├── exercises.md
-│   ├── order_status_tool.py
-│   ├── refund_tool.py
-│   └── images/
-├── part3b-ai-gateway-models/           # AI Gateway models
-│   ├── README.md
-│   ├── model-selection-guide.md
-│   └── agents/
-│       ├── support-agent-standard.yaml
-│       ├── support-agent-advanced.yaml
-│       ├── support-agent-expert.yaml
-│       └── support-router-agent.yaml
-├── part4-knowledge/                    # Knowledge bases
-│   ├── README.md
-│   ├── customer-support-agent.yaml
-│   ├── escalation-agent.yaml
-│   ├── faq-knowledge-base.yaml
-│   ├── FAQ.pdf
-│   └── images/
-├── part5-guidelines-guardrails/        # Guidelines and guardrails
-│   ├── README.md
-│   ├── customer-support-with-guidelines.yaml
-│   └── content_safety_plugin.py
-├── part6-mcp-servers/                  # MCP server integration
-│   ├── README.md
-│   ├── product-assistant-agent.yaml
-│   ├── product-catalog-toolkit.yaml
-│   ├── product_catalog_server.py
-│   ├── simple_test.py
-│   ├── requirements.txt
-│   └── images/
-├── part7-agent-evaluation/             # Agent evaluations & red-teaming
-│   ├── README.md
-│   ├── exercises.md
-│   ├── evaluation/
-│   ├── agents/
-│   └── images/
-├── part8-deployment/                   # Testing & Deployment
-│   ├── README.md
-│   ├── test-scenarios.md
-│   └── deployment-checklist.md
-└── part9-multi-agent-orchestration/    # Multi-agent systems
-    ├── README.md
-    ├── travel-concierge-agent.yaml
-    ├── flight-specialist-agent.yaml
-    ├── hotel-specialist-agent.yaml
-    ├── activity-planner-agent.yaml
-    ├── budget-advisor-agent.yaml
-    ├── flight_tools.py
-    ├── hotel_tools.py
-    ├── activity_tools.py
-    └── budget_tools.py
+Bobchestrate-for-Partner-test/
+├── workspace_config.yaml          # watsonx Orchestrate folder path configuration
+├── add-wxo-env.sh                 # Optional helper script for environment setup
+│
+├── agents/                        # Agent YAML files you create during the workshop
+├── tools/                         # Python tools you create during the workshop
+├── toolkits/                      # Toolkit definitions
+├── connections/                   # Connection definitions
+├── models/                        # Model definitions
+├── knowledge-bases/               # Knowledge base files and configs
+│
+├── .bob/
+│   ├── custom_modes.yaml
+│   └── mcp.json
+│
+└── .venv/                         # Python virtual environment
 ```
+
+Some folders may still be empty at this stage. That is expected. You will start adding files to them in the next parts of the workshop.
 
 ## Using Bob Throughout the Workshop
 

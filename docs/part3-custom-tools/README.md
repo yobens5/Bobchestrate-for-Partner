@@ -223,17 +223,13 @@ def process_refund(order_id: str, reason: str, amount: float) -> Dict[str, Any]:
 
 ## Step 3: Import Your Tools
 
-### IMPORTANT: Since the workshop participants will be using the same watsonx Orchestrate environment, RENAME your _tool names_ (function names) inside the tool python files by adding your initials as a postfix. ###
-
->For example, `def check_order_status` becomes `def check_order_status_JKJ`. Make sure to use the same postfix for all your tools.
-
 <img src="images/image-1.png" alt="" width="450px">
 
 ⬇︎
 
 <img src="images/image.png" alt="" width="480px">
 
-Notice that now that Bob is uing the custom wxO development rule, the tools are stored in _**tools**_ directory.
+Notice that now that Bob is using the custom wxO development rule, the tools are stored in _**tools**_ directory.
 
 Import the tools into watsonx Orchestrate:
 
@@ -242,34 +238,41 @@ orchestrate tools import -k python -f tools/check_order_status.py -r requirement
 orchestrate tools import -k python -f tools/process_refund.py -r requirements.txt
 ```
 
->NOTE: The name of the python files - when Bob generates them - might be different what is shown here. Use the file names as Bob created them for you.
+>NOTE: The name of the python files - when Bob generates them - might be different from what is shown here. Use the file names as Bob created them for you.
 
 If you see [WARNING] messages, it's okay. These are caused by a Langchain bug in doc string parsing.
 
 Verify they were imported:
-```
-orchestrate tools list | grep -E "<your_initials>", for example: orchestrate tools list | grep -E "JKJ"
+```bash
+orchestrate tools list
 ```
 
 You should see your tools listed!
 
 ## Step 4: Create a Customer Support Agent with Tools
 
-Now create an agent that uses these tools. You can use the definition below - it was also created by Bob.
+Now create an agent that uses these tools.
+
+### Option A: Ask Bob
+
+```
+Bob, create a watsonx Orchestrate native agent YAML called customer_support_agent that uses the tools check_order_status and process_refund. The agent should help customers check order status and process refunds. Save it to the agents/ directory.
+```
+
+Bob will generate the YAML and save it to the `agents/` directory. Review it before importing.
+
+### Option B: Manual
 
 1. Create a new file `customer-support-agent.yaml` in the `agents` directory of your workspace. The directory should have been created by Bob when it created the tools. If not, create it manually.
 2. Copy the content below into the file and save it.
 
-
 You can also create your own agent definition if you prefer.
-
-### IMPORTANT: Make sure to change the tool names in the agent definition to match the names of the tools you imported! ALSO the postfix the name of the agent with your initials! ###
 
 ```yaml
 # customer-support-agent.yaml
 spec_version: v1
 kind: native
-name: customer_support_agent_<your_initials_here>
+name: customer_support_agent
 llm: groq/openai/gpt-oss-120b
 description: A customer support agent that can check orders and process refunds
 
@@ -298,8 +301,8 @@ instructions: |
 
 # Specify which tools this agent can use
 tools:
-  - check_order_status_<your_initials_here>
-  - process_refund_<your_initials_here>
+  - check_order_status
+  - process_refund
 
 ```
 
@@ -313,7 +316,7 @@ orchestrate agents import -f agents/customer-support-agent.yaml
 Test the agent:
 
 ```bash
-orchestrate chat ask -n customer_support_agent_<your_initials_here>
+orchestrate chat ask -n customer_support_agent
 ```
 
 Try these test scenarios:

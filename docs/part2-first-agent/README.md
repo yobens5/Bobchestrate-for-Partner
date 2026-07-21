@@ -215,11 +215,6 @@ instructions: |
 
 ## Step 3: Import Your Agent
 
-### _IMPORTANT!_ ##
-> Since the workshop participants are working in the same environment, you need to import the agent with a unique name. Please use your initials in the agent name. Edit the agent name in the YAML file before importing by adding your initials to the agent name. For example, change `hello_agent` to `hello_agent_JKJ`.
-
-<img src="images/image.png" alt="Agent renaming" width="450px">
-
 ### Option A: Using Bob
 ```
 Bob, help me import the hello-agent.yaml file into my active environment. Use the available Python virtual environment (.venv).

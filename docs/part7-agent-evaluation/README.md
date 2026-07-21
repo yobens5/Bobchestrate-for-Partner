@@ -485,7 +485,12 @@ This requires ground truth datasets with complete `goal_details` and measures al
 Check the results directory:
 
 ```bash
+# macOS/Linux
 ls -la evaluation/results/
+```
+```powershell
+# Windows PowerShell
+Get-ChildItem evaluation\results\
 ```
 
 You'll see separate folders for each evaluation run. The structure typically looks like:
@@ -599,7 +604,7 @@ orchestrate evaluations red-teaming plan \
   -a "instruction_override,crescendo_attack,jailbreaking" \
   -d evaluation/datasets/ \
   -g agents/product-assistant.yaml \
-  -t product_assistant_<your_initials> \
+  -t product_assistant \
   -o evaluation/red-team-attacks/ \
   -n 3
 ```
@@ -632,11 +637,18 @@ orchestrate evaluations red-teaming run \
 Review the attack success rates:
 
 ```bash
-# Check results
+# macOS/Linux — check results
 ls -la evaluation/red-team-results/
 
 # View summary
 cat evaluation/red-team-results/summary.json
+```
+```powershell
+# Windows PowerShell — check results
+Get-ChildItem evaluation\red-team-results\
+
+# View summary
+Get-Content evaluation\red-team-results\summary.json
 ```
 
 **💡 Ask Bob:**
@@ -788,7 +800,7 @@ orchestrate evaluations red-teaming plan \
   -a "instruction_override,crescendo_attack,jailbreaking,crescendo_prompt_leakage" \
   -d evaluation/datasets/ \
   -g . \
-  -t product_assistant_improved_<your_initials> \
+  -t product_assistant_improved \
   -o evaluation/red-team-attacks-v2/ \
   -n 3
 

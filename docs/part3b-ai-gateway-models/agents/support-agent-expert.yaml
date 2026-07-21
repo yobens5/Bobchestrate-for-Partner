@@ -1,6 +1,6 @@
 spec_version: v1
 kind: native
-name: support_agent_anthropic_<your_initials_here>
+name: support_agent_anthropic
 description: Customer support agent using Anthropic Claude (example)
 
 instructions: |
@@ -25,8 +25,8 @@ llm: anthropic/claude-3-sonnet-20240229
 policy: premium_policy
 
 tools:
-  - check_order_status_<your_initials_here>
-  - process_refund_<your_initials_here>
+  - check_order_status
+  - process_refund
 
 # Made with Bob
 # Note: This is an example of using an external model provider.

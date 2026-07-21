@@ -15,7 +15,7 @@
 
 ```json
 {
-    "agent": "product_assistant_<your_initials>",
+    "agent": "product_assistant",
     "goals": {
         "search_products-1": ["summarize"]
     },
@@ -72,7 +72,7 @@ story, and starting_sentence fields.
 
 ```json
 {
-    "agent": "product_assistant_<your_initials>",
+    "agent": "product_assistant",
     "goals": {
         "summarize": []
     },
@@ -289,7 +289,7 @@ plotly for charts.
 
 ```json
 {
-    "agent": "product_assistant_<your_initials>",
+    "agent": "product_assistant",
     "goals": {
         "summarize": []
     },
