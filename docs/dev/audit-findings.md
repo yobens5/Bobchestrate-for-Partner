@@ -204,24 +204,23 @@ This contradicts the main flow (Step 10), which installs the ADK inside `.venv` 
 
 ---
 
-### Finding 15 — Part 1: Option B shell script (`.sh`) is Unix-only; Windows users blocked
+### Finding 15 — Part 1: Option A shell script (`.sh`) is Unix-only; Windows users blocked
 
-**Part:** Part 1 (`docs/part1-setup/README.md`), lines 272–307
+**Part:** Part 1 (`docs/part1-setup/README.md`), lines 251–315
 **Status:** ✅ CLOSED
-**Problem:** Option B instructs participants to ask Bob to generate an `add_wxo_env.sh` shell script, then run it as `./<script>.sh`. On Windows without Git Bash or WSL, `.sh` files cannot be executed directly in CMD or PowerShell.
+**Problem:** Option A instructed participants to ask Bob to generate an `add_wxo_env.sh` shell script. On Windows without Git Bash or WSL, `.sh` files cannot be executed directly in CMD or PowerShell.
 
-**Fix:** Add a note before Step 1 of Option B:
-> **Windows users:** This option requires Git Bash or WSL to run `.sh` scripts. If you don't have either, use **Option A** (manual CLI steps) instead.
+**Fix (updated):** The Bob prompt itself was updated to instruct Bob to first detect the user's OS and then generate a single platform-appropriate script: `.sh` for macOS/Linux or `.ps1` for Windows PowerShell. No Git Bash or WSL required. Step 3 and Step 8 in the surrounding instructions were updated to reflect both filename variants.
 
 ---
 
 ### Finding 16 — Part 3b & Part 9: Bob prompts generate `.sh` scripts with no Windows warning
 
-**Part:** Part 3b (`docs/part3b-ai-gateway-models/README.md`), lines 310, 318; Part 9 (`docs/part9-multi-agent-orchestration/README.md`), line 1002
+**Part:** Part 3b (`docs/part3b-ai-gateway-models/README.md`); Part 9 (`docs/part9-multi-agent-orchestration/README.md`)
 **Status:** ✅ CLOSED
-**Problem:** Bob prompts in these parts ask for `.sh` shell scripts that are then run directly. Same issue as Finding 15: Windows users without Git Bash/WSL cannot run them.
+**Problem:** Bob prompts in these parts asked for `.sh` shell scripts that are then run directly. Windows users without Git Bash/WSL cannot run them.
 
-**Fix:** Add a short note next to each `.sh` Bob prompt: _"Windows users: run in Git Bash or WSL, or run the generated commands individually in PowerShell."_
+**Fix (updated):** All three Bob prompts (Part 1, Part 3b ×2, Part 9) were updated to instruct Bob to first detect the user's OS, then generate a single platform-appropriate script (`.sh` for macOS/Linux, `.ps1` for Windows PowerShell). No Git Bash, WSL, or extra tooling required on any platform.
 
 ---
 

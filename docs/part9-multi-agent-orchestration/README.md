@@ -983,7 +983,7 @@ With unique names:
 
 ### Option A: Ask Bob first
 ```
-Bob, create a shell script that imports all agents (flight specialist, hotel specialist, activty planner, budget advisor and finally tra) and their tools in the correct order. Make sure each agent is imported after its collaborators.
+Bob, create a script that imports all agents (flight specialist, hotel specialist, activity planner, budget advisor and finally travel concierge) and their tools in the correct order. Make sure each agent is imported after its collaborators. First detect my operating system, then generate a single script for my platform: a .sh file for macOS/Linux or a .ps1 file for Windows PowerShell. Do not require Git Bash or WSL.
 ```
 Check Bob's output — every tool and agent should report as imported successfully, with the orchestrator imported last. If something fails partway through, note which imports already succeeded and finish the rest manually below.
 

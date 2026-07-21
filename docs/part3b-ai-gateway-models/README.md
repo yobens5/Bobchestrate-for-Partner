@@ -106,7 +106,7 @@ First, establish a connection to your external provider by configuring the neces
 ##### Option A: Ask Bob first
 
 ```
-Bob, create a shell script that adds a new connection definition for importing OpenAI LLM model with an API key to both draft and live environment. Connection app-id should be "openai". The script should be named "add_openai_connection.sh" and should be executable.
+Bob, create a script that adds a new connection definition for importing an OpenAI LLM model with an API key to both draft and live environments. Connection app-id should be "openai". First detect my operating system, then generate a single script for my platform: a .sh file for macOS/Linux or a .ps1 file for Windows PowerShell. Do not require Git Bash or WSL.
 ```
 
 Check that the connection was created and configured for both environments. If not, use Option B below.
@@ -147,7 +147,7 @@ model_type: chat
 ##### Option A: Ask Bob first
 
 ```
-Bob, create a shell script that imports an external model "openai/gpt-5-2025-08-07" from OpenAI using the connection definition "openai" to both draft and live enviroment. The script should be named "import_openai_model.sh" and should be executable.
+Bob, create a script that imports an external model "openai/gpt-5-2025-08-07" from OpenAI using the connection definition "openai" to both draft and live environments. First detect my operating system, then generate a single script for my platform: a .sh file for macOS/Linux or a .ps1 file for Windows PowerShell. Do not require Git Bash or WSL.
 ```
 
 Check that the model was imported for both environments. If not, use Option B below.

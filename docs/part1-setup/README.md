@@ -250,14 +250,12 @@ Copy the **Service instance URL** from the API details information. This is the 
 
 #### Option A: Using Bob to help you 😃
 
-> **Windows users:** Option A generates a `.sh` shell script. To run it you need **Git Bash** or **WSL**. If you don't have either, use **Option B** (the manual CLI steps below) instead — it works on all platforms.
-
 Now that you have watsonx Orchestrate MCP servers and the WXO Agent Architect mode enabled, you can use Bob to help you with the setup.
 
 1. Make sure that you have the **WXO Agent Architect** mode selected for your Bob chat. Then ask Bob to create a script to add and activate new watsonx Orchestarte environment for the ADK:
 
    ```
-   Create a simple shell script to add and activate new watsonx Orchestrate SaaS environment for the ADK. I have the environment URL and API key ready.
+   Create a script to add and activate a new watsonx Orchestrate SaaS environment for the ADK. I have the environment URL and API key ready. First detect my operating system, then generate a single script for my platform: a .sh file for macOS/Linux or a .ps1 file for Windows PowerShell. Do not require Git Bash or WSL.
    ```
 
    <img src="images/image-16.png" alt="Create a script to add and activate new watsonx Orchestarte environment for the ADK" width="400px">
@@ -270,7 +268,7 @@ Now that you have watsonx Orchestrate MCP servers and the WXO Agent Architect mo
 
    >Note: Bob might ask you to approve the MCP server access multiple times. This is because Bob is trying to access the MCP server to get the more detailed information after first learning about the environment setup. Recommendation is to enable **Auto-approval** for the MCP servers to avoid granting the permission manually each time.
 
-3. After Bob has created the script (e.g. _add_wxo_env.sh_, name could be something else for you), it will ask you to permission to save the script. Click on the **Save** button to save the script.
+3. After Bob has created the script (e.g. _add_wxo_env.sh_ on macOS/Linux or _add_wxo_env.ps1_ on Windows), it will ask for permission to save it. Click the **Save** button to save the script.
 
 4. Next, Bob will create a documentation - an MD-file - for the script. Click on the **Save** button to save the documentation.
 
@@ -292,7 +290,14 @@ Now that you have watsonx Orchestrate MCP servers and the WXO Agent Architect mo
 
 8. Run the created script in your terminal to **add** your environment:
 
-   `./<name of your created script>, e.g. ./_add_wxo_env.sh`
+   ```bash
+   # macOS/Linux
+   ./add_wxo_env.sh
+   ```
+   ```powershell
+   # Windows PowerShell
+   .\add_wxo_env.ps1
+   ```
 
 9. When asked, provide name for your environment, e.g. `my-wxo-cloud`:
 
