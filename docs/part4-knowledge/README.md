@@ -24,13 +24,44 @@ Knowledge bases allow agents to:
 
 Let's create a simple FAQ knowledge base for our customer support agent. Choose one of the following options:
 
-### Option A: Manual YAML Creation
+### Option A: Import PDF with Bob's Help
+
+Use Bob to create a knowledge base YAML file to import the FAQ PDF.
+
+1. **Download the FAQ PDF**:
+   - **Direct download**: [FAQ.pdf](./FAQ.pdf)
+   
+   The FAQ.pdf contains comprehensive FAQs about:
+   - Shipping Information
+   - Returns and Refunds
+   - Payment Methods and Billing
+   - Account Management
+   - Order Management
+   - Customer Support
+
+2. **Place the PDF in the `knowledge_bases` directory in your workspace.**
+
+3. **Ask Bob to create the knowledge base**:
+   ```
+   Bob, create a knowledge base yaml-file to import the FAQ.pdf in the knowledge_bases directory as a knowledge to watsonx Orchestrate. The yaml-file should be called "customer-support-faq.yaml".
+   ```
+
+4. **What Bob will do**:
+   - Verify that the FAQ.pdf file exists in the knowledge_bases directory
+   - Create a properly formatted knowledge base YAML file to import the PDF as a knowledge base
+   - Structure it for optimal retrieval in watsonx Orchestrate
+
+5. **Expected output**: Bob will create a `customer-support-faq.yaml` file with the PDF content ready for import into watsonx Orchestrate.
+
+**💡 Pro Tip:** Option A is ideal when you have existing documentation in PDF format. Bob can help you quickly convert it into a knowledge base without manual copying and formatting!
+
+### Option B: Manual YAML Creation
 
 Knowledge bases in watsonx Orchestrate must reference **external document files** — inline content is not supported. You need two files: a text file with the FAQ content, and a YAML file that points to it.
 
 **Step 1 — Create the FAQ document** (`knowledge_bases/customer-support-faq.txt`):
 
-A sample `customer-support-faq.txt` is already provided in `docs/part4-knowledge/`. Copy it to your `knowledge_bases/` directory, or create your own with content covering shipping, returns, payments, and account management.
+A sample [`customer-support-faq.txt`](https://github.com/yobens5/Bobchestrate-for-Partner/blob/main/docs/part4-knowledge/customer-support-faq.txt) is already provided in `docs/part4-knowledge/`. Copy it to your `knowledge_bases/` directory, or create your own with content covering shipping, returns, payments, and account management.
 
 **Step 2 — Create the knowledge base YAML** (`knowledge_bases/customer-support-faq.yaml`):
 
@@ -72,37 +103,6 @@ conversational_search_tool:
 Bob, create a knowledge base YAML file and companion FAQ text file with content about shipping, returns, payments, and account management. Place both files in the knowledge_bases directory.
 ```
 
-### Option B: Import PDF with Bob's Help
-
-Use Bob to create a knowledge base YAML file to import the FAQ PDF.
-
-1. **Download the FAQ PDF**:
-   - **Direct download**: [FAQ.pdf](./FAQ.pdf)
-   
-   The FAQ.pdf contains comprehensive FAQs about:
-   - Shipping Information
-   - Returns and Refunds
-   - Payment Methods and Billing
-   - Account Management
-   - Order Management
-   - Customer Support
-
-2. **Place the PDF in the `knowledge_bases` directory in your workspace.**
-
-3. **Ask Bob to create the knowledge base**:
-   ```
-   Bob, create a knowledge base yaml-file to import the FAQ.pdf in the knowledge_bases directory as a knowledge to watsonx Orchestrate. The yaml-file should be called "customer-support-faq.yaml".
-   ```
-
-4. **What Bob will do**:
-   - Verify that the FAQ.pdf file exists in the knowledge_bases directory
-   - Create a properly formatted knowledge base YAML file to import the PDF as a knowledge base
-   - Structure it for optimal retrieval in watsonx Orchestrate
-
-5. **Expected output**: Bob will create a `customer-support-faq.yaml` file with the PDF content ready for import into watsonx Orchestrate.
-
-**💡 Pro Tip:** Option B is ideal when you have existing documentation in PDF format. Bob can help you quickly convert it into a knowledge base without manual copying and formatting!
-
 #### Knowledge Base Naming Guidelines
 
 When naming your knowledge base, follow these best practices:
@@ -115,10 +115,6 @@ When naming your knowledge base, follow these best practices:
 ## Step 2: Import the Knowledge Base
 
 <img src="images/image-2.png" alt="" width="350px">
-
-⬇︎
-
-<img src="images/image-1.png" alt="" width="350px">
 
 Import your knowledge base:
 
@@ -140,7 +136,15 @@ Wait for the knowledge base to be indexed (status: "ready").
 
 Update your _**customer support agent**_ to use the knowledge base. **Add the "knowledge_base" field to your agent configuration.**
 
->NOTE: The example below might be a bit different what you have as your customer support agent, but the main things is to add the "knowledge_base" field to your agent configuration.
+### Option A: Ask Bob to Help
+
+```
+Bob, update my customer support agent to use the customer-support-faq knowledge base. Add the knowledge_base field to agents/customer-support-agent.yaml and re-import the agent.
+```
+
+### Option B: Manual Update
+
+>NOTE: The example below might be a bit different from what you have as your customer support agent, but the main thing is to add the `knowledge_base` field to your agent configuration.
 
 ```yaml
 # customer-support-agent.yaml
@@ -207,7 +211,17 @@ The agent should retrieve and present information from the knowledge base!
 
 ## Step 5: Create a Specialized Escalation Agent
 
-Now let's create a specialized agent for handling complex issues. Use the example below as a template and store it in `agents/escalation-agent.yaml`.
+Now let's create a specialized agent for handling complex issues.
+
+### Option A: Ask Bob to Help
+
+```
+Bob, create a specialized escalation agent in agents/escalation-agent.yaml. It should handle complex refund requests over $10,000, customer complaints, and policy exceptions. It should have authority to approve refunds up to $25,000, offer compensation, and override standard policies. Give it access to the check_order_status and process_refund tools and the customer-support-faq knowledge base. Then import it.
+```
+
+### Option B: Manual Creation
+
+Use the example below as a template and store it in `agents/escalation-agent.yaml`.
 
 ```yaml
 # escalation-agent.yaml
@@ -261,7 +275,15 @@ orchestrate agents import -f agents/escalation-agent.yaml
 
 ## Step 6: Create Agent Collaboration
 
-Update the main customer support agent to collaborate with the escalation agent:
+Update the main customer support agent to collaborate with the escalation agent.
+
+### Option A: Ask Bob to Help
+
+```
+Bob, update my customer support agent to collaborate with the escalation_agent. Add escalation_agent as a collaborator in agents/customer-support-agent.yaml and add instructions about when to escalate (refund requests over $10,000, very upset customers, policy exceptions, customer requests a manager). Then re-import the agent.
+```
+
+### Option B: Manual Update
 
 ```yaml
 # customer-support-agent.yaml (updated)
