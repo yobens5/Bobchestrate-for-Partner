@@ -1,0 +1,577 @@
+year,month,month_name,store_key,store_name,city,district,net_revenue,gross_margin,labor_cost,labor_pct_of_revenue,contribution,num_transactions
+2024,12,December ,13,SuperChampion Ir Yamim,Netanya,Central,402240.71,117023.00,128243.03,31.88,-11220.03,9513
+2024,8,August   ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,848056.47,244670.57,63721.49,7.51,180949.08,19856
+2025,12,December ,22,SuperChampion Nazareth,Nazareth,Northern,416368.06,122566.55,96293.24,23.13,26273.31,10062
+2024,1,January  ,7,SuperChampion Malha,Jerusalem,Jerusalem,871985.98,257499.61,64766.37,7.43,192733.24,20326
+2025,6,June     ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,190886.13,55505.85,97461.97,51.06,-41956.12,4660
+2025,8,August   ,10,SuperChampion Grand Canyon,Haifa,Haifa,971291.14,288446.67,62730.74,6.46,225715.93,21424
+2025,4,April    ,14,SuperChampion Kfar Saba,Kfar Saba,Central,416317.59,122033.19,98141.13,23.57,23892.06,9508
+2025,10,October  ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,995857.35,290839.10,83273.32,8.36,207565.78,22186
+2024,5,May      ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,403189.32,119173.60,53314.46,13.22,65859.14,9547
+2024,3,March    ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,930256.92,274204.51,37598.77,4.04,236605.74,21641
+2025,5,May      ,14,SuperChampion Kfar Saba,Kfar Saba,Central,385394.60,113180.44,93921.91,24.37,19258.53,8834
+2024,7,July     ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,417531.24,122420.02,73514.65,17.61,48905.37,9376
+2025,12,December ,10,SuperChampion Grand Canyon,Haifa,Haifa,1003133.23,296560.08,65510.48,6.53,231049.60,23114
+2024,4,April    ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,885968.83,262611.31,66223.72,7.47,196387.59,20738
+2024,12,December ,7,SuperChampion Malha,Jerusalem,Jerusalem,945190.94,278854.55,93174.54,9.86,185680.01,20322
+2024,7,July     ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,191571.40,56820.16,71481.69,37.31,-14661.53,4602
+2024,3,March    ,10,SuperChampion Grand Canyon,Haifa,Haifa,1011627.09,297207.51,20169.90,1.99,277037.61,22095
+2025,2,February ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,805036.92,235039.61,72928.49,9.06,162111.12,17172
+2025,1,January  ,19,SuperChampion Ashdod,Ashdod,Southern,956804.96,282616.28,96157.98,10.05,186458.30,22161
+2024,11,November ,18,SuperChampion Rehovot,Rehovot,Central,407159.59,118877.30,55778.32,13.70,63098.98,9613
+2025,4,April    ,16,SuperChampion Petah Tikva,Petah Tikva,Central,941397.83,277845.42,93569.73,9.94,184275.69,21710
+2024,6,June     ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,821093.21,244487.70,64140.17,7.81,180347.53,19417
+2025,4,April    ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,185156.77,55275.92,94920.48,51.26,-39644.56,4645
+2024,7,July     ,7,SuperChampion Malha,Jerusalem,Jerusalem,962960.86,287026.16,83436.84,8.66,203589.32,21884
+2025,3,March    ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,381188.69,112399.61,92007.06,24.14,20392.55,9097
+2024,11,November ,7,SuperChampion Malha,Jerusalem,Jerusalem,842605.72,249251.40,77471.18,9.19,171780.22,20160
+2024,9,September,18,SuperChampion Rehovot,Rehovot,Central,380515.92,110234.82,60031.57,15.78,50203.25,8901
+2024,1,January  ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,186271.18,54805.65,55557.29,29.83,-751.64,4459
+2025,3,March    ,7,SuperChampion Malha,Jerusalem,Jerusalem,946165.27,275907.18,93041.41,9.83,182865.77,20772
+2024,5,May      ,18,SuperChampion Rehovot,Rehovot,Central,388389.09,114556.85,55933.36,14.40,58623.49,9361
+2025,5,May      ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,178421.75,52423.93,90192.94,50.55,-37769.01,4435
+2025,4,April    ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,1014770.35,302675.35,78107.28,7.70,224568.07,22543
+2025,9,September,10,SuperChampion Grand Canyon,Haifa,Haifa,939149.41,278227.11,66157.31,7.04,212069.80,21140
+2025,1,January  ,7,SuperChampion Malha,Jerusalem,Jerusalem,971590.45,289000.67,98180.76,10.11,190819.91,21880
+2024,11,November ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,354435.04,103727.29,72515.88,20.46,31211.41,8462
+2024,11,November ,16,SuperChampion Petah Tikva,Petah Tikva,Central,922091.26,272647.92,89736.24,9.73,182911.68,21149
+2025,2,February ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,176582.35,52150.06,72253.24,40.92,-20103.18,4424
+2025,6,June     ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,393708.65,116977.55,71215.71,18.09,45761.84,8864
+2025,6,June     ,14,SuperChampion Kfar Saba,Kfar Saba,Central,371015.61,110381.66,101036.72,27.23,9344.94,8726
+2025,7,July     ,22,SuperChampion Nazareth,Nazareth,Northern,419211.70,123553.69,104201.50,24.86,19352.19,9223
+2024,5,May      ,13,SuperChampion Ir Yamim,Netanya,Central,434052.09,126853.19,120013.26,27.65,6839.93,10492
+2025,1,January  ,18,SuperChampion Rehovot,Rehovot,Central,408104.90,122569.07,61340.81,15.03,61228.26,9443
+2024,5,May      ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,911196.25,268162.24,38512.25,4.23,229649.99,20549
+2025,2,February ,16,SuperChampion Petah Tikva,Petah Tikva,Central,847838.37,254475.82,87174.12,10.28,167301.70,18834
+2024,10,October  ,23,SuperChampion Tiberias,Tiberias,Northern,418826.78,124018.95,84030.20,20.06,39988.75,9356
+2025,5,May      ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,422217.98,123058.02,82967.46,19.65,40090.56,9773
+2024,3,March    ,16,SuperChampion Petah Tikva,Petah Tikva,Central,1005949.11,298469.32,70209.60,6.98,228259.72,23440
+2024,8,August   ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,397581.26,116283.79,104488.15,26.28,11795.64,9284
+2024,8,August   ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,405782.39,118423.27,50459.27,12.44,67964.00,9525
+2024,9,September,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,924206.29,273347.59,63264.96,6.85,210082.63,21442
+2025,5,May      ,7,SuperChampion Malha,Jerusalem,Jerusalem,905861.43,264951.32,96449.60,10.65,168501.72,21588
+2024,10,October  ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,388804.90,116214.65,104438.04,26.86,11776.61,8576
+2024,1,January  ,5,SuperChampion Holon,Holon,Tel Aviv,399608.39,117911.17,64044.01,16.03,53867.16,9329
+2025,1,January  ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,970577.97,287468.96,83854.70,8.64,203614.26,21957
+2025,4,April    ,10,SuperChampion Grand Canyon,Haifa,Haifa,1047149.58,308856.96,48531.66,4.63,260325.30,24598
+2024,8,August   ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,454603.98,134444.69,74178.18,16.32,60266.51,10318
+2025,6,June     ,11,SuperChampion Hadar,Haifa,Haifa,416066.32,123900.38,75562.56,18.16,48337.82,9249
+2025,11,November ,24,SuperChampion Afula,Afula,Northern,375040.04,112400.22,89012.10,23.73,23388.12,8867
+2025,10,October  ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,953105.71,283222.91,79220.90,8.31,204002.01,21347
+2025,1,January  ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,438974.39,129812.75,116664.43,26.58,13148.32,10122
+2025,3,March    ,15,SuperChampion Raanana,Raanana,Central,355053.17,104713.45,81891.02,23.06,22822.43,8178
+2024,1,January  ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,959462.65,287209.33,40402.26,4.21,246807.07,21087
+2025,7,July     ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,210995.52,62955.54,102935.23,48.79,-39979.69,5108
+2024,3,March    ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,972977.71,283838.43,57754.57,5.94,226083.86,22034
+2024,4,April    ,21,SuperChampion Eilat,Eilat,Southern,417211.66,123617.50,54904.06,13.16,68713.44,9681
+2024,12,December ,19,SuperChampion Ashdod,Ashdod,Southern,905905.25,269036.19,98911.57,10.92,170124.62,19948
+2024,10,October  ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,852420.71,252314.39,66901.41,7.85,185412.98,19028
+2024,4,April    ,22,SuperChampion Nazareth,Nazareth,Northern,399808.50,118149.10,70465.09,17.62,47684.01,9531
+2024,7,July     ,15,SuperChampion Raanana,Raanana,Central,417575.34,121925.14,59283.00,14.20,62642.14,9608
+2024,8,August   ,22,SuperChampion Nazareth,Nazareth,Northern,422823.80,126152.61,74340.47,17.58,51812.14,9128
+2024,9,September,7,SuperChampion Malha,Jerusalem,Jerusalem,963040.19,282821.39,84302.28,8.75,198519.11,22547
+2025,12,December ,16,SuperChampion Petah Tikva,Petah Tikva,Central,931556.76,275710.08,95935.21,10.30,179774.87,20839
+2025,9,September,24,SuperChampion Afula,Afula,Northern,405079.19,119765.21,88543.98,21.86,31221.23,9443
+2025,7,July     ,21,SuperChampion Eilat,Eilat,Southern,420022.12,123632.50,86933.73,20.70,36698.77,9901
+2024,5,May      ,15,SuperChampion Raanana,Raanana,Central,436285.77,127981.57,57108.34,13.09,70873.23,10159
+2025,5,May      ,21,SuperChampion Eilat,Eilat,Southern,427395.83,127397.00,75489.06,17.66,51907.94,9932
+2024,5,May      ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,425524.44,124503.34,71153.13,16.72,53350.21,10431
+2024,2,February ,16,SuperChampion Petah Tikva,Petah Tikva,Central,860192.40,255871.75,67706.70,7.87,188165.05,18609
+2024,1,January  ,15,SuperChampion Raanana,Raanana,Central,419557.57,122034.45,55915.87,13.33,66118.58,9723
+2024,2,February ,18,SuperChampion Rehovot,Rehovot,Central,403415.91,119613.80,48907.29,12.12,70706.51,9123
+2025,9,September,22,SuperChampion Nazareth,Nazareth,Northern,405014.84,119352.56,96933.63,23.93,22418.93,8996
+2025,9,September,21,SuperChampion Eilat,Eilat,Southern,410549.93,121903.75,81162.38,19.77,40741.37,9644
+2024,7,July     ,21,SuperChampion Eilat,Eilat,Southern,438390.59,130185.04,65062.17,14.84,65122.87,10038
+2024,6,June     ,16,SuperChampion Petah Tikva,Petah Tikva,Central,890123.32,262676.99,83276.09,9.36,179400.90,20323
+2024,9,September,8,SuperChampion Talpiot,Jerusalem,Jerusalem,386973.96,114679.00,54198.17,14.01,60480.83,8829
+2025,5,May      ,11,SuperChampion Hadar,Haifa,Haifa,440384.31,128628.26,69773.69,15.84,58854.57,10149
+2025,3,March    ,5,SuperChampion Holon,Holon,Tel Aviv,363553.18,105901.60,71952.70,19.79,33948.90,8394
+2025,11,November ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,378354.20,111603.41,112558.65,29.75,-955.24,8935
+2025,9,September,12,SuperChampion Krayot,Kiryat Bialik,Haifa,375775.13,110239.90,110756.22,29.47,-516.32,9311
+2025,4,April    ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,426973.55,124674.85,69531.25,16.28,55143.60,10112
+2025,11,November ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,911242.24,270441.34,88951.96,9.76,181489.38,20677
+2024,10,October  ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,366222.18,106432.31,69752.20,19.05,36680.11,8432
+2025,2,February ,10,SuperChampion Grand Canyon,Haifa,Haifa,913420.22,273009.36,44946.18,4.92,228063.18,20583
+2025,12,December ,24,SuperChampion Afula,Afula,Northern,392509.92,113760.16,87750.20,22.36,26009.96,9329
+2024,1,January  ,13,SuperChampion Ir Yamim,Netanya,Central,391475.40,115324.99,118077.23,30.16,-2752.24,9118
+2024,7,July     ,24,SuperChampion Afula,Afula,Northern,414115.77,121907.65,60277.10,14.56,61630.55,9674
+2024,2,February ,23,SuperChampion Tiberias,Tiberias,Northern,395229.85,116702.24,72887.69,18.44,43814.55,9216
+2025,10,October  ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,934634.06,279064.01,76291.06,8.16,202772.95,20902
+2024,4,April    ,10,SuperChampion Grand Canyon,Haifa,Haifa,963381.96,281412.23,20382.08,2.12,261030.15,22542
+2024,9,September,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,393248.59,116335.06,64277.95,16.35,52057.11,8919
+2025,2,February ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,388749.71,114195.83,83544.48,21.49,30651.35,9099
+2025,6,June     ,15,SuperChampion Raanana,Raanana,Central,402449.93,117746.86,82339.62,20.46,35407.24,9393
+2024,1,January  ,21,SuperChampion Eilat,Eilat,Southern,430470.24,126550.65,52708.84,12.24,73841.81,10150
+2024,10,October  ,11,SuperChampion Hadar,Haifa,Haifa,444104.98,131390.99,48989.42,11.03,82401.57,9770
+2025,4,April    ,22,SuperChampion Nazareth,Nazareth,Northern,429346.11,126060.89,91962.28,21.42,34098.61,10211
+2024,9,September,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,373236.74,108941.52,77295.05,20.71,31646.47,8611
+2025,8,August   ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,418036.92,122552.81,105550.35,25.25,17002.46,9900
+2025,4,April    ,13,SuperChampion Ir Yamim,Netanya,Central,418116.73,123281.07,116137.16,27.78,7143.91,9419
+2024,10,October  ,7,SuperChampion Malha,Jerusalem,Jerusalem,809383.57,240000.77,77313.88,9.55,162686.89,18428
+2025,1,January  ,21,SuperChampion Eilat,Eilat,Southern,446211.46,131356.52,74051.58,16.60,57304.94,10276
+2024,11,November ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,380444.20,109928.44,65919.13,17.33,44009.31,8397
+2024,7,July     ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,426000.19,126603.78,78323.78,18.39,48280.00,9508
+2024,8,August   ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,925602.71,276421.58,62430.11,6.74,213991.47,20786
+2024,1,January  ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,905655.80,269517.03,71591.15,7.90,197925.88,20348
+2025,3,March    ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,385149.67,114524.89,69449.92,18.03,45074.97,9009
+2025,11,November ,7,SuperChampion Malha,Jerusalem,Jerusalem,860824.78,249418.80,103577.18,12.03,145841.62,19669
+2025,6,June     ,10,SuperChampion Grand Canyon,Haifa,Haifa,937221.92,279147.29,66523.95,7.10,212623.34,21422
+2024,10,October  ,24,SuperChampion Afula,Afula,Northern,378285.83,112594.43,57340.57,15.16,55253.86,8879
+2025,8,August   ,22,SuperChampion Nazareth,Nazareth,Northern,413342.83,121981.90,92778.67,22.45,29203.23,9507
+2024,7,July     ,23,SuperChampion Tiberias,Tiberias,Northern,462897.75,138038.86,93375.72,20.17,44663.14,10205
+2024,4,April    ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,377718.49,113733.68,52258.99,13.84,61474.69,8511
+2025,3,March    ,18,SuperChampion Rehovot,Rehovot,Central,399427.43,118523.06,58676.85,14.69,59846.21,9367
+2024,11,November ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,377298.99,111394.73,104429.87,27.68,6964.86,8515
+2024,2,February ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,400755.99,119228.60,32396.32,8.08,86832.28,8813
+2025,1,January  ,22,SuperChampion Nazareth,Nazareth,Northern,411980.90,120610.34,94274.06,22.88,26336.28,9979
+2024,2,February ,5,SuperChampion Holon,Holon,Tel Aviv,384605.94,113919.43,58771.53,15.28,55147.90,9057
+2024,6,June     ,18,SuperChampion Rehovot,Rehovot,Central,360030.83,104640.90,56855.85,15.79,47785.05,8290
+2025,8,August   ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,952326.54,282309.01,92008.66,9.66,190300.35,22026
+2024,8,August   ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,420636.31,123122.82,71251.55,16.94,51871.27,9555
+2025,3,March    ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,813889.62,242535.75,81884.96,10.06,160650.79,19017
+2025,2,February ,15,SuperChampion Raanana,Raanana,Central,359099.70,105059.72,75008.74,20.89,30050.98,8780
+2024,3,March    ,21,SuperChampion Eilat,Eilat,Southern,436430.62,128125.28,52803.39,12.10,75321.89,9950
+2024,10,October  ,14,SuperChampion Kfar Saba,Kfar Saba,Central,375744.87,110931.88,91760.40,24.42,19171.48,8436
+2024,10,October  ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,403407.30,119556.63,65926.23,16.34,53630.40,9060
+2024,12,December ,21,SuperChampion Eilat,Eilat,Southern,454074.79,133149.11,68246.74,15.03,64902.37,10415
+2025,6,June     ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,408726.93,120258.81,100403.45,24.56,19855.36,9412
+2024,7,July     ,19,SuperChampion Ashdod,Ashdod,Southern,968627.66,287276.90,85441.62,8.82,201835.28,22416
+2024,12,December ,14,SuperChampion Kfar Saba,Kfar Saba,Central,382774.23,112301.78,108256.01,28.28,4045.77,8420
+2025,5,May      ,24,SuperChampion Afula,Afula,Northern,416131.39,122099.02,82839.23,19.91,39259.79,9466
+2024,7,July     ,18,SuperChampion Rehovot,Rehovot,Central,421965.99,125552.43,61576.01,14.59,63976.42,9837
+2025,7,July     ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,975175.39,285901.83,97766.68,10.03,188135.15,22403
+2024,3,March    ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,1007369.82,302516.82,66379.64,6.59,236137.18,21844
+2024,8,August   ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,196721.17,58010.18,72886.24,37.05,-14876.06,4903
+2025,8,August   ,21,SuperChampion Eilat,Eilat,Southern,435829.79,128451.09,77857.45,17.86,50593.64,10098
+2024,2,February ,11,SuperChampion Hadar,Haifa,Haifa,440178.47,130546.40,44015.45,10.00,86530.95,10580
+2024,4,April    ,24,SuperChampion Afula,Afula,Northern,369328.55,109551.37,58116.93,15.74,51434.44,8846
+2024,10,October  ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,824993.21,245621.46,69463.19,8.42,176158.27,19411
+2025,7,July     ,16,SuperChampion Petah Tikva,Petah Tikva,Central,934121.58,276063.80,102128.83,10.93,173934.97,20418
+2025,2,February ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,368454.35,108761.46,100571.70,27.30,8189.76,8285
+2025,10,October  ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,432167.38,127486.41,76836.76,17.78,50649.65,10552
+2025,3,March    ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,910050.94,265771.76,83710.12,9.20,182061.64,20426
+2024,10,October  ,10,SuperChampion Grand Canyon,Haifa,Haifa,905412.91,265132.55,33490.51,3.70,231642.04,20678
+2025,7,July     ,13,SuperChampion Ir Yamim,Netanya,Central,406468.04,119906.43,125835.87,30.96,-5929.44,9250
+2025,10,October  ,22,SuperChampion Nazareth,Nazareth,Northern,397813.90,116146.18,84066.70,21.13,32079.48,9228
+2025,2,February ,13,SuperChampion Ir Yamim,Netanya,Central,354933.02,103713.53,107330.76,30.24,-3617.23,8173
+2025,8,August   ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,387496.10,114185.54,66967.74,17.28,47217.80,8994
+2024,7,July     ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,417528.86,123746.32,58620.82,14.04,65125.50,9375
+2025,1,January  ,23,SuperChampion Tiberias,Tiberias,Northern,443498.49,131196.65,95818.29,21.61,35378.36,10297
+2025,11,November ,21,SuperChampion Eilat,Eilat,Southern,429787.40,126450.31,82297.15,19.15,44153.16,9814
+2025,12,December ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,907717.34,271449.70,87757.14,9.67,183692.56,20591
+2025,10,October  ,10,SuperChampion Grand Canyon,Haifa,Haifa,1059902.01,312596.77,57134.85,5.39,255461.92,24459
+2025,4,April    ,21,SuperChampion Eilat,Eilat,Southern,435734.17,128337.21,79285.01,18.20,49052.20,9872
+2025,5,May      ,13,SuperChampion Ir Yamim,Netanya,Central,407414.30,121794.29,110415.66,27.10,11378.63,8877
+2024,8,August   ,14,SuperChampion Kfar Saba,Kfar Saba,Central,406180.29,119577.54,81594.24,20.09,37983.30,9276
+2025,2,February ,7,SuperChampion Malha,Jerusalem,Jerusalem,858946.32,252524.29,84674.44,9.86,167849.85,19871
+2024,3,March    ,22,SuperChampion Nazareth,Nazareth,Northern,401829.85,116361.50,63021.79,15.68,53339.71,9437
+2024,11,November ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,363916.44,106828.09,65385.46,17.97,41442.63,8655
+2025,10,October  ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,417301.69,124295.46,94956.78,22.75,29338.68,9535
+2025,1,January  ,24,SuperChampion Afula,Afula,Northern,441472.09,131692.59,74258.09,16.82,57434.50,10431
+2024,12,December ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,896289.11,262357.21,75885.99,8.47,186471.22,20856
+2025,2,February ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,894983.47,262873.93,71073.76,7.94,191800.17,20426
+2024,12,December ,23,SuperChampion Tiberias,Tiberias,Northern,425617.74,125498.61,97204.43,22.84,28294.18,9828
+2024,10,October  ,13,SuperChampion Ir Yamim,Netanya,Central,370709.15,108674.25,109786.25,29.62,-1112.00,8728
+2025,10,October  ,14,SuperChampion Kfar Saba,Kfar Saba,Central,425461.37,125044.38,86837.00,20.41,38207.38,9735
+2025,2,February ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,839825.03,248459.54,72556.09,8.64,175903.45,19240
+2024,7,July     ,5,SuperChampion Holon,Holon,Tel Aviv,409340.40,121686.74,75683.30,18.49,46003.44,9404
+2024,9,September,23,SuperChampion Tiberias,Tiberias,Northern,421130.26,123556.59,91567.61,21.74,31988.98,9668
+2024,1,January  ,18,SuperChampion Rehovot,Rehovot,Central,381998.25,114165.00,55039.06,14.41,59125.94,9080
+2025,12,December ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,420218.29,122919.00,69777.77,16.61,53141.23,9446
+2025,5,May      ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,882521.20,264584.04,82747.73,9.38,181836.31,18854
+2025,12,December ,14,SuperChampion Kfar Saba,Kfar Saba,Central,387149.25,113013.42,99655.09,25.74,13358.33,9110
+2025,7,July     ,15,SuperChampion Raanana,Raanana,Central,422114.97,124247.72,87690.41,20.77,36557.31,9626
+2025,5,May      ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,383069.80,111598.58,62473.91,16.31,49124.67,9061
+2025,3,March    ,22,SuperChampion Nazareth,Nazareth,Northern,383353.73,112907.84,90190.30,23.53,22717.54,8736
+2025,8,August   ,23,SuperChampion Tiberias,Tiberias,Northern,395103.06,114472.53,90087.93,22.80,24384.60,9543
+2024,6,June     ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,374013.55,111169.70,71479.34,19.11,39690.36,8832
+2025,12,December ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,431448.37,125876.38,88654.89,20.55,37221.49,9824
+2024,1,January  ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,414937.51,121880.99,34358.08,8.28,87522.91,9465
+2025,8,August   ,24,SuperChampion Afula,Afula,Northern,389770.60,115176.24,84017.72,21.56,31158.52,9398
+2024,3,March    ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,462231.87,136326.09,68847.81,14.89,67478.28,10737
+2024,10,October  ,22,SuperChampion Nazareth,Nazareth,Northern,378568.42,111408.50,79262.34,20.94,32146.16,8554
+2025,11,November ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,399830.96,117429.17,89606.13,22.41,27823.04,9205
+2024,1,January  ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,434547.89,129327.39,67834.82,15.61,61492.57,9711
+2025,9,September,4,SuperChampion Givatayim,Givatayim,Tel Aviv,382600.10,112651.16,69626.42,18.20,43024.74,9223
+2024,7,July     ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,949947.36,286040.37,69799.73,7.35,216240.64,21675
+2025,3,March    ,24,SuperChampion Afula,Afula,Northern,392031.32,115510.47,86819.03,22.15,28691.44,8940
+2024,12,December ,22,SuperChampion Nazareth,Nazareth,Northern,399257.26,117361.67,97317.75,24.37,20043.92,9442
+2024,8,August   ,18,SuperChampion Rehovot,Rehovot,Central,395548.02,115488.81,55965.09,14.15,59523.72,8974
+2024,4,April    ,18,SuperChampion Rehovot,Rehovot,Central,398897.02,116142.69,50945.91,12.77,65196.78,9659
+2025,1,January  ,15,SuperChampion Raanana,Raanana,Central,406694.83,121484.10,86201.64,21.20,35282.46,9601
+2025,10,October  ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,397651.82,118409.39,85876.02,21.60,32533.37,9200
+2025,7,July     ,19,SuperChampion Ashdod,Ashdod,Southern,936975.96,277743.06,97561.12,10.41,180181.94,21852
+2024,6,June     ,11,SuperChampion Hadar,Haifa,Haifa,392839.50,116921.34,44477.78,11.32,72443.56,9419
+2024,8,August   ,11,SuperChampion Hadar,Haifa,Haifa,426778.21,126521.07,45653.07,10.70,80868.00,9592
+2024,12,December ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,409347.24,122101.44,75079.70,18.34,47021.74,9506
+2025,7,July     ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,400304.28,118803.28,74953.13,18.72,43850.15,9139
+2025,10,October  ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,422335.95,123916.41,60230.24,14.26,63686.17,9721
+2024,6,June     ,14,SuperChampion Kfar Saba,Kfar Saba,Central,351334.86,103968.96,82271.23,23.42,21697.73,8265
+2024,3,March    ,13,SuperChampion Ir Yamim,Netanya,Central,396285.69,116583.47,117654.84,29.69,-1071.37,9376
+2025,8,August   ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,955365.92,283633.68,83536.24,8.74,200097.44,21250
+2025,12,December ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,386098.85,114379.96,70409.59,18.24,43970.37,9438
+2024,5,May      ,11,SuperChampion Hadar,Haifa,Haifa,444804.52,131961.43,46267.73,10.40,85693.70,10570
+2024,3,March    ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,396728.68,116707.80,49689.96,12.52,67017.84,9146
+2024,11,November ,24,SuperChampion Afula,Afula,Northern,378247.82,109507.38,64787.31,17.13,44720.07,9287
+2024,2,February ,13,SuperChampion Ir Yamim,Netanya,Central,377438.92,111116.94,111675.19,29.59,-558.25,8694
+2024,12,December ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,188776.48,55253.99,86203.44,45.66,-30949.45,4396
+2025,7,July     ,18,SuperChampion Rehovot,Rehovot,Central,413434.97,121933.64,71457.27,17.28,50476.37,9700
+2025,4,April    ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,421259.63,122887.23,61723.75,14.65,61163.48,9697
+2025,7,July     ,7,SuperChampion Malha,Jerusalem,Jerusalem,927086.27,274991.05,110212.86,11.89,164778.19,21284
+2025,5,May      ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,914139.54,271290.60,82246.13,9.00,189044.47,21765
+2025,3,March    ,13,SuperChampion Ir Yamim,Netanya,Central,405415.17,119611.35,118332.76,29.19,1278.59,8883
+2024,2,February ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,190712.82,55176.61,57523.63,30.16,-2347.02,4522
+2025,1,January  ,10,SuperChampion Grand Canyon,Haifa,Haifa,989222.46,291737.99,52496.91,5.31,239241.08,21963
+2024,3,March    ,23,SuperChampion Tiberias,Tiberias,Northern,444057.48,131904.77,75994.02,17.11,55910.75,10747
+2025,4,April    ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,426165.97,125497.06,87131.65,20.45,38365.41,9945
+2024,5,May      ,10,SuperChampion Grand Canyon,Haifa,Haifa,1008947.59,298165.75,20865.20,2.07,277300.55,22848
+2024,3,March    ,19,SuperChampion Ashdod,Ashdod,Southern,980019.23,288540.78,74315.66,7.58,214225.12,22241
+2025,8,August   ,5,SuperChampion Holon,Holon,Tel Aviv,394140.76,115683.78,76118.38,19.31,39565.40,9092
+2025,7,July     ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,431961.02,127836.78,95152.92,22.03,32683.86,10214
+2025,7,July     ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,415897.54,121786.34,106541.88,25.62,15244.46,9458
+2024,5,May      ,14,SuperChampion Kfar Saba,Kfar Saba,Central,427631.93,125215.67,87205.79,20.39,38009.88,9969
+2025,5,May      ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,368147.95,109458.01,93178.46,25.31,16279.55,8638
+2025,10,October  ,7,SuperChampion Malha,Jerusalem,Jerusalem,948118.87,280790.19,89042.15,9.39,191748.04,21039
+2024,12,December ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,431062.73,127872.66,68522.90,15.90,59349.76,9898
+2025,1,January  ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,188885.69,56232.21,82596.55,43.73,-26364.34,4485
+2025,12,December ,21,SuperChampion Eilat,Eilat,Southern,420416.07,124651.53,80737.37,19.20,43914.16,9957
+2024,7,July     ,22,SuperChampion Nazareth,Nazareth,Northern,445045.98,129539.08,80912.02,18.18,48627.06,10286
+2024,10,October  ,18,SuperChampion Rehovot,Rehovot,Central,381222.60,112244.97,54846.43,14.39,57398.54,8639
+2025,10,October  ,11,SuperChampion Hadar,Haifa,Haifa,412374.83,121696.30,64958.69,15.75,56737.61,9875
+2024,1,January  ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,411756.68,122655.80,48368.66,11.75,74287.14,9225
+2024,9,September,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,191148.48,55770.83,81757.18,42.77,-25986.35,4730
+2024,5,May      ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,946455.58,277799.06,60324.15,6.37,217474.91,21229
+2024,2,February ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,892944.24,263624.15,63927.06,7.16,199697.09,20662
+2025,12,December ,23,SuperChampion Tiberias,Tiberias,Northern,427201.27,126250.78,93269.70,21.83,32981.08,10235
+2024,6,June     ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,916514.05,267515.65,42626.72,4.65,224888.93,20389
+2024,11,November ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,383936.65,113277.65,58561.44,15.25,54716.21,8677
+2024,10,October  ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,384826.16,111824.08,58569.42,15.22,53254.66,8730
+2025,6,June     ,21,SuperChampion Eilat,Eilat,Southern,439458.07,131861.01,82365.12,18.74,49495.89,10312
+2025,11,November ,14,SuperChampion Kfar Saba,Kfar Saba,Central,377404.78,110500.56,100477.08,26.62,10023.48,8705
+2024,6,June     ,24,SuperChampion Afula,Afula,Northern,388874.23,114216.70,56871.37,14.62,57345.33,9254
+2025,12,December ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,392208.10,114259.74,70473.30,17.97,43786.44,9120
+2025,7,July     ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,408415.19,121624.10,118333.92,28.97,3290.18,9079
+2024,6,June     ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,384607.07,112577.68,50765.55,13.20,61812.13,9113
+2024,4,April    ,14,SuperChampion Kfar Saba,Kfar Saba,Central,376265.78,110847.21,85773.11,22.80,25074.10,8724
+2025,2,February ,19,SuperChampion Ashdod,Ashdod,Southern,934760.52,276841.13,82802.90,8.86,194038.23,20588
+2024,2,February ,24,SuperChampion Afula,Afula,Northern,390261.18,115151.50,55126.49,14.13,60025.01,9398
+2024,4,April    ,15,SuperChampion Raanana,Raanana,Central,391962.44,114745.18,56570.27,14.43,58174.91,9025
+2024,8,August   ,15,SuperChampion Raanana,Raanana,Central,406632.25,120157.41,64319.20,15.82,55838.21,9172
+2024,9,September,21,SuperChampion Eilat,Eilat,Southern,417908.87,122811.32,64406.59,15.41,58404.73,9547
+2025,11,November ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,188986.20,55904.43,97299.70,51.49,-41395.27,4485
+2025,9,September,15,SuperChampion Raanana,Raanana,Central,401675.90,118700.37,81687.16,20.34,37013.21,9091
+2024,5,May      ,19,SuperChampion Ashdod,Ashdod,Southern,920527.44,273059.55,74760.92,8.12,198298.63,21147
+2024,1,January  ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,404340.14,120775.43,84053.90,20.79,36721.53,9799
+2025,7,July     ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,382724.41,112823.23,74868.59,19.56,37954.64,8974
+2024,11,November ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,904604.54,264537.84,57432.43,6.35,207105.41,20876
+2024,2,February ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,384556.97,113486.67,88778.26,23.09,24708.41,8845
+2024,4,April    ,5,SuperChampion Holon,Holon,Tel Aviv,382907.16,112819.29,61932.68,16.17,50886.61,9011
+2025,11,November ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,370992.28,110610.36,69773.77,18.81,40836.59,8539
+2024,2,February ,7,SuperChampion Malha,Jerusalem,Jerusalem,897585.61,262677.06,57438.07,6.40,205238.99,20117
+2025,11,November ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,382658.22,112491.00,71571.17,18.70,40919.83,9086
+2024,12,December ,24,SuperChampion Afula,Afula,Northern,390236.73,115587.60,75926.87,19.46,39660.73,9399
+2024,2,February ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,374617.82,109961.42,45256.70,12.08,64704.72,8904
+2025,2,February ,18,SuperChampion Rehovot,Rehovot,Central,346606.32,101190.23,52839.31,15.24,48350.92,7926
+2024,8,August   ,10,SuperChampion Grand Canyon,Haifa,Haifa,941717.87,279179.56,19951.79,2.12,259227.77,22221
+2025,4,April    ,19,SuperChampion Ashdod,Ashdod,Southern,949721.74,282292.06,89294.90,9.40,192997.16,22587
+2025,9,September,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,408205.16,120095.99,87798.44,21.51,32297.55,9338
+2025,6,June     ,5,SuperChampion Holon,Holon,Tel Aviv,399305.85,118777.41,80394.94,20.13,38382.47,9220
+2025,12,December ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,388744.39,114951.38,100191.18,25.77,14760.20,8998
+2025,6,June     ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,881696.54,263902.88,91493.08,10.38,172409.80,19698
+2024,9,September,16,SuperChampion Petah Tikva,Petah Tikva,Central,887011.85,259265.52,94128.23,10.61,165137.29,20166
+2024,2,February ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,825670.34,243861.67,55794.29,6.76,188067.38,18585
+2024,5,May      ,23,SuperChampion Tiberias,Tiberias,Northern,433949.68,127035.54,87161.74,20.09,39873.80,10170
+2025,6,June     ,18,SuperChampion Rehovot,Rehovot,Central,408194.90,120339.07,66920.67,16.39,53418.40,9122
+2024,7,July     ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,908818.55,269486.89,68115.20,7.49,201371.69,20264
+2025,6,June     ,7,SuperChampion Malha,Jerusalem,Jerusalem,924746.33,273910.62,103692.51,11.21,170218.11,20207
+2024,9,September,5,SuperChampion Holon,Holon,Tel Aviv,411657.96,121822.04,75143.70,18.25,46678.34,9301
+2024,5,May      ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,439492.13,127612.36,98628.52,22.44,28983.84,9827
+2024,9,September,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,402279.40,118559.70,87525.94,21.76,31033.76,9493
+2024,10,October  ,19,SuperChampion Ashdod,Ashdod,Southern,910414.94,267130.13,85731.23,9.42,181398.90,20662
+2024,12,December ,11,SuperChampion Hadar,Haifa,Haifa,421995.08,125030.94,61372.99,14.54,63657.95,9671
+2025,12,December ,15,SuperChampion Raanana,Raanana,Central,383785.90,113792.49,81750.63,21.30,32041.86,8790
+2024,6,June     ,10,SuperChampion Grand Canyon,Haifa,Haifa,983545.78,293751.91,19712.41,2.00,274039.50,21948
+2024,3,March    ,18,SuperChampion Rehovot,Rehovot,Central,404834.21,120376.61,50407.84,12.45,69968.77,9136
+2024,4,April    ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,934425.15,275901.96,57284.96,6.13,218617.00,21197
+2025,3,March    ,16,SuperChampion Petah Tikva,Petah Tikva,Central,877954.99,255286.04,95526.17,10.88,159759.87,19692
+2025,9,September,14,SuperChampion Kfar Saba,Kfar Saba,Central,382259.25,111133.26,98992.26,25.90,12141.00,9022
+2025,10,October  ,18,SuperChampion Rehovot,Rehovot,Central,434054.61,127784.43,57447.81,13.24,70336.62,10120
+2025,1,January  ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,1028652.98,303879.63,80177.61,7.79,223702.02,22189
+2025,2,February ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,366582.64,109119.48,64340.16,17.55,44779.32,8352
+2025,11,November ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,960244.68,282260.61,97416.71,10.14,184843.90,21558
+2025,2,February ,22,SuperChampion Nazareth,Nazareth,Northern,377186.30,110620.14,81833.72,21.70,28786.42,8957
+2025,3,March    ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,383968.01,113855.53,110563.00,28.79,3292.53,8504
+2024,12,December ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,403560.22,119096.08,121066.33,30.00,-1970.25,9330
+2025,3,March    ,14,SuperChampion Kfar Saba,Kfar Saba,Central,364422.79,106573.76,99878.40,27.41,6695.36,8863
+2025,12,December ,19,SuperChampion Ashdod,Ashdod,Southern,946823.07,278913.22,90442.18,9.55,188471.04,21142
+2025,5,May      ,16,SuperChampion Petah Tikva,Petah Tikva,Central,953044.70,282472.02,89292.95,9.37,193179.07,20550
+2024,8,August   ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,424510.50,125448.91,54007.46,12.72,71441.45,9599
+2024,3,March    ,5,SuperChampion Holon,Holon,Tel Aviv,393161.01,115403.53,61732.33,15.70,53671.20,9455
+2025,5,May      ,19,SuperChampion Ashdod,Ashdod,Southern,815068.88,242723.60,85497.76,10.49,157225.84,19843
+2025,8,August   ,7,SuperChampion Malha,Jerusalem,Jerusalem,994247.54,298257.16,97803.43,9.84,200453.73,22099
+2025,12,December ,18,SuperChampion Rehovot,Rehovot,Central,418146.39,122279.96,66574.65,15.92,55705.31,9691
+2025,4,April    ,7,SuperChampion Malha,Jerusalem,Jerusalem,929569.63,276877.46,97245.13,10.46,179632.33,20725
+2025,10,October  ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,391622.45,115581.48,60396.44,15.42,55185.04,9262
+2025,2,February ,11,SuperChampion Hadar,Haifa,Haifa,399307.51,117958.92,63182.05,15.82,54776.87,9411
+2024,5,May      ,24,SuperChampion Afula,Afula,Northern,402422.83,118364.80,58840.76,14.62,59524.04,9142
+2025,4,April    ,11,SuperChampion Hadar,Haifa,Haifa,402357.76,117703.80,73161.20,18.18,44542.60,9204
+2024,10,October  ,5,SuperChampion Holon,Holon,Tel Aviv,385407.33,114594.16,68134.92,17.68,46459.24,8745
+2024,8,August   ,16,SuperChampion Petah Tikva,Petah Tikva,Central,886278.02,260751.69,81463.53,9.19,179288.16,20994
+2025,5,May      ,15,SuperChampion Raanana,Raanana,Central,379379.13,111508.71,77169.25,20.34,34339.46,9113
+2024,9,September,12,SuperChampion Krayot,Kiryat Bialik,Haifa,385167.46,112183.37,114510.76,29.73,-2327.39,9248
+2024,5,May      ,16,SuperChampion Petah Tikva,Petah Tikva,Central,980448.45,289423.59,76962.79,7.85,212460.80,23110
+2025,2,February ,5,SuperChampion Holon,Holon,Tel Aviv,365204.73,107758.11,66320.07,18.16,41438.04,8596
+2025,8,August   ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,887670.61,263488.78,87443.56,9.85,176045.22,20455
+2025,11,November ,10,SuperChampion Grand Canyon,Haifa,Haifa,905432.21,267156.43,66413.09,7.33,200743.34,20776
+2025,10,October  ,19,SuperChampion Ashdod,Ashdod,Southern,1012309.51,300028.38,78694.56,7.77,221333.82,23070
+2025,2,February ,14,SuperChampion Kfar Saba,Kfar Saba,Central,361350.06,106000.83,90350.47,25.00,15650.36,8210
+2024,3,March    ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,454648.98,134653.69,48097.01,10.58,86556.68,10214
+2024,10,October  ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,896883.01,266744.89,57862.77,6.45,208882.12,21173
+2025,5,May      ,22,SuperChampion Nazareth,Nazareth,Northern,377625.55,112368.68,91478.91,24.22,20889.77,8709
+2024,12,December ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,398473.91,115935.72,76279.37,19.14,39656.35,9558
+2025,6,June     ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,381169.02,112695.50,112557.99,29.53,137.51,8855
+2024,4,April    ,23,SuperChampion Tiberias,Tiberias,Northern,397499.32,116460.02,76101.21,19.14,40358.81,9677
+2025,12,December ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,912493.12,272895.07,91022.50,9.98,181872.57,20758
+2025,1,January  ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,942705.06,279290.90,83389.50,8.85,195901.40,21113
+2024,3,March    ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,193005.94,56781.70,60387.39,31.29,-3605.69,4809
+2024,12,December ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,931478.40,275726.63,86145.27,9.25,189581.36,21933
+2025,5,May      ,18,SuperChampion Rehovot,Rehovot,Central,372671.40,110660.85,55001.66,14.76,55659.19,8426
+2024,10,October  ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,187744.85,54751.03,75269.42,40.09,-20518.39,4394
+2025,9,September,16,SuperChampion Petah Tikva,Petah Tikva,Central,882088.71,261992.36,95100.71,10.78,166891.65,20436
+2025,2,February ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,344964.03,102285.55,56837.44,16.48,45448.11,7911
+2024,6,June     ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,395359.96,116788.85,54829.46,13.87,61959.39,9299
+2025,4,April    ,5,SuperChampion Holon,Holon,Tel Aviv,444370.78,130178.46,78090.34,17.57,52088.12,10128
+2024,7,July     ,14,SuperChampion Kfar Saba,Kfar Saba,Central,415481.94,123026.69,89306.13,21.49,33720.56,9610
+2025,3,March    ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,370989.66,108940.32,70727.64,19.06,38212.68,8759
+2025,10,October  ,16,SuperChampion Petah Tikva,Petah Tikva,Central,940804.56,271665.88,82805.79,8.80,188860.09,21466
+2024,9,September,11,SuperChampion Hadar,Haifa,Haifa,435814.47,128751.30,54123.47,12.42,74627.83,9803
+2025,7,July     ,23,SuperChampion Tiberias,Tiberias,Northern,426785.79,125562.42,101267.52,23.73,24294.90,9897
+2025,5,May      ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,376568.86,109910.29,104778.69,27.82,5131.60,8469
+2025,11,November ,23,SuperChampion Tiberias,Tiberias,Northern,439232.78,129658.30,95684.70,21.78,33973.60,9913
+2025,8,August   ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,191986.27,56391.12,91941.36,47.89,-35550.24,4618
+2024,11,November ,22,SuperChampion Nazareth,Nazareth,Northern,389491.40,115895.13,85195.41,21.87,30699.72,8695
+2024,5,May      ,7,SuperChampion Malha,Jerusalem,Jerusalem,912676.45,268007.43,76414.10,8.37,191593.33,20889
+2024,10,October  ,15,SuperChampion Raanana,Raanana,Central,393612.58,116419.01,77161.00,19.60,39258.01,9257
+2024,6,June     ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,387278.09,114216.26,94338.63,24.36,19877.63,8960
+2025,9,September,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,179141.06,52781.56,95968.32,53.57,-43186.76,4432
+2025,3,March    ,19,SuperChampion Ashdod,Ashdod,Southern,932886.19,280430.26,90341.61,9.68,190088.65,20509
+2025,7,July     ,14,SuperChampion Kfar Saba,Kfar Saba,Central,402115.15,119132.27,106940.82,26.59,12191.45,9711
+2025,10,October  ,13,SuperChampion Ir Yamim,Netanya,Central,439433.56,129827.70,103014.09,23.44,26813.61,9914
+2025,7,July     ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,962994.08,281342.05,93458.96,9.71,187883.09,20992
+2025,3,March    ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,389010.26,113911.64,62674.36,16.11,51237.28,8718
+2025,12,December ,13,SuperChampion Ir Yamim,Netanya,Central,416222.51,123445.44,118412.00,28.45,5033.44,9884
+2024,2,February ,22,SuperChampion Nazareth,Nazareth,Northern,408575.48,119471.03,47928.61,11.73,71542.42,9112
+2025,6,June     ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,418053.40,123183.80,89133.27,21.32,34050.53,9941
+2025,10,October  ,21,SuperChampion Eilat,Eilat,Southern,453607.54,132358.36,69689.09,15.36,62669.27,10415
+2024,3,March    ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,421065.39,124490.16,52460.41,12.46,72029.75,9306
+2025,4,April    ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,930779.39,275015.26,81666.17,8.77,193349.09,20963
+2024,11,November ,14,SuperChampion Kfar Saba,Kfar Saba,Central,395200.55,115218.03,93594.90,23.68,21623.13,8768
+2024,6,June     ,23,SuperChampion Tiberias,Tiberias,Northern,438556.29,131183.43,87051.87,19.85,44131.56,10238
+2025,11,November ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,385020.37,115038.55,100652.80,26.14,14385.75,9089
+2025,12,December ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,198897.00,58878.68,96345.97,48.44,-37467.29,4936
+2024,7,July     ,16,SuperChampion Petah Tikva,Petah Tikva,Central,950323.25,285557.97,88490.49,9.31,197067.48,20941
+2024,4,April    ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,379573.80,112991.86,68645.67,18.08,44346.19,8578
+2024,3,March    ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,442616.07,131536.10,69542.65,15.71,61993.45,10100
+2025,6,June     ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,410820.06,121535.26,70359.19,17.13,51176.07,9889
+2024,1,January  ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,991344.91,290432.49,62294.41,6.28,228138.08,21872
+2025,6,June     ,13,SuperChampion Ir Yamim,Netanya,Central,411381.68,121123.67,119623.41,29.08,1500.26,9761
+2025,10,October  ,24,SuperChampion Afula,Afula,Northern,389654.39,113538.43,76412.97,19.61,37125.46,9078
+2025,7,July     ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,384823.50,113932.25,75758.68,19.69,38173.57,8594
+2024,11,November ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,945975.45,279342.52,71068.68,7.51,208273.84,20853
+2024,8,August   ,24,SuperChampion Afula,Afula,Northern,415956.35,122294.04,55283.17,13.29,67010.87,9278
+2025,11,November ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,363876.71,107676.19,70803.37,19.46,36872.82,8663
+2024,11,November ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,439023.91,130564.47,83067.97,18.92,47496.50,10003
+2025,6,June     ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,942230.93,279517.53,97310.70,10.33,182206.83,20957
+2024,3,March    ,7,SuperChampion Malha,Jerusalem,Jerusalem,1026751.31,305247.86,59721.72,5.82,245526.14,22871
+2024,2,February ,15,SuperChampion Raanana,Raanana,Central,373443.96,111855.10,53979.83,14.45,57875.27,8653
+2024,7,July     ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,937066.53,275929.66,58186.77,6.21,217742.89,21529
+2024,4,April    ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,184197.06,55021.41,60549.60,32.87,-5528.19,4648
+2024,5,May      ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,445487.02,134591.30,56054.82,12.58,78536.48,10549
+2025,11,November ,18,SuperChampion Rehovot,Rehovot,Central,378877.86,112283.76,67158.13,17.73,45125.63,9120
+2024,11,November ,23,SuperChampion Tiberias,Tiberias,Northern,407287.31,118319.20,83525.56,20.51,34793.64,9745
+2025,1,January  ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,419862.50,125301.35,74008.31,17.63,51293.04,9303
+2024,10,October  ,16,SuperChampion Petah Tikva,Petah Tikva,Central,913688.89,268823.57,89258.43,9.77,179565.14,21141
+2024,9,September,19,SuperChampion Ashdod,Ashdod,Southern,929121.33,276188.91,93355.44,10.05,182833.47,21190
+2025,3,March    ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,191579.91,56349.04,83170.11,43.41,-26821.07,4658
+2025,1,January  ,11,SuperChampion Hadar,Haifa,Haifa,435432.84,129731.62,68233.41,15.67,61498.21,10489
+2025,9,September,19,SuperChampion Ashdod,Ashdod,Southern,897197.90,258200.59,90539.66,10.09,167660.93,20247
+2024,4,April    ,19,SuperChampion Ashdod,Ashdod,Southern,849792.00,252927.49,74205.39,8.73,178722.10,19904
+2024,12,December ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,407361.80,121468.13,95884.96,23.54,25583.17,9140
+2024,7,July     ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,407456.64,119543.81,55067.80,13.52,64476.01,9329
+2024,2,February ,21,SuperChampion Eilat,Eilat,Southern,405943.91,119933.63,47268.09,11.64,72665.54,9864
+2024,11,November ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,189580.99,54932.92,74467.39,39.28,-19534.47,4510
+2025,6,June     ,22,SuperChampion Nazareth,Nazareth,Northern,398750.98,118817.53,97950.30,24.56,20867.23,9434
+2024,8,August   ,7,SuperChampion Malha,Jerusalem,Jerusalem,917983.77,268175.19,77966.91,8.49,190208.28,21278
+2025,9,September,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,368368.19,108219.01,99548.18,27.02,8670.83,8819
+2025,2,February ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,421227.48,123097.70,81310.28,19.30,41787.42,9598
+2025,9,September,7,SuperChampion Malha,Jerusalem,Jerusalem,881021.02,261895.08,101877.02,11.56,160018.06,19112
+2024,3,March    ,11,SuperChampion Hadar,Haifa,Haifa,464722.57,136490.57,45497.99,9.79,90992.58,10578
+2025,7,July     ,5,SuperChampion Holon,Holon,Tel Aviv,417072.30,122127.44,85486.45,20.50,36640.99,9696
+2024,5,May      ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,416935.23,124333.83,70332.04,16.87,54001.79,8986
+2025,2,February ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,366481.01,108803.22,63282.07,17.27,45521.15,8073
+2024,5,May      ,22,SuperChampion Nazareth,Nazareth,Northern,412968.99,122288.51,72183.94,17.48,50104.57,9216
+2025,9,September,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,379212.10,110907.69,69329.36,18.28,41578.33,8905
+2025,5,May      ,10,SuperChampion Grand Canyon,Haifa,Haifa,972057.35,285509.11,51341.18,5.28,234167.93,22215
+2025,2,February ,23,SuperChampion Tiberias,Tiberias,Northern,379070.57,111787.06,85910.32,22.66,25876.74,8915
+2024,11,November ,13,SuperChampion Ir Yamim,Netanya,Central,397747.36,117727.10,110216.77,27.71,7510.33,8898
+2024,9,September,24,SuperChampion Afula,Afula,Northern,421860.73,122880.31,59177.85,14.03,63702.46,9892
+2025,8,August   ,19,SuperChampion Ashdod,Ashdod,Southern,939299.04,276305.89,86828.75,9.24,189477.14,21579
+2025,1,January  ,16,SuperChampion Petah Tikva,Petah Tikva,Central,1015223.45,299407.12,100751.06,9.92,198656.06,23189
+2024,4,April    ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,389058.03,115359.22,53426.44,13.73,61932.78,9011
+2024,4,April    ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,873262.91,253835.55,37710.94,4.32,216124.61,20420
+2025,1,January  ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,408846.16,121017.77,73755.49,18.04,47262.28,9376
+2025,3,March    ,21,SuperChampion Eilat,Eilat,Southern,426626.24,126288.28,81244.66,19.04,45043.62,9750
+2025,3,March    ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,894803.60,268057.12,79538.21,8.89,188518.91,20422
+2025,5,May      ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,865160.20,256929.73,84589.98,9.78,172339.75,19881
+2024,6,June     ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,192217.16,57137.34,65734.13,34.20,-8596.79,4583
+2024,2,February ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,861599.00,256119.68,36548.40,4.24,219571.28,19067
+2025,8,August   ,13,SuperChampion Ir Yamim,Netanya,Central,394670.31,117529.34,112961.96,28.62,4567.38,9065
+2025,6,June     ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,900810.66,269279.57,88928.40,9.87,180351.17,20673
+2024,5,May      ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,944311.38,278446.45,68030.70,7.20,210415.75,21801
+2024,9,September,20,SuperChampion Beer Sheva,Beer Sheva,Southern,885768.77,264012.03,68488.61,7.73,195523.42,20288
+2024,11,November ,11,SuperChampion Hadar,Haifa,Haifa,419733.33,123393.25,49060.22,11.69,74333.03,9775
+2025,10,October  ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,181003.77,53167.54,83175.87,45.95,-30008.33,4585
+2025,10,October  ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,416613.00,122320.46,61309.83,14.72,61010.63,10049
+2025,3,March    ,11,SuperChampion Hadar,Haifa,Haifa,404246.78,121849.03,73435.15,18.17,48413.88,9141
+2024,7,July     ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,414617.40,121562.24,80888.62,19.51,40673.62,9981
+2025,6,June     ,19,SuperChampion Ashdod,Ashdod,Southern,904150.14,268114.62,92449.05,10.22,175665.57,20132
+2025,8,August   ,18,SuperChampion Rehovot,Rehovot,Central,404344.99,119304.66,63108.73,15.61,56195.93,9446
+2025,9,September,8,SuperChampion Talpiot,Jerusalem,Jerusalem,402003.35,118097.34,68972.73,17.16,49124.61,9304
+2024,7,July     ,10,SuperChampion Grand Canyon,Haifa,Haifa,985180.63,293560.75,21256.10,2.16,272304.65,22696
+2025,2,February ,21,SuperChampion Eilat,Eilat,Southern,354805.03,106483.46,71883.86,20.26,34599.60,8306
+2025,9,September,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,919688.77,270768.03,95847.05,10.42,174920.98,20582
+2025,1,January  ,5,SuperChampion Holon,Holon,Tel Aviv,444246.67,130637.66,76880.63,17.31,53757.03,10317
+2025,7,July     ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,967551.16,286695.58,103050.05,10.65,183645.53,21982
+2025,4,April    ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,973157.44,284070.31,86895.21,8.93,197175.10,21933
+2024,12,December ,18,SuperChampion Rehovot,Rehovot,Central,414084.58,122531.24,63367.52,15.30,59163.72,9626
+2025,12,December ,5,SuperChampion Holon,Holon,Tel Aviv,417969.89,124171.18,79179.06,18.94,44992.12,9382
+2024,1,January  ,24,SuperChampion Afula,Afula,Northern,382325.21,113499.74,58011.83,15.17,55487.91,8750
+2024,1,January  ,11,SuperChampion Hadar,Haifa,Haifa,423021.61,125992.87,49088.12,11.60,76904.75,9983
+2025,6,June     ,16,SuperChampion Petah Tikva,Petah Tikva,Central,899591.15,267776.29,96149.46,10.69,171626.83,20775
+2025,8,August   ,16,SuperChampion Petah Tikva,Petah Tikva,Central,982375.39,291272.69,90725.14,9.24,200547.55,22131
+2025,5,May      ,23,SuperChampion Tiberias,Tiberias,Northern,417788.80,122588.01,88858.00,21.27,33730.01,9888
+2025,11,November ,15,SuperChampion Raanana,Raanana,Central,373526.59,110315.72,83091.77,22.25,27223.95,8655
+2025,3,March    ,10,SuperChampion Grand Canyon,Haifa,Haifa,976020.83,288464.79,49335.60,5.05,239129.19,21969
+2024,4,April    ,11,SuperChampion Hadar,Haifa,Haifa,430253.93,127338.81,45506.76,10.58,81832.05,9805
+2025,7,July     ,24,SuperChampion Afula,Afula,Northern,415235.02,122522.22,94354.85,22.72,28167.37,9578
+2025,5,May      ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,404385.66,119214.18,66230.49,16.38,52983.69,9268
+2024,1,January  ,22,SuperChampion Nazareth,Nazareth,Northern,409113.87,121013.32,35348.69,8.64,85664.63,9368
+2025,9,September,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,863103.59,255307.34,90557.32,10.49,164750.02,19806
+2025,1,January  ,14,SuperChampion Kfar Saba,Kfar Saba,Central,439203.88,130407.25,105184.09,23.95,25223.16,9862
+2024,6,June     ,15,SuperChampion Raanana,Raanana,Central,402037.91,119799.53,55037.68,13.69,64761.85,9264
+2024,6,June     ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,845719.72,249816.11,63209.16,7.47,186606.95,20402
+2024,9,September,14,SuperChampion Kfar Saba,Kfar Saba,Central,404036.39,118742.81,89142.85,22.06,29599.96,9590
+2025,11,November ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,902584.32,265740.28,92054.09,10.20,173686.19,20401
+2024,2,February ,19,SuperChampion Ashdod,Ashdod,Southern,928690.19,272363.05,66772.78,7.19,205590.27,20801
+2025,3,March    ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,418569.72,120910.61,88442.24,21.13,32468.37,9604
+2024,3,March    ,24,SuperChampion Afula,Afula,Northern,414587.22,122609.23,58155.06,14.03,64454.17,9641
+2024,11,November ,10,SuperChampion Grand Canyon,Haifa,Haifa,965309.29,284956.39,33841.09,3.51,251115.30,22338
+2025,5,May      ,5,SuperChampion Holon,Holon,Tel Aviv,393287.74,116618.41,75673.25,19.24,40945.16,8969
+2025,4,April    ,18,SuperChampion Rehovot,Rehovot,Central,429603.81,127053.25,57517.56,13.39,69535.69,9967
+2025,8,August   ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,413304.55,120940.15,95250.60,23.05,25689.55,9583
+2024,8,August   ,19,SuperChampion Ashdod,Ashdod,Southern,955189.56,281925.01,86892.47,9.10,195032.54,21147
+2025,4,April    ,15,SuperChampion Raanana,Raanana,Central,445838.75,131411.78,80091.73,17.96,51320.05,10299
+2024,9,September,15,SuperChampion Raanana,Raanana,Central,379566.08,110199.49,74003.52,19.50,36195.97,9023
+2025,9,September,23,SuperChampion Tiberias,Tiberias,Northern,416736.52,123613.61,94121.91,22.59,29491.70,9772
+2025,8,August   ,14,SuperChampion Kfar Saba,Kfar Saba,Central,393088.01,117250.90,94906.08,24.14,22344.82,8891
+2025,4,April    ,24,SuperChampion Afula,Afula,Northern,454476.11,134490.86,86429.71,19.02,48061.15,10329
+2025,4,April    ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,410662.38,119389.92,108579.83,26.44,10810.09,9521
+2025,10,October  ,5,SuperChampion Holon,Holon,Tel Aviv,428689.55,128517.47,69311.43,16.17,59206.04,9830
+2024,7,July     ,11,SuperChampion Hadar,Haifa,Haifa,412073.70,121054.16,48241.37,11.71,72812.79,10003
+2024,1,January  ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,408270.64,120456.83,52542.61,12.87,67914.22,9658
+2024,12,December ,15,SuperChampion Raanana,Raanana,Central,414961.34,121217.49,89180.54,21.49,32036.95,9790
+2024,6,June     ,7,SuperChampion Malha,Jerusalem,Jerusalem,829143.36,245066.83,73913.32,8.91,171153.51,19663
+2025,8,August   ,11,SuperChampion Hadar,Haifa,Haifa,423085.48,124321.05,72066.60,17.03,52254.45,9953
+2024,1,January  ,14,SuperChampion Kfar Saba,Kfar Saba,Central,391412.95,116102.82,92724.25,23.69,23378.57,9284
+2024,5,May      ,21,SuperChampion Eilat,Eilat,Southern,467677.36,138463.30,57546.32,12.30,80916.98,10293
+2024,1,January  ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,409926.68,120800.59,47582.62,11.61,73217.97,9503
+2024,8,August   ,23,SuperChampion Tiberias,Tiberias,Northern,431957.40,127841.85,85094.62,19.70,42747.23,9950
+2024,6,June     ,13,SuperChampion Ir Yamim,Netanya,Central,374523.48,110803.50,114518.83,30.58,-3715.33,8686
+2024,5,May      ,5,SuperChampion Holon,Holon,Tel Aviv,426991.35,127021.51,64872.21,15.19,62149.30,9839
+2025,8,August   ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,396184.42,117683.39,66367.13,16.75,51316.26,8942
+2024,2,February ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,400802.03,117949.43,67705.49,16.89,50243.94,9275
+2025,8,August   ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,407594.54,120127.38,66653.46,16.35,53473.92,9505
+2024,12,December ,10,SuperChampion Grand Canyon,Haifa,Haifa,962944.87,286404.90,45376.41,4.71,241028.49,21834
+2025,6,June     ,24,SuperChampion Afula,Afula,Northern,407542.95,121701.87,89182.51,21.88,32519.36,8709
+2024,12,December ,16,SuperChampion Petah Tikva,Petah Tikva,Central,943687.98,276174.57,103624.63,10.98,172549.94,22278
+2025,1,January  ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,421737.54,124262.97,65803.39,15.60,58459.58,9629
+2024,4,April    ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,408585.20,121426.86,70271.90,17.20,51154.96,9275
+2024,4,April    ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,395536.61,115500.97,51556.36,13.03,63944.61,9037
+2024,11,November ,21,SuperChampion Eilat,Eilat,Southern,430191.81,127775.35,58666.06,13.64,69109.29,10115
+2024,2,February ,10,SuperChampion Grand Canyon,Haifa,Haifa,922802.77,268991.84,20156.60,2.18,248835.24,21159
+2025,2,February ,24,SuperChampion Afula,Afula,Northern,375860.68,110773.84,65395.94,17.40,45377.90,8405
+2025,9,September,20,SuperChampion Beer Sheva,Beer Sheva,Southern,876852.15,259899.32,87714.03,10.00,172185.29,19417
+2025,12,December ,11,SuperChampion Hadar,Haifa,Haifa,419812.19,122196.91,74422.84,17.73,47774.07,10095
+2025,1,January  ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,446090.06,130607.05,92666.11,20.77,37940.94,9790
+2024,4,April    ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,403877.06,119127.37,97089.20,24.04,22038.17,9486
+2024,10,October  ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,360998.31,106023.36,83491.02,23.13,22532.34,8545
+2024,11,November ,15,SuperChampion Raanana,Raanana,Central,407692.76,120976.56,77132.63,18.92,43843.93,9491
+2025,4,April    ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,408780.71,121755.39,68710.18,16.81,53045.21,9443
+2024,8,August   ,21,SuperChampion Eilat,Eilat,Southern,426572.46,126786.81,59537.10,13.96,67249.71,9564
+2025,6,June     ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,386590.25,116385.16,70572.02,18.25,45813.14,9085
+2025,10,October  ,15,SuperChampion Raanana,Raanana,Central,429042.67,127910.76,71606.91,16.69,56303.85,9541
+2024,9,September,13,SuperChampion Ir Yamim,Netanya,Central,412530.07,122666.33,121678.83,29.50,987.50,9660
+2025,4,April    ,23,SuperChampion Tiberias,Tiberias,Northern,443632.32,131915.93,91794.46,20.69,40121.47,10710
+2024,1,January  ,23,SuperChampion Tiberias,Tiberias,Northern,419725.63,123416.13,81670.08,19.46,41746.05,9560
+2024,5,May      ,1,SuperChampion Dizengoff,Tel Aviv,Tel Aviv,214952.79,63826.38,62040.57,28.86,1785.81,5155
+2024,2,February ,14,SuperChampion Kfar Saba,Kfar Saba,Central,391314.80,116058.56,81980.70,20.95,34077.86,8919
+2024,8,August   ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,956597.46,284938.04,58812.94,6.15,226125.10,21403
+2025,4,April    ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,425903.63,126744.66,94619.43,22.22,32125.23,9776
+2024,9,September,10,SuperChampion Grand Canyon,Haifa,Haifa,1000578.16,297640.55,27502.77,2.75,270137.78,21763
+2025,11,November ,13,SuperChampion Ir Yamim,Netanya,Central,370297.10,110302.24,119509.46,32.27,-9207.22,8584
+2024,10,October  ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,379365.74,113470.96,62062.81,16.36,51408.15,8698
+2025,7,July     ,10,SuperChampion Grand Canyon,Haifa,Haifa,992173.23,297218.20,71708.57,7.23,225509.63,22129
+2024,3,March    ,14,SuperChampion Kfar Saba,Kfar Saba,Central,425745.04,125632.76,85466.69,20.07,40166.07,9751
+2024,11,November ,20,SuperChampion Beer Sheva,Beer Sheva,Southern,853411.54,247872.27,74586.63,8.74,173285.64,19692
+2024,8,August   ,5,SuperChampion Holon,Holon,Tel Aviv,418337.82,123104.94,69373.79,16.58,53731.15,9797
+2025,1,January  ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,421089.01,126395.62,97048.54,23.05,29347.08,9653
+2024,3,March    ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,422250.09,125319.97,97873.44,23.18,27446.53,9502
+2024,9,September,4,SuperChampion Givatayim,Givatayim,Tel Aviv,395582.33,117279.38,72322.41,18.28,44956.97,9045
+2025,9,September,13,SuperChampion Ir Yamim,Netanya,Central,405186.65,120592.08,117657.21,29.04,2934.87,9028
+2024,4,April    ,7,SuperChampion Malha,Jerusalem,Jerusalem,894830.89,265240.30,59697.14,6.67,205543.16,20699
+2025,9,September,5,SuperChampion Holon,Holon,Tel Aviv,377897.57,113827.90,79643.64,21.08,34184.26,8655
+2024,8,August   ,13,SuperChampion Ir Yamim,Netanya,Central,386044.42,113564.41,112871.80,29.24,692.61,9013
+2024,9,September,22,SuperChampion Nazareth,Nazareth,Northern,413060.11,123252.27,84955.75,20.57,38296.52,9672
+2024,5,May      ,9,SuperChampion Givat Shaul,Jerusalem,Jerusalem,410866.89,122907.55,57384.37,13.97,65523.18,9469
+2025,5,May      ,8,SuperChampion Talpiot,Jerusalem,Jerusalem,401332.87,119126.39,66198.30,16.49,52928.09,9234
+2024,4,April    ,16,SuperChampion Petah Tikva,Petah Tikva,Central,889351.03,262767.87,70245.34,7.90,192522.53,19541
+2024,11,November ,5,SuperChampion Holon,Holon,Tel Aviv,381424.35,113297.87,68402.12,17.93,44895.75,8899
+2024,3,March    ,15,SuperChampion Raanana,Raanana,Central,425385.08,125895.03,56202.31,13.21,69692.72,10171
+2024,7,July     ,13,SuperChampion Ir Yamim,Netanya,Central,412308.00,119681.88,123412.98,29.93,-3731.10,9688
+2025,11,November ,16,SuperChampion Petah Tikva,Petah Tikva,Central,863992.84,253771.49,95926.90,11.10,157844.59,19726
+2025,8,August   ,15,SuperChampion Raanana,Raanana,Central,403508.05,118134.09,78128.04,19.36,40006.05,9860
+2024,11,November ,19,SuperChampion Ashdod,Ashdod,Southern,921049.78,269636.44,85711.12,9.31,183925.32,20924
+2025,11,November ,5,SuperChampion Holon,Holon,Tel Aviv,381968.16,111401.20,81137.80,21.24,30263.40,9085
+2024,6,June     ,19,SuperChampion Ashdod,Ashdod,Southern,950200.50,283631.34,71838.48,7.56,211792.86,21674
+2025,6,June     ,23,SuperChampion Tiberias,Tiberias,Northern,404002.01,119595.76,95024.12,23.52,24571.64,9594
+2024,6,June     ,5,SuperChampion Holon,Holon,Tel Aviv,399747.17,117629.29,70712.70,17.69,46916.59,9012
+2025,9,September,18,SuperChampion Rehovot,Rehovot,Central,399505.97,117794.96,65985.28,16.52,51809.68,9183
+2024,4,April    ,13,SuperChampion Ir Yamim,Netanya,Central,367047.88,108973.30,116980.62,31.87,-8007.32,8148
+2024,10,October  ,21,SuperChampion Eilat,Eilat,Southern,422182.66,124949.21,58985.07,13.97,65964.14,9523
+2025,7,July     ,11,SuperChampion Hadar,Haifa,Haifa,402103.69,118612.43,80212.99,19.95,38399.44,9165
+2024,12,December ,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,1024257.53,300994.40,81654.96,7.97,219339.44,22894
+2024,1,January  ,16,SuperChampion Petah Tikva,Petah Tikva,Central,912027.83,265272.19,75546.61,8.28,189725.58,21218
+2024,6,June     ,21,SuperChampion Eilat,Eilat,Southern,421764.35,124801.95,61103.86,14.49,63698.09,9508
+2025,9,September,11,SuperChampion Hadar,Haifa,Haifa,422926.66,124153.91,74679.97,17.66,49473.94,9750
+2024,7,July     ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,391862.15,115471.65,104756.35,26.73,10715.30,9007
+2025,11,November ,19,SuperChampion Ashdod,Ashdod,Southern,859030.52,254893.84,91819.59,10.69,163074.25,19121
+2025,1,January  ,13,SuperChampion Ir Yamim,Netanya,Central,411254.56,121938.33,124616.30,30.30,-2677.97,9719
+2024,6,June     ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,402191.76,120320.89,74013.44,18.40,46307.45,9429
+2024,6,June     ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,386076.20,114007.97,63967.34,16.57,50040.63,8551
+2025,12,December ,7,SuperChampion Malha,Jerusalem,Jerusalem,954502.14,283421.97,102546.64,10.74,180875.33,21749
+2024,1,January  ,19,SuperChampion Ashdod,Ashdod,Southern,923750.36,271418.27,71988.59,7.79,199429.68,21438
+2024,1,January  ,10,SuperChampion Grand Canyon,Haifa,Haifa,963880.97,283533.87,21880.48,2.27,261653.39,22019
+2025,3,March    ,23,SuperChampion Tiberias,Tiberias,Northern,401822.19,118419.10,93985.70,23.39,24433.40,9237
+2024,9,September,3,SuperChampion Ayalon,Ramat Gan,Tel Aviv,944983.83,279428.38,67227.34,7.11,212201.04,21641
+2024,2,February ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,381821.87,111564.11,42205.65,11.05,69358.46,8789
+2024,6,June     ,22,SuperChampion Nazareth,Nazareth,Northern,406892.89,119252.55,73272.28,18.01,45980.27,9265
+2024,8,August   ,4,SuperChampion Givatayim,Givatayim,Tel Aviv,375323.85,111150.16,67541.66,18.00,43608.50,8822
+2025,8,August   ,2,SuperChampion Ramat Aviv,Tel Aviv,Tel Aviv,429562.98,127342.80,84576.35,19.69,42766.45,10150
+2024,12,December ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,387745.67,114337.02,99079.15,25.55,15257.87,8756
+2025,12,December ,17,SuperChampion Rishon LeZion,Rishon LeZion,Central,916882.58,271428.91,96009.22,10.47,175419.69,20780
+2025,11,November ,11,SuperChampion Hadar,Haifa,Haifa,440285.58,130755.24,75855.28,17.23,54899.96,10156
+2024,12,December ,5,SuperChampion Holon,Holon,Tel Aviv,398241.96,117104.09,79121.95,19.87,37982.14,9190
+2025,11,November ,22,SuperChampion Nazareth,Nazareth,Northern,374077.75,112101.62,98733.57,26.39,13368.05,8628
+2025,12,December ,12,SuperChampion Krayot,Kiryat Bialik,Haifa,416310.43,123489.39,110601.07,26.57,12888.32,10109
+2025,10,October  ,23,SuperChampion Tiberias,Tiberias,Northern,447204.77,132831.98,81498.29,18.22,51333.69,9973
+2024,2,February ,6,SuperChampion Bat Yam,Bat Yam,Tel Aviv,371686.74,108483.81,61342.68,16.50,47141.13,8470

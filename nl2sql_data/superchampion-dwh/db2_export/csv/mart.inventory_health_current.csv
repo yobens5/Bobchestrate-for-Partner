@@ -1,0 +1,25 @@
+store_key,store_name,district,snapshot_date,skus_stocked,total_stock_value,skus_below_reorder,pct_below_reorder,avg_days_of_supply
+19,SuperChampion Ashdod,Southern,2025-12-28,58,225446.26,9,15.52,4.6
+15,SuperChampion Raanana,Central,2025-12-28,63,107701.20,8,12.70,4.9
+3,SuperChampion Ayalon,Tel Aviv,2025-12-28,64,235125.51,10,15.63,4.5
+20,SuperChampion Beer Sheva,Southern,2025-12-28,59,246016.90,11,18.64,4.5
+4,SuperChampion Givatayim,Tel Aviv,2025-12-28,63,91590.33,10,15.87,4.3
+11,SuperChampion Hadar,Haifa,2025-12-28,59,98961.65,10,16.95,4.5
+23,SuperChampion Tiberias,Northern,2025-12-28,62,101775.70,11,17.74,4.5
+14,SuperChampion Kfar Saba,Central,2025-12-28,64,110626.46,12,18.75,4.7
+1,SuperChampion Dizengoff,Tel Aviv,2025-12-28,61,44610.96,10,16.39,4.6
+22,SuperChampion Nazareth,Northern,2025-12-28,61,86959.38,13,21.31,4.3
+6,SuperChampion Bat Yam,Tel Aviv,2025-12-28,59,83885.96,15,25.42,4.0
+9,SuperChampion Givat Shaul,Jerusalem,2025-12-28,63,107810.41,6,9.52,4.8
+24,SuperChampion Afula,Northern,2025-12-28,59,83757.76,11,18.64,4.1
+21,SuperChampion Eilat,Southern,2025-12-28,61,100454.59,10,16.39,4.4
+17,SuperChampion Rishon LeZion,Central,2025-12-28,64,261227.38,7,10.94,4.9
+7,SuperChampion Malha,Jerusalem,2025-12-28,61,252515.68,11,18.03,4.7
+5,SuperChampion Holon,Tel Aviv,2025-12-28,62,96436.32,12,19.35,4.4
+18,SuperChampion Rehovot,Central,2025-12-28,60,99363.81,14,23.33,4.6
+2,SuperChampion Ramat Aviv,Tel Aviv,2025-12-28,60,101038.35,7,11.67,4.7
+16,SuperChampion Petah Tikva,Central,2025-12-28,63,239064.87,10,15.87,4.7
+10,SuperChampion Grand Canyon,Haifa,2025-12-28,61,226421.43,9,14.75,4.6
+12,SuperChampion Krayot,Haifa,2025-12-28,63,97426.79,11,17.46,4.4
+8,SuperChampion Talpiot,Jerusalem,2025-12-28,63,97169.35,16,25.40,4.2
+13,SuperChampion Ir Yamim,Central,2025-12-28,60,84030.06,16,26.67,4.4

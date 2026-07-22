@@ -1,13 +1,1 @@
 {% extends "base.html" %}
-
-{# Inject lang-toggle CSS in <head> #}
-{% block extrahead %}
-  {{ super() }}
-  <link rel="stylesheet" href="{{ base_url }}/assets/lang-toggle.css">
-{% endblock %}
-
-{# Inject translations JS + button injection after all scripts #}
-{% block scripts %}
-  {{ super() }}
-  <script src="{{ base_url }}/assets/translations.js"></script>
-{% endblock %}

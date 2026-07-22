@@ -49,6 +49,14 @@ The agent is not limited to text answers — it can also generate visual charts 
 
 ---
 
+## The NL2SQL Accelerator
+
+The agent builder used in this part is the **IBM CE NL2SQL Accelerator** — an IBM Client Engineering tool that automates the full pipeline from database connection to deployed watsonx Orchestrate agent.
+
+👉 **[Open the NL2SQL Accelerator](https://github.ibm.com/tech-garage-spgi/ce-israel-txt2data-template)**
+
+---
+
 ## Step 1 — Connect the Database & Run Data Discovery
 
 The first step is connecting your source database to the accelerator. This connection triggers the **data discovery** phase: the accelerator scans the database schema (tables, columns, relationships) to understand the data structure. This understanding is what enables the agent to generate accurate SQL queries.

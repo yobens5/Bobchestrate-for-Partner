@@ -1,0 +1,577 @@
+year,month,store_key,store_name,district,total_hours,overtime_hours,labor_cost,headcount,avg_hourly_cost
+2024,1,1,SuperChampion Dizengoff,Tel Aviv,1098.1,488.6,55557.29,6,50.59
+2024,2,1,SuperChampion Dizengoff,Tel Aviv,1202.4,649.1,57523.63,7,47.84
+2024,3,1,SuperChampion Dizengoff,Tel Aviv,1265.1,583.3,60387.39,7,47.73
+2024,4,1,SuperChampion Dizengoff,Tel Aviv,1270.3,690.1,60549.60,7,47.67
+2024,5,1,SuperChampion Dizengoff,Tel Aviv,1300.5,740.1,62040.57,7,47.71
+2024,6,1,SuperChampion Dizengoff,Tel Aviv,1371.0,709.1,65734.13,8,47.95
+2024,7,1,SuperChampion Dizengoff,Tel Aviv,1487.5,877.1,71481.69,8,48.05
+2024,8,1,SuperChampion Dizengoff,Tel Aviv,1491.6,838.6,72886.24,9,48.86
+2024,9,1,SuperChampion Dizengoff,Tel Aviv,1665.9,866.6,81757.18,9,49.08
+2024,10,1,SuperChampion Dizengoff,Tel Aviv,1531.6,829.5,75269.42,9,49.14
+2024,11,1,SuperChampion Dizengoff,Tel Aviv,1517.7,809.3,74467.39,9,49.07
+2024,12,1,SuperChampion Dizengoff,Tel Aviv,1759.4,936.1,86203.44,9,49.00
+2025,1,1,SuperChampion Dizengoff,Tel Aviv,1684.0,685.0,82596.55,9,49.05
+2025,2,1,SuperChampion Dizengoff,Tel Aviv,1471.9,810.4,72253.24,9,49.09
+2025,3,1,SuperChampion Dizengoff,Tel Aviv,1687.7,896.7,83170.11,10,49.28
+2025,4,1,SuperChampion Dizengoff,Tel Aviv,1985.7,1125.4,94920.48,11,47.80
+2025,5,1,SuperChampion Dizengoff,Tel Aviv,1889.9,1058.2,90192.94,11,47.72
+2025,6,1,SuperChampion Dizengoff,Tel Aviv,2038.0,1050.8,97461.97,11,47.82
+2025,7,1,SuperChampion Dizengoff,Tel Aviv,2153.2,1089.6,102935.23,11,47.81
+2025,8,1,SuperChampion Dizengoff,Tel Aviv,1924.1,985.7,91941.36,11,47.78
+2025,9,1,SuperChampion Dizengoff,Tel Aviv,2011.7,1114.0,95968.32,11,47.71
+2025,10,1,SuperChampion Dizengoff,Tel Aviv,1739.8,918.0,83175.87,11,47.81
+2025,11,1,SuperChampion Dizengoff,Tel Aviv,2036.7,1065.6,97299.70,11,47.77
+2025,12,1,SuperChampion Dizengoff,Tel Aviv,2015.5,1115.4,96345.97,11,47.80
+2024,1,2,SuperChampion Ramat Aviv,Tel Aviv,1409.9,744.5,67834.82,8,48.11
+2024,2,2,SuperChampion Ramat Aviv,Tel Aviv,1411.1,757.0,67705.49,8,47.98
+2024,3,2,SuperChampion Ramat Aviv,Tel Aviv,1454.9,661.8,69542.65,8,47.80
+2024,4,2,SuperChampion Ramat Aviv,Tel Aviv,1466.9,761.4,70271.90,8,47.91
+2024,5,2,SuperChampion Ramat Aviv,Tel Aviv,1485.4,739.9,71153.13,8,47.90
+2024,6,2,SuperChampion Ramat Aviv,Tel Aviv,1589.2,851.2,74013.44,9,46.57
+2024,7,2,SuperChampion Ramat Aviv,Tel Aviv,1738.7,918.8,80888.62,9,46.52
+2024,8,2,SuperChampion Ramat Aviv,Tel Aviv,1596.8,841.5,74178.18,9,46.45
+2024,9,2,SuperChampion Ramat Aviv,Tel Aviv,1852.0,940.6,87525.94,10,47.26
+2024,10,2,SuperChampion Ramat Aviv,Tel Aviv,1759.9,939.4,83491.02,10,47.44
+2024,11,2,SuperChampion Ramat Aviv,Tel Aviv,1751.3,868.7,83067.97,10,47.43
+2024,12,2,SuperChampion Ramat Aviv,Tel Aviv,2020.9,1066.6,95884.96,10,47.45
+2025,1,2,SuperChampion Ramat Aviv,Tel Aviv,1956.0,858.6,92666.11,10,47.38
+2025,2,2,SuperChampion Ramat Aviv,Tel Aviv,1713.1,978.9,81310.28,10,47.46
+2025,3,2,SuperChampion Ramat Aviv,Tel Aviv,1864.2,967.2,88442.24,10,47.44
+2025,4,2,SuperChampion Ramat Aviv,Tel Aviv,1835.5,945.2,87131.65,10,47.47
+2025,5,2,SuperChampion Ramat Aviv,Tel Aviv,1745.6,862.9,82967.46,10,47.53
+2025,6,2,SuperChampion Ramat Aviv,Tel Aviv,1878.6,947.4,89133.27,10,47.45
+2025,7,2,SuperChampion Ramat Aviv,Tel Aviv,2002.7,1036.4,95152.92,10,47.51
+2025,8,2,SuperChampion Ramat Aviv,Tel Aviv,1782.2,889.6,84576.35,10,47.46
+2025,9,2,SuperChampion Ramat Aviv,Tel Aviv,1853.0,895.1,87798.44,10,47.38
+2025,10,2,SuperChampion Ramat Aviv,Tel Aviv,1618.1,870.6,76836.76,10,47.49
+2025,11,2,SuperChampion Ramat Aviv,Tel Aviv,1887.1,960.7,89606.13,10,47.48
+2025,12,2,SuperChampion Ramat Aviv,Tel Aviv,1864.7,927.8,88654.89,10,47.54
+2024,1,3,SuperChampion Ayalon,Tel Aviv,1265.7,611.2,62294.41,6,49.22
+2024,2,3,SuperChampion Ayalon,Tel Aviv,1131.2,545.9,55794.29,6,49.32
+2024,3,3,SuperChampion Ayalon,Tel Aviv,1173.6,650.9,57754.57,6,49.21
+2024,4,3,SuperChampion Ayalon,Tel Aviv,1166.1,552.5,57284.96,6,49.13
+2024,5,3,SuperChampion Ayalon,Tel Aviv,1240.3,580.5,60324.15,7,48.64
+2024,6,3,SuperChampion Ayalon,Tel Aviv,1335.6,787.1,63209.16,7,47.33
+2024,7,3,SuperChampion Ayalon,Tel Aviv,1442.0,762.9,68115.20,7,47.24
+2024,8,3,SuperChampion Ayalon,Tel Aviv,1320.6,679.5,62430.11,7,47.27
+2024,9,3,SuperChampion Ayalon,Tel Aviv,1422.4,809.9,67227.34,7,47.26
+2024,10,3,SuperChampion Ayalon,Tel Aviv,1399.5,696.7,66901.41,8,47.80
+2024,11,3,SuperChampion Ayalon,Tel Aviv,1479.1,801.0,71068.68,8,48.05
+2024,12,3,SuperChampion Ayalon,Tel Aviv,1695.6,782.7,81654.96,8,48.16
+2025,1,3,SuperChampion Ayalon,Tel Aviv,1667.0,861.7,80177.61,8,48.10
+2025,2,3,SuperChampion Ayalon,Tel Aviv,1491.4,712.4,71073.76,9,47.66
+2025,3,3,SuperChampion Ayalon,Tel Aviv,1786.6,1036.9,83710.12,9,46.85
+2025,4,3,SuperChampion Ayalon,Tel Aviv,1743.3,895.7,81666.17,9,46.85
+2025,5,3,SuperChampion Ayalon,Tel Aviv,1768.5,981.7,82246.13,10,46.51
+2025,6,3,SuperChampion Ayalon,Tel Aviv,1981.2,890.1,91493.08,10,46.18
+2025,7,3,SuperChampion Ayalon,Tel Aviv,2119.9,1162.4,97766.68,10,46.12
+2025,8,3,SuperChampion Ayalon,Tel Aviv,1892.2,1026.8,87443.56,10,46.21
+2025,9,3,SuperChampion Ayalon,Tel Aviv,1963.9,1054.1,90557.32,10,46.11
+2025,10,3,SuperChampion Ayalon,Tel Aviv,1714.7,881.5,79220.90,10,46.20
+2025,11,3,SuperChampion Ayalon,Tel Aviv,1997.4,1097.5,92054.09,10,46.09
+2025,12,3,SuperChampion Ayalon,Tel Aviv,1972.2,946.1,91022.50,10,46.15
+2024,1,4,SuperChampion Givatayim,Tel Aviv,1209.8,591.7,47582.62,6,39.33
+2024,2,4,SuperChampion Givatayim,Tel Aviv,1075.1,511.6,42205.65,6,39.26
+2024,3,4,SuperChampion Givatayim,Tel Aviv,1230.2,726.1,48097.01,7,39.10
+2024,4,4,SuperChampion Givatayim,Tel Aviv,1324.0,745.1,51556.36,7,38.94
+2024,5,4,SuperChampion Givatayim,Tel Aviv,1454.8,703.1,56054.82,8,38.53
+2024,6,4,SuperChampion Givatayim,Tel Aviv,1685.3,892.2,63967.34,10,37.96
+2024,7,4,SuperChampion Givatayim,Tel Aviv,1945.7,982.7,73514.65,10,37.78
+2024,8,4,SuperChampion Givatayim,Tel Aviv,1786.8,968.1,67541.66,10,37.80
+2024,9,4,SuperChampion Givatayim,Tel Aviv,1917.2,988.0,72322.41,10,37.72
+2024,10,4,SuperChampion Givatayim,Tel Aviv,1746.0,889.7,65926.23,10,37.76
+2024,11,4,SuperChampion Givatayim,Tel Aviv,1746.8,914.1,65919.13,10,37.74
+2024,12,4,SuperChampion Givatayim,Tel Aviv,2019.5,947.6,76279.37,10,37.77
+2025,1,4,SuperChampion Givatayim,Tel Aviv,1959.5,935.5,74008.31,10,37.77
+2025,2,4,SuperChampion Givatayim,Tel Aviv,1705.5,933.6,64340.16,10,37.73
+2025,3,4,SuperChampion Givatayim,Tel Aviv,1873.8,1019.5,70727.64,10,37.75
+2025,4,4,SuperChampion Givatayim,Tel Aviv,1841.8,947.8,69531.25,10,37.75
+2025,5,4,SuperChampion Givatayim,Tel Aviv,1754.3,913.4,66230.49,10,37.75
+2025,6,4,SuperChampion Givatayim,Tel Aviv,1887.5,990.3,71215.71,10,37.73
+2025,7,4,SuperChampion Givatayim,Tel Aviv,2007.3,1103.8,75758.68,10,37.74
+2025,8,4,SuperChampion Givatayim,Tel Aviv,1767.5,850.2,66653.46,10,37.71
+2025,9,4,SuperChampion Givatayim,Tel Aviv,1844.0,800.1,69626.42,10,37.76
+2025,10,4,SuperChampion Givatayim,Tel Aviv,1625.2,883.4,61309.83,10,37.72
+2025,11,4,SuperChampion Givatayim,Tel Aviv,1895.8,1046.7,71571.17,10,37.75
+2025,12,4,SuperChampion Givatayim,Tel Aviv,1866.9,970.5,70473.30,10,37.75
+2024,1,5,SuperChampion Holon,Tel Aviv,1576.3,838.5,64044.01,9,40.63
+2024,2,5,SuperChampion Holon,Tel Aviv,1439.9,755.1,58771.53,9,40.82
+2024,3,5,SuperChampion Holon,Tel Aviv,1513.0,807.8,61732.33,9,40.80
+2024,4,5,SuperChampion Holon,Tel Aviv,1517.2,785.1,61932.68,9,40.82
+2024,5,5,SuperChampion Holon,Tel Aviv,1575.2,806.5,64872.21,10,41.18
+2024,6,5,SuperChampion Holon,Tel Aviv,1659.5,868.2,70712.70,10,42.61
+2024,7,5,SuperChampion Holon,Tel Aviv,1772.1,866.5,75683.30,10,42.71
+2024,8,5,SuperChampion Holon,Tel Aviv,1623.4,832.0,69373.79,10,42.73
+2024,9,5,SuperChampion Holon,Tel Aviv,1761.5,977.3,75143.70,10,42.66
+2024,10,5,SuperChampion Holon,Tel Aviv,1596.5,804.0,68134.92,10,42.68
+2024,11,5,SuperChampion Holon,Tel Aviv,1603.8,899.5,68402.12,10,42.65
+2024,12,5,SuperChampion Holon,Tel Aviv,1855.1,915.9,79121.95,10,42.65
+2025,1,5,SuperChampion Holon,Tel Aviv,1802.5,921.7,76880.63,10,42.65
+2025,2,5,SuperChampion Holon,Tel Aviv,1555.1,837.7,66320.07,10,42.65
+2025,3,5,SuperChampion Holon,Tel Aviv,1685.4,745.1,71952.70,10,42.69
+2025,4,5,SuperChampion Holon,Tel Aviv,1808.8,897.6,78090.34,11,43.17
+2025,5,5,SuperChampion Holon,Tel Aviv,1750.1,990.3,75673.25,11,43.24
+2025,6,5,SuperChampion Holon,Tel Aviv,1861.5,869.1,80394.94,11,43.19
+2025,7,5,SuperChampion Holon,Tel Aviv,1978.7,982.0,85486.45,11,43.20
+2025,8,5,SuperChampion Holon,Tel Aviv,1764.0,943.5,76118.38,11,43.15
+2025,9,5,SuperChampion Holon,Tel Aviv,1846.7,925.1,79643.64,11,43.13
+2025,10,5,SuperChampion Holon,Tel Aviv,1607.3,866.8,69311.43,11,43.12
+2025,11,5,SuperChampion Holon,Tel Aviv,1878.8,1041.0,81137.80,11,43.19
+2025,12,5,SuperChampion Holon,Tel Aviv,1834.3,898.9,79179.06,11,43.17
+2024,1,6,SuperChampion Bat Yam,Tel Aviv,1130.5,511.0,52542.61,8,46.48
+2024,2,6,SuperChampion Bat Yam,Tel Aviv,1350.6,707.3,61342.68,9,45.42
+2024,3,6,SuperChampion Bat Yam,Tel Aviv,1548.2,756.7,68847.81,9,44.47
+2024,4,6,SuperChampion Bat Yam,Tel Aviv,1544.3,681.4,68645.67,9,44.45
+2024,5,6,SuperChampion Bat Yam,Tel Aviv,1581.8,826.9,70332.04,9,44.46
+2024,6,6,SuperChampion Bat Yam,Tel Aviv,1618.6,822.8,71479.34,10,44.16
+2024,7,6,SuperChampion Bat Yam,Tel Aviv,1778.9,914.8,78323.78,10,44.03
+2024,8,6,SuperChampion Bat Yam,Tel Aviv,1618.1,743.5,71251.55,10,44.03
+2024,9,6,SuperChampion Bat Yam,Tel Aviv,1757.4,931.4,77295.05,10,43.98
+2024,10,6,SuperChampion Bat Yam,Tel Aviv,1586.7,770.9,69752.20,10,43.96
+2024,11,6,SuperChampion Bat Yam,Tel Aviv,1623.7,851.8,72515.88,11,44.66
+2024,12,6,SuperChampion Bat Yam,Tel Aviv,2060.2,991.4,99079.15,11,48.09
+2025,1,6,SuperChampion Bat Yam,Tel Aviv,2020.2,1082.2,97048.54,11,48.04
+2025,2,6,SuperChampion Bat Yam,Tel Aviv,1735.9,905.3,83544.48,11,48.13
+2025,3,6,SuperChampion Bat Yam,Tel Aviv,1914.9,1116.3,92007.06,11,48.05
+2025,4,6,SuperChampion Bat Yam,Tel Aviv,1980.8,1124.7,94619.43,12,47.77
+2025,5,6,SuperChampion Bat Yam,Tel Aviv,1966.7,985.0,93178.46,12,47.38
+2025,6,6,SuperChampion Bat Yam,Tel Aviv,2124.9,1054.7,100403.45,12,47.25
+2025,7,6,SuperChampion Bat Yam,Tel Aviv,2251.3,1199.1,106541.88,12,47.32
+2025,8,6,SuperChampion Bat Yam,Tel Aviv,2013.1,1149.0,95250.60,12,47.32
+2025,9,6,SuperChampion Bat Yam,Tel Aviv,2109.0,1170.4,99548.18,12,47.20
+2025,10,6,SuperChampion Bat Yam,Tel Aviv,1817.1,949.0,85876.02,12,47.26
+2025,11,6,SuperChampion Bat Yam,Tel Aviv,2128.8,1084.0,100652.80,12,47.28
+2025,12,6,SuperChampion Bat Yam,Tel Aviv,2115.5,1271.1,100191.18,12,47.36
+2024,1,7,SuperChampion Malha,Jerusalem,1706.9,1001.2,64766.37,8,37.94
+2024,2,7,SuperChampion Malha,Jerusalem,1513.8,805.7,57438.07,8,37.94
+2024,3,7,SuperChampion Malha,Jerusalem,1573.4,885.5,59721.72,8,37.96
+2024,4,7,SuperChampion Malha,Jerusalem,1573.8,899.2,59697.14,8,37.93
+2024,5,7,SuperChampion Malha,Jerusalem,1783.6,974.7,76414.10,9,42.84
+2024,6,7,SuperChampion Malha,Jerusalem,1709.7,880.3,73913.32,9,43.23
+2024,7,7,SuperChampion Malha,Jerusalem,1937.0,882.8,83436.84,10,43.08
+2024,8,7,SuperChampion Malha,Jerusalem,1821.9,830.7,77966.91,10,42.79
+2024,9,7,SuperChampion Malha,Jerusalem,1975.3,1062.6,84302.28,10,42.68
+2024,10,7,SuperChampion Malha,Jerusalem,1808.7,1003.7,77313.88,10,42.75
+2024,11,7,SuperChampion Malha,Jerusalem,1810.5,1028.5,77471.18,10,42.79
+2024,12,7,SuperChampion Malha,Jerusalem,2151.0,1039.6,93174.54,11,43.32
+2025,1,7,SuperChampion Malha,Jerusalem,2232.7,1129.5,98180.76,11,43.97
+2025,2,7,SuperChampion Malha,Jerusalem,1923.9,943.4,84674.44,11,44.01
+2025,3,7,SuperChampion Malha,Jerusalem,2114.9,1052.4,93041.41,11,43.99
+2025,4,7,SuperChampion Malha,Jerusalem,2197.6,1154.8,97245.13,12,44.25
+2025,5,7,SuperChampion Malha,Jerusalem,2170.7,1091.1,96449.60,12,44.43
+2025,6,7,SuperChampion Malha,Jerusalem,2337.2,1172.0,103692.51,12,44.37
+2025,7,7,SuperChampion Malha,Jerusalem,2480.8,1237.8,110212.86,12,44.43
+2025,8,7,SuperChampion Malha,Jerusalem,2200.9,1038.4,97803.43,12,44.44
+2025,9,7,SuperChampion Malha,Jerusalem,2292.4,1084.0,101877.02,12,44.44
+2025,10,7,SuperChampion Malha,Jerusalem,2005.6,1015.1,89042.15,12,44.40
+2025,11,7,SuperChampion Malha,Jerusalem,2331.7,1149.1,103577.18,12,44.42
+2025,12,7,SuperChampion Malha,Jerusalem,2305.4,1033.9,102546.64,12,44.48
+2024,1,8,SuperChampion Talpiot,Jerusalem,1055.9,568.4,48368.66,5,45.81
+2024,2,8,SuperChampion Talpiot,Jerusalem,996.2,504.5,45256.70,6,45.43
+2024,3,8,SuperChampion Talpiot,Jerusalem,1175.3,606.9,52460.41,6,44.64
+2024,4,8,SuperChampion Talpiot,Jerusalem,1169.5,616.1,52258.99,6,44.68
+2024,5,8,SuperChampion Talpiot,Jerusalem,1193.2,596.5,53314.46,6,44.68
+2024,6,8,SuperChampion Talpiot,Jerusalem,1136.6,508.1,50765.55,6,44.66
+2024,7,8,SuperChampion Talpiot,Jerusalem,1234.1,581.1,55067.80,6,44.62
+2024,8,8,SuperChampion Talpiot,Jerusalem,1130.0,574.7,50459.27,6,44.65
+2024,9,8,SuperChampion Talpiot,Jerusalem,1212.0,618.3,54198.17,6,44.72
+2024,10,8,SuperChampion Talpiot,Jerusalem,1253.5,587.3,62062.81,7,49.51
+2024,11,8,SuperChampion Talpiot,Jerusalem,1297.8,712.1,65385.46,7,50.38
+2024,12,8,SuperChampion Talpiot,Jerusalem,1488.0,687.5,75079.70,7,50.46
+2025,1,8,SuperChampion Talpiot,Jerusalem,1462.1,867.2,73755.49,7,50.44
+2025,2,8,SuperChampion Talpiot,Jerusalem,1252.1,595.3,63282.07,7,50.54
+2025,3,8,SuperChampion Talpiot,Jerusalem,1375.1,629.8,69449.92,7,50.51
+2025,4,8,SuperChampion Talpiot,Jerusalem,1362.0,743.5,68710.18,7,50.45
+2025,5,8,SuperChampion Talpiot,Jerusalem,1309.0,795.3,66198.30,7,50.57
+2025,6,8,SuperChampion Talpiot,Jerusalem,1394.3,712.2,70359.19,7,50.46
+2025,7,8,SuperChampion Talpiot,Jerusalem,1486.5,866.0,74868.59,7,50.37
+2025,8,8,SuperChampion Talpiot,Jerusalem,1323.7,683.4,66967.74,7,50.59
+2025,9,8,SuperChampion Talpiot,Jerusalem,1367.9,659.9,68972.73,7,50.42
+2025,10,8,SuperChampion Talpiot,Jerusalem,1194.5,597.6,60396.44,7,50.56
+2025,11,8,SuperChampion Talpiot,Jerusalem,1401.9,789.0,70803.37,7,50.51
+2025,12,8,SuperChampion Talpiot,Jerusalem,1396.3,848.7,70409.59,7,50.43
+2024,1,9,SuperChampion Givat Shaul,Jerusalem,764.1,334.2,34358.08,4,44.97
+2024,2,9,SuperChampion Givat Shaul,Jerusalem,715.1,411.4,32396.32,5,45.30
+2024,3,9,SuperChampion Givat Shaul,Jerusalem,931.2,498.5,49689.96,5,53.36
+2024,4,9,SuperChampion Givat Shaul,Jerusalem,1039.9,546.5,53426.44,6,51.38
+2024,5,9,SuperChampion Givat Shaul,Jerusalem,1145.8,586.6,57384.37,6,50.08
+2024,6,9,SuperChampion Givat Shaul,Jerusalem,1095.0,562.8,54829.46,6,50.07
+2024,7,9,SuperChampion Givat Shaul,Jerusalem,1168.5,526.5,58620.82,6,50.17
+2024,8,9,SuperChampion Givat Shaul,Jerusalem,1078.5,518.6,54007.46,6,50.08
+2024,9,9,SuperChampion Givat Shaul,Jerusalem,1307.9,675.8,64277.95,7,49.15
+2024,10,9,SuperChampion Givat Shaul,Jerusalem,1193.9,592.3,58569.42,7,49.06
+2024,11,9,SuperChampion Givat Shaul,Jerusalem,1188.9,559.9,58561.44,7,49.26
+2024,12,9,SuperChampion Givat Shaul,Jerusalem,1395.2,808.2,68522.90,7,49.11
+2025,1,9,SuperChampion Givat Shaul,Jerusalem,1340.1,651.2,65803.39,7,49.10
+2025,2,9,SuperChampion Givat Shaul,Jerusalem,1155.0,595.2,56837.44,7,49.21
+2025,3,9,SuperChampion Givat Shaul,Jerusalem,1275.7,676.7,62674.36,7,49.13
+2025,4,9,SuperChampion Givat Shaul,Jerusalem,1252.6,665.3,61723.75,7,49.28
+2025,5,9,SuperChampion Givat Shaul,Jerusalem,1299.8,654.1,62473.91,8,48.06
+2025,6,9,SuperChampion Givat Shaul,Jerusalem,1492.0,767.1,70572.02,8,47.30
+2025,7,9,SuperChampion Givat Shaul,Jerusalem,1584.4,838.7,74953.13,8,47.31
+2025,8,9,SuperChampion Givat Shaul,Jerusalem,1402.6,711.7,66367.13,8,47.32
+2025,9,9,SuperChampion Givat Shaul,Jerusalem,1460.1,764.5,69329.36,8,47.48
+2025,10,9,SuperChampion Givat Shaul,Jerusalem,1270.8,623.2,60230.24,8,47.40
+2025,11,9,SuperChampion Givat Shaul,Jerusalem,1477.1,697.4,69773.77,8,47.24
+2025,12,9,SuperChampion Givat Shaul,Jerusalem,1477.0,779.2,69777.77,8,47.24
+2024,1,10,SuperChampion Grand Canyon,Haifa,418.9,180.6,21880.48,2,52.23
+2024,2,10,SuperChampion Grand Canyon,Haifa,386.4,306.1,20156.60,2,52.17
+2024,3,10,SuperChampion Grand Canyon,Haifa,386.6,129.8,20169.90,2,52.17
+2024,4,10,SuperChampion Grand Canyon,Haifa,391.1,189.6,20382.08,2,52.11
+2024,5,10,SuperChampion Grand Canyon,Haifa,399.9,242.2,20865.20,2,52.18
+2024,6,10,SuperChampion Grand Canyon,Haifa,378.3,169.6,19712.41,2,52.11
+2024,7,10,SuperChampion Grand Canyon,Haifa,407.2,183.9,21256.10,2,52.20
+2024,8,10,SuperChampion Grand Canyon,Haifa,382.3,247.3,19951.79,2,52.19
+2024,9,10,SuperChampion Grand Canyon,Haifa,561.2,326.7,27502.77,3,49.01
+2024,10,10,SuperChampion Grand Canyon,Haifa,727.3,367.3,33490.51,4,46.05
+2024,11,10,SuperChampion Grand Canyon,Haifa,736.0,309.6,33841.09,4,45.98
+2024,12,10,SuperChampion Grand Canyon,Haifa,1012.8,550.5,45376.41,6,44.80
+2025,1,10,SuperChampion Grand Canyon,Haifa,1199.6,660.3,52496.91,6,43.76
+2025,2,10,SuperChampion Grand Canyon,Haifa,1028.0,547.2,44946.18,6,43.72
+2025,3,10,SuperChampion Grand Canyon,Haifa,1130.5,550.8,49335.60,6,43.64
+2025,4,10,SuperChampion Grand Canyon,Haifa,1108.9,544.5,48531.66,6,43.77
+2025,5,10,SuperChampion Grand Canyon,Haifa,1169.3,599.3,51341.18,8,43.91
+2025,6,10,SuperChampion Grand Canyon,Haifa,1484.6,717.5,66523.95,8,44.81
+2025,7,10,SuperChampion Grand Canyon,Haifa,1597.9,985.1,71708.57,8,44.88
+2025,8,10,SuperChampion Grand Canyon,Haifa,1398.3,640.2,62730.74,8,44.86
+2025,9,10,SuperChampion Grand Canyon,Haifa,1475.1,867.8,66157.31,8,44.85
+2025,10,10,SuperChampion Grand Canyon,Haifa,1272.8,620.2,57134.85,8,44.89
+2025,11,10,SuperChampion Grand Canyon,Haifa,1480.5,735.9,66413.09,8,44.86
+2025,12,10,SuperChampion Grand Canyon,Haifa,1460.3,680.6,65510.48,8,44.86
+2024,1,11,SuperChampion Hadar,Haifa,995.3,481.4,49088.12,5,49.32
+2024,2,11,SuperChampion Hadar,Haifa,891.1,475.9,44015.45,5,49.39
+2024,3,11,SuperChampion Hadar,Haifa,924.6,437.3,45497.99,5,49.21
+2024,4,11,SuperChampion Hadar,Haifa,926.0,479.2,45506.76,5,49.14
+2024,5,11,SuperChampion Hadar,Haifa,938.0,402.7,46267.73,5,49.33
+2024,6,11,SuperChampion Hadar,Haifa,902.4,507.9,44477.78,5,49.29
+2024,7,11,SuperChampion Hadar,Haifa,975.4,532.7,48241.37,5,49.46
+2024,8,11,SuperChampion Hadar,Haifa,939.3,550.4,45653.07,6,48.60
+2024,9,11,SuperChampion Hadar,Haifa,1158.3,591.7,54123.47,6,46.73
+2024,10,11,SuperChampion Hadar,Haifa,1052.2,446.0,48989.42,6,46.56
+2024,11,11,SuperChampion Hadar,Haifa,1055.7,474.6,49060.22,6,46.47
+2024,12,11,SuperChampion Hadar,Haifa,1345.1,657.3,61372.99,7,45.63
+2025,1,11,SuperChampion Hadar,Haifa,1500.2,758.2,68233.41,8,45.48
+2025,2,11,SuperChampion Hadar,Haifa,1391.9,705.9,63182.05,8,45.39
+2025,3,11,SuperChampion Hadar,Haifa,1631.1,753.0,73435.15,9,45.02
+2025,4,11,SuperChampion Hadar,Haifa,1629.4,700.7,73161.20,9,44.90
+2025,5,11,SuperChampion Hadar,Haifa,1552.5,705.9,69773.69,9,44.94
+2025,6,11,SuperChampion Hadar,Haifa,1685.4,834.2,75562.56,9,44.83
+2025,7,11,SuperChampion Hadar,Haifa,1788.3,934.2,80212.99,9,44.85
+2025,8,11,SuperChampion Hadar,Haifa,1603.4,894.3,72066.60,9,44.95
+2025,9,11,SuperChampion Hadar,Haifa,1663.2,848.4,74679.97,9,44.90
+2025,10,11,SuperChampion Hadar,Haifa,1450.4,813.0,64958.69,9,44.79
+2025,11,11,SuperChampion Hadar,Haifa,1691.8,909.3,75855.28,9,44.84
+2025,12,11,SuperChampion Hadar,Haifa,1658.6,770.1,74422.84,9,44.87
+2024,1,12,SuperChampion Krayot,Haifa,1938.3,959.1,84053.90,11,43.36
+2024,2,12,SuperChampion Krayot,Haifa,1947.5,990.6,88778.26,12,45.59
+2024,3,12,SuperChampion Krayot,Haifa,2105.2,1144.9,97873.44,12,46.49
+2024,4,12,SuperChampion Krayot,Haifa,2091.8,997.9,97089.20,12,46.41
+2024,5,12,SuperChampion Krayot,Haifa,2120.6,1020.0,98628.52,12,46.51
+2024,6,12,SuperChampion Krayot,Haifa,2030.8,937.9,94338.63,12,46.45
+2024,7,12,SuperChampion Krayot,Haifa,2259.5,1282.3,104756.35,13,46.36
+2024,8,12,SuperChampion Krayot,Haifa,2292.7,1394.8,104488.15,14,45.57
+2024,9,12,SuperChampion Krayot,Haifa,2523.5,1341.8,114510.76,14,45.38
+2024,10,12,SuperChampion Krayot,Haifa,2299.3,1205.2,104438.04,14,45.42
+2024,11,12,SuperChampion Krayot,Haifa,2294.3,1180.2,104429.87,14,45.52
+2024,12,12,SuperChampion Krayot,Haifa,2668.9,1465.5,121066.33,14,45.36
+2025,1,12,SuperChampion Krayot,Haifa,2568.3,1338.3,116664.43,14,45.42
+2025,2,12,SuperChampion Krayot,Haifa,2212.3,1140.6,100571.70,14,45.46
+2025,3,12,SuperChampion Krayot,Haifa,2436.7,1323.7,110563.00,14,45.37
+2025,4,12,SuperChampion Krayot,Haifa,2390.5,1220.4,108579.83,14,45.42
+2025,5,12,SuperChampion Krayot,Haifa,2306.3,1285.6,104778.69,14,45.43
+2025,6,12,SuperChampion Krayot,Haifa,2480.2,1333.0,112557.99,14,45.38
+2025,7,12,SuperChampion Krayot,Haifa,2605.8,1283.6,118333.92,14,45.41
+2025,8,12,SuperChampion Krayot,Haifa,2320.8,1171.2,105550.35,14,45.48
+2025,9,12,SuperChampion Krayot,Haifa,2440.5,1250.7,110756.22,14,45.38
+2025,10,12,SuperChampion Krayot,Haifa,2090.5,912.6,94956.78,14,45.42
+2025,11,12,SuperChampion Krayot,Haifa,2479.6,1378.7,112558.65,14,45.39
+2025,12,12,SuperChampion Krayot,Haifa,2436.2,1281.2,110601.07,14,45.40
+2024,1,13,SuperChampion Ir Yamim,Central,2572.0,1273.2,118077.23,13,45.91
+2024,2,13,SuperChampion Ir Yamim,Central,2451.0,1276.1,111675.19,14,45.56
+2024,3,13,SuperChampion Ir Yamim,Central,2595.2,1399.4,117654.84,14,45.34
+2024,4,13,SuperChampion Ir Yamim,Central,2578.7,1318.7,116980.62,14,45.36
+2024,5,13,SuperChampion Ir Yamim,Central,2642.2,1441.5,120013.26,14,45.42
+2024,6,13,SuperChampion Ir Yamim,Central,2521.9,1316.1,114518.83,14,45.41
+2024,7,13,SuperChampion Ir Yamim,Central,2717.6,1477.6,123412.98,14,45.41
+2024,8,13,SuperChampion Ir Yamim,Central,2482.2,1247.3,112871.80,14,45.47
+2024,9,13,SuperChampion Ir Yamim,Central,2681.1,1489.0,121678.83,14,45.38
+2024,10,13,SuperChampion Ir Yamim,Central,2422.3,1085.9,109786.25,14,45.32
+2024,11,13,SuperChampion Ir Yamim,Central,2428.0,1139.3,110216.77,14,45.39
+2024,12,13,SuperChampion Ir Yamim,Central,2823.3,1449.9,128243.03,14,45.42
+2025,1,13,SuperChampion Ir Yamim,Central,2749.5,1453.1,124616.30,14,45.32
+2025,2,13,SuperChampion Ir Yamim,Central,2364.3,1194.1,107330.76,14,45.40
+2025,3,13,SuperChampion Ir Yamim,Central,2604.1,1396.7,118332.76,14,45.44
+2025,4,13,SuperChampion Ir Yamim,Central,2561.3,1362.2,116137.16,14,45.34
+2025,5,13,SuperChampion Ir Yamim,Central,2432.3,1177.9,110415.66,14,45.40
+2025,6,13,SuperChampion Ir Yamim,Central,2633.8,1391.7,119623.41,14,45.42
+2025,7,13,SuperChampion Ir Yamim,Central,2774.7,1304.3,125835.87,14,45.35
+2025,8,13,SuperChampion Ir Yamim,Central,2490.7,1312.3,112961.96,14,45.35
+2025,9,13,SuperChampion Ir Yamim,Central,2593.9,1388.7,117657.21,14,45.36
+2025,10,13,SuperChampion Ir Yamim,Central,2269.4,1282.8,103014.09,14,45.39
+2025,11,13,SuperChampion Ir Yamim,Central,2629.7,1293.8,119509.46,14,45.45
+2025,12,13,SuperChampion Ir Yamim,Central,2606.7,1470.9,118412.00,14,45.43
+2024,1,14,SuperChampion Kfar Saba,Central,1960.5,1160.9,92724.25,10,47.30
+2024,2,14,SuperChampion Kfar Saba,Central,1728.3,859.4,81980.70,10,47.43
+2024,3,14,SuperChampion Kfar Saba,Central,1804.1,842.1,85466.69,10,47.37
+2024,4,14,SuperChampion Kfar Saba,Central,1807.8,934.0,85773.11,10,47.45
+2024,5,14,SuperChampion Kfar Saba,Central,1841.6,980.9,87205.79,10,47.35
+2024,6,14,SuperChampion Kfar Saba,Central,1732.2,736.9,82271.23,10,47.50
+2024,7,14,SuperChampion Kfar Saba,Central,1885.0,1017.3,89306.13,10,47.38
+2024,8,14,SuperChampion Kfar Saba,Central,1723.4,852.3,81594.24,10,47.34
+2024,9,14,SuperChampion Kfar Saba,Central,1888.8,1013.8,89142.85,11,47.20
+2024,10,14,SuperChampion Kfar Saba,Central,1979.3,1032.5,91760.40,12,46.36
+2024,11,14,SuperChampion Kfar Saba,Central,2017.2,1099.2,93594.90,12,46.40
+2024,12,14,SuperChampion Kfar Saba,Central,2334.6,1162.0,108256.01,12,46.37
+2025,1,14,SuperChampion Kfar Saba,Central,2265.9,1109.9,105184.09,12,46.42
+2025,2,14,SuperChampion Kfar Saba,Central,1949.5,934.3,90350.47,12,46.35
+2025,3,14,SuperChampion Kfar Saba,Central,2154.4,1105.2,99878.40,12,46.36
+2025,4,14,SuperChampion Kfar Saba,Central,2117.5,1098.5,98141.13,12,46.35
+2025,5,14,SuperChampion Kfar Saba,Central,2023.5,1093.0,93921.91,12,46.42
+2025,6,14,SuperChampion Kfar Saba,Central,2179.5,1126.7,101036.72,12,46.36
+2025,7,14,SuperChampion Kfar Saba,Central,2306.0,1169.5,106940.82,12,46.38
+2025,8,14,SuperChampion Kfar Saba,Central,2046.7,977.3,94906.08,12,46.37
+2025,9,14,SuperChampion Kfar Saba,Central,2133.2,996.8,98992.26,12,46.41
+2025,10,14,SuperChampion Kfar Saba,Central,1870.8,989.4,86837.00,12,46.42
+2025,11,14,SuperChampion Kfar Saba,Central,2166.3,1029.6,100477.08,12,46.38
+2025,12,14,SuperChampion Kfar Saba,Central,2152.1,1150.1,99655.09,12,46.31
+2024,1,15,SuperChampion Raanana,Central,1239.2,573.3,55915.87,7,45.12
+2024,2,15,SuperChampion Raanana,Central,1213.8,620.5,53979.83,7,44.47
+2024,3,15,SuperChampion Raanana,Central,1265.8,602.0,56202.31,7,44.40
+2024,4,15,SuperChampion Raanana,Central,1274.0,722.3,56570.27,7,44.40
+2024,5,15,SuperChampion Raanana,Central,1286.9,587.8,57108.34,7,44.38
+2024,6,15,SuperChampion Raanana,Central,1236.2,638.4,55037.68,7,44.52
+2024,7,15,SuperChampion Raanana,Central,1330.7,740.1,59283.00,7,44.55
+2024,8,15,SuperChampion Raanana,Central,1472.0,758.4,64319.20,9,43.70
+2024,9,15,SuperChampion Raanana,Central,1706.1,812.9,74003.52,9,43.38
+2024,10,15,SuperChampion Raanana,Central,1751.6,898.5,77161.00,10,44.05
+2024,11,15,SuperChampion Raanana,Central,1755.5,910.0,77132.63,10,43.94
+2024,12,15,SuperChampion Raanana,Central,2026.7,1063.7,89180.54,10,44.00
+2025,1,15,SuperChampion Raanana,Central,1959.4,922.7,86201.64,10,43.99
+2025,2,15,SuperChampion Raanana,Central,1703.3,965.7,75008.74,10,44.04
+2025,3,15,SuperChampion Raanana,Central,1865.5,1030.1,81891.02,10,43.90
+2025,4,15,SuperChampion Raanana,Central,1822.4,828.4,80091.73,10,43.95
+2025,5,15,SuperChampion Raanana,Central,1756.4,968.6,77169.25,10,43.94
+2025,6,15,SuperChampion Raanana,Central,1874.2,895.5,82339.62,10,43.93
+2025,7,15,SuperChampion Raanana,Central,1995.7,1018.6,87690.41,10,43.94
+2025,8,15,SuperChampion Raanana,Central,1775.1,893.2,78128.04,10,44.01
+2025,9,15,SuperChampion Raanana,Central,1857.0,1002.8,81687.16,10,43.99
+2025,10,15,SuperChampion Raanana,Central,1625.0,845.0,71606.91,10,44.07
+2025,11,15,SuperChampion Raanana,Central,1891.0,997.1,83091.77,10,43.94
+2025,12,15,SuperChampion Raanana,Central,1856.1,912.8,81750.63,10,44.04
+2024,1,16,SuperChampion Petah Tikva,Central,1638.1,904.4,75546.61,8,46.12
+2024,2,16,SuperChampion Petah Tikva,Central,1465.1,787.1,67706.70,8,46.21
+2024,3,16,SuperChampion Petah Tikva,Central,1524.9,884.8,70209.60,8,46.04
+2024,4,16,SuperChampion Petah Tikva,Central,1527.3,820.7,70245.34,9,45.99
+2024,5,16,SuperChampion Petah Tikva,Central,1685.2,828.1,76962.79,9,45.67
+2024,6,16,SuperChampion Petah Tikva,Central,1823.6,1096.7,83276.09,10,45.67
+2024,7,16,SuperChampion Petah Tikva,Central,1939.1,1011.8,88490.49,10,45.63
+2024,8,16,SuperChampion Petah Tikva,Central,1786.6,970.7,81463.53,10,45.60
+2024,9,16,SuperChampion Petah Tikva,Central,2046.5,1172.6,94128.23,11,45.99
+2024,10,16,SuperChampion Petah Tikva,Central,1930.4,1002.4,89258.43,11,46.24
+2024,11,16,SuperChampion Petah Tikva,Central,1935.1,1002.0,89736.24,11,46.37
+2024,12,16,SuperChampion Petah Tikva,Central,2239.6,1183.5,103624.63,11,46.27
+2025,1,16,SuperChampion Petah Tikva,Central,2179.0,1083.8,100751.06,11,46.24
+2025,2,16,SuperChampion Petah Tikva,Central,1884.8,1045.4,87174.12,11,46.25
+2025,3,16,SuperChampion Petah Tikva,Central,2065.7,1131.3,95526.17,11,46.24
+2025,4,16,SuperChampion Petah Tikva,Central,2020.4,997.3,93569.73,11,46.31
+2025,5,16,SuperChampion Petah Tikva,Central,1930.2,940.1,89292.95,11,46.26
+2025,6,16,SuperChampion Petah Tikva,Central,2076.1,952.7,96149.46,11,46.31
+2025,7,16,SuperChampion Petah Tikva,Central,2207.7,1180.4,102128.83,11,46.26
+2025,8,16,SuperChampion Petah Tikva,Central,1961.1,936.6,90725.14,11,46.26
+2025,9,16,SuperChampion Petah Tikva,Central,2054.4,1067.7,95100.71,11,46.29
+2025,10,16,SuperChampion Petah Tikva,Central,1790.0,982.6,82805.79,11,46.26
+2025,11,16,SuperChampion Petah Tikva,Central,2075.5,977.3,95926.90,11,46.22
+2025,12,16,SuperChampion Petah Tikva,Central,2070.6,1117.7,95935.21,11,46.33
+2024,1,17,SuperChampion Rishon LeZion,Central,936.9,425.1,40402.26,5,43.12
+2024,2,17,SuperChampion Rishon LeZion,Central,847.9,507.3,36548.40,5,43.10
+2024,3,17,SuperChampion Rishon LeZion,Central,873.9,399.0,37598.77,5,43.02
+2024,4,17,SuperChampion Rishon LeZion,Central,875.1,433.6,37710.94,5,43.09
+2024,5,17,SuperChampion Rishon LeZion,Central,894.8,502.6,38512.25,5,43.04
+2024,6,17,SuperChampion Rishon LeZion,Central,1007.0,573.8,42626.72,6,42.33
+2024,7,17,SuperChampion Rishon LeZion,Central,1254.7,715.2,58186.77,7,46.38
+2024,8,17,SuperChampion Rishon LeZion,Central,1213.6,635.4,58812.94,7,48.46
+2024,9,17,SuperChampion Rishon LeZion,Central,1302.6,664.4,63264.96,7,48.57
+2024,10,17,SuperChampion Rishon LeZion,Central,1197.1,611.4,57862.77,7,48.34
+2024,11,17,SuperChampion Rishon LeZion,Central,1186.9,518.2,57432.43,7,48.39
+2024,12,17,SuperChampion Rishon LeZion,Central,1616.4,875.4,75885.99,9,46.95
+2025,1,17,SuperChampion Rishon LeZion,Central,1756.8,881.5,83854.70,9,47.73
+2025,2,17,SuperChampion Rishon LeZion,Central,1525.1,807.4,72928.49,9,47.82
+2025,3,17,SuperChampion Rishon LeZion,Central,1669.5,916.5,79538.21,9,47.64
+2025,4,17,SuperChampion Rishon LeZion,Central,1637.3,797.8,78107.28,9,47.70
+2025,5,17,SuperChampion Rishon LeZion,Central,1805.3,1018.4,84589.98,11,46.86
+2025,6,17,SuperChampion Rishon LeZion,Central,2090.0,1036.6,97310.70,11,46.56
+2025,7,17,SuperChampion Rishon LeZion,Central,2214.0,1181.8,103050.05,11,46.54
+2025,8,17,SuperChampion Rishon LeZion,Central,1976.5,1099.7,92008.66,11,46.55
+2025,9,17,SuperChampion Rishon LeZion,Central,2058.4,1140.9,95847.05,11,46.56
+2025,10,17,SuperChampion Rishon LeZion,Central,1787.8,927.5,83273.32,11,46.58
+2025,11,17,SuperChampion Rishon LeZion,Central,2092.4,1118.9,97416.71,11,46.56
+2025,12,17,SuperChampion Rishon LeZion,Central,2060.5,1080.5,96009.22,11,46.60
+2024,1,18,SuperChampion Rehovot,Central,1065.7,633.2,55039.06,5,51.65
+2024,2,18,SuperChampion Rehovot,Central,944.1,486.4,48907.29,5,51.80
+2024,3,18,SuperChampion Rehovot,Central,976.1,467.0,50407.84,5,51.64
+2024,4,18,SuperChampion Rehovot,Central,981.6,535.1,50945.91,5,51.90
+2024,5,18,SuperChampion Rehovot,Central,1114.4,557.5,55933.36,6,50.19
+2024,6,18,SuperChampion Rehovot,Central,1150.1,667.7,56855.85,6,49.44
+2024,7,18,SuperChampion Rehovot,Central,1246.4,733.4,61576.01,6,49.40
+2024,8,18,SuperChampion Rehovot,Central,1130.4,547.7,55965.09,6,49.51
+2024,9,18,SuperChampion Rehovot,Central,1213.2,611.7,60031.57,6,49.48
+2024,10,18,SuperChampion Rehovot,Central,1109.2,579.5,54846.43,6,49.45
+2024,11,18,SuperChampion Rehovot,Central,1129.9,703.0,55778.32,6,49.37
+2024,12,18,SuperChampion Rehovot,Central,1283.8,695.5,63367.52,6,49.36
+2025,1,18,SuperChampion Rehovot,Central,1242.8,563.2,61340.81,6,49.36
+2025,2,18,SuperChampion Rehovot,Central,1071.4,497.5,52839.31,6,49.32
+2025,3,18,SuperChampion Rehovot,Central,1191.5,628.1,58676.85,6,49.25
+2025,4,18,SuperChampion Rehovot,Central,1161.4,551.1,57517.56,6,49.52
+2025,5,18,SuperChampion Rehovot,Central,1116.0,546.5,55001.66,7,49.28
+2025,6,18,SuperChampion Rehovot,Central,1390.4,726.0,66920.67,7,48.13
+2025,7,18,SuperChampion Rehovot,Central,1484.3,791.5,71457.27,7,48.14
+2025,8,18,SuperChampion Rehovot,Central,1315.6,644.7,63108.73,7,47.97
+2025,9,18,SuperChampion Rehovot,Central,1371.6,684.5,65985.28,7,48.11
+2025,10,18,SuperChampion Rehovot,Central,1201.0,599.9,57447.81,7,47.83
+2025,11,18,SuperChampion Rehovot,Central,1396.5,642.4,67158.13,7,48.09
+2025,12,18,SuperChampion Rehovot,Central,1384.5,718.1,66574.65,7,48.09
+2024,1,19,SuperChampion Ashdod,Southern,1523.1,756.7,71988.59,8,47.26
+2024,2,19,SuperChampion Ashdod,Southern,1429.2,754.7,66772.78,9,46.72
+2024,3,19,SuperChampion Ashdod,Southern,1610.3,815.2,74315.66,9,46.15
+2024,4,19,SuperChampion Ashdod,Southern,1611.5,849.8,74205.39,9,46.05
+2024,5,19,SuperChampion Ashdod,Southern,1625.8,800.9,74760.92,9,45.98
+2024,6,19,SuperChampion Ashdod,Southern,1561.0,722.7,71838.48,9,46.02
+2024,7,19,SuperChampion Ashdod,Southern,1829.7,877.0,85441.62,11,46.70
+2024,8,19,SuperChampion Ashdod,Southern,1868.9,945.2,86892.47,11,46.49
+2024,9,19,SuperChampion Ashdod,Southern,2005.7,1001.2,93355.44,11,46.55
+2024,10,19,SuperChampion Ashdod,Southern,1841.1,1005.9,85731.23,11,46.57
+2024,11,19,SuperChampion Ashdod,Southern,1842.1,962.2,85711.12,11,46.53
+2024,12,19,SuperChampion Ashdod,Southern,2129.8,1129.7,98911.57,11,46.44
+2025,1,19,SuperChampion Ashdod,Southern,2069.7,1101.0,96157.98,11,46.46
+2025,2,19,SuperChampion Ashdod,Southern,1779.4,907.4,82802.90,11,46.53
+2025,3,19,SuperChampion Ashdod,Southern,1942.6,927.3,90341.61,11,46.51
+2025,4,19,SuperChampion Ashdod,Southern,1923.5,1007.6,89294.90,11,46.42
+2025,5,19,SuperChampion Ashdod,Southern,1837.6,941.9,85497.76,11,46.53
+2025,6,19,SuperChampion Ashdod,Southern,1989.9,1112.3,92449.05,11,46.46
+2025,7,19,SuperChampion Ashdod,Southern,2099.4,1148.0,97561.12,11,46.47
+2025,8,19,SuperChampion Ashdod,Southern,1865.0,935.4,86828.75,11,46.56
+2025,9,19,SuperChampion Ashdod,Southern,1949.9,960.0,90539.66,11,46.43
+2025,10,19,SuperChampion Ashdod,Southern,1692.1,845.2,78694.56,11,46.51
+2025,11,19,SuperChampion Ashdod,Southern,1976.0,1005.5,91819.59,11,46.47
+2025,12,19,SuperChampion Ashdod,Southern,1944.3,943.6,90442.18,11,46.52
+2024,1,20,SuperChampion Beer Sheva,Southern,1573.4,763.8,71591.15,8,45.50
+2024,2,20,SuperChampion Beer Sheva,Southern,1405.2,743.9,63927.06,8,45.49
+2024,3,20,SuperChampion Beer Sheva,Southern,1461.6,708.3,66379.64,8,45.42
+2024,4,20,SuperChampion Beer Sheva,Southern,1460.9,736.1,66223.72,8,45.33
+2024,5,20,SuperChampion Beer Sheva,Southern,1499.2,852.2,68030.70,8,45.38
+2024,6,20,SuperChampion Beer Sheva,Southern,1408.5,638.1,64140.17,8,45.54
+2024,7,20,SuperChampion Beer Sheva,Southern,1532.8,792.1,69799.73,8,45.54
+2024,8,20,SuperChampion Beer Sheva,Southern,1401.8,697.5,63721.49,8,45.46
+2024,9,20,SuperChampion Beer Sheva,Southern,1505.2,763.4,68488.61,8,45.50
+2024,10,20,SuperChampion Beer Sheva,Southern,1564.8,798.8,69463.19,10,44.39
+2024,11,20,SuperChampion Beer Sheva,Southern,1704.3,879.2,74586.63,10,43.76
+2024,12,20,SuperChampion Beer Sheva,Southern,1972.5,1095.2,86145.27,10,43.67
+2025,1,20,SuperChampion Beer Sheva,Southern,1908.8,973.0,83389.50,10,43.69
+2025,2,20,SuperChampion Beer Sheva,Southern,1656.3,895.4,72556.09,10,43.81
+2025,3,20,SuperChampion Beer Sheva,Southern,1874.2,975.9,81884.96,11,43.69
+2025,4,20,SuperChampion Beer Sheva,Southern,1986.9,1153.5,86895.21,11,43.73
+2025,5,20,SuperChampion Beer Sheva,Southern,1893.9,1045.5,82747.73,11,43.69
+2025,6,20,SuperChampion Beer Sheva,Southern,2036.0,1082.9,88928.40,11,43.68
+2025,7,20,SuperChampion Beer Sheva,Southern,2136.1,972.8,93458.96,11,43.75
+2025,8,20,SuperChampion Beer Sheva,Southern,1910.2,960.4,83536.24,11,43.73
+2025,9,20,SuperChampion Beer Sheva,Southern,2004.2,999.4,87714.03,11,43.77
+2025,10,20,SuperChampion Beer Sheva,Southern,1747.2,890.9,76291.06,11,43.66
+2025,11,20,SuperChampion Beer Sheva,Southern,2037.2,1071.5,88951.96,11,43.66
+2025,12,20,SuperChampion Beer Sheva,Southern,2010.9,1070.5,87757.14,11,43.64
+2024,1,21,SuperChampion Eilat,Southern,1353.2,625.6,52708.84,7,38.95
+2024,2,21,SuperChampion Eilat,Southern,1212.4,613.6,47268.09,7,38.99
+2024,3,21,SuperChampion Eilat,Southern,1356.3,733.6,52803.39,8,38.93
+2024,4,21,SuperChampion Eilat,Southern,1409.1,662.5,54904.06,8,38.96
+2024,5,21,SuperChampion Eilat,Southern,1480.0,810.5,57546.32,9,38.88
+2024,6,21,SuperChampion Eilat,Southern,1578.1,930.5,61103.86,9,38.72
+2024,7,21,SuperChampion Eilat,Southern,1680.8,839.5,65062.17,9,38.71
+2024,8,21,SuperChampion Eilat,Southern,1538.6,805.5,59537.10,9,38.70
+2024,9,21,SuperChampion Eilat,Southern,1663.6,917.2,64406.59,9,38.72
+2024,10,21,SuperChampion Eilat,Southern,1523.3,813.7,58985.07,9,38.72
+2024,11,21,SuperChampion Eilat,Southern,1515.8,726.0,58666.06,9,38.70
+2024,12,21,SuperChampion Eilat,Southern,1762.2,963.2,68246.74,9,38.73
+2025,1,21,SuperChampion Eilat,Southern,1845.0,918.7,74051.58,10,40.14
+2025,2,21,SuperChampion Eilat,Southern,1743.2,875.9,71883.86,11,41.24
+2025,3,21,SuperChampion Eilat,Southern,1960.3,1080.8,81244.66,11,41.45
+2025,4,21,SuperChampion Eilat,Southern,1916.0,971.0,79285.01,11,41.38
+2025,5,21,SuperChampion Eilat,Southern,1821.9,800.6,75489.06,11,41.43
+2025,6,21,SuperChampion Eilat,Southern,1988.5,1085.1,82365.12,11,41.42
+2025,7,21,SuperChampion Eilat,Southern,2099.7,1166.6,86933.73,11,41.40
+2025,8,21,SuperChampion Eilat,Southern,1880.4,1111.4,77857.45,11,41.40
+2025,9,21,SuperChampion Eilat,Southern,1960.2,1045.9,81162.38,11,41.41
+2025,10,21,SuperChampion Eilat,Southern,1682.0,832.6,69689.09,11,41.43
+2025,11,21,SuperChampion Eilat,Southern,1988.9,1072.7,82297.15,11,41.38
+2025,12,21,SuperChampion Eilat,Southern,1948.9,914.6,80737.37,11,41.43
+2024,1,22,SuperChampion Nazareth,Northern,944.5,504.0,35348.69,6,37.43
+2024,2,22,SuperChampion Nazareth,Northern,1179.1,572.6,47928.61,7,40.65
+2024,3,22,SuperChampion Nazareth,Northern,1425.3,764.6,63021.79,8,44.22
+2024,4,22,SuperChampion Nazareth,Northern,1508.7,725.5,70465.09,8,46.71
+2024,5,22,SuperChampion Nazareth,Northern,1543.9,815.6,72183.94,8,46.75
+2024,6,22,SuperChampion Nazareth,Northern,1585.3,857.0,73272.28,9,46.22
+2024,7,22,SuperChampion Nazareth,Northern,1750.4,1013.4,80912.02,9,46.22
+2024,8,22,SuperChampion Nazareth,Northern,1614.3,804.9,74340.47,10,46.05
+2024,9,22,SuperChampion Nazareth,Northern,1864.3,997.8,84955.75,10,45.57
+2024,10,22,SuperChampion Nazareth,Northern,1749.7,945.4,79262.34,11,45.30
+2024,11,22,SuperChampion Nazareth,Northern,1899.3,1103.5,85195.41,11,44.86
+2024,12,22,SuperChampion Nazareth,Northern,2176.9,1125.3,97317.75,11,44.70
+2025,1,22,SuperChampion Nazareth,Northern,2110.4,988.1,94274.06,11,44.67
+2025,2,22,SuperChampion Nazareth,Northern,1828.2,868.3,81833.72,11,44.76
+2025,3,22,SuperChampion Nazareth,Northern,2012.8,1035.0,90190.30,11,44.81
+2025,4,22,SuperChampion Nazareth,Northern,2075.7,939.5,91962.28,12,44.30
+2025,5,22,SuperChampion Nazareth,Northern,2079.9,1143.9,91478.91,12,43.98
+2025,6,22,SuperChampion Nazareth,Northern,2225.7,1105.4,97950.30,12,44.01
+2025,7,22,SuperChampion Nazareth,Northern,2369.2,1250.8,104201.50,12,43.98
+2025,8,22,SuperChampion Nazareth,Northern,2105.7,1034.4,92778.67,12,44.06
+2025,9,22,SuperChampion Nazareth,Northern,2201.6,1159.8,96933.63,12,44.03
+2025,10,22,SuperChampion Nazareth,Northern,1907.1,977.0,84066.70,12,44.08
+2025,11,22,SuperChampion Nazareth,Northern,2243.2,1199.8,98733.57,12,44.01
+2025,12,22,SuperChampion Nazareth,Northern,2187.6,1001.3,96293.24,12,44.02
+2024,1,23,SuperChampion Tiberias,Northern,1828.6,944.2,81670.08,10,44.66
+2024,2,23,SuperChampion Tiberias,Northern,1630.6,900.5,72887.69,10,44.70
+2024,3,23,SuperChampion Tiberias,Northern,1706.1,865.5,75994.02,10,44.54
+2024,4,23,SuperChampion Tiberias,Northern,1709.9,914.6,76101.21,10,44.51
+2024,5,23,SuperChampion Tiberias,Northern,1985.5,973.9,87161.74,12,43.90
+2024,6,23,SuperChampion Tiberias,Northern,1996.8,1054.3,87051.87,12,43.60
+2024,7,23,SuperChampion Tiberias,Northern,2136.7,1162.9,93375.72,12,43.70
+2024,8,23,SuperChampion Tiberias,Northern,1946.6,990.9,85094.62,12,43.71
+2024,9,23,SuperChampion Tiberias,Northern,2101.3,1032.5,91567.61,12,43.58
+2024,10,23,SuperChampion Tiberias,Northern,1925.2,1043.0,84030.20,12,43.65
+2024,11,23,SuperChampion Tiberias,Northern,1913.0,961.8,83525.56,12,43.66
+2024,12,23,SuperChampion Tiberias,Northern,2229.5,1128.2,97204.43,12,43.60
+2025,1,23,SuperChampion Tiberias,Northern,2198.0,1286.4,95818.29,13,43.59
+2025,2,23,SuperChampion Tiberias,Northern,1995.3,1034.7,85910.32,13,43.06
+2025,3,23,SuperChampion Tiberias,Northern,2181.1,1125.6,93985.70,13,43.09
+2025,4,23,SuperChampion Tiberias,Northern,2136.3,972.6,91794.46,13,42.97
+2025,5,23,SuperChampion Tiberias,Northern,2063.5,1144.0,88858.00,13,43.06
+2025,6,23,SuperChampion Tiberias,Northern,2208.6,1075.6,95024.12,13,43.02
+2025,7,23,SuperChampion Tiberias,Northern,2355.8,1305.2,101267.52,13,42.99
+2025,8,23,SuperChampion Tiberias,Northern,2091.2,1092.9,90087.93,13,43.08
+2025,9,23,SuperChampion Tiberias,Northern,2191.6,1118.2,94121.91,13,42.95
+2025,10,23,SuperChampion Tiberias,Northern,1893.5,1016.9,81498.29,13,43.04
+2025,11,23,SuperChampion Tiberias,Northern,2222.2,1179.8,95684.70,13,43.06
+2025,12,23,SuperChampion Tiberias,Northern,2165.7,977.0,93269.70,13,43.07
+2024,1,24,SuperChampion Afula,Northern,1218.0,641.2,58011.83,7,47.63
+2024,2,24,SuperChampion Afula,Northern,1159.3,573.2,55126.49,7,47.55
+2024,3,24,SuperChampion Afula,Northern,1224.9,683.0,58155.06,7,47.48
+2024,4,24,SuperChampion Afula,Northern,1223.9,652.4,58116.93,7,47.49
+2024,5,24,SuperChampion Afula,Northern,1237.9,597.3,58840.76,7,47.53
+2024,6,24,SuperChampion Afula,Northern,1196.5,768.5,56871.37,7,47.53
+2024,7,24,SuperChampion Afula,Northern,1267.8,641.0,60277.10,7,47.54
+2024,8,24,SuperChampion Afula,Northern,1164.4,599.9,55283.17,7,47.48
+2024,9,24,SuperChampion Afula,Northern,1244.3,571.6,59177.85,7,47.56
+2024,10,24,SuperChampion Afula,Northern,1194.6,614.6,57340.57,8,48.00
+2024,11,24,SuperChampion Afula,Northern,1322.4,591.0,64787.31,8,48.99
+2024,12,24,SuperChampion Afula,Northern,1546.7,901.7,75926.87,8,49.09
+2025,1,24,SuperChampion Afula,Northern,1513.1,906.0,74258.09,8,49.08
+2025,2,24,SuperChampion Afula,Northern,1341.4,754.2,65395.94,9,48.75
+2025,3,24,SuperChampion Afula,Northern,1783.8,901.8,86819.03,10,48.67
+2025,4,24,SuperChampion Afula,Northern,1776.1,854.6,86429.71,10,48.66
+2025,5,24,SuperChampion Afula,Northern,1701.4,882.7,82839.23,10,48.69
+2025,6,24,SuperChampion Afula,Northern,1832.7,919.1,89182.51,10,48.66
+2025,7,24,SuperChampion Afula,Northern,1936.0,956.6,94354.85,10,48.74
+2025,8,24,SuperChampion Afula,Northern,1724.7,855.9,84017.72,10,48.71
+2025,9,24,SuperChampion Afula,Northern,1820.6,1054.3,88543.98,10,48.63
+2025,10,24,SuperChampion Afula,Northern,1569.8,786.4,76412.97,10,48.68
+2025,11,24,SuperChampion Afula,Northern,1826.9,882.6,89012.10,10,48.72
+2025,12,24,SuperChampion Afula,Northern,1802.2,861.7,87750.20,10,48.69

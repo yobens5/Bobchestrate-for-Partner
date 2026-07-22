@@ -66,3 +66,6 @@ temp/
 # MkDocs
 site/
 docs/part10-nl2sql/videos/*.mov
+
+# Db2 credentials
+.db2.json

@@ -1,0 +1,373 @@
+employee_key,employee_code,full_name,store_key,role,employment_type,hire_date,hourly_rate,is_active
+1,EMP-00001,Moshe Katz,1,Store Manager,Full-time,2022-01-19,81.19,1
+2,EMP-00002,Itai Sasson,1,Shift Manager,Full-time,2022-02-19,57.25,1
+3,EMP-00003,Omer Levi,1,Shift Manager,Full-time,2024-08-11,57.74,1
+4,EMP-00004,Daniel Sasson,1,Stocker,Full-time,2025-04-01,34.16,1
+5,EMP-00005,Ofir Amar,1,Stocker,Full-time,2021-03-15,34.13,1
+6,EMP-00006,Moshe Ben-David,1,Butcher,Full-time,2025-03-20,50.58,1
+7,EMP-00007,Tamar Malka,1,Baker,Part-time,2024-06-03,49.47,1
+8,EMP-00008,Eitan Elbaz,1,Security,Full-time,2021-07-07,43.92,1
+9,EMP-00009,Shira Peretz,1,Cleaner,Part-time,2024-01-10,39.75,1
+10,EMP-00010,Tal Levi,1,Cashier,Student,2021-08-12,37.95,1
+11,EMP-00011,Itai Avraham,1,Cashier,Student,2024-05-03,38.57,1
+12,EMP-00012,Roni Avraham,1,Cashier,Full-time,2024-02-05,34.24,1
+13,EMP-00013,Yael Ohayon,1,Cashier,Student,2021-12-31,39.05,1
+14,EMP-00014,Tal Mizrahi,2,Store Manager,Full-time,2021-06-18,85.90,1
+15,EMP-00015,Daniel Ben-David,2,Shift Manager,Full-time,2024-09-10,55.67,1
+16,EMP-00016,Liat Amar,2,Shift Manager,Full-time,2023-04-12,54.47,1
+17,EMP-00017,Nadav Mizrahi,2,Stocker,Part-time,2021-11-21,38.25,1
+18,EMP-00018,Adi Ben-David,2,Stocker,Full-time,2022-08-01,38.63,1
+19,EMP-00019,Roni Biton,2,Butcher,Full-time,2024-01-26,46.52,1
+20,EMP-00020,Gal Azoulay,2,Baker,Part-time,2021-03-19,46.29,1
+21,EMP-00021,Omer Friedman,2,Security,Full-time,2021-04-04,39.08,1
+22,EMP-00022,Itai Avraham,2,Cleaner,Full-time,2023-04-21,38.99,1
+23,EMP-00023,Sigal Biton,2,Cashier,Full-time,2021-04-02,37.29,1
+24,EMP-00024,Hila Sasson,2,Cashier,Student,2022-06-09,37.48,1
+25,EMP-00025,Ronen Gabay,2,Cashier,Full-time,2024-06-05,35.94,1
+26,EMP-00026,Omer Levi,2,Cashier,Full-time,2023-01-06,38.83,1
+27,EMP-00027,Gal Levi,2,Cashier,Student,2024-03-18,36.72,1
+28,EMP-00028,Amit Malka,3,Store Manager,Full-time,2021-05-22,84.46,1
+29,EMP-00029,Avi Mizrahi,3,Shift Manager,Full-time,2022-01-27,56.61,1
+30,EMP-00030,Gal Biton,3,Shift Manager,Full-time,2024-10-15,52.84,1
+31,EMP-00031,Avi Shapira,3,Stocker,Part-time,2022-01-14,37.11,1
+32,EMP-00032,Tamar Naim,3,Stocker,Full-time,2024-05-25,35.96,1
+33,EMP-00033,Yael Cohen,3,Butcher,Full-time,2023-09-05,49.63,1
+34,EMP-00034,Yael Malka,3,Baker,Full-time,2021-09-17,46.48,1
+35,EMP-00035,Ofir Mizrahi,3,Security,Full-time,2022-10-23,41.75,1
+36,EMP-00036,Sigal Ben-David,3,Cleaner,Full-time,2025-02-20,38.02,1
+37,EMP-00037,Yael Peretz,3,Cashier,Student,2023-08-27,37.52,1
+38,EMP-00038,Or Levi,3,Cashier,Full-time,2021-05-13,35.28,1
+39,EMP-00039,Ofir Naim,3,Cashier,Full-time,2022-10-31,34.37,1
+40,EMP-00040,Nadav Ohayon,3,Cashier,Student,2023-05-13,39.79,1
+41,EMP-00041,Tamar Malka,3,Cashier,Full-time,2025-05-17,39.18,1
+42,EMP-00042,Liat Elbaz,3,Cashier,Full-time,2022-09-05,37.65,1
+43,EMP-00043,Michal Mizrahi,4,Store Manager,Full-time,2024-09-28,80.14,1
+44,EMP-00044,Amit Biton,4,Shift Manager,Full-time,2024-04-08,52.12,1
+45,EMP-00045,Tamar Dahan,4,Shift Manager,Full-time,2024-03-08,54.10,1
+46,EMP-00046,Amit Biton,4,Stocker,Full-time,2023-12-13,35.75,1
+47,EMP-00047,David Biton,4,Stocker,Full-time,2023-11-22,34.90,1
+48,EMP-00048,Liat Naim,4,Butcher,Full-time,2021-12-20,47.64,1
+49,EMP-00049,Moshe Mizrahi,4,Baker,Part-time,2021-12-30,46.90,1
+50,EMP-00050,Adi Azoulay,4,Security,Full-time,2022-06-03,38.18,1
+51,EMP-00051,Adi Mizrahi,4,Cleaner,Part-time,2024-11-01,37.83,1
+52,EMP-00052,Dana Ben-David,4,Cashier,Full-time,2024-06-07,35.55,1
+53,EMP-00053,Omer Katz,4,Cashier,Student,2022-12-30,35.33,1
+54,EMP-00054,Omer Mizrahi,4,Cashier,Full-time,2023-05-25,34.47,1
+55,EMP-00055,Yael Ohayon,4,Cashier,Student,2022-06-28,38.91,1
+56,EMP-00056,Omer Hadad,4,Cashier,Full-time,2024-05-13,34.03,1
+57,EMP-00057,Shira Malka,4,Cashier,Student,2024-06-19,35.05,1
+58,EMP-00058,Nadav Friedman,4,Cashier,Full-time,2024-03-16,36.80,1
+59,EMP-00059,Or Azoulay,5,Store Manager,Full-time,2025-04-03,80.40,1
+60,EMP-00060,Tal Hadad,5,Shift Manager,Full-time,2024-05-27,56.82,1
+61,EMP-00061,Tal Ohayon,5,Shift Manager,Full-time,2023-02-06,53.04,1
+62,EMP-00062,Adi Peretz,5,Stocker,Full-time,2023-06-14,35.97,1
+63,EMP-00063,Liat Naim,5,Stocker,Full-time,2023-09-22,36.25,1
+64,EMP-00064,Yossi Ohayon,5,Butcher,Part-time,2025-04-02,49.22,1
+65,EMP-00065,Yarden Malka,5,Baker,Part-time,2024-01-08,48.79,1
+66,EMP-00066,Michal Ben-David,5,Security,Part-time,2022-01-07,41.23,1
+67,EMP-00067,Hila Levi,5,Cleaner,Full-time,2021-03-29,39.93,1
+68,EMP-00068,Dana Katz,5,Cashier,Student,2021-03-27,34.18,1
+69,EMP-00069,Shira Dahan,5,Cashier,Student,2022-04-13,38.74,1
+70,EMP-00070,David Azoulay,5,Cashier,Student,2023-11-30,36.77,1
+71,EMP-00071,Tal Biton,5,Cashier,Student,2021-11-23,37.70,1
+72,EMP-00072,Ronen Avraham,5,Cashier,Student,2022-12-17,37.77,1
+73,EMP-00073,Liat Gabay,5,Cashier,Student,2023-03-13,38.64,1
+74,EMP-00074,Ofir Amar,5,Cashier,Part-time,2021-01-31,38.90,1
+75,EMP-00075,Yarden Avraham,5,Cashier,Full-time,2021-10-20,37.95,1
+76,EMP-00076,Sigal Gabay,6,Store Manager,Full-time,2024-11-26,83.39,1
+77,EMP-00077,Dana Azoulay,6,Shift Manager,Full-time,2022-10-16,55.28,1
+78,EMP-00078,Adi Hadad,6,Shift Manager,Full-time,2023-08-13,57.67,1
+79,EMP-00079,Tal Mizrahi,6,Stocker,Full-time,2024-02-24,36.33,1
+80,EMP-00080,Shira Amar,6,Stocker,Full-time,2021-10-02,38.77,1
+81,EMP-00081,Liat Sasson,6,Butcher,Part-time,2022-09-01,50.03,1
+82,EMP-00082,Amit Hadad,6,Baker,Full-time,2024-01-31,46.26,1
+83,EMP-00083,Michal Amar,6,Security,Full-time,2025-04-17,39.67,1
+84,EMP-00084,Ofir Hadad,6,Cleaner,Part-time,2024-01-25,36.56,1
+85,EMP-00085,Michal Ohayon,6,Cashier,Student,2023-11-21,35.08,1
+86,EMP-00086,Hila Avraham,6,Cashier,Student,2025-01-15,38.18,1
+87,EMP-00087,Dana Dahan,6,Cashier,Student,2024-06-09,38.39,1
+88,EMP-00088,Noa Levi,6,Cashier,Part-time,2021-11-21,37.19,1
+89,EMP-00089,Yael Gabay,6,Cashier,Student,2021-05-09,36.46,1
+90,EMP-00090,Liat Friedman,6,Cashier,Part-time,2021-11-23,34.37,1
+91,EMP-00091,Eitan Avraham,6,Cashier,Student,2021-07-02,38.22,1
+92,EMP-00092,Ronen Mizrahi,6,Cashier,Student,2022-08-29,36.05,1
+93,EMP-00093,Yael Peretz,6,Cashier,Student,2025-04-29,34.74,1
+94,EMP-00094,Gal Cohen,7,Store Manager,Full-time,2024-05-03,85.58,1
+95,EMP-00095,Maya Ohayon,7,Shift Manager,Full-time,2022-07-16,53.60,1
+96,EMP-00096,Daniel Azoulay,7,Shift Manager,Full-time,2024-12-19,55.23,1
+97,EMP-00097,Omer Malka,7,Stocker,Full-time,2022-03-11,37.61,1
+98,EMP-00098,Moshe Ohayon,7,Stocker,Full-time,2023-07-18,34.25,1
+99,EMP-00099,Omer Peretz,7,Butcher,Full-time,2022-12-16,47.83,1
+100,EMP-00100,Shani Gabay,7,Baker,Full-time,2025-04-14,48.95,1
+101,EMP-00101,Omer Biton,7,Security,Full-time,2023-09-13,40.46,1
+102,EMP-00102,Amit Amar,7,Cleaner,Full-time,2021-11-03,39.48,1
+103,EMP-00103,Ronen Amar,7,Cashier,Full-time,2021-07-15,34.27,1
+104,EMP-00104,Ronen Gabay,7,Cashier,Student,2024-12-30,39.03,1
+105,EMP-00105,Shira Levi,7,Cashier,Student,2024-07-14,37.57,1
+106,EMP-00106,Michal Malka,7,Cashier,Student,2024-11-24,37.70,1
+107,EMP-00107,Itai Katz,7,Cashier,Student,2022-08-05,38.60,1
+108,EMP-00108,Nadav Azoulay,7,Cashier,Full-time,2021-09-17,34.07,1
+109,EMP-00109,Tamar Mizrahi,7,Cashier,Student,2024-01-23,34.52,1
+110,EMP-00110,Michal Naim,7,Cashier,Full-time,2022-06-07,35.53,1
+111,EMP-00111,Eitan Biton,7,Cashier,Student,2023-09-23,37.96,1
+112,EMP-00112,Yossi Katz,7,Cashier,Student,2024-02-20,39.79,1
+113,EMP-00113,Michal Sasson,8,Store Manager,Full-time,2024-10-08,85.37,1
+114,EMP-00114,Sigal Ohayon,8,Shift Manager,Full-time,2023-06-15,55.11,1
+115,EMP-00115,Avi Amar,8,Shift Manager,Full-time,2021-09-17,53.40,1
+116,EMP-00116,Ofir Levi,8,Stocker,Part-time,2021-06-23,36.07,1
+117,EMP-00117,Ofir Biton,8,Stocker,Full-time,2022-06-18,35.43,1
+118,EMP-00118,Yossi Hadad,8,Butcher,Part-time,2024-09-03,50.50,1
+119,EMP-00119,Michal Malka,8,Baker,Full-time,2021-05-10,46.01,1
+120,EMP-00120,Moshe Ohayon,8,Security,Full-time,2022-06-14,40.50,1
+121,EMP-00121,Noa Malka,8,Cleaner,Full-time,2022-01-18,39.10,1
+122,EMP-00122,Or Friedman,8,Cashier,Student,2025-04-19,39.29,1
+123,EMP-00123,Itai Ohayon,8,Cashier,Full-time,2024-02-22,38.92,1
+124,EMP-00124,Shira Friedman,8,Cashier,Part-time,2021-11-17,37.64,1
+125,EMP-00125,Daniel Biton,9,Store Manager,Full-time,2024-02-29,85.75,1
+126,EMP-00126,Sigal Friedman,9,Shift Manager,Full-time,2022-03-19,57.85,1
+127,EMP-00127,Noa Levi,9,Shift Manager,Full-time,2022-08-21,52.40,1
+128,EMP-00128,Dana Dahan,9,Stocker,Full-time,2025-05-15,35.02,1
+129,EMP-00129,Maya Gabay,9,Stocker,Full-time,2024-04-13,34.12,1
+130,EMP-00130,Shani Shapira,9,Butcher,Full-time,2021-01-16,51.48,1
+131,EMP-00131,Dana Katz,9,Baker,Part-time,2025-01-14,48.41,1
+132,EMP-00132,Ofir Dahan,9,Security,Part-time,2024-08-30,42.15,1
+133,EMP-00133,Ofir Dahan,9,Cleaner,Full-time,2024-03-14,36.74,1
+134,EMP-00134,Daniel Azoulay,9,Cashier,Student,2023-04-07,37.46,1
+135,EMP-00135,Itai Friedman,9,Cashier,Student,2023-04-16,34.99,1
+136,EMP-00136,Michal Ohayon,9,Cashier,Student,2023-07-01,34.40,1
+137,EMP-00137,Lior Cohen,9,Cashier,Full-time,2024-01-03,35.81,1
+138,EMP-00138,Roni Levi,10,Store Manager,Full-time,2022-09-28,85.00,1
+139,EMP-00139,Omer Friedman,10,Shift Manager,Full-time,2021-11-12,56.97,1
+140,EMP-00140,Eitan Amar,10,Shift Manager,Full-time,2025-05-26,54.98,1
+141,EMP-00141,Gal Avraham,10,Stocker,Part-time,2025-05-18,39.95,1
+142,EMP-00142,David Peretz,10,Stocker,Full-time,2024-12-15,37.89,1
+143,EMP-00143,Roni Gabay,10,Butcher,Full-time,2021-11-03,47.37,1
+144,EMP-00144,Tal Elbaz,10,Baker,Part-time,2024-07-05,47.90,1
+145,EMP-00145,Shira Gabay,10,Security,Full-time,2024-09-08,40.62,1
+146,EMP-00146,Maya Biton,10,Cleaner,Part-time,2024-12-24,39.49,1
+147,EMP-00147,Gal Katz,10,Cashier,Student,2021-09-21,36.09,1
+148,EMP-00148,Shani Naim,10,Cashier,Student,2022-10-15,36.77,1
+149,EMP-00149,Daniel Azoulay,10,Cashier,Full-time,2021-09-02,38.18,1
+150,EMP-00150,Shani Ohayon,10,Cashier,Student,2025-01-15,34.16,1
+151,EMP-00151,Eitan Cohen,10,Cashier,Full-time,2024-10-06,38.85,1
+152,EMP-00152,Or Peretz,11,Store Manager,Full-time,2022-05-16,83.08,1
+153,EMP-00153,Dana Avraham,11,Shift Manager,Full-time,2021-01-27,57.64,1
+154,EMP-00154,Yael Cohen,11,Shift Manager,Full-time,2023-08-05,56.55,1
+155,EMP-00155,Michal Gabay,11,Stocker,Part-time,2025-03-07,38.60,1
+156,EMP-00156,Shani Elbaz,11,Stocker,Full-time,2023-07-23,39.08,1
+157,EMP-00157,Yael Mizrahi,11,Butcher,Full-time,2025-01-17,46.27,1
+158,EMP-00158,Shira Levi,11,Baker,Full-time,2022-07-07,47.21,1
+159,EMP-00159,Ofir Katz,11,Security,Full-time,2021-03-09,42.02,1
+160,EMP-00160,Amit Peretz,11,Cleaner,Part-time,2021-08-13,35.24,1
+161,EMP-00161,Nadav Ben-David,11,Cashier,Student,2023-08-01,34.25,1
+162,EMP-00162,Daniel Gabay,11,Cashier,Full-time,2024-12-12,37.90,1
+163,EMP-00163,Yarden Gabay,11,Cashier,Full-time,2023-05-11,38.88,1
+164,EMP-00164,Roni Naim,11,Cashier,Student,2022-05-27,38.77,1
+165,EMP-00165,Roni Dahan,11,Cashier,Student,2024-08-17,34.19,1
+166,EMP-00166,Tal Avraham,11,Cashier,Full-time,2024-08-24,34.17,1
+167,EMP-00167,Amit Biton,12,Store Manager,Full-time,2024-02-09,80.19,1
+168,EMP-00168,Shira Katz,12,Shift Manager,Full-time,2021-01-21,54.34,1
+169,EMP-00169,Yossi Elbaz,12,Shift Manager,Full-time,2022-08-25,55.05,1
+170,EMP-00170,Yael Avraham,12,Stocker,Part-time,2021-07-20,35.06,1
+171,EMP-00171,Noa Gabay,12,Stocker,Full-time,2022-09-11,37.80,1
+172,EMP-00172,Adi Azoulay,12,Butcher,Full-time,2022-04-25,49.70,1
+173,EMP-00173,Adi Ben-David,12,Baker,Part-time,2022-10-31,45.89,1
+174,EMP-00174,Gal Biton,12,Security,Full-time,2022-12-04,39.43,1
+175,EMP-00175,Eitan Levi,12,Cleaner,Full-time,2024-08-11,38.83,1
+176,EMP-00176,Yael Amar,12,Cashier,Student,2022-06-16,34.50,1
+177,EMP-00177,Liat Ohayon,12,Cashier,Part-time,2024-01-20,36.49,1
+178,EMP-00178,Shira Ohayon,12,Cashier,Full-time,2022-08-28,39.64,1
+179,EMP-00179,Shira Hadad,12,Cashier,Student,2023-10-09,34.63,1
+180,EMP-00180,Gal Hadad,12,Cashier,Student,2024-07-21,38.58,1
+181,EMP-00181,Gal Malka,12,Cashier,Full-time,2021-06-28,39.15,1
+182,EMP-00182,David Friedman,12,Cashier,Part-time,2022-02-07,39.10,1
+183,EMP-00183,Tal Sasson,13,Store Manager,Full-time,2023-10-23,80.03,1
+184,EMP-00184,Moshe Ohayon,13,Shift Manager,Full-time,2023-02-18,53.88,1
+185,EMP-00185,Shira Ben-David,13,Shift Manager,Full-time,2021-01-22,56.31,1
+186,EMP-00186,Yael Katz,13,Stocker,Full-time,2022-06-17,37.77,1
+187,EMP-00187,Moshe Cohen,13,Stocker,Full-time,2021-04-25,38.39,1
+188,EMP-00188,Lior Naim,13,Butcher,Full-time,2022-07-09,50.41,1
+189,EMP-00189,Yossi Malka,13,Baker,Full-time,2021-01-20,44.41,1
+190,EMP-00190,Sigal Hadad,13,Security,Full-time,2024-02-07,39.03,1
+191,EMP-00191,Gal Mizrahi,13,Cleaner,Full-time,2023-11-27,39.45,1
+192,EMP-00192,Amit Dahan,13,Cashier,Student,2023-07-04,36.08,1
+193,EMP-00193,Moshe Levi,13,Cashier,Full-time,2021-09-27,39.50,1
+194,EMP-00194,Ofir Avraham,13,Cashier,Part-time,2022-04-18,35.53,1
+195,EMP-00195,Tamar Mizrahi,13,Cashier,Part-time,2021-08-06,39.32,1
+196,EMP-00196,Dana Katz,13,Cashier,Student,2021-01-07,34.87,1
+197,EMP-00197,David Azoulay,13,Cashier,Student,2021-04-11,39.56,1
+198,EMP-00198,Adi Sasson,13,Cashier,Full-time,2024-06-08,37.88,1
+199,EMP-00199,Nadav Katz,13,Cashier,Full-time,2022-11-22,38.63,1
+200,EMP-00200,Yarden Ben-David,14,Store Manager,Full-time,2022-08-13,84.82,1
+201,EMP-00201,Yarden Avraham,14,Shift Manager,Full-time,2022-09-27,55.76,1
+202,EMP-00202,Liat Shapira,14,Shift Manager,Full-time,2021-01-24,56.83,1
+203,EMP-00203,Sigal Avraham,14,Stocker,Full-time,2024-09-26,36.10,1
+204,EMP-00204,Liat Katz,14,Stocker,Full-time,2021-02-01,34.15,1
+205,EMP-00205,Roni Katz,14,Butcher,Part-time,2024-10-10,47.76,1
+206,EMP-00206,Yarden Sasson,14,Baker,Part-time,2022-04-04,49.81,1
+207,EMP-00207,Hila Amar,14,Security,Part-time,2022-06-04,40.43,1
+208,EMP-00208,Or Mizrahi,14,Cleaner,Full-time,2023-05-02,38.87,1
+209,EMP-00209,Yael Elbaz,14,Cashier,Student,2021-12-22,34.16,1
+210,EMP-00210,Ofir Shapira,14,Cashier,Full-time,2024-08-07,34.22,1
+211,EMP-00211,Noa Ben-David,14,Cashier,Full-time,2021-07-24,37.19,1
+212,EMP-00212,Itai Gabay,14,Cashier,Student,2023-03-08,35.04,1
+213,EMP-00213,Or Katz,14,Cashier,Student,2023-01-20,35.18,1
+214,EMP-00214,Daniel Ohayon,14,Cashier,Full-time,2022-03-21,39.00,1
+215,EMP-00215,Yarden Ben-David,14,Cashier,Full-time,2022-04-09,34.63,1
+216,EMP-00216,Noa Cohen,14,Cashier,Part-time,2023-10-13,34.02,1
+217,EMP-00217,Noa Sasson,14,Cashier,Student,2025-05-08,37.25,1
+218,EMP-00218,Nadav Biton,15,Store Manager,Full-time,2022-03-07,83.25,1
+219,EMP-00219,Yossi Amar,15,Shift Manager,Full-time,2024-05-28,55.27,1
+220,EMP-00220,Or Gabay,15,Shift Manager,Full-time,2021-05-08,52.95,1
+221,EMP-00221,Hila Sasson,15,Stocker,Full-time,2024-01-17,39.06,1
+222,EMP-00222,Yarden Cohen,15,Stocker,Part-time,2021-12-05,37.88,1
+223,EMP-00223,Or Amar,15,Butcher,Part-time,2024-08-21,51.80,1
+224,EMP-00224,Hila Dahan,15,Baker,Full-time,2024-10-01,49.46,1
+225,EMP-00225,Lior Hadad,15,Security,Full-time,2024-08-06,41.78,1
+226,EMP-00226,David Azoulay,15,Cleaner,Full-time,2022-10-14,34.00,1
+227,EMP-00227,Or Ohayon,15,Cashier,Part-time,2023-11-20,34.58,1
+228,EMP-00228,Daniel Cohen,15,Cashier,Full-time,2023-03-25,36.12,1
+229,EMP-00229,Daniel Peretz,15,Cashier,Full-time,2024-08-15,37.81,1
+230,EMP-00230,Ronen Naim,15,Cashier,Full-time,2023-05-15,39.25,1
+231,EMP-00231,Sigal Sasson,15,Cashier,Student,2024-07-12,35.93,1
+232,EMP-00232,Maya Katz,15,Cashier,Student,2022-10-19,36.06,1
+233,EMP-00233,Daniel Mizrahi,15,Cashier,Student,2021-02-07,34.63,1
+234,EMP-00234,Eitan Mizrahi,15,Cashier,Student,2021-09-17,39.98,1
+235,EMP-00235,Nadav Biton,15,Cashier,Student,2021-02-03,37.79,1
+236,EMP-00236,Avi Amar,15,Cashier,Part-time,2024-10-19,36.73,1
+237,EMP-00237,Hila Katz,16,Store Manager,Full-time,2022-09-17,81.40,1
+238,EMP-00238,Eitan Katz,16,Shift Manager,Full-time,2024-09-12,52.26,1
+239,EMP-00239,Liat Cohen,16,Shift Manager,Full-time,2022-08-08,53.83,1
+240,EMP-00240,Ronen Malka,16,Stocker,Full-time,2021-11-13,34.62,1
+241,EMP-00241,Yarden Ben-David,16,Stocker,Full-time,2021-08-30,37.77,1
+242,EMP-00242,Tal Azoulay,16,Butcher,Full-time,2024-06-02,46.20,1
+243,EMP-00243,Itai Levi,16,Baker,Full-time,2021-10-26,45.90,1
+244,EMP-00244,Ofir Elbaz,16,Security,Part-time,2024-04-28,39.79,1
+245,EMP-00245,Ofir Levi,16,Cleaner,Full-time,2022-12-02,35.81,1
+246,EMP-00246,Tal Ohayon,16,Cashier,Part-time,2023-02-19,35.07,1
+247,EMP-00247,Shani Azoulay,16,Cashier,Full-time,2022-01-17,37.08,1
+248,EMP-00248,Yarden Katz,16,Cashier,Full-time,2022-05-07,39.17,1
+249,EMP-00249,Avi Naim,17,Store Manager,Full-time,2024-07-14,82.33,1
+250,EMP-00250,Shani Levi,17,Shift Manager,Full-time,2022-12-29,52.55,1
+251,EMP-00251,Moshe Cohen,17,Shift Manager,Full-time,2024-12-31,53.37,1
+252,EMP-00252,Ronen Malka,17,Stocker,Part-time,2022-04-12,34.16,1
+253,EMP-00253,Moshe Cohen,17,Stocker,Part-time,2025-03-22,34.05,1
+254,EMP-00254,Noa Ben-David,17,Butcher,Full-time,2022-12-29,47.98,1
+255,EMP-00255,Omer Sasson,17,Baker,Full-time,2025-05-18,44.48,1
+256,EMP-00256,Gal Naim,17,Security,Full-time,2022-05-06,40.84,1
+257,EMP-00257,Itai Biton,17,Cleaner,Full-time,2024-12-01,37.25,1
+258,EMP-00258,Or Katz,17,Cashier,Full-time,2025-05-11,38.83,1
+259,EMP-00259,Hila Naim,17,Cashier,Part-time,2024-04-06,34.78,1
+260,EMP-00260,Sigal Mizrahi,17,Cashier,Student,2021-07-28,35.31,1
+261,EMP-00261,Ronen Katz,17,Cashier,Full-time,2024-06-08,38.63,1
+262,EMP-00262,Daniel Amar,18,Store Manager,Full-time,2022-10-19,81.22,1
+263,EMP-00263,Yarden Peretz,18,Shift Manager,Full-time,2022-01-14,56.39,1
+264,EMP-00264,Yael Katz,18,Shift Manager,Full-time,2021-07-10,57.38,1
+265,EMP-00265,Yael Mizrahi,18,Stocker,Full-time,2022-07-13,34.56,1
+266,EMP-00266,Shani Cohen,18,Stocker,Full-time,2024-05-13,37.45,1
+267,EMP-00267,Omer Mizrahi,18,Butcher,Full-time,2022-10-30,49.56,1
+268,EMP-00268,Ofir Azoulay,18,Baker,Part-time,2024-11-25,44.17,1
+269,EMP-00269,Michal Azoulay,18,Security,Full-time,2025-05-30,39.70,1
+270,EMP-00270,Michal Avraham,18,Cleaner,Full-time,2021-06-08,37.01,1
+271,EMP-00271,Yossi Hadad,18,Cashier,Full-time,2022-07-24,37.53,1
+272,EMP-00272,Tal Hadad,18,Cashier,Student,2023-02-06,37.81,1
+273,EMP-00273,Liat Sasson,18,Cashier,Part-time,2023-10-25,35.99,1
+274,EMP-00274,David Biton,18,Cashier,Full-time,2021-07-19,34.90,1
+275,EMP-00275,Amit Ohayon,18,Cashier,Full-time,2021-07-02,37.09,1
+276,EMP-00276,Nadav Ben-David,19,Store Manager,Full-time,2023-04-20,82.53,1
+277,EMP-00277,Omer Cohen,19,Shift Manager,Full-time,2024-07-16,57.49,1
+278,EMP-00278,Or Mizrahi,19,Shift Manager,Full-time,2021-10-06,57.66,1
+279,EMP-00279,Avi Ben-David,19,Stocker,Full-time,2021-11-18,37.08,1
+280,EMP-00280,David Malka,19,Stocker,Full-time,2021-12-17,39.07,1
+281,EMP-00281,Omer Ohayon,19,Butcher,Part-time,2023-05-07,46.62,1
+282,EMP-00282,Shani Avraham,19,Baker,Part-time,2022-05-17,45.58,1
+283,EMP-00283,Amit Sasson,19,Security,Full-time,2024-01-08,38.09,1
+284,EMP-00284,Dana Shapira,19,Cleaner,Full-time,2025-05-17,39.69,1
+285,EMP-00285,Maya Cohen,19,Cashier,Full-time,2023-09-13,34.79,1
+286,EMP-00286,Dana Friedman,19,Cashier,Full-time,2023-10-29,39.20,1
+287,EMP-00287,Maya Ben-David,19,Cashier,Student,2023-04-29,38.88,1
+288,EMP-00288,Amit Peretz,19,Cashier,Student,2024-07-23,35.68,1
+289,EMP-00289,Maya Amar,19,Cashier,Student,2021-03-17,37.08,1
+290,EMP-00290,Roni Katz,19,Cashier,Student,2024-02-25,37.62,1
+291,EMP-00291,Amit Peretz,20,Store Manager,Full-time,2023-10-07,84.94,1
+292,EMP-00292,Noa Katz,20,Shift Manager,Full-time,2025-01-19,55.73,1
+293,EMP-00293,Liat Peretz,20,Shift Manager,Full-time,2024-07-10,57.16,1
+294,EMP-00294,Tal Hadad,20,Stocker,Full-time,2023-08-03,39.29,1
+295,EMP-00295,Omer Avraham,20,Stocker,Full-time,2024-10-11,36.97,1
+296,EMP-00296,Ronen Cohen,20,Butcher,Full-time,2023-10-13,48.34,1
+297,EMP-00297,Dana Katz,20,Baker,Part-time,2023-01-02,44.93,1
+298,EMP-00298,Maya Sasson,20,Security,Full-time,2025-03-23,43.60,1
+299,EMP-00299,Liat Friedman,20,Cleaner,Full-time,2021-01-10,39.33,1
+300,EMP-00300,David Gabay,20,Cashier,Full-time,2023-07-15,34.69,1
+301,EMP-00301,Moshe Friedman,20,Cashier,Full-time,2023-02-05,38.55,1
+302,EMP-00302,Yarden Azoulay,20,Cashier,Student,2024-07-01,39.33,1
+303,EMP-00303,Lior Avraham,20,Cashier,Student,2021-02-05,38.59,1
+304,EMP-00304,Tamar Amar,20,Cashier,Student,2024-10-19,35.28,1
+305,EMP-00305,Michal Ben-David,20,Cashier,Student,2021-09-26,35.12,1
+306,EMP-00306,Avi Ohayon,20,Cashier,Student,2022-02-08,36.10,1
+307,EMP-00307,Shani Dahan,21,Store Manager,Full-time,2024-05-15,84.35,1
+308,EMP-00308,Yarden Sasson,21,Shift Manager,Full-time,2024-04-02,55.06,1
+309,EMP-00309,Dana Katz,21,Shift Manager,Full-time,2025-01-11,57.34,1
+310,EMP-00310,Roni Ohayon,21,Stocker,Full-time,2021-12-01,38.78,1
+311,EMP-00311,Omer Elbaz,21,Stocker,Full-time,2021-10-18,36.64,1
+312,EMP-00312,Eitan Levi,21,Butcher,Part-time,2025-02-08,49.74,1
+313,EMP-00313,David Friedman,21,Baker,Full-time,2023-04-19,46.54,1
+314,EMP-00314,Itai Sasson,21,Security,Part-time,2024-08-18,41.46,1
+315,EMP-00315,Noa Ohayon,21,Cleaner,Full-time,2023-11-20,38.27,1
+316,EMP-00316,Tal Katz,21,Cashier,Student,2024-06-06,38.42,1
+317,EMP-00317,Hila Katz,21,Cashier,Part-time,2021-11-02,38.66,1
+318,EMP-00318,Omer Amar,21,Cashier,Student,2023-05-18,35.16,1
+319,EMP-00319,Liat Dahan,21,Cashier,Student,2024-03-13,38.90,1
+320,EMP-00320,Roni Biton,21,Cashier,Full-time,2024-05-27,36.99,1
+321,EMP-00321,Tamar Levi,21,Cashier,Student,2021-10-16,39.24,1
+322,EMP-00322,Moshe Shapira,21,Cashier,Student,2024-05-19,35.09,1
+323,EMP-00323,Ronen Ohayon,21,Cashier,Full-time,2023-09-02,34.60,1
+324,EMP-00324,Or Peretz,22,Store Manager,Full-time,2024-03-15,82.95,1
+325,EMP-00325,Dana Elbaz,22,Shift Manager,Full-time,2022-06-06,53.33,1
+326,EMP-00326,Gal Elbaz,22,Shift Manager,Full-time,2024-01-28,54.16,1
+327,EMP-00327,Avi Elbaz,22,Stocker,Part-time,2023-06-30,35.07,1
+328,EMP-00328,David Dahan,22,Stocker,Full-time,2021-11-17,36.83,1
+329,EMP-00329,Lior Levi,22,Butcher,Full-time,2024-02-15,50.33,1
+330,EMP-00330,Liat Sasson,22,Baker,Full-time,2022-08-31,46.11,1
+331,EMP-00331,Eitan Hadad,22,Security,Part-time,2024-06-07,40.22,1
+332,EMP-00332,Liat Ohayon,22,Cleaner,Full-time,2024-10-25,37.80,1
+333,EMP-00333,Daniel Avraham,22,Cashier,Full-time,2025-04-15,36.42,1
+334,EMP-00334,Shani Sasson,22,Cashier,Part-time,2024-08-26,37.74,1
+335,EMP-00335,Avi Biton,22,Cashier,Student,2022-11-04,39.74,1
+336,EMP-00336,Moshe Hadad,22,Cashier,Student,2022-11-25,39.72,1
+337,EMP-00337,Eitan Cohen,22,Cashier,Student,2024-01-18,36.16,1
+338,EMP-00338,Roni Mizrahi,22,Cashier,Full-time,2023-01-12,34.43,1
+339,EMP-00339,Yarden Amar,22,Cashier,Part-time,2021-11-05,39.13,1
+340,EMP-00340,Tamar Gabay,22,Cashier,Full-time,2022-05-29,36.97,1
+341,EMP-00341,Shira Friedman,22,Cashier,Full-time,2021-03-28,39.26,1
+342,EMP-00342,Michal Hadad,23,Store Manager,Full-time,2023-04-28,80.82,1
+343,EMP-00343,Yossi Gabay,23,Shift Manager,Full-time,2023-05-06,55.75,1
+344,EMP-00344,Nadav Avraham,23,Shift Manager,Full-time,2023-05-26,52.59,1
+345,EMP-00345,Liat Cohen,23,Stocker,Full-time,2021-07-29,35.60,1
+346,EMP-00346,Lior Avraham,23,Stocker,Part-time,2022-09-13,36.63,1
+347,EMP-00347,Eitan Biton,23,Butcher,Full-time,2023-11-28,46.57,1
+348,EMP-00348,Amit Dahan,23,Baker,Part-time,2022-08-29,44.30,1
+349,EMP-00349,Shani Avraham,23,Security,Full-time,2021-06-13,40.92,1
+350,EMP-00350,Yael Avraham,23,Cleaner,Full-time,2024-05-05,37.98,1
+351,EMP-00351,Yossi Mizrahi,23,Cashier,Full-time,2022-03-28,39.11,1
+352,EMP-00352,Ronen Ohayon,23,Cashier,Student,2022-11-22,35.18,1
+353,EMP-00353,Amit Amar,23,Cashier,Student,2022-10-12,34.45,1
+354,EMP-00354,Adi Malka,23,Cashier,Student,2021-04-24,34.26,1
+355,EMP-00355,Gal Amar,23,Cashier,Student,2021-02-23,38.65,1
+356,EMP-00356,Ronen Levi,23,Cashier,Part-time,2024-08-04,39.29,1
+357,EMP-00357,Amit Sasson,23,Cashier,Student,2023-11-18,37.52,1
+358,EMP-00358,Tal Azoulay,23,Cashier,Student,2025-01-30,34.42,1
+359,EMP-00359,Shani Elbaz,23,Cashier,Student,2024-05-13,39.34,1
+360,EMP-00360,Dana Naim,23,Cashier,Student,2023-04-10,36.81,1
+361,EMP-00361,Omer Gabay,24,Store Manager,Full-time,2022-11-22,82.72,1
+362,EMP-00362,Moshe Hadad,24,Shift Manager,Full-time,2024-10-23,57.86,1
+363,EMP-00363,Or Amar,24,Shift Manager,Full-time,2025-03-04,55.28,1
+364,EMP-00364,Or Ohayon,24,Stocker,Part-time,2022-10-24,39.99,1
+365,EMP-00365,Shira Azoulay,24,Stocker,Full-time,2022-10-27,37.08,1
+366,EMP-00366,Hila Biton,24,Butcher,Part-time,2023-12-27,50.53,1
+367,EMP-00367,Dana Biton,24,Baker,Full-time,2024-01-14,46.09,1
+368,EMP-00368,Shira Shapira,24,Security,Full-time,2025-02-23,39.87,1
+369,EMP-00369,Moshe Shapira,24,Cleaner,Full-time,2022-06-13,35.16,1
+370,EMP-00370,Liat Amar,24,Cashier,Student,2021-09-06,36.15,1
+371,EMP-00371,Noa Gabay,24,Cashier,Student,2024-04-29,35.14,1
+372,EMP-00372,Adi Azoulay,24,Cashier,Student,2023-09-28,37.49,1

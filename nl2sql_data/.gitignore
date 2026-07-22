@@ -1,0 +1,10 @@
+# Python virtualenv
+.venv/
+
+# Db2 credentials
+.db2.json
+data.json
+
+# macOS junk
+.DS_Store
+__MACOSX/
