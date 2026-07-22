@@ -214,13 +214,13 @@ This contradicts the main flow (Step 10), which installs the ADK inside `.venv` 
 
 ---
 
-### Finding 16 — Part 3b & Part 9: Bob prompts generate `.sh` scripts with no Windows warning
+### Finding 16 — Part 11 & Part 9: Bob prompts generate `.sh` scripts with no Windows warning
 
-**Part:** Part 3b (`docs/part3b-ai-gateway-models/README.md`); Part 9 (`docs/part9-multi-agent-orchestration/README.md`)
+**Part:** Part 11 (`docs/part11-ai-gateway-models/README.md`); Part 9 (`docs/part9-multi-agent-orchestration/README.md`)
 **Status:** ✅ CLOSED
 **Problem:** Bob prompts in these parts asked for `.sh` shell scripts that are then run directly. Windows users without Git Bash/WSL cannot run them.
 
-**Fix (updated):** All three Bob prompts (Part 1, Part 3b ×2, Part 9) were updated to instruct Bob to first detect the user's OS, then generate a single platform-appropriate script (`.sh` for macOS/Linux, `.ps1` for Windows PowerShell). No Git Bash, WSL, or extra tooling required on any platform.
+**Fix (updated):** All three Bob prompts (Part 1, Part 11 ×2, Part 9) were updated to instruct Bob to first detect the user's OS, then generate a single platform-appropriate script (`.sh` for macOS/Linux, `.ps1` for Windows PowerShell). No Git Bash, WSL, or extra tooling required on any platform.
 
 ---
 
@@ -365,7 +365,7 @@ Audit all setup and installation steps assuming a **fresh machine** on both plat
 - [x] `orchestrate` CLI accessible on PATH after install — Part 1 Troubleshooting covers Windows CMD and PowerShell activation
 - [x] Bash-only shell constructs identified and replaced or given Windows alternatives:
   - `for env in draft live; do ... done` loop (Part 6) — **DISMISSED** (Finding 18 / loop dismissal above; canonical ADK pattern)
-  - `.sh` scripts in Part 1 Option B, Part 3b, Part 9 — Windows warning added to all three (Findings 15 & 16)
+  - `.sh` scripts in Part 1 Option B, Part 11, Part 9 — Windows warning added to all three (Findings 15 & 16)
   - `source .venv/bin/activate` — wrapped in platform-specific blocks with CMD and PS alternatives
 - [x] Path separator differences (`/` vs `\`) — no CLI arguments use OS-specific separators; venv activation blocks already use correct `\` for Windows
 

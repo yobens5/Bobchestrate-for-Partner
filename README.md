@@ -98,14 +98,6 @@ Each system builds on concepts from previous parts, teaching you to create incre
 - Import tools into your agent
 - Use Bob to help write and debug tool code
 
-### [Part 3b: AI Gateway and Using Different Models](./part3b-ai-gateway-models/README.md) (25 min)
-- Understand the AI Gateway architecture
-- Learn about different LLM providers and models
-- Configure agents with different models
-- Compare model performance and costs
-- Create intelligent model routing agents
-- Best practices for model selection
-
 ### [Part 4: Knowledge Bases & Collaborators](./part4-knowledge/README.md) (25 min)
 - Add a knowledge base for FAQs
 - Create a specialized escalation agent
@@ -149,6 +141,14 @@ Each system builds on concepts from previous parts, teaching you to create incre
 - Implement complex multi-agent workflows
 - Learn best practices for agent hierarchies
 - **Advanced standalone exercise** - Build a complete travel planning system
+
+### [Part 11: AI Gateway and Using Different Models](./part11-ai-gateway-models/README.md) (25 min) *(Optional — requires external provider API keys)*
+- Understand the AI Gateway architecture
+- Learn about different LLM providers and models
+- Configure agents with different models
+- Compare model performance and costs
+- Create intelligent model routing agents
+- Best practices for model selection
 
 ## How Bob Helps You
 
@@ -194,9 +194,6 @@ bobchestrate-workshop/
 │   ├── exercises.md
 │   └── images/
 │
-├── part3b-ai-gateway-models/                # AI Gateway and Models (25 min)
-│   └── README.md                            # Model selection and configuration
-│
 ├── part4-knowledge/                         # Knowledge Bases & Collaborators (25 min)
 │   ├── README.md
 │   ├── customer-support-agent.yaml          # Main support agent
@@ -233,15 +230,18 @@ bobchestrate-workshop/
 │   ├── test-scenarios.md
 │   └── deployment-checklist.md
 │
-└── part9-multi-agent-orchestration/         # Multi-Agent Orchestration (30 min)
-    ├── README.md
-    ├── travel-concierge-agent.yaml          # Orchestrator agent
-    ├── flight-specialist-agent.yaml         # Specialist agents
-    ├── hotel-specialist-agent.yaml
-    ├── activity-planner-agent.yaml
-    ├── budget-advisor-agent.yaml
-    ├── flight_tools.py                      # Domain-specific tools
-    └── hotel_tools.py
+├── part9-multi-agent-orchestration/         # Multi-Agent Orchestration (30 min)
+│   ├── README.md
+│   ├── travel-concierge-agent.yaml          # Orchestrator agent
+│   ├── flight-specialist-agent.yaml         # Specialist agents
+│   ├── hotel-specialist-agent.yaml
+│   ├── activity-planner-agent.yaml
+│   ├── budget-advisor-agent.yaml
+│   ├── flight_tools.py                      # Domain-specific tools
+│   └── hotel_tools.py
+│
+└── part11-ai-gateway-models/                # Part 11 - AI Gateway and Models (optional, 25 min)
+    └── README.md                            # Model selection and configuration
 ```
 
 ## Getting Started

@@ -37,7 +37,7 @@ All workshop content, CLI commands, YAML schemas, and code examples have been ve
 │   ├── part2-first-agent/           # Hello World agent basics
 │   ├── part2b-bob-custom-rules/     # Bob custom development rules
 │   ├── part3-custom-tools/          # Python tools (@tool decorator)
-│   ├── part3b-ai-gateway-models/    # AI Gateway & multi-model routing
+│   ├── part11-ai-gateway-models/    # Part 11 - AI Gateway & multi-model routing (optional)
 │   ├── part4-knowledge/             # Knowledge bases & agent collaborators
 │   ├── part5-guidelines-guardrails/ # Guidelines, guardrails & plugins
 │   ├── part6-mcp-servers/           # Building & importing MCP servers

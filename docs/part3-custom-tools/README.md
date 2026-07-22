@@ -437,9 +437,9 @@ The exercises include detailed requirements, test cases, and success criteria to
 
 ## Next Steps
 
-Now that your agent has tools, let's explore how to use different AI models!
+Now that your agent has tools, let's add knowledge bases and create agent collaborators!
 
-Continue to [Part 3b: AI Gateway and Using Different Models](../part3b-ai-gateway-models/README.md) →
+Continue to [Part 4: Knowledge Bases & Collaborators](../part4-knowledge/README.md) →
 
 ## Additional Resources
 

@@ -123,14 +123,6 @@ Each system builds on concepts from previous parts, teaching you to create incre
 - Import tools into your agent
 - Use Bob to help write and debug tool code
 
-### [Part 3b: AI Gateway and Using Different Models](part3b-ai-gateway-models/README.md) (25 min)
-- Understand the AI Gateway architecture
-- Learn about different LLM providers and models
-- Configure agents with different models
-- Compare model performance and costs
-- Create intelligent model routing agents
-- Best practices for model selection
-
 ### [Part 4: Knowledge Bases & Collaborators](part4-knowledge/README.md) (25 min)
 - Add a knowledge base for FAQs
 - Create a specialized escalation agent
@@ -191,6 +183,14 @@ Each system builds on concepts from previous parts, teaching you to create incre
 - Generate a working NL2SQL agent in one click
 - Run a quick demo with natural language queries
 - **Continue developing the agent with Bob**
+
+### [Part 11: AI Gateway and Using Different Models](part11-ai-gateway-models/README.md) (25 min) *(Optional — requires external provider API keys)*
+- Understand the AI Gateway architecture
+- Learn about different LLM providers and models
+- Configure agents with different models
+- Compare model performance and costs
+- Create intelligent model routing agents
+- Best practices for model selection
 
 ## How Bob Helps You
 

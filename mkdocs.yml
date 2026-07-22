@@ -83,9 +83,6 @@ nav:
   - Part 3 - Custom Tools:
       - Overview: part3-custom-tools/README.md
       - Exercises: part3-custom-tools/exercises.md
-  - Part 3b - AI Gateway Models:
-      - Overview: part3b-ai-gateway-models/README.md
-      - Model Selection Guide: part3b-ai-gateway-models/model-selection-guide.md
   - Part 4 - Knowledge:
       - Overview: part4-knowledge/README.md
   - Part 5 - Guidelines & Guardrails:
@@ -104,6 +101,9 @@ nav:
       - Overview: part9-multi-agent-orchestration/README.md
   - Part 10 - NL2SQL Accelerator:
       - Overview: part10-nl2sql/README.md
+  - Part 11 - AI Gateway Models:
+      - Overview: part11-ai-gateway-models/README.md
+      - Model Selection Guide: part11-ai-gateway-models/model-selection-guide.md
   - Bob Prompts:
       - Helpful Prompts: bob-prompts/helpful-prompts.md
 
