@@ -1,4 +1,4 @@
-# Part 9: Multi-Agent Orchestration & Workflows
+# Part 8: Multi-Agent Orchestration & Workflows
 
 <p align="center">
   <img src="bobchestrate_part9.png" alt="Bobchestrate - Setup" width="700">
@@ -1595,4 +1595,4 @@ In this lesson, you learned:
 
 **Want to learn more?** This completes the advanced multi-agent orchestration module. You can now apply these patterns to build sophisticated agent systems for any domain! 🚀
 
-For testing and deployment best practices, refer back to [Part 8: Testing & Deployment](../part8-deployment/README.md).
+For testing and deployment best practices, refer back to [Part 7: Testing & Deployment](../part7-deployment/README.md).

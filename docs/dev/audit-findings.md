@@ -117,7 +117,7 @@ These fields belong to `llm_config`, not `chat_with_docs.generation`. The only d
 
 ### Finding 9 — Part 6: `orchestrate toolkit list` missing `s` (typo)
 
-**Part:** Part 6 (`docs/part6-mcp-servers/README.md`), line 957
+**Part:** Part 6 (`docs/part10-mcp-servers/README.md`), line 957
 **Status:** ✅ CLOSED
 **Command (was):**
 ```bash
@@ -133,7 +133,7 @@ orchestrate toolkits list
 
 ### Finding 10 — Part 6: Second `--entries` call still uses JSON object syntax
 
-**Part:** Part 6 (`docs/part6-mcp-servers/README.md`), line 776
+**Part:** Part 6 (`docs/part10-mcp-servers/README.md`), line 776
 **Status:** ✅ CLOSED
 **Command (was):**
 ```bash
@@ -216,7 +216,7 @@ This contradicts the main flow (Step 10), which installs the ADK inside `.venv` 
 
 ### Finding 16 — Part 11 & Part 9: Bob prompts generate `.sh` scripts with no Windows warning
 
-**Part:** Part 11 (`docs/part11-ai-gateway-models/README.md`); Part 9 (`docs/part9-multi-agent-orchestration/README.md`)
+**Part:** Part 11 (`docs/part12-ai-gateway-models/README.md`); Part 9 (`docs/part8-multi-agent-orchestration/README.md`)
 **Status:** ✅ CLOSED
 **Problem:** Bob prompts in these parts asked for `.sh` shell scripts that are then run directly. Windows users without Git Bash/WSL cannot run them.
 
@@ -226,7 +226,7 @@ This contradicts the main flow (Step 10), which installs the ADK inside `.venv` 
 
 ### Finding 17 — Part 6: Inconsistent Python version (`3.9+` vs `3.12`)
 
-**Part:** Part 6 (`docs/part6-mcp-servers/README.md`), line 947
+**Part:** Part 6 (`docs/part10-mcp-servers/README.md`), line 947
 **Status:** ✅ CLOSED
 **Problem:** Troubleshooting section says "Check Python version (3.9+)" but the workshop requires 3.12 (stated in Part 1, line 9). A participant checking this step would think their Python 3.10 install is fine when it isn't.
 
@@ -236,7 +236,7 @@ This contradicts the main flow (Step 10), which installs the ADK inside `.venv` 
 
 ### Finding 18 — Part 6 & Part 6b: `command: python3` in YAML fails on Windows
 
-**Part:** Part 6 (`docs/part6-mcp-servers/README.md`), line 398; Part 6b (`docs/part6b-agentic-workflows/README.md`), line 273
+**Part:** Part 6 (`docs/part10-mcp-servers/README.md`), line 398; Part 6b (`docs/part11-agentic-workflows/README.md`), line 273
 **Status:** ➖ DISMISSED
 **Original concern:** `command: python3` would fail on Windows because Windows does not create a `python3` alias by default.
 **Resolution:** The `command` field in a local MCP toolkit YAML is **not executed on the participant's machine**. Per official ADK docs (`tools/toolkits/overview`): _"Local MCP toolkits run **inside the watsonx Orchestrate runtime** using stdio transport."_ The platform runtime is always Linux, where `python3` is the correct command. The YAML `command` is correct as-is. The erroneous Windows note that was added has been reverted.
@@ -245,7 +245,7 @@ This contradicts the main flow (Step 10), which installs the ADK inside `.venv` 
 
 ### Dismissed — `for env in draft live; do ... done` bash loops
 
-**Part:** Part 6 (`docs/part6-mcp-servers/README.md`), lines 634, 768
+**Part:** Part 6 (`docs/part10-mcp-servers/README.md`), lines 634, 768
 **Status:** ➖ DISMISSED
 **Original concern (Plan 3):** These POSIX bash loops would fail on Windows CMD/PowerShell without Git Bash or WSL.
 **Resolution:** The **official ADK documentation** (`tools/toolkits/local_mcp_toolkits`, `connections/build_connections`) uses the exact same `for env in draft live; do ... done` pattern in all its code examples. Since the ADK docs set this as the canonical pattern, we defer to them — the loops are correct for macOS/Linux. Windows coverage is addressed by Finding 15/16 (adding a global note about Git Bash/WSL for shell scripts). No change to the loop syntax itself.
@@ -376,7 +376,7 @@ Audit all setup and installation steps assuming a **fresh machine** on both plat
 
 #### Primary files to audit
 - `docs/part1-setup/README.md` — full environment bootstrap
-- `docs/part6-mcp-servers/README.md` — bash loop on line ~633
+- `docs/part10-mcp-servers/README.md` — bash loop on line ~633
 - Any other part using `source`, `export`, or multi-line shell scripts
 
 ---
@@ -412,7 +412,7 @@ No change needed in the docs.
 
 ## Finding 3 — `orchestrate chat -a loan_processor_agent`
 
-**Part:** Part 6b (`docs/part6b-agentic-workflows/README.md`)
+**Part:** Part 6b (`docs/part11-agentic-workflows/README.md`)
 **Status:** ✅ CLOSED
 **Command in docs (was line 462):**
 ```bash
@@ -428,7 +428,7 @@ orchestrate chat ask --agent-name loan_processor_agent
 
 ## Finding 4 — `orchestrate env set draft` / `orchestrate env set live`
 
-**Part:** Part 8 (`docs/part8-deployment/README.md`)
+**Part:** Part 8 (`docs/part7-deployment/README.md`)
 **Status:** ✅ CLOSED
 **Commands in docs (were lines 632, 655):**
 ```bash
@@ -480,7 +480,7 @@ The surrounding import and verify commands were already correct and unchanged.
 
 ## Finding 6 — Part 6 Step 1: first toolkit YAML missing `spec_version` and has invalid `language:` field
 
-**Part:** Part 6 (`docs/part6-mcp-servers/README.md`), line ~368
+**Part:** Part 6 (`docs/part10-mcp-servers/README.md`), line ~368
 **Status:** ✅ CLOSED
 **Broken YAML (was):**
 ```yaml
@@ -517,7 +517,7 @@ tools:
 
 ## Finding 7 — Part 6 auth section: `--entries` JSON object syntax
 
-**Part:** Part 6 (`docs/part6-mcp-servers/README.md`), line ~641
+**Part:** Part 6 (`docs/part10-mcp-servers/README.md`), line ~641
 **Status:** ✅ CLOSED
 **Command (was):**
 ```bash
@@ -541,7 +541,7 @@ orchestrate connections set-credentials -a external-api \
 
 ## Finding 8 — Part 8: `orchestrate evaluations generate` wrong flags
 
-**Part:** Part 8 (`docs/part8-deployment/README.md`), line ~288
+**Part:** Part 8 (`docs/part7-deployment/README.md`), line ~288
 **Status:** ✅ CLOSED
 **Command (was):**
 ```bash

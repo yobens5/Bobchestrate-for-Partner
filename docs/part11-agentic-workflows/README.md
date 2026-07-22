@@ -1,4 +1,4 @@
-# Part 6b: Agentic Workflows - Deterministic Tool Orchestration
+# Part 11: Agentic Workflows - Deterministic Tool Orchestration
 
 <p align="center">
   <img src="bobchestrate_part6b.png" alt="Bobchestrate - Agentic Workflows" width="700">
@@ -725,4 +725,4 @@ Now that you understand agentic workflows, you can:
 3. ✅ Use workflows within multi-agent systems
 4. ✅ Optimize costs by replacing agent chains with workflows
 
-Continue to [Part 7: Agent Evaluations](../part7-agent-evaluation/README.md) to learn how to evaluate your workflows and agents! →
+Continue to [Part 6: Agent Evaluations](../part6-agent-evaluation/README.md) to learn how to evaluate your workflows and agents! →

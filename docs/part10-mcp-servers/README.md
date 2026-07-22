@@ -1,4 +1,4 @@
-# Part 6: MCP Servers - Connecting to Backend Services
+# Part 10: MCP Servers - Connecting to Backend Services
 
 **Duration**: 25 minutes  
 **Difficulty**: Intermediate
@@ -1003,4 +1003,4 @@ In this lesson, you learned:
 
 ---
 
-**Ready for the next lesson?** Head to [Part 7: Agent Evaluations & Red-Teaming](../part7-agent-evaluation/README.md) to evaluate your agent, run red-teaming exercises, and improve its reliability and security! 🚀
+**Ready for the next lesson?** Head to [Part 6: Agent Evaluations & Red-Teaming](../part6-agent-evaluation/README.md) to evaluate your agent, run red-teaming exercises, and improve its reliability and security! 🚀

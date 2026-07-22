@@ -754,7 +754,7 @@ Bob, create test cases that try to bypass my financial services agent's safety g
 
 Now that you understand guidelines and guardrails, you're ready to deploy your agents more safely!
 
-Continue to [Part 6: MCP Servers](../part6-mcp-servers/README.md) →
+Continue to [Part 10: MCP Servers](../part10-mcp-servers/README.md) *(Optional)* →
 
 ## Additional Resources
 

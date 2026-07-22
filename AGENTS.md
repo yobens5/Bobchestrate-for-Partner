@@ -37,15 +37,15 @@ All workshop content, CLI commands, YAML schemas, and code examples have been ve
 │   ├── part2-first-agent/           # Hello World agent basics
 │   ├── part2b-bob-custom-rules/     # Bob custom development rules
 │   ├── part3-custom-tools/          # Python tools (@tool decorator)
-│   ├── part11-ai-gateway-models/    # Part 11 - AI Gateway & multi-model routing (optional)
 │   ├── part4-knowledge/             # Knowledge bases & agent collaborators
 │   ├── part5-guidelines-guardrails/ # Guidelines, guardrails & plugins
-│   ├── part6-mcp-servers/           # Building & importing MCP servers
-│   ├── part6b-agentic-workflows/    # Deterministic agentic workflows (@flow)
-│   ├── part7-agent-evaluation/      # Evaluation datasets & red-teaming
-│   ├── part8-deployment/            # Testing, deployment & webchat embed
-│   ├── part9-multi-agent-orchestration/ # Multi-agent travel planning system
-│   ├── part10-nl2sql/               # NL-to-SQL advanced exercise
+│   ├── part6-agent-evaluation/      # Evaluation datasets & red-teaming
+│   ├── part7-deployment/            # Testing, deployment & webchat embed
+│   ├── part8-multi-agent-orchestration/ # Multi-agent travel planning system
+│   ├── part9-nl2sql/                # NL-to-SQL advanced exercise
+│   ├── part10-mcp-servers/          # Optional: Building & importing MCP servers
+│   ├── part11-agentic-workflows/    # Optional: Deterministic agentic workflows (@flow)
+│   ├── part12-ai-gateway-models/    # Optional: AI Gateway & multi-model routing
 │   ├── bob-prompts/                 # Curated Bob prompts for the workshop
 │   └── dev/                        # ← Internal: findings, fixes, and change log
 │       └── cli-audit-findings.md

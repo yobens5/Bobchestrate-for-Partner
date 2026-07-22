@@ -325,7 +325,7 @@ Try to complete the exercises on your own first, then compare with the solutions
 
 Once you've completed these exercises, you're ready to:
 
-1. ✅ Move on to [Part 7: Agent Evaluations](../part7-agent-evaluation/README.md)
+1. ✅ Move on to [Part 6: Agent Evaluations](../part6-agent-evaluation/README.md)
 2. ✅ Learn how to evaluate your workflows
 3. ✅ Understand workflow performance metrics
 4. ✅ Test workflow reliability and correctness

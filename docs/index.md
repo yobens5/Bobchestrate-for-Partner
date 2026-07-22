@@ -34,9 +34,10 @@ This estimate includes:
 **Alternative Options:**
 
 - **Core Workshop** (Parts 1-8): 240-270 minutes (4-4.5 hours)
-- **Advanced Exercise Only** (Part 1 + Part 9): 60-75 minutes (1-1.25 hours) - setup + multi-agent orchestration as standalone exercise
+- **Advanced Exercise Only** (Part 1 + Part 8): 60-75 minutes (1-1.25 hours) - setup + multi-agent orchestration as standalone exercise
+- **Optional Parts** (10, 11, 12): MCP Servers, Agentic Workflows, AI Gateway — each 25-30 min, can be done independently
 
-**Level:** Beginner to Intermediate (Advanced for Part 9)
+**Level:** Beginner to Intermediate (Advanced for Part 8)
 
 **Prerequisites:**
 
@@ -61,15 +62,7 @@ A complete customer support solution featuring:
 - **Specialized escalation agent** for complex issues
 - **Safety guidelines and guardrails** for responsible AI
 
-### 3. Product Catalog System (Part 6)
-An **MCP server-powered agent** that demonstrates backend integration:
-
-- Product search and details
-- Inventory checking
-- Product recommendations
-- Reusable MCP server architecture
-
-### 4. Agent Evaluations & Red-Teaming (Part 7)
+### 3. Agent Evaluations & Red-Teaming (Part 6)
 Learn to **evaluate and secure** your agents:
 
 - Creating comprehensive evaluation datasets
@@ -78,7 +71,7 @@ Learn to **evaluate and secure** your agents:
 - Identifying and fixing vulnerabilities
 - Measuring agent performance metrics
 
-### 5. Testing & Deployment (Part 8)
+### 4. Testing & Deployment (Part 7)
 Learn to **test and deploy** your customer support agent:
 
 - Comprehensive testing strategies
@@ -136,23 +129,7 @@ Each system builds on concepts from previous parts, teaching you to create incre
 - Test safety measures and compliance
 - Learn responsible AI best practices
 
-### [Part 6: MCP Servers - Connecting to Backend Services](part6-mcp-servers/README.md) (25 min)
-- Understand what MCP servers are and their benefits
-- Create an MCP server in Python with multiple tools
-- Define tool schemas and implement tool logic
-- Import MCP servers into watsonx Orchestrate
-- Use MCP server tools in your agents
-- Learn MCP best practices and patterns
-
-### [Part 6b: Agentic Workflows - Deterministic Tool Orchestration](part6b-agentic-workflows/README.md) (25-30 min)
-- Understand what agentic workflows are and when to use them
-- Learn the difference between workflows and agent-based approaches
-- Build deterministic workflows using the Flow Builder
-- Implement parameter mapping and conditional branching
-- Create workflows that are 60% faster and 80% cheaper than agents
-- Test and deploy workflows for fixed business processes
-
-### [Part 7: Agent Evaluations & Red-Teaming](part7-agent-evaluation/README.md) (30-35 min)
+### [Part 6: Agent Evaluations & Red-Teaming](part6-agent-evaluation/README.md) (30-35 min)
 - Create comprehensive evaluation datasets
 - Run automated evaluations with watsonx Orchestrate CLI
 - Perform red-teaming exercises to test agent security
@@ -160,13 +137,13 @@ Each system builds on concepts from previous parts, teaching you to create incre
 - Measure agent performance metrics
 - Implement fixes based on evaluation results
 
-### [Part 8: Testing & Deployment](part8-deployment/README.md) (20 min)
+### [Part 7: Testing & Deployment](part7-deployment/README.md) (20 min)
 - Test your agent thoroughly
 - Deploy to different environments
 - Generate webchat embed code
 - Monitor agent performance
 
-### [Part 9: Multi-Agent Orchestration & Workflows](part9-multi-agent-orchestration/README.md) (30 min)
+### [Part 8: Multi-Agent Orchestration & Workflows](part8-multi-agent-orchestration/README.md) (30 min)
 - Understand when and why to use multi-agent systems
 - Design focused specialist agents for specific domains
 - Create orchestrator agents with intelligent routing
@@ -175,7 +152,7 @@ Each system builds on concepts from previous parts, teaching you to create incre
 - Learn best practices for agent hierarchies
 - **Advanced standalone exercise** - Build a complete travel planning system
 
-### [Part 10: NL2SQL Agent with the Accelerator](part10-nl2sql/README.md) (30 min)
+### [Part 9: NL2SQL Agent with the Accelerator](part9-nl2sql/README.md) (30 min)
 - Connect a database and run automated data discovery
 - Explore schema, relationships, and query samples
 - Configure the NL2SQL asset and connect watsonx Orchestrate
@@ -184,7 +161,23 @@ Each system builds on concepts from previous parts, teaching you to create incre
 - Run a quick demo with natural language queries
 - **Continue developing the agent with Bob**
 
-### [Part 11: AI Gateway and Using Different Models](part11-ai-gateway-models/README.md) (25 min) *(Optional — requires external provider API keys)*
+### [Part 10: MCP Servers - Connecting to Backend Services](part10-mcp-servers/README.md) (25 min) *(Optional)*
+- Understand what MCP servers are and their benefits
+- Create an MCP server in Python with multiple tools
+- Define tool schemas and implement tool logic
+- Import MCP servers into watsonx Orchestrate
+- Use MCP server tools in your agents
+- Learn MCP best practices and patterns
+
+### [Part 11: Agentic Workflows - Deterministic Tool Orchestration](part11-agentic-workflows/README.md) (25-30 min) *(Optional)*
+- Understand what agentic workflows are and when to use them
+- Learn the difference between workflows and agent-based approaches
+- Build deterministic workflows using the Flow Builder
+- Implement parameter mapping and conditional branching
+- Create workflows that are 60% faster and 80% cheaper than agents
+- Test and deploy workflows for fixed business processes
+
+### [Part 12: AI Gateway and Using Different Models](part12-ai-gateway-models/README.md) (25 min) *(Optional — requires external provider API keys)*
 - Understand the AI Gateway architecture
 - Learn about different LLM providers and models
 - Configure agents with different models

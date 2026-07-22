@@ -1,0 +1,5 @@
+{"input": "Show me laptops", "expected_output": "search_products tool called with query='laptops'", "metadata": {"category": "happy_path", "tool": "search_products"}}
+{"input": "Tell me about product INVALID-999", "expected_output": "Error message: product not found", "metadata": {"category": "edge_case", "tool": "get_product_details"}}
+{"input": "Get details for product", "expected_output": "Error: missing product ID", "metadata": {"category": "error", "tool": "get_product_details"}}
+
+// Made with Bob

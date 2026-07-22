@@ -1,4 +1,4 @@
-# Part 7: Agent Evaluations & Red-Teaming
+# Part 6: Agent Evaluations & Red-Teaming
 
 <p align="center">
   <img src="wxo-testing.png" alt="Bobchestrate - Setup" width="700">
@@ -162,11 +162,9 @@ Let's create comprehensive test cases for the product assistant agent from Part 
 
 **💡 Ask Bob:**
 ```
-Bob, create evaluation dataset files in the evaluation/datasets/ directory
-for the product assistant agent. Create separate JSON files for:
-- 6 happy path cases (normal product searches, details, inventory)
-- 3 edge cases (out of stock, invalid IDs, ambiguous queries)
-- 3 error scenarios (malformed inputs, missing parameters)
+Bob, look at the agent and tools I have in this project, then create 3 evaluation
+dataset JSON files in evaluation/datasets/ — one happy path, one edge case, and
+one error scenario — that match the actual tool names and parameters my agent uses.
 
 Use the official ground truth dataset format with agent, goals, goal_details,
 story, and starting_sentence fields.
@@ -434,13 +432,7 @@ configuration format with wxo_lite_version 2.10.1.
 
 ### Step 1: Run Quick Evaluation
 
-#### IMPORTANT: ####
-Before running evaluations, make sure to install / upgrade the latest AgentOps libraries to your ADK. Run the command:
-
-```bash
-pip install --upgrade "ibm-watsonx-orchestrate[agentops]"
-```
->NOTE: When you run the evaluations, it might take a while to start for the first time and a couple of minutes to complete.
+> **Note:** The first evaluation run may take a few minutes to complete.
 
 The watsonx Orchestrate CLI provides two evaluation modes:
 
@@ -588,25 +580,27 @@ This shows all 15 attack types with descriptions and OWASP mappings.
 
 ### Step 2: Plan Attack Scenarios
 
-Generate attack scenarios based on your evaluation dataset.
+Generate attack scenarios based on your evaluation dataset. **Keep it focused — pick 3 attack types with 2 variants each (6 attacks total). Running all 15 attack types takes a very long time.**
 
 **Option A: Ask Bob first**
 ```
-Bob, run the red-teaming plan command to generate attack scenarios for the
-product assistant agent using the datasets in evaluation/datasets/.
+Bob, run the red-teaming plan command to generate attack scenarios for my agent.
+Use only 3 attack types from the list (e.g. instruction_override, jailbreaking,
+role_playing), 2 variants each, based on the datasets in evaluation/datasets/.
+Find my agent name and agent YAML path from the project files.
 ```
 Check that Bob's output confirms the attack scenarios were generated. If not, use Option B below.
 
 **Option B: Do it yourself (fallback)**
 ```bash
-# Create attack scenarios
+# Create attack scenarios — 3 attack types, 2 variants each = 6 attacks total
 orchestrate evaluations red-teaming plan \
-  -a "instruction_override,crescendo_attack,jailbreaking" \
+  -a "instruction_override,jailbreaking,role_playing" \
   -d evaluation/datasets/ \
-  -g agents/product-assistant.yaml \
-  -t product_assistant \
+  -g agents/ \
+  -t <your-agent-name> \
   -o evaluation/red-team-attacks/ \
-  -n 3
+  -n 2
 ```
 
 **Parameters:**
@@ -614,14 +608,21 @@ orchestrate evaluations red-teaming plan \
 - `-a` - Comma-separated list of attack types to generate
 - `-d` - Dataset file(s) or directory containing JSON test cases to base attacks on
 - `-g` - Directory containing agent definitions
-- `-t` - Target agent name
+- `-t` - Target agent name (use `orchestrate agents list` to find yours)
 - `-o` - Output directory for generated attacks
-- `-n` - Number of variants per attack type (default: 3)
+- `-n` - Number of variants per attack type (keep this at 2–3 to stay manageable)
 
 ### Step 3: Run Attack Scenarios
 
 Execute the generated attacks:
 
+**💡 Ask Bob:**
+```
+Bob, run the red-teaming attacks that were generated in evaluation/red-team-attacks/
+and save the results to evaluation/red-team-results/.
+```
+
+Or run directly:
 ```bash
 orchestrate evaluations red-teaming run \
   -a evaluation/red-team-attacks/ \
@@ -1034,8 +1035,8 @@ In this lesson, you learned:
 
 ### Next Steps
 
-- **Part 8**: Deployment strategies and production monitoring
-- **Part 9**: Multi-agent orchestration and complex workflows
+- **Part 7**: Deployment strategies and production monitoring
+- **Part 8**: Multi-agent orchestration and complex workflows
 
 ### Additional Resources
 
