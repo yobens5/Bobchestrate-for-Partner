@@ -89,7 +89,7 @@ The NL2SQL module (Part 10) is kept **separate from the main agent storyline** �
 
 - The NL2SQL exercises use their own dedicated agents and database.
 - **Database:** Use Yohan's **PostgreSQL** database instance (not Db2); reprovision it before the workshop.
-- **Agent template:** Maria's NL2SQL agent template is hosted at https://data-agent-builder.1v4cskc77bqd.us-east.codeengine.appdomain.cloud/ — see `docs/dev/audit-findings.md` → Plan 5 for action items.
+- **Agent template:** Maria's NL2SQL agent template is hosted at https://agent-builder.2clsicnm3dwo.us-south.codeengine.appdomain.cloud/ — see `docs/dev/audit-findings.md` → Plan 5 for action items.
 
 ## Key Conventions
 

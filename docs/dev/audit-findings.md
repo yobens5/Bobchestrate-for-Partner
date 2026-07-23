@@ -330,7 +330,7 @@ The current NL2SQL videos in `docs/part10-nl2sql/videos/` are low quality. Repla
 
 Maria has shared a template for creating NL2SQL agents, hosted here:
 
-> **Template URL:** https://data-agent-builder.1v4cskc77bqd.us-east.codeengine.appdomain.cloud/
+> **Template URL:** https://agent-builder.2clsicnm3dwo.us-south.codeengine.appdomain.cloud/
 
 - [ ] Review Maria's template and assess whether to include it directly in Part 10 instructions or link to it as a reference
 - [ ] Add screenshots for the NL2SQL template usage flow once Igor has tested it
