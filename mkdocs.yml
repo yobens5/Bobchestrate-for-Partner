@@ -92,10 +92,10 @@ nav:
       - Exercises: part6-agent-evaluation/exercises.md
   - Part 7 - Deployment:
       - Overview: part7-deployment/README.md
-  - Multi-Agent Orchestration (Optional):
-      - Overview: part8-multi-agent-orchestration/README.md
   - Part 9 - NL2SQL Accelerator:
       - Overview: part9-nl2sql/README.md
+  - Part 8 - Multi-Agent Orchestration (Optional):
+      - Overview: part8-multi-agent-orchestration/README.md
   - MCP Servers (Optional):
       - Overview: part10-mcp-servers/README.md
   - Agentic Workflows (Optional):
