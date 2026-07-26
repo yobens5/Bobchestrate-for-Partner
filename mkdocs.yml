@@ -94,7 +94,7 @@ nav:
       - Overview: part7-deployment/README.md
   - Part 9 - NL2SQL Accelerator:
       - Overview: part9-nl2sql/README.md
-  - Part 10 - Multi-Agent Orchestration (Optional):
+  - Multi-Agent Orchestration (Optional):
       - Overview: part8-multi-agent-orchestration/README.md
   - MCP Servers (Optional):
       - Overview: part10-mcp-servers/README.md

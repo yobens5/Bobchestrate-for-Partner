@@ -142,7 +142,7 @@ Each system builds on concepts from previous parts, teaching you to create incre
 - Generate webchat embed code
 - Monitor agent performance
 
-### [Part 10: Multi-Agent Orchestration & Workflows](part8-multi-agent-orchestration/README.md) (30 min) *(Optional)*
+### [Multi-Agent Orchestration & Workflows](part8-multi-agent-orchestration/README.md) (30 min) *(Optional)*
 - Understand when and why to use multi-agent systems
 - Design focused specialist agents for specific domains
 - Create orchestrator agents with intelligent routing
