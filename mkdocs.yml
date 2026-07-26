@@ -75,26 +75,26 @@ nav:
       - Overview: part0-prerequisites/README.md
   - Part 1 - Setup:
       - Overview: part1-setup/README.md
-  - Part 2 - First Agent:
+  - Part 2 - Bob Custom Rules:
+      - Overview: part2b-bob-custom-rules/README.md
+  - Part 3 - First Agent:
       - Overview: part2-first-agent/README.md
       - Exercises: part2-first-agent/exercises.md
-  - Part 2b - Bob Custom Rules:
-      - Overview: part2b-bob-custom-rules/README.md
-  - Part 3 - Custom Tools:
+  - Part 4 - Custom Tools:
       - Overview: part3-custom-tools/README.md
       - Exercises: part3-custom-tools/exercises.md
-  - Part 4 - Knowledge:
+  - Part 5 - Knowledge:
       - Overview: part4-knowledge/README.md
-  - Part 5 - Guidelines & Guardrails:
+  - Part 6 - Guidelines & Guardrails:
       - Overview: part5-guidelines-guardrails/README.md
-  - Part 6 - Agent Evaluations:
+  - Part 7 - Agent Evaluations:
       - Overview: part6-agent-evaluation/README.md
       - Exercises: part6-agent-evaluation/exercises.md
-  - Part 7 - Deployment:
+  - Part 8 - Deployment:
       - Overview: part7-deployment/README.md
   - Part 9 - NL2SQL Accelerator:
       - Overview: part9-nl2sql/README.md
-  - Part 8 - Multi-Agent Orchestration (Optional):
+  - Part 10 - Multi-Agent Orchestration (Optional):
       - Overview: part8-multi-agent-orchestration/README.md
   - MCP Servers (Optional):
       - Overview: part10-mcp-servers/README.md

@@ -33,7 +33,7 @@ This estimate includes:
 
 **Alternative Options:**
 
-- **Core Workshop** (Parts 1-7 + Part 9): 210-240 minutes (3.5-4 hours)
+- **Core Workshop** (Parts 1-9): 210-240 minutes (3.5-4 hours)
 - **Optional Parts** (Multi-Agent Orchestration, MCP Servers, Agentic Workflows, AI Gateway): each 25-30 min, can be done independently
 
 **Level:** Beginner to Intermediate
@@ -50,10 +50,10 @@ This estimate includes:
 
 Throughout this workshop, you'll build progressively more sophisticated AI agents:
 
-### 1. Hello World Agent (Part 2)
+### 1. Hello World Agent (Part 3)
 Your first simple agent to understand the basics of agent configuration and behavior.
 
-### 2. Customer Support System (Parts 3-5)
+### 2. Customer Support System (Parts 4-6)
 A complete customer support solution featuring:
 
 - **Custom Python tools** for order status checking and refund processing
@@ -61,7 +61,7 @@ A complete customer support solution featuring:
 - **Specialized escalation agent** for complex issues
 - **Safety guidelines and guardrails** for responsible AI
 
-### 3. Agent Evaluations & Red-Teaming (Part 6)
+### 3. Agent Evaluations & Red-Teaming (Part 7)
 Learn to **evaluate and secure** your agents:
 
 - Creating comprehensive evaluation datasets
@@ -70,7 +70,7 @@ Learn to **evaluate and secure** your agents:
 - Identifying and fixing vulnerabilities
 - Measuring agent performance metrics
 
-### 4. Testing & Deployment (Part 7)
+### 4. Testing & Deployment (Part 8)
 Learn to **test and deploy** your customer support agent:
 
 - Comprehensive testing strategies
@@ -97,38 +97,38 @@ Each system builds on concepts from previous parts, teaching you to create incre
 - Understand the project structure
 - Set up your development environment
 
-### [Part 2: Building Your First Agent](part2-first-agent/README.md) (20 min)
-- Create a simple "Hello World" agent
-- Understand agent instructions and behavior
-- Test your agent with the chat interface
-- Learn how to use Bob to help debug issues
-
-### [Part 2b: Using Custom Rules with Bob IDE](part2b-bob-custom-rules/README.md) (10 min)
+### [Part 2: Using Custom Rules with Bob IDE](part2b-bob-custom-rules/README.md) (10 min)
 - Learn how to configure Bob with custom development rules
 - Understand the watsonx Orchestrate development rule
 - Set up project-specific conventions for Bob
 - Create your own custom rules for consistent development
 
-### [Part 3: Adding Custom Tools](part3-custom-tools/README.md) (30 min)
+### [Part 3: Building Your First Agent](part2-first-agent/README.md) (20 min)
+- Create a simple "Hello World" agent
+- Understand agent instructions and behavior
+- Test your agent with the chat interface
+- Learn how to use Bob to help debug issues
+
+### [Part 4: Adding Custom Tools](part3-custom-tools/README.md) (30 min)
 - Create a Python tool to check order status
 - Create a tool to process refund requests
 - Import tools into your agent
 - Use Bob to help write and debug tool code
 
-### [Part 4: Knowledge Bases & Collaborators](part4-knowledge/README.md) (25 min)
+### [Part 5: Knowledge Bases & Collaborators](part4-knowledge/README.md) (25 min)
 - Add a knowledge base for FAQs
 - Create a specialized escalation agent
 - Connect agents as collaborators
 - Test the complete customer support flow
 
-### [Part 5: Agent Guidelines & Guardrails](part5-guidelines-guardrails/README.md) (20 min)
+### [Part 6: Agent Guidelines & Guardrails](part5-guidelines-guardrails/README.md) (20 min)
 - Write comprehensive agent guidelines
 - Implement content safety guardrails
 - Create input/output filtering plugins
 - Test safety measures and compliance
 - Learn responsible AI best practices
 
-### [Part 6: Agent Evaluations & Red-Teaming](part6-agent-evaluation/README.md) (30-35 min)
+### [Part 7: Agent Evaluations & Red-Teaming](part6-agent-evaluation/README.md) (30-35 min)
 - Create comprehensive evaluation datasets
 - Run automated evaluations with watsonx Orchestrate CLI
 - Perform red-teaming exercises to test agent security
@@ -136,13 +136,13 @@ Each system builds on concepts from previous parts, teaching you to create incre
 - Measure agent performance metrics
 - Implement fixes based on evaluation results
 
-### [Part 7: Testing & Deployment](part7-deployment/README.md) (20 min)
+### [Part 8: Testing & Deployment](part7-deployment/README.md) (20 min)
 - Test your agent thoroughly
 - Deploy to different environments
 - Generate webchat embed code
 - Monitor agent performance
 
-### [Multi-Agent Orchestration & Workflows](part8-multi-agent-orchestration/README.md) (30 min) *(Optional)*
+### [Part 10: Multi-Agent Orchestration & Workflows](part8-multi-agent-orchestration/README.md) (30 min) *(Optional)*
 - Understand when and why to use multi-agent systems
 - Design focused specialist agents for specific domains
 - Create orchestrator agents with intelligent routing
