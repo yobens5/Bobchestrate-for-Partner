@@ -18,6 +18,7 @@ In this lesson, you'll learn how to create and use **MCP (Model Context Protocol
 ### What You'll Build
 
 A **Product Catalog MCP Server** that provides tools for:
+
 - Searching products
 - Getting product details
 - Checking inventory
@@ -633,7 +634,7 @@ for env in draft live; do
     
     orchestrate connections set-credentials -a external-api \
       --env $env \
-      --entries "API_KEY=your-api-key-here"
+      -e "API_KEY=your-api-key-here"
 done
 ```
 
@@ -916,6 +917,7 @@ that takes a product_id and returns just the price.
 ### Exercise 2: Enhance Search (Medium)
 
 Improve the `search_products` tool to support:
+
 - Price range filtering
 - Category filtering
 - Sorting by price or name
@@ -923,6 +925,7 @@ Improve the `search_products` tool to support:
 ### Exercise 3: Add Shopping Cart (Advanced)
 
 Create a new MCP server called `shopping-cart` with tools for:
+
 - Adding items to cart
 - Removing items from cart
 - Viewing cart contents

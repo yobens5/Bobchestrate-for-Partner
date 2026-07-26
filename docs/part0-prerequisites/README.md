@@ -13,15 +13,15 @@ Before starting the workshop, make sure you have the following:
 
 ## Software Prerequisites
 
-### Python 3.12
+### Python 3.12 or 3.11
 
-The workshop requires **Python 3.12**. Other versions are not tested and not supported.
+The workshop requires **Python 3.12** or **Python 3.11**. Both versions are supported. Other versions are not tested and not supported.
 
 **macOS:**
 
 ```bash
 # Option 1 — Homebrew (recommended)
-brew install python@3.12
+brew install python@3.12   # or: brew install python@3.11
 
 # Option 2 — python.org installer
 # Download from https://www.python.org/downloads/ and run the .pkg file
@@ -31,16 +31,30 @@ brew install python@3.12
 
 **Windows:**
 
-1. Download the installer from [https://www.python.org/downloads/](https://www.python.org/downloads/)
-2. Run the installer
-3. ⚠️ **Check "Add Python to PATH"** on the first screen — this is the most common cause of `python not found` errors
+1. Download the Windows installer directly from python.org:
+   - **Python 3.12.10** 👉 [https://www.python.org/downloads/release/python-31210/](https://www.python.org/downloads/release/python-31210/)
+   - **Python 3.11** 👉 [https://www.python.org/downloads/release/python-3110/](https://www.python.org/downloads/release/python-3110/)
+
+   Scroll to the **Files** section at the bottom of the page and choose:
+   - **Windows installer (64-bit)** — for most modern PCs (e.g. `python-3.12.10-amd64.exe`)
+   - **Windows installer (32-bit)** — only if your system is 32-bit
+
+2. Run the downloaded `.exe` file
+3. ⚠️ **On the first screen, check "Add Python 3.12 to PATH"** before clicking anything else — skipping this is the most common cause of `python not found` errors
 4. Click **Install Now**
 
 Verify the installation:
 
+> **Windows users:** Open **PowerShell** (press `Win + R`, type `powershell`, press Enter) and run:
+
+```powershell
+python --version
+```
+
+> **macOS/Linux users:** Open your terminal and run:
+
 ```bash
-python --version   # Windows
-python3 --version  # macOS/Linux
+python3 --version
 ```
 
 ### uv
@@ -65,7 +79,9 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 
 Verify the installation:
 
-```bash
+> **Windows users:** Open **PowerShell** and run:
+
+```powershell
 uv --version
 ```
 

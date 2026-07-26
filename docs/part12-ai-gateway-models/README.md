@@ -1,4 +1,4 @@
-# Part 11: AI Gateway and External Model Providers
+# AI Gateway and External Model Providers
 
 **Duration:** 25 minutes
 **Objective:** Learn how to configure external AI models through watsonx Orchestrate's AI Gateway and implement model policies
@@ -17,6 +17,7 @@
 ## Why AI Gateway Matters
 
 The AI Gateway in watsonx Orchestrate provides:
+
 - 🔌 **Unified Interface** - Access multiple LLM providers through a single API
 - 🌐 **External Provider Support** - Connect to OpenAI, Anthropic, Google, AWS Bedrock, Azure, and more
 - 🔄 **Model Flexibility** - Switch between models without changing agent code
@@ -213,7 +214,7 @@ Distributes traffic across multiple models based on weight:
 ```yaml
 # load-balance-policy.yaml
 spec_version: v1
-kind: model
+kind: model_policy
 name: balanced_gpt
 description: Load balances between Groq and AWS Bedrock
 display_name: Balanced GPT
@@ -238,7 +239,7 @@ Automatically switches to backup model on errors:
 ```yaml
 # fallback-policy.yaml
 spec_version: v1
-kind: model
+kind: model_policy
 name: resilient_gpt
 description: Falls back to AWS Bedrock if Groq fails
 display_name: Resilient GPT
@@ -261,7 +262,7 @@ Retries on the same model for transient errors:
 ```yaml
 # retry-policy.yaml
 spec_version: v1
-kind: model
+kind: model_policy
 name: retry_gpt
 description: Retries up to 3 times on transient errors
 display_name: Retry GPT
@@ -354,9 +355,7 @@ tools:
 
 ## Next Steps
 
-Now that you understand AI Gateway and model policies, let's add knowledge bases and collaborators!
-
-🎉 You've completed all workshop modules! Return to the [Workshop Overview](../index.md) to review what you've learned.
+🎉 You've completed all optional workshop modules! Return to the [Workshop Overview](../index.md) to review everything you've learned.
 
 ## Additional Resources
 

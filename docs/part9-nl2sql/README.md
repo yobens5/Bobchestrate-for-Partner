@@ -105,6 +105,21 @@ The agent is now deployed and available on the watsonx Orchestrate platform. Use
 
 ---
 
+## Test the Agent — Sample Questions
+
+Once your NL2SQL agent is live, use the following questions to verify it is working correctly. Each question covers a different query type — aggregation, grouping, ranking, and filtering.
+
+| # | Question |
+|---|----------|
+| 1 | What were the total units sold and net revenue on January 1 2024? |
+| 2 | What was the average basket value for each store type (Express, Supermarket, Hypermarket)? |
+| 3 | Which month in 2024 had the highest net revenue for the whole chain? |
+| 4 | Which product category generated the most net revenue in 2024? |
+| 5 | How many products are kosher? |
+| 6 | How many active stores are open on Shabbat? |
+
+---
+
 ## What's Next — Continue with Bob
 
 You now have a working NL2SQL agent in watsonx Orchestrate. The accelerator got you there fast — but Bob can take it further.

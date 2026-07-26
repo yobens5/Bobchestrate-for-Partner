@@ -15,6 +15,7 @@
 ## Knowledge Bases Overview
 
 Knowledge bases allow agents to:
+
 - 📚 Access large amounts of information without including it in instructions
 - 🔍 Retrieve relevant information based on user queries
 - 📝 Answer questions from documents, FAQs, and knowledge articles
@@ -106,6 +107,7 @@ Bob, create a knowledge base YAML file and companion FAQ text file with content 
 #### Knowledge Base Naming Guidelines
 
 When naming your knowledge base, follow these best practices:
+
 - Use lowercase letters, numbers, and hyphens (e.g., `customer-support-faq`)
 - Keep names descriptive and meaningful
 - Avoid spaces (use hyphens instead)
@@ -202,6 +204,7 @@ orchestrate chat ask -n customer_support_agent
 ```
 
 Try these questions:
+
 - "What's your shipping policy?"
 - "What payment methods do you accept?"
 - "How long does standard shipping take?"

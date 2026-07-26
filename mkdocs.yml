@@ -92,16 +92,16 @@ nav:
       - Exercises: part6-agent-evaluation/exercises.md
   - Part 7 - Deployment:
       - Overview: part7-deployment/README.md
-  - Part 8 - Multi-Agent Orchestration:
+  - Multi-Agent Orchestration (Optional):
       - Overview: part8-multi-agent-orchestration/README.md
   - Part 9 - NL2SQL Accelerator:
       - Overview: part9-nl2sql/README.md
-  - Part 10 - MCP Servers (Optional):
+  - MCP Servers (Optional):
       - Overview: part10-mcp-servers/README.md
-  - Part 11 - Agentic Workflows (Optional):
+  - Agentic Workflows (Optional):
       - Overview: part11-agentic-workflows/README.md
       - Exercises: part11-agentic-workflows/exercises.md
-  - Part 12 - AI Gateway Models (Optional):
+  - AI Gateway Models (Optional):
       - Overview: part12-ai-gateway-models/README.md
       - Model Selection Guide: part12-ai-gateway-models/model-selection-guide.md
   - Bob Prompts:

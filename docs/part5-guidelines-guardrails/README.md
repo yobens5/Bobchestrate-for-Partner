@@ -14,6 +14,7 @@
 ## Why Guidelines and Guardrails Matter
 
 As AI agents become more powerful, it's crucial to ensure they:
+
 - 🛡️ Operate within defined boundaries
 - 🔒 Protect sensitive information
 - ✅ Follow company policies and regulations
@@ -27,6 +28,7 @@ As AI agents become more powerful, it's crucial to ensure they:
 Guidelines are **rule-based instructions** that control your agent's behavior in specific situations. Unlike general instructions that shape overall behavior, guidelines create **predictable, automated responses** to defined conditions.
 
 Guidelines use a **When-Then format**:
+
 - **When** a specific condition is met
 - **Then** perform an action and/or invoke a tool
 
@@ -332,6 +334,7 @@ Final Response to User
 ### What Are Guardrails?
 
 Guardrails are automated safety mechanisms that:
+
 - Filter inappropriate content
 - Detect and block harmful requests
 - Validate inputs and outputs

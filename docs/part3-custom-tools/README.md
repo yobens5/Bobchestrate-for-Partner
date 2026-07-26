@@ -13,6 +13,7 @@
 ## Why Custom Tools?
 
 Tools extend your agent's capabilities beyond conversation. They allow agents to:
+
 - 🔍 Query databases and APIs
 - 📊 Process and analyze data
 - 📝 Create and modify files
@@ -355,6 +356,7 @@ Bob, my agent isn't calling the check_order_status tool. Here's the agent YAML a
 ```
 
 Common issues:
+
 - Tool name mismatch between agent YAML and tool definition
 - Missing or incorrect parameter descriptions
 - Tool not imported successfully
@@ -420,6 +422,7 @@ Ready to practice? We've prepared a comprehensive set of exercises to help you m
 📝 **[View All Exercises](exercises.md)** - Complete exercises ranging from easy to advanced
 
 We strongly recommend working through at least a few of these exercises before moving forward with the workshop. They'll help solidify your understanding of:
+
 - Tool structure and best practices
 - Input validation and error handling
 - Creating tools that agents can effectively use

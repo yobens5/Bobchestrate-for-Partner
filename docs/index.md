@@ -33,11 +33,10 @@ This estimate includes:
 
 **Alternative Options:**
 
-- **Core Workshop** (Parts 1-8): 240-270 minutes (4-4.5 hours)
-- **Advanced Exercise Only** (Part 1 + Part 8): 60-75 minutes (1-1.25 hours) - setup + multi-agent orchestration as standalone exercise
-- **Optional Parts** (10, 11, 12): MCP Servers, Agentic Workflows, AI Gateway — each 25-30 min, can be done independently
+- **Core Workshop** (Parts 1-7 + Part 9): 210-240 minutes (3.5-4 hours)
+- **Optional Parts** (Multi-Agent Orchestration, MCP Servers, Agentic Workflows, AI Gateway): each 25-30 min, can be done independently
 
-**Level:** Beginner to Intermediate (Advanced for Part 8)
+**Level:** Beginner to Intermediate
 
 **Prerequisites:**
 
@@ -143,7 +142,7 @@ Each system builds on concepts from previous parts, teaching you to create incre
 - Generate webchat embed code
 - Monitor agent performance
 
-### [Part 8: Multi-Agent Orchestration & Workflows](part8-multi-agent-orchestration/README.md) (30 min)
+### [Multi-Agent Orchestration & Workflows](part8-multi-agent-orchestration/README.md) (30 min) *(Optional)*
 - Understand when and why to use multi-agent systems
 - Design focused specialist agents for specific domains
 - Create orchestrator agents with intelligent routing
@@ -161,7 +160,7 @@ Each system builds on concepts from previous parts, teaching you to create incre
 - Run a quick demo with natural language queries
 - **Continue developing the agent with Bob**
 
-### [Part 10: MCP Servers - Connecting to Backend Services](part10-mcp-servers/README.md) (25 min) *(Optional)*
+### [MCP Servers - Connecting to Backend Services](part10-mcp-servers/README.md) (25 min) *(Optional)*
 - Understand what MCP servers are and their benefits
 - Create an MCP server in Python with multiple tools
 - Define tool schemas and implement tool logic
@@ -169,7 +168,7 @@ Each system builds on concepts from previous parts, teaching you to create incre
 - Use MCP server tools in your agents
 - Learn MCP best practices and patterns
 
-### [Part 11: Agentic Workflows - Deterministic Tool Orchestration](part11-agentic-workflows/README.md) (25-30 min) *(Optional)*
+### [Agentic Workflows - Deterministic Tool Orchestration](part11-agentic-workflows/README.md) (25-30 min) *(Optional)*
 - Understand what agentic workflows are and when to use them
 - Learn the difference between workflows and agent-based approaches
 - Build deterministic workflows using the Flow Builder
@@ -177,7 +176,7 @@ Each system builds on concepts from previous parts, teaching you to create incre
 - Create workflows that are 60% faster and 80% cheaper than agents
 - Test and deploy workflows for fixed business processes
 
-### [Part 12: AI Gateway and Using Different Models](part12-ai-gateway-models/README.md) (25 min) *(Optional — requires external provider API keys)*
+### [AI Gateway and Using Different Models](part12-ai-gateway-models/README.md) (25 min) *(Optional — requires external provider API keys)*
 - Understand the AI Gateway architecture
 - Learn about different LLM providers and models
 - Configure agents with different models

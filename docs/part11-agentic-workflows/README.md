@@ -449,7 +449,8 @@ guidelines:
     action: "Use loan_approval_workflow with applicant_id and loan_amount"
     tool: "loan_approval_workflow"
 
-hidden: false
+config:
+  hidden: false
 ```
 
 ### Import and Test the Agent
@@ -560,6 +561,7 @@ tool_node.map_input(
 
 ### 1. Clear Naming
 Use descriptive workflow names:
+
 - ✅ `loan_approval_workflow`
 - ❌ `process_loan`
 

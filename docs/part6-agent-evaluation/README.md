@@ -811,6 +811,7 @@ orchestrate evaluations red-teaming run \
 ```
 
 Compare results:
+
 - Improved metrics (fewer Schema Mismatches, Hallucinations)
 - Reduced attack success rates
 - Better handling of edge cases
