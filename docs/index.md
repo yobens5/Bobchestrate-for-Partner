@@ -1,242 +1,93 @@
-# Enable Partner Bobchestrate Workshop - Building AI Agents with watsonx Orchestrate and IBM Bob
+# Enable Partner Bobchestrate Workshop
 
-![Workshop Logo](Bobchestrate_Workshop_logo_new.png)
+![Workshop logo](Bobchestrate_Workshop_logo_new.png)
 
-## A Hands-On Workshop for Agentic AI Development
+Build, evaluate, and deploy AI agents with IBM watsonx Orchestrate while using
+IBM Bob as your development partner.
 
-Welcome! This workshop will guide you through building AI agents using IBM watsonx Orchestrate. You'll use IBM Bob, an AI coding assistant, to help you along the way.
+## Format
 
-## Workshop Overview
+- **Length:** Two days, approximately 3.5–4 hours per day including practice,
+  troubleshooting, breaks, and discussion
+- **Level:** Beginner to intermediate
+- **Tested ADK:** IBM watsonx Orchestrate ADK **2.12.0**
+- **Participant project:** a new, empty `bobchestrate-ws` folder
 
-!!! info "Partner Prerequisites"
-    Before starting this workshop, make sure you have:
+!!! warning "Use the tested version"
+    Commands and YAML examples target ADK 2.12.0. If your version differs,
+    consult the [ADK release notes](https://developer.watson-orchestrate.ibm.com/release/release).
 
-    - [ ] A GitHub account
-    - [ ] An IBM partner account
-    - [ ] Access to TechZone — [reserve environment](https://techzone.ibm.com/collection/6939fccc3fc778c2abfc1e25/environments?platform=69fe3e8a6a38f6a7c980166c) · [watsonx overview collection](https://techzone.ibm.com/collection/69c6bb3c694109c9b9a8abac/journey-watsonx-overview?platform=69caeeed05954196b4ae266c)
-    - [ ] Access to ticket creation — [request a Bob enterprise account](https://www.ibm.com/support/pages/node/7159462)
+## Before the workshop
 
-    → Full details in the [Prerequisites](part0-prerequisites/README.md) section.
+You need:
 
-!!! note "Tested ADK Version"
-    All workshop content, CLI commands, and YAML examples in this lab have been verified against **IBM watsonx Orchestrate ADK version 2.12.0**.
-    If you are running a different version, consult the [ADK release notes](https://developer.watson-orchestrate.ibm.com/release/release) for any changes.
+- a GitHub account and IBM partner account
+- a reserved watsonx Orchestrate environment from
+  [TechZone](https://techzone.ibm.com/collection/6939fccc3fc778c2abfc1e25/environments?platform=69fe3e8a6a38f6a7c980166c)
+- a Bob enterprise account requested through
+  [IBM Support](https://www.ibm.com/support/pages/node/7159462)
+- IBM Bob IDE, Python 3.12, and `uv`
 
-**Duration:** 270-300 minutes (4.5-5 hours) for complete workshop
+Complete the [Prerequisites](part0-prerequisites/README.md) before Day 1.
 
-This estimate includes:
+## Two-day agenda
 
-- Core instruction time: 220 minutes
-- Setup and troubleshooting: 20-30 minutes
-- Short breaks: 15-20 minutes
-- Q&A and discussion: 15-30 minutes
+### Day 1 — Build the customer-support system
 
-**Alternative Options:**
+| Part | Outcome |
+|---|---|
+| [1. Setup](part1-setup/README.md) | Prepare Bob IDE, Python, ADK, MCP servers, and the workshop environment |
+| [2. Bob Custom Rules](part2b-bob-custom-rules/README.md) | Give Bob the project conventions it should follow |
+| [3. First Agent](part2-first-agent/README.md) | Create, import, and test a native agent |
+| [4. Custom Tools](part3-custom-tools/README.md) | Add order-status and refund tools |
+| [5. Knowledge & Collaborators](part4-knowledge/README.md) | Add FAQs and an escalation agent |
 
-- **Core Workshop** (Parts 1-9): 210-240 minutes (3.5-4 hours)
-- **Optional Parts** (Multi-Agent Orchestration, MCP Servers, Agentic Workflows, AI Gateway): each 25-30 min, can be done independently
+### Day 2 — Make it safer, evaluate it, and deploy
 
-**Level:** Beginner to Intermediate
+| Part | Outcome |
+|---|---|
+| [6. Guidelines & Guardrails](part5-guidelines-guardrails/README.md) | Add behavioral guidance and input controls |
+| [7. Evaluation & Red-Teaming](part6-agent-evaluation/README.md) | Test expected behavior and adversarial prompts |
+| [8. Deployment](part7-deployment/README.md) | Promote the agent and generate webchat configuration |
+| [9. NL2SQL Accelerator](part9-nl2sql/README.md) | Discover a database and generate an editable NL2SQL agent |
 
-**Prerequisites:**
+NL2SQL is a mandatory standalone use case. It does not modify or rename the
+customer-support agents created in Parts 3–8.
 
-- Computer with internet access, Windows, macOS, or Linux operating system, at least 8GB RAM and 500 MB of free disk space
-- Basic Python knowledge and Python 3.12 installed ([https://www.python.org/downloads/](https://www.python.org/downloads/))
-- uv installed ([https://pypi.org/project/uv/](https://pypi.org/project/uv/))
-- watsonx Orchestrate SaaS access (provided by your instructor or you can use your own)
-- IBM Bob IDE installed (trial or one provided by your instructor)
+## Optional modules
 
-## What You'll Build
+These modules are independent extensions and are not required for the two-day
+core:
 
-Throughout this workshop, you'll build progressively more sophisticated AI agents:
+- [Multi-Agent Orchestration](part8-multi-agent-orchestration/README.md)
+- [MCP Servers](part10-mcp-servers/README.md)
+- [Agentic Workflows](part11-agentic-workflows/README.md)
+- [AI Gateway Models](part12-ai-gateway-models/README.md)
 
-### 1. Hello World Agent (Part 3)
-Your first simple agent to understand the basics of agent configuration and behavior.
+## What you will leave with
 
-### 2. Customer Support System (Parts 4-6)
-A complete customer support solution featuring:
+By the end of the core workshop, you will be able to:
 
-- **Custom Python tools** for order status checking and refund processing
-- **Knowledge base integration** for FAQ handling
-- **Specialized escalation agent** for complex issues
-- **Safety guidelines and guardrails** for responsible AI
+- define native agents with validated YAML
+- build and import Python tools
+- attach knowledge bases and collaborators
+- add guidelines and guardrail plugins
+- create evaluation datasets and run red-team checks
+- deploy a tested draft agent
+- generate an NL2SQL agent from discovered database metadata
+- use Bob to create, review, and troubleshoot Orchestrate artifacts
 
-### 3. Agent Evaluations & Red-Teaming (Part 7)
-Learn to **evaluate and secure** your agents:
+## Working style
 
-- Creating comprehensive evaluation datasets
-- Running automated evaluations
-- Red-teaming techniques for security testing
-- Identifying and fixing vulnerabilities
-- Measuring agent performance metrics
+For each exercise:
 
-### 4. Testing & Deployment (Part 8)
-Learn to **test and deploy** your customer support agent:
+1. Ask Bob using the provided prompt or use the manual fallback.
+2. Review generated files before running commands.
+3. Import one component at a time.
+4. Run the checkpoint before continuing.
 
-- Comprehensive testing strategies
-- Unit and integration testing
-- Deployment best practices
-- Monitoring and observability
-- Production readiness checklist
+If you get stuck, include the command, exact error, operating system, and
+relevant file when asking Bob for help. More examples are available in
+[Helpful Bob Prompts](bob-prompts/helpful-prompts.md).
 
-Each system builds on concepts from previous parts, teaching you to create increasingly sophisticated agentic AI solutions.
-
-## Workshop Structure
-
-### [Prerequisites](part0-prerequisites/README.md)
-- Have a GitHub account
-- Have an IBM partner account
-- Have access to TechZone
-- Have access to ticket creation
-- Create a watsonx Orchestrate instance on TechZone
-- Request a Bob enterprise account
-
-### [Part 1: Setup & Environment](part1-setup/README.md) (15 min)
-- Configure watsonx Orchestrate credentials
-- Verify Bob is working as your AI development partner
-- Understand the project structure
-- Set up your development environment
-
-### [Part 2: Using Custom Rules with Bob IDE](part2b-bob-custom-rules/README.md) (10 min)
-- Learn how to configure Bob with custom development rules
-- Understand the watsonx Orchestrate development rule
-- Set up project-specific conventions for Bob
-- Create your own custom rules for consistent development
-
-### [Part 3: Building Your First Agent](part2-first-agent/README.md) (20 min)
-- Create a simple "Hello World" agent
-- Understand agent instructions and behavior
-- Test your agent with the chat interface
-- Learn how to use Bob to help debug issues
-
-### [Part 4: Adding Custom Tools](part3-custom-tools/README.md) (30 min)
-- Create a Python tool to check order status
-- Create a tool to process refund requests
-- Import tools into your agent
-- Use Bob to help write and debug tool code
-
-### [Part 5: Knowledge Bases & Collaborators](part4-knowledge/README.md) (25 min)
-- Add a knowledge base for FAQs
-- Create a specialized escalation agent
-- Connect agents as collaborators
-- Test the complete customer support flow
-
-### [Part 6: Agent Guidelines & Guardrails](part5-guidelines-guardrails/README.md) (20 min)
-- Write comprehensive agent guidelines
-- Implement content safety guardrails
-- Create input/output filtering plugins
-- Test safety measures and compliance
-- Learn responsible AI best practices
-
-### [Part 7: Agent Evaluations & Red-Teaming](part6-agent-evaluation/README.md) (30-35 min)
-- Create comprehensive evaluation datasets
-- Run automated evaluations with watsonx Orchestrate CLI
-- Perform red-teaming exercises to test agent security
-- Identify and fix agent vulnerabilities
-- Measure agent performance metrics
-- Implement fixes based on evaluation results
-
-### [Part 8: Testing & Deployment](part7-deployment/README.md) (20 min)
-- Test your agent thoroughly
-- Deploy to different environments
-- Generate webchat embed code
-- Monitor agent performance
-
-### [Multi-Agent Orchestration & Workflows](part8-multi-agent-orchestration/README.md) (30 min) *(Optional)*
-- Understand when and why to use multi-agent systems
-- Design focused specialist agents for specific domains
-- Create orchestrator agents with intelligent routing
-- Manage context and handoffs between agents
-- Implement complex multi-agent workflows
-- Learn best practices for agent hierarchies
-- **Advanced standalone exercise** - Build a complete travel planning system
-
-### [Part 9: NL2SQL Agent with the Accelerator](part9-nl2sql/README.md) (30 min)
-- Connect a database and run automated data discovery
-- Explore schema, relationships, and query samples
-- Configure the NL2SQL asset and connect watsonx Orchestrate
-- Tour the accelerator features screen by screen
-- Generate a working NL2SQL agent in one click
-- Run a quick demo with natural language queries
-- **Continue developing the agent with Bob**
-
-### [MCP Servers - Connecting to Backend Services](part10-mcp-servers/README.md) (25 min) *(Optional)*
-- Understand what MCP servers are and their benefits
-- Create an MCP server in Python with multiple tools
-- Define tool schemas and implement tool logic
-- Import MCP servers into watsonx Orchestrate
-- Use MCP server tools in your agents
-- Learn MCP best practices and patterns
-
-### [Agentic Workflows - Deterministic Tool Orchestration](part11-agentic-workflows/README.md) (25-30 min) *(Optional)*
-- Understand what agentic workflows are and when to use them
-- Learn the difference between workflows and agent-based approaches
-- Build deterministic workflows using the Flow Builder
-- Implement parameter mapping and conditional branching
-- Create workflows that are 60% faster and 80% cheaper than agents
-- Test and deploy workflows for fixed business processes
-
-### [AI Gateway and Using Different Models](part12-ai-gateway-models/README.md) (25 min) *(Optional — requires external provider API keys)*
-- Understand the AI Gateway architecture
-- Learn about different LLM providers and models
-- Configure agents with different models
-- Compare model performance and costs
-- Create intelligent model routing agents
-- Best practices for model selection
-
-## How Bob Helps You
-
-Throughout this workshop, you'll use Bob to:
-
-- **Generate code**: "Bob, create a Python tool that checks order status"
-- **Debug issues**: "Bob, why is my agent not calling the refund tool?"
-- **Explain concepts**: "Bob, explain how agent instructions work"
-- **Refactor code**: "Bob, improve the error handling in my tool"
-- **Create tests**: "Bob, write tests for my order status tool"
-
-## Learning Objectives
-
-By the end of this workshop, you will:
-
-- ✅ Understand watsonx Orchestrate agent architecture
-- ✅ Create and configure agents using YAML specifications
-- ✅ Build custom Python tools for specific business logic
-- ✅ Integrate knowledge bases for FAQ handling
-- ✅ Use agent collaborators for complex workflows
-- ✅ Configure and use different AI models through the AI Gateway
-- ✅ Implement safety guidelines and guardrails
-- ✅ Create and use MCP servers for backend integration
-- ✅ Design and orchestrate multi-agent systems
-- ✅ Build responsible AI agents
-- ✅ Leverage Bob as an AI pair programmer
-- ✅ Test and deploy agents to production
-
-## Tips for Success
-
-1. **Ask Bob for help**: Don't hesitate to ask Bob questions throughout the workshop
-2. **Experiment**: Try modifying the examples to see what happens
-3. **Read error messages**: They often tell you exactly what's wrong
-4. **Test incrementally**: Build and test one feature at a time
-5. **Use the documentation**: Bob can search the watsonx Orchestrate docs for you
-
-## Additional Resources
-
-- [Bob Helpful Prompts](bob-prompts/helpful-prompts.md)
-- [watsonx Orchestrate Documentation](https://developer.watson-orchestrate.ibm.com/)
-- [Python Tools Guide](https://developer.watson-orchestrate.ibm.com/tools/create_tool)
-- [Agent Builder API Reference](https://developer.watson-orchestrate.ibm.com/apis/agents/)
-- [Community Forum](https://community.ibm.com/community/user/groups/community-home?CommunityKey=3ad46381-9535-462e-85c9-568b21f4b067)
-
-## Need Help?
-
-- Ask Bob: "Bob, I'm stuck on [specific issue]"
-- Review the bob-prompts guide for helpful prompts
-- Consult the watsonx Orchestrate documentation
-
-## Reporting issues and asking for enhancements
-
-If you have any issues or suggestions for improvement, please open an issue in the [Bobchestrate repository](https://github.com/yobens5/Bobchestrate-for-Partner/issues) - you'll need a GitHub account to do this. Cheers 🍻
-
-## Getting Started
-
-Let's get started! 🚀  Head to [Partner Prerequisites](part0-prerequisites/README.md) →
+[Start with the prerequisites →](part0-prerequisites/README.md)

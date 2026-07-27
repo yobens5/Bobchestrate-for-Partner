@@ -1,5 +1,6 @@
+spec_version: v1
 kind: native
-name: product-assistant
+name: product_assistant
 title: Product Assistant
 description: Helps customers find and learn about products
 
@@ -38,8 +39,11 @@ instructions: |
   - Customer: "What tablets do you recommend?"
     You: Use get_recommendations with category="Tablets"
 
-toolkits:
-  - product-catalog  # Use all tools from the MCP server
+tools:
+  - product-catalog:search_products
+  - product-catalog:get_product_details
+  - product-catalog:check_inventory
+  - product-catalog:get_recommendations
 
 llm: groq/openai/gpt-oss-120b
 

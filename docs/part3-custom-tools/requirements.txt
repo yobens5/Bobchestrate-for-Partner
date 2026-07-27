@@ -1,0 +1,2 @@
+# These workshop tools use only the Python standard library.
+# Add third-party runtime dependencies here if you extend them.

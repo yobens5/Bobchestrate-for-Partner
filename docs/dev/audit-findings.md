@@ -14,7 +14,297 @@ Source of truth for CLI/API: official ADK docs via `watsonx-orchestrate-adk-docs
 |--------|---------|
 | ✅ CLOSED | Fixed in docs |
 | ➖ DISMISSED | Confirmed not an issue / working as expected |
+| 🚧 IN PROGRESS | Fix is being implemented |
 | ⏳ TODO | Identified, not yet investigated or fixed |
+
+---
+
+## Full Workshop Review — 2026-07-27
+
+This review covers the English workshop, with special attention to macOS and
+Windows usability, internal consistency, ADK 2.12.0 compatibility, and the
+amount of material participants are expected to read during the workshop.
+
+Verification used:
+
+- the repository's installed `venv/bin/orchestrate` CLI (**ADK 2.12.0**)
+- local ADK 2.12.0 Pydantic schema validation
+- local Markdown-link, word-count, and consistency checks
+- current official IBM, Python, Astral `uv`, and Microsoft documentation
+
+### Finding 27 — Module numbering and next-step navigation are inconsistent
+
+**Files:** `mkdocs.yml`, `README.md`, `docs/index.md`, and most part READMEs
+**Status:** ✅ CLOSED
+**Original content:** The MkDocs navigation uses Part 2 for Bob Custom Rules,
+Part 3 for First Agent, and Parts 4–9 for the following core modules. Individual
+module titles and next-step links still use the older numbering and sometimes
+skip a module or send the participant backwards.
+**Resolution:** Treat the current MkDocs navigation as canonical and align
+titles, cross-references, next-step links, image captions, and the root README.
+**Fix:** Aligned all core titles, exercise titles, optional-module titles, and
+next-step links with the MkDocs navigation.
+**Verified against:** Local navigation and link audit; ADK 2.12.0 is not
+applicable to this editorial finding.
+
+### Finding 28 — Root README links and repository tree are stale
+
+**File:** `README.md`
+**Status:** ✅ CLOSED
+**Original content:** Links such as `part1-setup/README.md` are written as if
+part directories were at the repository root, but they are under `docs/`. The
+documented tree also includes nonexistent or misplaced files. A local check
+found 14 broken root-README links.
+**Resolution:** Repair links and update the tree, or reduce the root README to a
+short landing page that points to the maintained MkDocs site.
+**Fix:** Replaced the duplicated root guide with a short repository landing page
+whose links all resolve into `docs/`.
+**Verified against:** Local filesystem and Markdown-link audit.
+
+### Finding 29 — Participant setup starts from two incompatible project states
+
+**Files:** `README.md`, `docs/part1-setup/README.md`
+**Status:** ✅ CLOSED
+**Original content:** The root README tells participants to clone or download
+this repository, while Part 1 tells them to create an empty `bobchestrate-ws`
+folder and later download or generate assets.
+**Resolution:** Select one canonical path: work directly in a clone/starter
+repository, or create an empty participant workspace and download assets.
+Do not combine both paths.
+**Fix:** Removed the conflicting clone/open instructions from the root README.
+Part 1's empty `bobchestrate-ws` participant project is now the documented path.
+**Workshop-owner confirmation (2026-07-27):** Creating an empty
+`bobchestrate-ws` folder is the canonical participant workflow.
+**Verified against:** Local documentation review.
+
+### Finding 30 — First-agent field reference and complete example fail ADK 2.12.0
+
+**File:** `docs/part2-first-agent/README.md`
+**Status:** ✅ CLOSED
+**Original content:** The page says `spec_version`, `kind`, `name`, and `llm`
+are the four mandatory fields and describes `description` as optional. The
+complete example's starter prompts omit their required `id` fields.
+**Resolution:** Describe the actual ADK 2.12.0 requirements and defaults, add
+stable prompt IDs, and validate every example before publication.
+**Fix:** Corrected required/default field guidance, added starter-prompt IDs,
+and validated all native-agent examples with ADK 2.12.0.
+**Verified against:** Installed ADK 2.12.0 agent Pydantic model and local YAML
+validation.
+
+### Finding 31 — Customer-support names and file paths drift between modules
+
+**Files:** `docs/part3-custom-tools/README.md`,
+`docs/part4-knowledge/README.md`, `docs/part7-deployment/README.md`, and bundled
+assets
+**Status:** ✅ CLOSED
+**Original content:** The storyline alternates between
+`customer_support_agent` and `customer-support-agent`, and between files under
+`tools/` and root-level files such as `order_status_tool.py`. The deployment
+inventory therefore does not reliably match the project created earlier.
+**Resolution:** Choose one canonical agent name and one file layout, then use
+them throughout the customer-support storyline and downloadable assets.
+**Fix:** Applied the repository convention of snake_case agent names, aligned
+tool filenames with `tools/check_order_status.py` and
+`tools/process_refund.py`, and made deployment consume the same layout.
+**Verified against:** Local end-to-end file and command trace.
+
+### Finding 32 — Deployment Python imports omit the requirements file
+
+**File:** `docs/part7-deployment/README.md`
+**Status:** ✅ CLOSED
+**Original content:** The deployment sequence uses
+`orchestrate tools import -k python -f <file>` without `-r requirements.txt`.
+**Resolution:** Add the requirements argument and ensure the referenced
+requirements file exists in the canonical participant project.
+**Fix:** Added `-r requirements.txt` to both deployment imports and added the
+workshop requirements file.
+**Verified against:** `venv/bin/orchestrate tools import --help`, ADK 2.12.0,
+where `--requirements-file / -r` is required for Python tools.
+
+### Finding 33 — MCP agent creation, import, and test names do not form one runnable path
+
+**Files:** `docs/part10-mcp-servers/README.md`,
+`docs/part10-mcp-servers/product-assistant-agent.yaml`
+**Status:** ✅ CLOSED
+**Original content:** The instructions leave literal `<toolkit_name>`
+placeholders, create `product-assistant-agent.yaml`, import
+`product-catalog-agent.yaml`, and test `product_catalog_agent`. The bundled
+native agent places the toolkit under `toolkits:`, which ADK 2.12.0 rejects for
+this agent style.
+**Resolution:** Use the imported toolkit's prefixed tool names under `tools:`
+and use `product_assistant` plus one filename throughout.
+**Fix:** Replaced placeholders with `product-catalog:<tool>`, aligned the agent
+name and filename, and updated the bundled native agent to use `tools:`.
+**Verified against:** Installed ADK 2.12.0 agent validation and the page's own
+toolkit-import output.
+
+### Finding 34 — NL2SQL discovery and agent-generation steps are reversed
+
+**File:** `docs/part9-nl2sql/README.md`
+**Status:** ✅ CLOSED
+**Original content:** Step 1 creates and deploys an agent “once data discovery
+is complete,” but Step 2 connects the database and performs discovery. The
+summary repeats the same reversed order.
+**Resolution:** Connect the database and complete discovery before configuring
+watsonx Orchestrate and generating the draft agent.
+**Fix:** Reordered the instructions and summary so database discovery completes
+before agent generation, validation, and deployment.
+**Verified against:** Local procedural review and the page's linked video order.
+
+### Finding 35 — AI Gateway model-policy kind contradicts ADK documentation
+
+**File:** `docs/part12-ai-gateway-models/README.md`
+**Status:** ✅ CLOSED
+**Original content:** Main examples use `kind: model_policy`; the quick guide
+uses `kind: model`.
+**Resolution:** Use `kind: model` consistently.
+**Fix:** Updated all three main policy examples and validated six embedded
+model-policy examples with the ADK 2.12.0 model.
+**Verified against:** ADK 2.12.0 CLI and official IBM model-policy
+documentation.
+
+### Finding 36 — Windows support becomes incomplete in later modules
+
+**Files:** Parts 7, 10, and 11, including Part 11 exercises
+**Status:** ✅ CLOSED
+**Original content:** Later instructions rely on `diff`, `grep`, POSIX `for`
+loops, and local `python3` commands without PowerShell alternatives. Part 11
+also uses the invalid command `orchestrate chat -a`.
+**Resolution:** Add adjacent PowerShell equivalents for participant-local
+commands and replace the invalid chat command with
+`orchestrate chat ask --agent-name <name>`. Keep runtime-side
+`command: python3` in MCP YAML unchanged.
+**Fix:** Removed platform-specific filtering where unnecessary, added
+PowerShell connection loops and local Python commands, replaced `diff` with the
+cross-platform IDE comparison flow, and corrected the chat command.
+**Verified against:** ADK 2.12.0 CLI help and local macOS/Windows command review.
+
+### Finding 37 — Python and PowerShell setup guidance needs one tested path
+
+**Files:** `docs/part0-prerequisites/README.md`,
+`docs/part1-setup/README.md`
+**Status:** ✅ CLOSED
+**Original content:** Prerequisites accept Python 3.11 or 3.12, setup expects
+3.12, and the Windows 3.11 link targets the superseded 3.11.0 release. Part 1
+also asks users to persist `RemoteSigned` at `CurrentUser` scope without
+explaining that the change is persistent.
+**Resolution:** Standardize on the workshop-tested Python version and explain or
+replace the persistent execution-policy change with a session-scoped recovery
+option.
+**Fix:** Standardized the workshop on Python 3.12, removed the stale Python
+3.11.0 installer path, and changed PowerShell activation recovery to
+process-scoped execution-policy bypass.
+**Verified against:** Python release pages, Microsoft PowerShell execution
+policy documentation, and local workshop requirements.
+
+### Finding 38 — Setup workspace tree and troubleshooting are not cross-platform
+
+**File:** `docs/part1-setup/README.md`
+**Status:** ✅ CLOSED
+**Original content:** The final tree uses a third project name and shows only
+`add-wxo-env.sh`. A troubleshooting code block labels Bash, PowerShell, and CMD
+commands as one Bash snippet. A referenced setup image is missing.
+**Resolution:** Use the canonical project name, show `.sh` and `.ps1`
+alternatives, split shell-specific blocks, and replace or remove the missing
+image reference.
+**Fix:** Standardized the tree on `bobchestrate-ws`, listed both helper-script
+formats, split shell-specific troubleshooting blocks, and replaced the missing
+image with a command-palette fallback.
+**Verified against:** Local filesystem and cross-platform documentation review.
+
+### Finding 39 — Evaluation examples contain stale version and storyline references
+
+**Files:** `docs/part6-agent-evaluation/README.md` and exercises
+**Status:** ✅ CLOSED
+**Original content:** The module discusses several old ADK versions, includes
+example output and a Bob prompt for 2.10.1, and says the product assistant came
+from “Part 6” even though it belongs to a later optional MCP module.
+**Resolution:** Make the core evaluation exercise use the customer-support
+agent produced by preceding modules and standardize version-specific guidance
+on ADK 2.12.0.
+**Fix:** Reworked the examples and bundled datasets around
+`customer_support_agent`, standardized `wxo_lite_version` on 2.12.0, and removed
+the stale multi-page version output.
+**Verified against:** Local workshop sequence and installed ADK 2.12.0.
+
+### Finding 40 — Some examples overstate production, compliance, and performance readiness
+
+**Files:** Parts 5, 7, 9, and 11
+**Status:** ✅ CLOSED
+**Original content:** Introductory agents are called “production-ready,” simple
+regex guardrails are associated with regulatory compliance, and workflows are
+claimed to be exactly “60% faster” and “80% cheaper” without a cited benchmark.
+The NL2SQL instructions also tell participants to ignore a settings warning
+before independently confirming success.
+**Resolution:** Use “workshop-ready example,” describe guardrails as one control
+layer rather than proof of compliance, label measured results with methodology
+or remove exact percentages, and require validation before proceeding past
+warnings.
+**Fix:** Replaced production-readiness claims with draft/workshop language,
+added an explicit compliance limitation, removed unsupported performance
+percentages, labeled fictional MCP packages, and required warning validation.
+**Verified against:** Local content audit and current official ADK workflow
+documentation; no official source was found for the stated percentages.
+
+### Finding 41 — Workshop length and page density exceed the stated schedule
+
+**Files:** `docs/index.md` and all module READMEs
+**Status:** ✅ CLOSED
+**Original content:** Main module pages contain approximately 33,000 words,
+including about 19,000 prose words and 3,600 lines of fenced code. Declared
+module durations total approximately 305–315 minutes before normal workshop
+overhead, while the overview advertises 270–300 minutes. Part 8 alone contains
+about 993 code lines for a 30-minute exercise.
+**Resolution:** Decide the mandatory two-day path, then move reference material,
+complete source listings, advanced patterns, and optional exercises out of the
+participant's primary flow. A 40–50% reduction in core prose is recommended.
+**Workshop-owner confirmation (2026-07-27):** This is a two-day workshop.
+NL2SQL is mandatory. Multi-Agent Orchestration, MCP Servers, Agentic Workflows,
+and AI Gateway remain optional.
+**Fix:** Rebuilt the overview around a two-day agenda and rewrote participant
+pages around outcomes, short procedures, checkpoints, and collapsed
+troubleshooting. Full source listings now live in downloadable assets.
+Main-module prose fell from approximately 19,400 to 4,700 words, and fenced code
+from approximately 3,600 to 300 lines.
+**Verified against:** Local word/code-line count and duration audit.
+
+### Finding 42 — Copyediting defects reduce confidence and clarity
+
+**Files:** Multiple module READMEs
+**Status:** ✅ CLOSED
+**Original content:** Examples include “where ever,” “informaton,” “undestand,”
+“ceating,” “Ypu,” “If is has,” and “promt,” plus several run-on instructions.
+**Resolution:** Perform a focused English copyedit after structural and
+technical corrections, before translating updates to Hebrew.
+**Fix:** Rewrote the English participant path in concise instructional language,
+removed the identified spelling and grammar defects, standardized terminology,
+and reduced run-on and duplicate explanations. Hebrew content was not changed.
+**Verified against:** Local text search and manual review.
+
+### Finding 43 — MCP smoke test did not match the bundled server
+
+**Files:** `docs/part10-mcp-servers/simple_test.py`,
+`docs/part10-mcp-servers/product_catalog_server.py`
+**Status:** ✅ CLOSED
+**Original content:** The smoke test imported four functions that did not exist
+in the server and used product IDs and argument names absent from the bundled
+catalog. It failed immediately with `ImportError`.
+**Fix:** Reworked the test to call the server's registered `call_tool` handler,
+use the actual schemas and product IDs, assert all four tool paths plus a
+not-found case, removed a duplicate `asyncio` import, and pinned the locally
+verified MCP package version in both optional MCP-based modules.
+**Verified against:** Local execution with the module's declared `mcp`
+dependency; all smoke tests pass.
+
+### Finding 44 — NL2SQL participant link pointed to an internal source repository
+
+**File:** `docs/part9-nl2sql/README.md`
+**Status:** ✅ CLOSED
+**Original content:** The participant CTA opened an internal
+`github.ibm.com` source repository rather than the hosted accelerator identified
+in the project plan.
+**Fix:** Replaced it with the hosted IBM CE NL2SQL Accelerator URL.
+**Verified against:** HTTP GET on 2026-07-27 returned `200 text/html`.
 
 ---
 
@@ -583,4 +873,3 @@ orchestrate evaluations generate \
 ## Pending Audit — Cross-platform setup instructions (macOS & Windows)
 
 **Status:** ✅ CLOSED — merged into Plan 3 above; all items verified and resolved via Findings 11–18.
-

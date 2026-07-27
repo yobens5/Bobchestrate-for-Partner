@@ -1,528 +1,133 @@
-# Part 4: Knowledge Bases & Collaborators
+# Part 5: Knowledge Bases & Collaborators
 
-**Duration:** 25 minutes
-**Objective:** Add knowledge bases for FAQ handling and create specialized collaborator agents
+**Outcome:** The customer-support agent answers approved FAQs and delegates
+exceptions to `escalation_agent`.
 
-> **Note:** This part builds on the agents you created in [Part 3: Custom Tools](../part3-custom-tools/README.md).
+This part builds on the agent and tools from [Part 4](../part3-custom-tools/README.md).
 
-## What You'll Learn
+## 1. Add the FAQ knowledge base
 
-- How to create and configure knowledge bases
-- Connecting knowledge bases to agents
-- Creating specialized collaborator agents
-- Building agent hierarchies for complex workflows
+Download these tested files into `knowledge_bases/`:
 
-## Knowledge Bases Overview
+- [`customer-support-faq.txt`](customer-support-faq.txt)
+- [`faq-knowledge-base.yaml`](faq-knowledge-base.yaml)
 
-Knowledge bases allow agents to:
+The YAML defines a knowledge base named `customer-support-faq` and points to the
+FAQ document beside it.
 
-- 📚 Access large amounts of information without including it in instructions
-- 🔍 Retrieve relevant information based on user queries
-- 📝 Answer questions from documents, FAQs, and knowledge articles
-- 🎯 Provide accurate, sourced responses
-
-## Step 1: Create a Knowledge Base
-
-Let's create a simple FAQ knowledge base for our customer support agent. Choose one of the following options:
-
-### Option A: Import PDF with Bob's Help
-
-Use Bob to create a knowledge base YAML file to import the FAQ PDF.
-
-1. **Download the FAQ PDF**:
-   - **Direct download**: [FAQ.pdf](./FAQ.pdf)
-   
-   The FAQ.pdf contains comprehensive FAQs about:
-   - Shipping Information
-   - Returns and Refunds
-   - Payment Methods and Billing
-   - Account Management
-   - Order Management
-   - Customer Support
-
-2. **Place the PDF in the `knowledge_bases` directory in your workspace.**
-
-3. **Ask Bob to create the knowledge base**:
-   ```
-   Bob, create a knowledge base yaml-file to import the FAQ.pdf in the knowledge_bases directory as a knowledge to watsonx Orchestrate. The yaml-file should be called "customer-support-faq.yaml".
-   ```
-
-4. **What Bob will do**:
-   - Verify that the FAQ.pdf file exists in the knowledge_bases directory
-   - Create a properly formatted knowledge base YAML file to import the PDF as a knowledge base
-   - Structure it for optimal retrieval in watsonx Orchestrate
-
-5. **Expected output**: Bob will create a `customer-support-faq.yaml` file with the PDF content ready for import into watsonx Orchestrate.
-
-**💡 Pro Tip:** Option A is ideal when you have existing documentation in PDF format. Bob can help you quickly convert it into a knowledge base without manual copying and formatting!
-
-### Option B: Manual YAML Creation
-
-Knowledge bases in watsonx Orchestrate must reference **external document files** — inline content is not supported. You need two files: a text file with the FAQ content, and a YAML file that points to it.
-
-**Step 1 — Create the FAQ document** (`knowledge_bases/customer-support-faq.txt`):
-
-A sample [`customer-support-faq.txt`](https://github.com/yobens5/Bobchestrate-for-Partner/blob/main/docs/part4-knowledge/customer-support-faq.txt) is already provided in `docs/part4-knowledge/`. Copy it to your `knowledge_bases/` directory, or create your own with content covering shipping, returns, payments, and account management.
-
-**Step 2 — Create the knowledge base YAML** (`knowledge_bases/customer-support-faq.yaml`):
-
-```yaml
-# customer-support-faq.yaml
-spec_version: v1
-kind: knowledge_base
-name: customer-support-faq
-description: Frequently asked questions for customer support including shipping, returns, payments, and account management
-
-documents:
-  - path: customer-support-faq.txt
-
-vector_index:
-  embeddings_model_name: ibm/slate-125m-english-rtrvr-v2
-  chunk_size: 500
-  chunk_overlap: 50
-  extraction_strategy: standard
-
-conversational_search_tool:
-  generation:
-    prompt_instruction: "Answer customer questions based on the FAQ document. Provide clear and concise answers."
-    max_docs_passed_to_llm: 10
-    generated_response_length: Moderate
-    idk_message: "I don't have information about that in our FAQ. Please contact our customer support team for assistance."
-  confidence_thresholds:
-    retrieval_confidence_threshold: Low
-    response_confidence_threshold: Low
-  query_rewrite:
-    enabled: true
-  citations:
-    citations_shown: -1
-```
-
-> **Important:** The `path:` value is relative to the YAML file. Both files must be in the same directory (e.g., `knowledge_bases/`).
-
-#### Ask Bob to Help:
-```
-Bob, create a knowledge base YAML file and companion FAQ text file with content about shipping, returns, payments, and account management. Place both files in the knowledge_bases directory.
-```
-
-#### Knowledge Base Naming Guidelines
-
-When naming your knowledge base, follow these best practices:
-
-- Use lowercase letters, numbers, and hyphens (e.g., `customer-support-faq`)
-- Keep names descriptive and meaningful
-- Avoid spaces (use hyphens instead)
-- Use consistent naming conventions across your project
-- Example good names: `product-catalog`, `technical-docs`, `company-policies`
-
-## Step 2: Import the Knowledge Base
-
-<img src="images/image-2.png" alt="" width="350px">
-
-Import your knowledge base:
+Import it:
 
 ```bash
-orchestrate knowledge-bases import -f knowledge_bases/customer-support-faq.yaml
-```
+orchestrate knowledge-bases import \
+  -f knowledge_bases/faq-knowledge-base.yaml
 
-Check the status:
-```bash
-orchestrate knowledge-bases list
 orchestrate knowledge-bases status -n customer-support-faq
 ```
 
-<img src="images/image.png" alt="KB status" width="600px">
+Wait until indexing completes before testing.
 
-Wait for the knowledge base to be indexed (status: "ready").
+## 2. Attach the knowledge base
 
-## Step 3: Connect Knowledge Base to Agent
-
-Update your _**customer support agent**_ to use the knowledge base. **Add the "knowledge_base" field to your agent configuration.**
-
-### Option A: Ask Bob to Help
-
-```
-Bob, update my customer support agent to use the customer-support-faq knowledge base. Add the knowledge_base field to agents/customer-support-agent.yaml and re-import the agent.
-```
-
-### Option B: Manual Update
-
->NOTE: The example below might be a bit different from what you have as your customer support agent, but the main thing is to add the `knowledge_base` field to your agent configuration.
+Add this field to `agents/customer-support-agent.yaml`:
 
 ```yaml
-# customer-support-agent.yaml
-spec_version: v1
-kind: native
-name: customer_support_agent
-description: A customer support agent that can check orders, process refunds, and answer FAQs
-
-instructions: |
-  You are a helpful customer support agent for an e-commerce company.
-  
-  Your capabilities:
-  - Check order status using the check_order_status tool
-  - Process refund requests using the process_refund tool
-  - Answer questions using the customer-support-faq knowledge base
-  
-  When answering questions:
-  1. First check if the information is in your knowledge base
-  2. Provide accurate, helpful answers based on the knowledge base
-  3. If the information isn't available, politely say so and offer to escalate
-  
-  When handling orders and refunds:
-  1. Use the appropriate tools
-  2. Present information clearly
-  3. Be empathetic and professional
-  
-  Always prioritize customer satisfaction while following company policies.
-
-llm: groq/openai/gpt-oss-120b
-
-# Tools this agent can use
-tools:
-  - check_order_status
-  - process_refund
-
-# Knowledge bases this agent can access
 knowledge_base:
   - customer-support-faq
-
 ```
 
-Re-import the agent:
+Also tell the agent to use the FAQ for shipping, returns, payment, and account
+questions, and to say when the FAQ does not contain an answer.
+
+Re-import and test:
+
 ```bash
 orchestrate agents import -f agents/customer-support-agent.yaml
+orchestrate chat ask --agent-name customer_support_agent
 ```
 
-<img src="images/image-3.png" alt="Agent reimported successfully" width="850px">
+Try:
 
-## Step 4: Test Knowledge Base Integration
-
-Test the agent with FAQ questions:
-
-```bash
-orchestrate chat ask -n customer_support_agent
+```text
+What is your return policy?
 ```
 
-Try these questions:
+The answer should be grounded in the FAQ rather than invented.
 
-- "What's your shipping policy?"
-- "What payment methods do you accept?"
-- "How long does standard shipping take?"
-- "Do you accept returns?"
+## 3. Add an escalation collaborator
 
-The agent should retrieve and present information from the knowledge base!
+Download [`escalation-agent.yaml`](escalation-agent.yaml) into `agents/`, or ask
+Bob:
 
-## Step 5: Create a Specialized Escalation Agent
-
-Now let's create a specialized agent for handling complex issues.
-
-### Option A: Ask Bob to Help
-
-```
-Bob, create a specialized escalation agent in agents/escalation-agent.yaml. It should handle complex refund requests over $10,000, customer complaints, and policy exceptions. It should have authority to approve refunds up to $25,000, offer compensation, and override standard policies. Give it access to the check_order_status and process_refund tools and the customer-support-faq knowledge base. Then import it.
+```text
+Create agents/escalation-agent.yaml for a native agent named escalation_agent.
+It handles refunds above the main agent's limit, policy exceptions, serious
+complaints, and requests for a manager. Reuse the two customer-support tools and
+customer-support-faq knowledge base. Validate it against ADK 2.12.0.
 ```
 
-### Option B: Manual Creation
+Import it:
 
-Use the example below as a template and store it in `agents/escalation-agent.yaml`.
-
-```yaml
-# escalation-agent.yaml
-spec_version: v1
-kind: native
-name: escalation_agent
-description: Handles complex customer issues that require manager approval or special handling
-
-instructions: |
-  You are a senior customer support specialist who handles escalated issues.
-  
-  Your role:
-  - Handle complex refund requests over $10,000
-  - Resolve customer complaints
-  - Make exceptions to standard policies when appropriate
-  - Provide detailed investigation of issues
-  
-  When handling escalations:
-  1. Acknowledge the customer's frustration
-  2. Gather all relevant details
-  3. Explain what you can do to help
-  4. Provide clear next steps and timelines
-  5. Follow up to ensure resolution
-  
-  You have authority to:
-  - Approve refunds up to $25,000
-  - Offer compensation (discounts, credits)
-  - Override standard policies in exceptional cases
-  - Expedite shipping at no charge
-  
-  Always document your decisions and reasoning. Be empathetic but maintain
-  professional boundaries.
-
-llm: groq/openai/gpt-oss-120b
-
-# This agent can use the same tools
-tools:
-  - check_order_status
-  - process_refund
-
-# And access the same knowledge base
-knowledge_base:
-  - customer-support-faq
-
-```
-
-Import the escalation agent:
 ```bash
 orchestrate agents import -f agents/escalation-agent.yaml
 ```
 
-## Step 6: Create Agent Collaboration
-
-Update the main customer support agent to collaborate with the escalation agent.
-
-### Option A: Ask Bob to Help
-
-```
-Bob, update my customer support agent to collaborate with the escalation_agent. Add escalation_agent as a collaborator in agents/customer-support-agent.yaml and add instructions about when to escalate (refund requests over $10,000, very upset customers, policy exceptions, customer requests a manager). Then re-import the agent.
-```
-
-### Option B: Manual Update
+Add it to the main agent:
 
 ```yaml
-# customer-support-agent.yaml (updated)
-spec_version: v1
-kind: native
-name: customer_support_agent
-description: A customer support agent that can check orders, process refunds, and answer FAQs
-
-instructions: |
-  You are a helpful customer support agent for an e-commerce company.
-  
-  Your capabilities:
-  - Check order status using the check_order_status tool
-  - Process refund requests using the process_refund tool (up to $10,000)
-  - Answer questions using the customer-support-faq knowledge base
-  - Escalate complex issues to the escalation-agent
-  
-  When to escalate to escalation-agent:
-  - Refund requests over $10,000
-  - Customer is very upset or threatening legal action
-  - Request requires policy exception
-  - Issue is beyond your authority
-  - Customer specifically requests a manager
-  
-  When escalating:
-  1. Explain to the customer that you're connecting them with a specialist
-  2. Summarize the issue for the escalation agent
-  3. Let the escalation agent take over
-  
-  For routine matters, handle them yourself efficiently and professionally.
-
-llm: groq/openai/gpt-oss-120b
-
-tools:
-  - check_order_status
-  - process_refund
-
-knowledge_base:
-  - customer-support-faq
-
-# Add the escalation agent as a collaborator
 collaborators:
   - escalation_agent
-
 ```
 
-***The important parts:***
-- Add `escalation_agent` to collaborators
-- Add instructions about when to escalate under your customer support agent's instructions
-```
-When to escalate to escalation_agent:
-  - Refund requests over $10,000
-  - Customer is very upset or threatening legal action
-  - Request requires policy exception
-  - Issue is beyond your authority
-  - Customer specifically requests a manager
-  
-  When escalating:
-  1. Explain to the customer that you're connecting them with a specialist
-  2. Summarize the issue for the escalation agent
-  3. Let the escalation agent take over
-  
-  For routine matters, handle them yourself efficiently and professionally.
-```
+Update the main instructions to delegate:
 
-Re-import:
+- refunds above $10,000
+- policy exceptions
+- requests for a manager
+- serious complaints or legal threats
+
+Then re-import:
+
 ```bash
 orchestrate agents import -f agents/customer-support-agent.yaml
 ```
 
-## Step 7: Test Agent Collaboration
+The complete tested example is available as
+[`customer-support-agent.yaml`](customer-support-agent.yaml).
 
-Test the collaboration:
+## 4. Test the complete flow
 
 ```bash
-orchestrate chat ask -n customer_support_agent
+orchestrate chat ask --agent-name customer_support_agent
 ```
 
-Try these scenarios:
+Test one prompt from each path:
 
-**Scenario 1: Routine Question (handled by main agent)**
-```
-User: What's your return policy?
-```
+| Path | Prompt |
+|---|---|
+| Tool | `What is the status of order ORD-12345?` |
+| Knowledge | `How long do refunds normally take?` |
+| Collaborator | `I need a $15,000 refund and want to speak with a manager.` |
 
-**Scenario 2: Standard Refund (handled by main agent)**
-```
-User: I need a refund for order ORD-12345. The item was damaged. Amount is $99.99.
-```
+The third prompt should delegate to `escalation_agent`.
 
-**Scenario 3: Large Refund (escalated)**
-```
-User: I need a refund for order ORD-67890. The entire shipment was wrong. Amount is $15,000.
-```
-```
-User: This is very unprofessional service. I'm considering legal action. I need to be refunded NOW!
-```
+## Checkpoint
 
-The agent should recognize this needs escalation and delegate to the escalation-agent!
+- [ ] The knowledge base finishes indexing
+- [ ] FAQ answers are grounded in the supplied document
+- [ ] `escalation_agent` imports successfully
+- [ ] The main agent delegates only the documented exception cases
 
-## Step 8: Advanced Knowledge Base Features
+## Troubleshooting
 
-### Multiple Knowledge Bases
+??? question "The agent cannot find FAQ content"
 
-You can create specialized knowledge bases:
+    Check knowledge-base status, document path, and the exact knowledge-base
+    name under `knowledge_base:`.
 
-```yaml
-# technical-kb.yaml
-kind: knowledge_base
-name: technical-support-kb
-description: Technical troubleshooting guides
+??? question "Delegation does not happen"
 
-documents:
-  - title: "Device Setup"
-    content: |
-      # Device Setup Guide
-      [Technical content here]
-      
-  - title: "Troubleshooting"
-    content: |
-      # Common Issues
-      [Troubleshooting steps here]
-```
+    Confirm that `escalation_agent` exists, is listed under `collaborators:`,
+    and has a clear description. State the delegation conditions explicitly in
+    the main agent's instructions.
 
-Then assign different knowledge bases to different agents. _**Multiple agents can access the same knowledge base or each can have their own.**_
-
-```yaml
-# technical-support-agent.yaml
-knowledge_base:
-  - technical-support-kb
-  - customer-support-faq  # Can access multiple KBs
-```
-
-## Best Practices
-
-### Knowledge Base Best Practices
-
-✅ **DO:**
-- Organize content into clear, focused documents
-- Use descriptive titles
-- Include relevant keywords
-- Keep documents updated
-- Test retrieval with common queries
-
-❌ **DON'T:**
-- Create overly large documents
-- Mix unrelated topics in one document
-- Use vague titles
-- Include outdated information
-- Forget to re-index after updates
-
-### Collaboration Best Practices
-
-✅ **DO:**
-- Define clear escalation criteria
-- Provide context when delegating
-- Create specialized agents for specific domains
-- Test collaboration flows thoroughly
-- Document agent responsibilities
-
-❌ **DON'T:**
-- Create circular delegation loops
-- Make escalation criteria too vague
-- Give all agents the same capabilities
-- Forget to handle delegation failures
-- Create too many layers of agents
-
-## Common Issues
-
-### Issue: Knowledge base not returning relevant results
-**Solution:** 
-- Check document titles and content
-- Verify knowledge base is indexed (status: "ready")
-- Try rephrasing the query
-- Adjust chunk_size and chunk_overlap
-
-### Issue: Agent not delegating to collaborator
-**Solution:**
-- Check collaborator is listed in agent YAML
-- Review escalation criteria in instructions
-- Verify collaborator agent exists
-- Test with clear escalation scenarios
-
-### Issue: Collaborator agent not accessible
-**Solution:**
-```bash
-orchestrate agents list
-# Verify both agents are imported
-```
-
-## Optional exercises
-
-### Exercise 1: Product Catalog Knowledge Base
-Create a knowledge base with product information and connect it to a sales agent.
-
-**Ask Bob:**
-```
-Bob, create a product catalog knowledge base with 5 products and a sales agent that uses it
-```
-
-### Exercise 2: Multi-Agent System
-Create a system with 3 agents: front-line support, technical support, and billing support.
-
-**Ask Bob:**
-```
-Bob, design a multi-agent customer service system with specialized agents for different departments
-```
-
-### Exercise 3: Knowledge Base Optimization
-Improve the FAQ knowledge base by adding more detailed content and better organization.
-
-**Ask Bob:**
-```
-Bob, review my knowledge base and suggest improvements for better retrieval
-```
-
-## Key Takeaways
-
-✅ Knowledge bases provide agents with access to large information sources  
-✅ Agents can collaborate by delegating to specialized agents  
-✅ Clear escalation criteria are essential for effective collaboration  
-✅ Multiple knowledge bases can be used for different domains  
-✅ Bob can help design and optimize agent hierarchies  
-
-## Next Steps
-
-You've built a complete customer support system! Now let's test and deploy it.
-
-Continue to [Part 5: Agent guidelines and guardrails](../part5-guidelines-guardrails/README.md) →
-
-## Additional Resources
-
-- [Knowledge Base Guide](https://developer.watson-orchestrate.ibm.com/knowledge_base/build_kb)
-- [Agent Collaboration Patterns](https://developer.watson-orchestrate.ibm.com/agents/overview)
-- [Best Practices for Multi-Agent Systems](https://developer.watson-orchestrate.ibm.com/agents/descriptions)
-
----
-
-**💡 Pro Tip:** Use Bob to help design your agent hierarchy. Ask: "Bob, design an agent system for [your use case]"
+[Continue to Part 6: Guidelines & Guardrails →](../part5-guidelines-guardrails/README.md)

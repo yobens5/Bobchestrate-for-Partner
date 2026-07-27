@@ -1,5 +1,3 @@
-{"input": "Show me laptops", "expected_output": "search_products tool called with query='laptops'", "metadata": {"category": "happy_path", "tool": "search_products"}}
-{"input": "Tell me about product INVALID-999", "expected_output": "Error message: product not found", "metadata": {"category": "edge_case", "tool": "get_product_details"}}
-{"input": "Get details for product", "expected_output": "Error: missing product ID", "metadata": {"category": "error", "tool": "get_product_details"}}
-
-// Made with Bob
+{"input": "What is the status of order ORD-12345?", "expected_output": "check_order_status tool called with order_id='ORD-12345'", "metadata": {"category": "happy_path", "tool": "check_order_status"}}
+{"input": "Check order INVALID-999", "expected_output": "A clear validation error explaining the required ORD-12345 format", "metadata": {"category": "edge_case", "tool": "check_order_status"}}
+{"input": "I need a refund", "expected_output": "The agent asks for the missing order ID, reason, and amount before calling process_refund", "metadata": {"category": "error", "tool": "process_refund"}}

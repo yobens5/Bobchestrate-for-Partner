@@ -13,15 +13,16 @@ Before starting the workshop, make sure you have the following:
 
 ## Software Prerequisites
 
-### Python 3.12 or 3.11
+### Python 3.12
 
-The workshop requires **Python 3.12** or **Python 3.11**. Both versions are supported. Other versions are not tested and not supported.
+The workshop is tested with **Python 3.12**. Use Python 3.12 for all workshop
+exercises; other versions are not covered by the workshop support path.
 
 **macOS:**
 
 ```bash
 # Option 1 — Homebrew (recommended)
-brew install python@3.12   # or: brew install python@3.11
+brew install python@3.12
 
 # Option 2 — python.org installer
 # Download from https://www.python.org/downloads/ and run the .pkg file
@@ -33,8 +34,6 @@ brew install python@3.12   # or: brew install python@3.11
 
 1. Download the Windows installer directly from python.org:
    - **Python 3.12.10** 👉 [https://www.python.org/downloads/release/python-31210/](https://www.python.org/downloads/release/python-31210/)
-   - **Python 3.11** 👉 [https://www.python.org/downloads/release/python-3110/](https://www.python.org/downloads/release/python-3110/)
-
    Scroll to the **Files** section at the bottom of the page and choose:
    - **Windows installer (64-bit)** — for most modern PCs (e.g. `python-3.12.10-amd64.exe`)
    - **Windows installer (32-bit)** — only if your system is 32-bit
@@ -77,9 +76,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-Verify the installation:
-
-> **Windows users:** Open **PowerShell** and run:
+Verify the installation in a terminal on either Windows or macOS:
 
 ```powershell
 uv --version

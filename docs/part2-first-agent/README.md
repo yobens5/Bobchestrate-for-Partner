@@ -1,370 +1,109 @@
-# Part 2: Building Your First Agent
+# Part 3: Building Your First Agent
 
-![Bobchestrate - Setup](bobchestrate_part2.png)
+**Outcome:** A native `hello_world_agent` imported and tested in the draft
+environment.
 
-**Duration:** 20 minutes
+## Minimal native-agent structure
 
-**Objective:** Create a simple agent and understand the basics of agent configuration
-
-## What You'll Learn
-
-- How to create an agent using YAML specification
-- Understanding agent instructions and behavior
-- Testing your agent with the chat interface
-- Using Bob to help debug and improve your agent
-
-## Agent Basics
-
-A watsonx Orchestrate agent is an AI assistant that can:
-
-- Understand natural language
-- Execute tasks using tools
-- Collaborate with other agents
-- Access knowledge bases
-- Follow specific instructions
-
-## Step 1: Understanding Agent Structure
-
-An agent specification is defined using YAML or JSON format. Here's what you need to know:
-
-### Mandatory Fields
-
-Every agent MUST have these four fields:
-
-- **`spec_version`** (string): The specification version (e.g., "v1")
-- **`kind`** (string): The agent type - "native", "external", or "assistant" (default: "native")
-- **`name`** (string): Unique identifier for your agent
-- **`llm`** (string): The large language model that powers the agent (e.g., "groq/openai/gpt-oss-120b")
-
-### Core Optional Fields
-
-These fields define your agent's behavior and capabilities:
-
-- **`description`** (string): Human-readable summary of the agent's purpose. This is visible in the UI and helps other agents understand its role when used as a collaborator
-- **`instructions`** (string): Natural language guidance that shapes the agent's behavior, persona, and how it uses tools and collaborators
-- **`style`** (string): Prompting structure - "default", "react", "react_intrinsic", or "planner" (default: "default")
-- **`hide_reasoning`** (boolean): Whether to hide the agent's reasoning from users (default: false)
-- **`memory_enabled`** (boolean): Whether the agent retains conversation history across interactions within a session (default: false)
-
-### Extending Agent Capabilities
-
-- **`tools`** (list<string>): Names of tools the agent can use to perform actions (OpenAPI definitions, Python functions, agentic workflows, or MCP server tools)
-- **`collaborators`** (list<string>): Names of other agents this agent can delegate tasks to for solving complex problems
-- **`knowledge_base`** (list<string>): Names of knowledge bases providing domain-specific information from uploaded files or vector data stores
-
-### Advanced Configuration
-
-- **`guidelines`** (list<object>): Rule-based behavior controls with:
-  - `condition` (string, required): When to trigger the guideline
-  - `action` (string, optional): What action to perform
-  - `tool` (string, optional): Which tool to invoke
-  
-- **`restrictions`** (string): Whether the agent is "editable" or "non_editable" after import (default: "editable")
-- **`icon`** (string): SVG icon string for the agent (64-100px square, max 200KB)
-- **`is_schedulable`** (boolean): Whether the agent can be scheduled to run at specific times via Chat UI (default: false)
-
-### Web Chat Features
-
-- **`welcome_content`** (object): Configure the initial greeting
-  - `welcome_message` (string): The welcome message shown to users
-  - `description` (string): Subtitle text below the welcome message
-
-- **`starter_prompts`** (object): Predefined prompts to help users start conversations
-  - `prompts` (list): Up to 3 prompt tiles with title, subtitle, and prompt text
-
-- **`chat_with_docs`** (object): Enable users to upload documents during chat
-  - `enabled` (boolean): Activate document upload feature
-  - `citations`: Configure how citations are displayed
-    - `citations_shown` (number): Maximum citations to display; use `-1` for all
-  - `generation`: Fine-tune document handling behavior
-    - `idk_message` (string): Fallback message when the feature cannot answer
-  - `vector_index`: Document processing settings
-    - `extraction_strategy` (string): `"express"` (default, no OCR) or `"standard"` (enables OCR)
-
-### Context Variables
-
-- **`context_access_enabled`** (boolean): Enable access to context variables from upstream systems (default: false)
-- **`context_variables`** (list<string>): List of context variables the agent can access (e.g., wxo_email_id, wxo_user_name, wxo_tenant_id)
-
-
-### Example: Complete Agent Configuration
-
-Here's a comprehensive example showing all mandatory and optional fields:
+ADK 2.12.0 requires `spec_version`, `name`, and `description` when importing a
+native-agent YAML file. The workshop also writes `kind` and `llm` explicitly so
+the configuration is easy to review.
 
 ```yaml
-# complete-agent-example.yaml
-# This example demonstrates all available agent configuration options
-
-# === MANDATORY FIELDS ===
 spec_version: v1
 kind: native
-name: complete-example-agent
+name: hello_world_agent
+description: A friendly workshop agent that greets users
 llm: groq/openai/gpt-oss-120b
-
-# === CORE OPTIONAL FIELDS ===
-description: A comprehensive example agent demonstrating all configuration options available in watsonx Orchestrate
 instructions: |
-  You are a demonstration agent showcasing the full range of configuration options.
-  
-  Your role is to:
-  1. Demonstrate proper agent structure and configuration
-  2. Show how different fields affect agent behavior
-  3. Serve as a reference for building production agents
-  
-  Always be helpful, clear, and educational in your responses.
-
-style: default
-hide_reasoning: false
-
-# === EXTENDING AGENT CAPABILITIES ===
-tools:
-  - example-tool-1
-  - example-tool-2
-
-collaborators:
-  - helper-agent
-  - specialist-agent
-
-knowledge_base:
-  - company-docs
-  - product-catalog
-
-# === ADVANCED CONFIGURATION ===
-guidelines:
-  - condition: "user asks about pricing"
-    action: "provide pricing information from knowledge base"
-    tool: "pricing-lookup-tool"
-  - condition: "user needs technical support"
-    action: "delegate to technical support agent"
-
-restrictions: editable
-
-icon: |
-  <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="32" cy="32" r="30" fill="#0f62fe"/>
-    <text x="32" y="40" font-size="24" fill="white" text-anchor="middle">AI</text>
-  </svg>
-
-# === WEB CHAT FEATURES ===
-welcome_content:
-  welcome_message: "Welcome! I'm your complete example agent."
-  description: "I demonstrate all available configuration options for watsonx Orchestrate agents."
-
-starter_prompts:
-  prompts:
-    - title: "Learn About Configuration"
-      subtitle: "Understand agent setup"
-      prompt: "Tell me about agent configuration options"
-    - title: "See My Capabilities"
-      subtitle: "What can I do?"
-      prompt: "What are your capabilities and features?"
-    - title: "Get Started"
-      subtitle: "Begin exploring"
-      prompt: "How can you help me today?"
-
-chat_with_docs:
-  enabled: true
-  citations:
-    citations_shown: -1
-  generation:
-    idk_message: "I don't have an answer based on the uploaded document."
-  vector_index:
-    extraction_strategy: express
-
-# === CONTEXT VARIABLES ===
-context_access_enabled: true
-context_variables:
-  - wxo_email_id
-  - wxo_user_name
-  - wxo_tenant_id
-  - wxo_user_role
-```
-### Key Insight
-
-The `instructions` field is the most critical part of your agent configuration. It defines the agent's personality, capabilities, and behavior patterns. Well-written instructions lead to predictable, helpful agent responses.
-
-## Step 2: Create Your First Agent
-
-Let's create a simple "Hello World" agent. Make sure you have the `WXO Agent Architect` mode selected for the Bob chat. **Start New Task** in the Bob chat.
-
-#### Ask Bob to Help:
-```
-Bob, create a YAML file called hello-agent.yaml that defines a simple watsonx Orchestrate agent that greets users and tells them about itself.
+  You are HelloBot, a concise and friendly workshop assistant.
+  Greet the user, introduce yourself, and explain that you are a demo agent
+  built with watsonx Orchestrate.
 ```
 
-Or create the yaml-file manually (see [hello-agent-EXAMPLE.yaml](./hello-agent-EXAMPLE.yaml) for reference):
+Agent names use `snake_case`. The `instructions` field describes the agent's
+role, boundaries, and expected behavior.
 
-```yaml
-# hello-agent.yaml
-spec_version: v1
-kind: native
-name: hello-world-agent
-llm: groq/openai/gpt-oss-120b
-description: A friendly agent that greets users and introduces itself
-instructions: |
-  You are a friendly AI assistant named HelloBot. Your role is to:
-  
-  1. Greet users warmly when they first interact with you
-  2. Introduce yourself and explain what you can do
-  3. Answer questions about watsonx Orchestrate
-  4. Be helpful, concise, and friendly
-  
-  When greeting users, mention that you're a demo agent created in a workshop.
-  Keep your responses brief and engaging.
+## 1. Create the agent
+
+Ask Bob:
+
+```text
+Create agents/hello-agent.yaml for a native watsonx Orchestrate agent named
+hello_world_agent. It should greet users and briefly introduce itself. Use the
+project rules and validate the YAML against ADK 2.12.0 before saving it.
 ```
 
-## Step 3: Import Your Agent
+Alternatively, copy the YAML above or download
+[`hello-agent-EXAMPLE.yaml`](hello-agent-EXAMPLE.yaml).
 
-### Option A: Using Bob
-```
-Bob, help me import the hello-agent.yaml file into my active environment. Use the available Python virtual environment (.venv).
-```
+Review the file before importing it. Confirm:
 
->NOTE: IBM Bob is using its own terminal to run the commands and therefore it might take a while to undestand that it needs to use the existing Python virtual environment (.venv). Therefore it's a good idea to add that info to the prompt. You can also test without it and approve Bob to have access to all the necessary files and the wxO MCP servers. Bob should eventually figure things out by itself and import the agent correctly.
+- the name is `hello_world_agent`
+- the model is `groq/openai/gpt-oss-120b`
+- the description is specific enough to distinguish the agent
+- the instructions do not claim tools or data the agent does not have
 
-<img src="images/image-1.png" alt="Bob importing the agent" width="400px">
-
-### Option B: Manually using the watsonx Orchestrate CLI - running _orchestrate_ command in the terminal
+## 2. Import it
 
 ```bash
-orchestrate agents import -f hello-agent.yaml
-```
-
-You should see:
-```
-[INFO] - Agent '<your_agent_name>' imported successfully
-```
-
-## Step 4: Test Your Agent
-
-```bash
-orchestrate chat ask --agent-name <your_agent_name>
-```
-
-This will start an interactive chat session with your agent. This is very useful for testing your agent's responses without needing to login to your watsonx Orchestrate instance UI.
-
-Try these test messages:
-
-- "Hello!"
-- "What can you do?"
-- "Tell me about watsonx Orchestrate"
-
-Type `exit` or press Ctrl+C to quit.
-
-## Step 5: Understanding Agent Instructions
-
-The `instructions` field is crucial - it defines your agent's behavior.
-
-### Good Instructions Include:
-✅ **Role definition**: "You are a customer support agent..."  
-✅ **Capabilities**: "You can check orders, process refunds..."  
-✅ **Behavior guidelines**: "Be professional and empathetic..."  
-✅ **Output format**: "Provide answers in bullet points..."  
-✅ **Limitations**: "If you can't help, escalate to..."  
-
-### Example: Improving Instructions
-
-**Ask Bob:** (make sure to have the WXO Agent Architect mode selected)
-```
-Bob, improve the instructions in hello-agent.yaml to make the agent more helpful and specific about what it can do in this workshop context
-```
-
-Bob might suggest something like:
-
-```yaml
-instructions: |
-  You are the Hello Agent, a demonstration agent designed for watsonx Orchestrate workshops.
-  
-  Your primary purpose is to help workshop participants understand the basics of agent creation and interaction.
-  
-  When users interact with you:
-  1. Greet them warmly and introduce yourself as the Hello Agent
-  2. Explain that you're a simple demonstration agent built to showcase watsonx Orchestrate capabilities
-  3. Describe your specific capabilities:
-     - Providing friendly greetings and introductions
-     - Explaining what watsonx Orchestrate agents are and how they work
-     - Demonstrating basic conversational AI patterns
-     - Serving as a starting point for learning agent development
-  4. Offer to answer questions about:
-     - How agents are structured (spec_version, kind, name, description, instructions, etc.)
-     - The role of LLMs in agent behavior
-     - How agents can be extended with tools and collaborators
-     - Next steps in the workshop for building more complex agents
-  
-  Workshop Context:
-  - You are part of a hands-on learning experience
-  - Participants are learning to create and deploy watsonx Orchestrate agents
-  - Your simplicity is intentional - you demonstrate core concepts without complexity
-  - You can help participants understand the YAML structure that defines you
-  
-  Always be polite, enthusiastic, educational, and encouraging. Help participants feel confident about building their own agents.
-```
-
-Let Bob save the updated instructions to your hello-agent.yaml file.
-
-## Step 6: Update Your Agent
-
-After modifying the YAML file, re-import it:
-
-```bash
-orchestrate agents import -f hello-agent.yaml
-```
-
-The agent will be updated with your new instructions. **Test** it again to see the difference!
-
-## Common Issues and Solutions
-
-### Issue: "Agent not found"
-**Solution:** Check the agent name is correct:
-```bash
+orchestrate agents import -f agents/hello-agent.yaml
 orchestrate agents list
 ```
 
-### Issue: Agent gives unexpected responses
-**Solution:** Review and refine your instructions. Ask Bob:
-```
-Bob, why might my agent be giving unexpected responses? Here are the instructions: [paste instructions]
-```
+The agent should appear in the draft environment.
 
-### Issue: Import fails with validation error
-**Solution:** Check your YAML syntax:
-```
-Bob, check this YAML file for syntax errors: [paste YAML]
+## 3. Test it
+
+```bash
+orchestrate chat ask --agent-name hello_world_agent
 ```
 
-## Additional Exercises
+Try:
 
-For hands-on practice building agents, see the [Part 2 Exercises](./exercises.md).
+```text
+Hello. Who are you, and what can you do?
+```
 
-The exercises cover:
+The response should be brief, friendly, and consistent with the instructions.
+Exit chat with `Ctrl+C`.
 
-- Creating personality-based agents
-- Building domain expert agents
-- Multi-lingual agent support
-- Structured output formatting
-- Conversational flow patterns
-- Debugging agent issues
+## 4. Make one change
 
-## Key Takeaways
+Update the instructions so HelloBot also explains one benefit of agentic AI,
+then re-import the same file:
 
-✅ Agents are defined using YAML specifications  
-✅ Instructions are the most important part of agent configuration  
-✅ Agents can be tested via CLI or Python  
-✅ Bob can help you create, debug, and improve agents  
-✅ Agents can be updated by re-importing the YAML file  
+```bash
+orchestrate agents import -f agents/hello-agent.yaml
+```
 
-## Next Steps
+Test again and confirm that the new behavior appears.
 
-Now that you understand basic agents, learn how to configure Bob IDE with custom rules for more efficient development!
+## Checkpoint
 
-Continue to [Part 2b: Using Custom Rules with Bob IDE](../part2b-bob-custom-rules/README.md) →
+- [ ] The YAML imports without validation errors
+- [ ] `orchestrate agents list` shows `hello_world_agent`
+- [ ] Chat behavior matches the instructions
+- [ ] Re-importing updates the existing agent
 
-## Additional Resources
+## Troubleshooting
 
-- [Agent Configuration Reference](https://developer.watson-orchestrate.ibm.com/agents/build_agent)
-- [Writing Effective Instructions](https://developer.watson-orchestrate.ibm.com/agents/descriptions)
-- [Agent Styles Guide](https://developer.watson-orchestrate.ibm.com/agents/agent_styles)
+??? question "The YAML is rejected"
 
----
+    Check indentation and confirm that `spec_version`, `name`, and
+    `description` are present. Ask Bob to validate the exact file against ADK
+    2.12.0 rather than rewriting it from memory.
 
-**💡 Pro Tip:** Use Bob to iterate on your agent instructions. Ask Bob to review and improve them based on your specific use case!
+??? question "The agent is missing from the list"
+
+    Confirm the active environment with `orchestrate env list`, then import the
+    file again and read the full error.
+
+??? question "The behavior did not change"
+
+    Confirm that you saved and re-imported the same file, then start a fresh
+    chat session.
+
+For more practice, use the [Part 3 exercises](exercises.md).
+
+[Continue to Part 4: Custom Tools →](../part3-custom-tools/README.md)

@@ -57,7 +57,7 @@ All workshop content, CLI commands, YAML schemas, and code examples have been ve
 
 All content corrections, CLI command fixes, schema updates, and verified findings are tracked in:
 
-**[`docs/dev/cli-audit-findings.md`](docs/dev/cli-audit-findings.md)**
+**[`docs/dev/audit-findings.md`](docs/dev/audit-findings.md)**
 
 Every update to workshop content — whether fixing a broken command, dismissing a false positive, or clarifying workshop instructions — must be logged there with:
 - The affected file and part number
