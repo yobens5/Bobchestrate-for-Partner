@@ -1,0 +1,32 @@
+{
+    "agent": "customer_support_agent",
+    "goals": {
+        "check_order_status-1": [
+            "summarize"
+        ]
+    },
+    "goal_details": [
+        {
+            "type": "tool_call",
+            "name": "check_order_status-1",
+            "tool_name": "check_order_status",
+            "args": {
+                "order_id": "ORD-1001"
+            }
+        },
+        {
+            "type": "text",
+            "name": "summarize",
+            "response": "Order ORD-1001 is currently Shipped and is expected to be delivered on 2025-08-10. It contains a Wireless Keyboard and two USB-C Hubs. Could you let me know specifically what you're looking for so I can help you further?",
+            "keywords": [
+                "ORD-1001",
+                "Shipped",
+                "2025-08-10",
+                "Wireless Keyboard",
+                "USB-C Hub"
+            ]
+        }
+    ],
+    "story": "The customer asks a vague question about 'my order' without specifying an intent — they may want the status or may want to request a refund. The agent asks for clarification. After receiving the order ID ORD-1001, it retrieves the status and presents the details while asking how to help further.",
+    "starting_sentence": "I have a question about my order ORD-1001."
+}

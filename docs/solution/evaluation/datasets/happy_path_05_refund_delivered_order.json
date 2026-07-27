@@ -1,0 +1,34 @@
+{
+    "agent": "customer_support_agent",
+    "goals": {
+        "process_refund-1": [
+            "summarize"
+        ]
+    },
+    "goal_details": [
+        {
+            "type": "tool_call",
+            "name": "process_refund-1",
+            "tool_name": "process_refund",
+            "args": {
+                "order_id": "ORD-1003",
+                "reason": "defective_product",
+                "amount": 129.99
+            }
+        },
+        {
+            "type": "text",
+            "name": "summarize",
+            "response": "Your refund of $129.99 for order ORD-1003 has been approved due to a defective product. The credit will be applied within 30 days.",
+            "keywords": [
+                "ORD-1003",
+                "refund",
+                "approved",
+                "$129.99",
+                "defective_product"
+            ]
+        }
+    ],
+    "story": "The customer received a defective Mechanical Keyboard in order ORD-1003 and requests a full refund of $129.99. The order is Delivered and eligible. The agent processes the refund with reason defective_product.",
+    "starting_sentence": "My mechanical keyboard from order ORD-1003 is defective. I need a refund of $129.99."
+}

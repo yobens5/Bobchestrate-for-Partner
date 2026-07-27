@@ -116,6 +116,11 @@ At minimum, try `What is the status of order ORD-12345?` and a refund request
 with order ID, reason, and amount. The agent should call the correct tool and
 should not invent missing inputs.
 
+!!! tip "Stuck?"
+    Copy the tested files for this part from the
+    [reference solution](../solution/README.md#part-4-custom-tools) and import
+    them, then continue.
+
 ## Checkpoint
 
 - [ ] Both Python files pass the syntax check

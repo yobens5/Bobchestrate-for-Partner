@@ -1,0 +1,35 @@
+{
+    "agent": "customer_support_agent",
+    "goals": {
+        "process_refund-1": [
+            "summarize"
+        ]
+    },
+    "goal_details": [
+        {
+            "type": "tool_call",
+            "name": "process_refund-1",
+            "tool_name": "process_refund",
+            "args": {
+                "order_id": "ORD-1001",
+                "reason": "wrong_item",
+                "amount": 999.99
+            }
+        },
+        {
+            "type": "text",
+            "name": "summarize",
+            "response": "I'm sorry, but your requested refund of $999.99 exceeds the total value of order ORD-1001 ($109.97). Please provide an amount equal to or less than the order total and I will re-process your request.",
+            "keywords": [
+                "ORD-1001",
+                "refund amount",
+                "exceeds",
+                "order total",
+                "$109.97",
+                "error"
+            ]
+        }
+    ],
+    "story": "The customer requests a refund of $999.99 for order ORD-1001, but the order total is only $109.97. The tool rejects the request because the amount exceeds the order total. The agent explains the constraint and asks for a corrected amount.",
+    "starting_sentence": "Please refund $999.99 for my order ORD-1001. The item was wrong."
+}

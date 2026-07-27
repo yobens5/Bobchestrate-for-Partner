@@ -106,6 +106,11 @@ from each path:
 
 The third prompt should delegate to `escalation_agent`.
 
+!!! tip "Stuck?"
+    Copy the tested files for this part from the
+    [reference solution](../solution/README.md#part-5-knowledge-collaborators)
+    and import them, then continue.
+
 ## Checkpoint
 
 - [ ] The knowledge base finishes indexing

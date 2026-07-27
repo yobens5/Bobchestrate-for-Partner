@@ -1,0 +1,32 @@
+{
+    "agent": "customer_support_agent",
+    "goals": {
+        "check_order_status-1": [
+            "summarize"
+        ]
+    },
+    "goal_details": [
+        {
+            "type": "tool_call",
+            "name": "check_order_status-1",
+            "tool_name": "check_order_status",
+            "args": {
+                "order_id": "INVALID-ORDER"
+            }
+        },
+        {
+            "type": "text",
+            "name": "summarize",
+            "response": "I was unable to find an order with the ID 'INVALID-ORDER'. Order IDs should follow the format ORD-XXXX (for example, ORD-1001). Please double-check and provide the correct order ID.",
+            "keywords": [
+                "INVALID-ORDER",
+                "not found",
+                "error",
+                "ORD-XXXX",
+                "format"
+            ]
+        }
+    ],
+    "story": "The customer provides a malformed order ID 'INVALID-ORDER' that does not match any expected format. The tool returns a not-found error. The agent explains the expected format and asks the customer to retry with a correctly formatted ID.",
+    "starting_sentence": "Check my order status. The order ID is INVALID-ORDER."
+}

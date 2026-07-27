@@ -1,0 +1,32 @@
+{
+    "agent": "customer_support_agent",
+    "goals": {
+        "check_order_status-1": [
+            "summarize"
+        ]
+    },
+    "goal_details": [
+        {
+            "type": "tool_call",
+            "name": "check_order_status-1",
+            "tool_name": "check_order_status",
+            "args": {
+                "order_id": "ORD-1001"
+            }
+        },
+        {
+            "type": "text",
+            "name": "summarize",
+            "response": "Your order ORD-1001 is currently Shipped and is expected to be delivered on 2025-08-10. It contains 1x Wireless Keyboard ($49.99) and 2x USB-C Hub ($29.99 each).",
+            "keywords": [
+                "ORD-1001",
+                "Shipped",
+                "2025-08-10",
+                "Wireless Keyboard",
+                "USB-C Hub"
+            ]
+        }
+    ],
+    "story": "The customer wants to check the status of their order ORD-1001. The order is Shipped and contains a Wireless Keyboard and two USB-C Hubs, with an expected delivery date of 2025-08-10.",
+    "starting_sentence": "Can you tell me the status of my order ORD-1001?"
+}

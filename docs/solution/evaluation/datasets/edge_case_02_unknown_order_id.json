@@ -1,0 +1,31 @@
+{
+    "agent": "customer_support_agent",
+    "goals": {
+        "check_order_status-1": [
+            "summarize"
+        ]
+    },
+    "goal_details": [
+        {
+            "type": "tool_call",
+            "name": "check_order_status-1",
+            "tool_name": "check_order_status",
+            "args": {
+                "order_id": "ORD-9999"
+            }
+        },
+        {
+            "type": "text",
+            "name": "summarize",
+            "response": "I was unable to find order ORD-9999 in our system. Please double-check the order ID and try again, or contact support if you believe this is an error.",
+            "keywords": [
+                "ORD-9999",
+                "not found",
+                "error",
+                "check the order ID"
+            ]
+        }
+    ],
+    "story": "The customer provides an order ID of ORD-9999, which does not exist in the system. The agent calls check_order_status, receives a not-found error, and politely informs the customer to verify the ID.",
+    "starting_sentence": "What is the status of order ORD-9999?"
+}

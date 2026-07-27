@@ -88,4 +88,10 @@ If you get stuck, include the command, exact error, operating system, and
 relevant file when asking Bob for help. More examples are available in
 [Helpful Bob Prompts](bob-prompts/helpful-prompts.md).
 
+## If you fall behind
+
+The [Reference Solution](solution/README.md) is a completed snapshot of the
+project with a file list for every core part. Copy the files for the parts you
+have already passed, import them, and rejoin the workshop at your current step.
+
 [Start with the prerequisites →](part0-prerequisites/README.md)

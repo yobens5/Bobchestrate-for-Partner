@@ -155,6 +155,11 @@ Re-import every changed artifact, then rerun the functional evaluation and the
 relevant red-team attack. Keep the failed case in the dataset so it becomes a
 regression test.
 
+!!! tip "Stuck?"
+    Copy the tested datasets and attack files for this part from the
+    [reference solution](../solution/README.md#part-7-evaluation-red-teaming),
+    then continue.
+
 ## Checkpoint
 
 - [ ] The configuration points to the correct SaaS environment

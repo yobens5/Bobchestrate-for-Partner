@@ -129,6 +129,11 @@ Test these cases separately:
 Record any prompt that does not produce the expected behavior; it becomes an
 evaluation case in Part 7.
 
+!!! tip "Stuck?"
+    Copy the tested files for this part from the
+    [reference solution](../solution/README.md#part-6-guidelines-guardrails)
+    and import them, then continue.
+
 ## Checkpoint
 
 - [ ] The agent imports with its guidelines

@@ -1,0 +1,47 @@
+{
+    "agent": "customer_support_agent",
+    "goals": {
+        "check_order_status-1": [
+            "process_refund-1"
+        ],
+        "process_refund-1": [
+            "summarize"
+        ]
+    },
+    "goal_details": [
+        {
+            "type": "tool_call",
+            "name": "check_order_status-1",
+            "tool_name": "check_order_status",
+            "args": {
+                "order_id": "ORD-1003"
+            }
+        },
+        {
+            "type": "tool_call",
+            "name": "process_refund-1",
+            "tool_name": "process_refund",
+            "args": {
+                "order_id": "ORD-1003",
+                "reason": "not_as_described",
+                "amount": 19.99
+            }
+        },
+        {
+            "type": "text",
+            "name": "summarize",
+            "response": "Order ORD-1003 was delivered on 2025-07-28. Your refund of $19.99 for the Mouse Pad XL has been approved with reason not_as_described. The credit will be applied within 30 days.",
+            "keywords": [
+                "ORD-1003",
+                "Delivered",
+                "2025-07-28",
+                "refund",
+                "approved",
+                "$19.99",
+                "not_as_described"
+            ]
+        }
+    ],
+    "story": "The customer checks the status of order ORD-1003, confirms it was delivered, and then requests a partial refund of $19.99 for the Mouse Pad XL because it was not as described. The agent first retrieves the order status, then processes the refund.",
+    "starting_sentence": "Can you check order ORD-1003 and then process a partial refund of $19.99 for the mouse pad because it wasn't as described?"
+}

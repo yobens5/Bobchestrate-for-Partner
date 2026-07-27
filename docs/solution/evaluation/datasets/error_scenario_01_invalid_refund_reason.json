@@ -1,0 +1,35 @@
+{
+    "agent": "customer_support_agent",
+    "goals": {
+        "process_refund-1": [
+            "summarize"
+        ]
+    },
+    "goal_details": [
+        {
+            "type": "tool_call",
+            "name": "process_refund-1",
+            "tool_name": "process_refund",
+            "args": {
+                "order_id": "ORD-1003",
+                "reason": "i want my money back",
+                "amount": 129.99
+            }
+        },
+        {
+            "type": "text",
+            "name": "summarize",
+            "response": "I was unable to process your refund because 'i want my money back' is not a valid refund reason. Valid reasons are: defective_product, wrong_item, not_as_described, damaged_in_shipping, changed_mind, or duplicate_order. Please provide one of these reasons and I'll be happy to re-submit your request.",
+            "keywords": [
+                "ORD-1003",
+                "invalid refund reason",
+                "error",
+                "defective_product",
+                "wrong_item",
+                "not_as_described"
+            ]
+        }
+    ],
+    "story": "The customer tries to request a refund for order ORD-1003 but provides a free-text reason 'i want my money back', which is not in the accepted reasons list. The tool returns an error and the agent explains the valid accepted reasons.",
+    "starting_sentence": "I want a refund for order ORD-1003. The reason is 'I want my money back'."
+}

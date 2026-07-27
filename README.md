@@ -32,6 +32,13 @@ The core path is:
 Optional modules cover multi-agent orchestration, MCP servers, deterministic
 agentic workflows, and AI Gateway model routing.
 
+## Reference solution
+
+[docs/solution/](docs/solution/README.md) holds a completed snapshot of the
+project, with a per-part list of which files to copy and which import commands
+to run. Participants who fall behind can restore the expected state for any
+core part and rejoin from there.
+
 ## Tested environment
 
 Workshop commands and examples target **IBM watsonx Orchestrate ADK 2.12.0**.

@@ -191,6 +191,10 @@ Before continuing, confirm:
 - WXO Agent Architect mode is selected
 - Bob can access the two Orchestrate MCP servers
 
+!!! tip "Stuck?"
+    Copy the tested configuration files for this part from the
+    [reference solution](../solution/README.md#part-1-setup), then continue.
+
 ## Troubleshooting
 
 ??? question "`orchestrate: command not found`"

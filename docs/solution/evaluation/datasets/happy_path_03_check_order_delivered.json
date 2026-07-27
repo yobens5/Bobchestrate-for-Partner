@@ -1,0 +1,33 @@
+{
+    "agent": "customer_support_agent",
+    "goals": {
+        "check_order_status-1": [
+            "summarize"
+        ]
+    },
+    "goal_details": [
+        {
+            "type": "tool_call",
+            "name": "check_order_status-1",
+            "tool_name": "check_order_status",
+            "args": {
+                "order_id": "ORD-1003"
+            }
+        },
+        {
+            "type": "text",
+            "name": "summarize",
+            "response": "Your order ORD-1003 has been Delivered on 2025-07-28. It contained 1x Mechanical Keyboard ($129.99), 1x Mouse Pad XL ($19.99), and 1x Cable Management Kit ($14.99).",
+            "keywords": [
+                "ORD-1003",
+                "Delivered",
+                "2025-07-28",
+                "Mechanical Keyboard",
+                "Mouse Pad XL",
+                "Cable Management Kit"
+            ]
+        }
+    ],
+    "story": "The customer is following up on order ORD-1003. The order has been delivered as of 2025-07-28 and contained a Mechanical Keyboard, Mouse Pad XL, and Cable Management Kit.",
+    "starting_sentence": "Has my order ORD-1003 been delivered yet?"
+}

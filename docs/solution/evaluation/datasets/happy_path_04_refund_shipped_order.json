@@ -1,0 +1,45 @@
+{
+    "agent": "customer_support_agent",
+    "goals": {
+        "check_order_status-1": [
+            "process_refund-1"
+        ],
+        "process_refund-1": [
+            "summarize"
+        ]
+    },
+    "goal_details": [
+        {
+            "type": "tool_call",
+            "name": "check_order_status-1",
+            "tool_name": "check_order_status",
+            "args": {
+                "order_id": "ORD-1001"
+            }
+        },
+        {
+            "type": "tool_call",
+            "name": "process_refund-1",
+            "tool_name": "process_refund",
+            "args": {
+                "order_id": "ORD-1001",
+                "reason": "wrong_item",
+                "amount": 49.99
+            }
+        },
+        {
+            "type": "text",
+            "name": "summarize",
+            "response": "Your refund of $49.99 for order ORD-1001 has been approved. You will receive a refund reference ID and the credit will be applied within 30 days.",
+            "keywords": [
+                "ORD-1001",
+                "refund",
+                "approved",
+                "$49.99",
+                "wrong_item"
+            ]
+        }
+    ],
+    "story": "The customer received the wrong item in order ORD-1001 and wants a refund of $49.99 for the Wireless Keyboard. The agent first checks the order status to confirm eligibility, then processes the refund with reason wrong_item.",
+    "starting_sentence": "I received the wrong item in my order ORD-1001 and I'd like a refund of $49.99."
+}

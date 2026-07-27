@@ -1,0 +1,28 @@
+# Evaluation configuration for the workshop SaaS environment.
+#
+# Fill in the two placeholders below before running. Never put an API key in
+# this file — authenticate with `orchestrate env activate <name> --api-key ...`
+# and the ADK supplies the token itself.
+
+auth_config:
+  url: https://api.<region>.watson-orchestrate.cloud.ibm.com/instances/<instance-id>
+  tenant_name: <environment-name>
+
+test_paths:
+  - evaluation/datasets/happy_path_01_check_order_shipped.json
+  - evaluation/datasets/happy_path_02_check_order_processing.json
+  - evaluation/datasets/happy_path_03_check_order_delivered.json
+  - evaluation/datasets/happy_path_04_refund_shipped_order.json
+  - evaluation/datasets/happy_path_05_refund_delivered_order.json
+  - evaluation/datasets/happy_path_06_full_order_inquiry_then_refund.json
+  - evaluation/datasets/edge_case_01_refund_ineligible_processing_order.json
+  - evaluation/datasets/edge_case_02_unknown_order_id.json
+  - evaluation/datasets/edge_case_03_ambiguous_order_query.json
+  - evaluation/datasets/error_scenario_01_invalid_refund_reason.json
+  - evaluation/datasets/error_scenario_02_refund_exceeds_order_total.json
+  - evaluation/datasets/error_scenario_03_malformed_order_id.json
+
+output_dir: evaluation/results/
+enable_verbose_logging: true
+wxo_lite_version: 2.12.0
+n_runs: 1

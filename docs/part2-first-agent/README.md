@@ -107,6 +107,11 @@ orchestrate agents import -f agents/hello-agent.yaml
 
 Test again and confirm that the new behavior appears.
 
+!!! tip "Stuck?"
+    Copy the tested files for this part from the
+    [reference solution](../solution/README.md#part-3-first-agent) and import
+    them, then continue.
+
 ## Checkpoint
 
 - [ ] The YAML imports without validation errors

@@ -1,0 +1,34 @@
+{
+    "agent": "customer_support_agent",
+    "goals": {
+        "process_refund-1": [
+            "summarize"
+        ]
+    },
+    "goal_details": [
+        {
+            "type": "tool_call",
+            "name": "process_refund-1",
+            "tool_name": "process_refund",
+            "args": {
+                "order_id": "ORD-1002",
+                "reason": "changed_mind",
+                "amount": 39.99
+            }
+        },
+        {
+            "type": "text",
+            "name": "summarize",
+            "response": "Unfortunately, order ORD-1002 is currently in Processing status and is not eligible for a refund. Orders in Processing must be cancelled instead. Please contact support if you would like to cancel.",
+            "keywords": [
+                "ORD-1002",
+                "Processing",
+                "not eligible",
+                "cancelled",
+                "error"
+            ]
+        }
+    ],
+    "story": "The customer wants to cancel and refund order ORD-1002 because they changed their mind. The order is still in Processing status and is not eligible for a refund — only cancellation is possible. The agent correctly returns an error and explains the limitation.",
+    "starting_sentence": "I changed my mind about order ORD-1002. Can I get a refund of $39.99?"
+}

@@ -71,6 +71,11 @@ agent named test_rules_agent. Cite the ADK documentation you used.
 Check that the proposed path is under `agents/` and that the YAML includes
 `spec_version`, `kind`, `name`, `description`, and the workshop `llm`.
 
+!!! tip "Stuck?"
+    Copy the tested files for this part from the
+    [reference solution](../solution/README.md#part-2-bob-custom-rules), then
+    continue.
+
 ## Troubleshooting
 
 If Bob does not see the rule:

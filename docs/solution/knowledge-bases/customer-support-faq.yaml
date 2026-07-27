@@ -1,0 +1,10 @@
+spec_version: v1
+kind: knowledge_base
+name: customer_support_faq
+description: |
+  Customer support frequently asked questions. Contains answers to common
+  customer inquiries to help support agents resolve issues quickly.
+documents:
+  - path: FAQ.pdf
+vector_index:
+  embeddings_model_name: ibm/slate-125m-english-rtrvr-v2

@@ -170,6 +170,12 @@ orchestrate agents undeploy --name customer_support_agent
 Confirm the exact command against `orchestrate agents undeploy --help` before
 using it in a shared environment.
 
+!!! tip "Stuck?"
+    Deployment adds no new files. If your agent is not in the expected state,
+    restore it from the
+    [reference solution](../solution/README.md#part-6-guidelines-guardrails)
+    and re-import before promoting it.
+
 ## Checkpoint
 
 - [ ] Draft artifacts and knowledge status are verified

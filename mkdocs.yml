@@ -106,6 +106,8 @@ nav:
       - Model Selection Guide: part12-ai-gateway-models/model-selection-guide.md
   - Bob Prompts:
       - Helpful Prompts: bob-prompts/helpful-prompts.md
+  - Reference Solution:
+      - Completed Project Files: solution/README.md
 
 # Plugins
 plugins:

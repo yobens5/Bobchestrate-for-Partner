@@ -69,3 +69,6 @@ docs/part10-nl2sql/videos/*.mov
 
 # Db2 credentials
 .db2.json
+
+# Reference solution ships a workspace_config.yaml on purpose
+!docs/solution/workspace_config.yaml
