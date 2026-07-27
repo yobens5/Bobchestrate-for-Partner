@@ -1,8 +1,8 @@
 # Bobchestrate Workshop
 
 A hands-on workshop for building AI agents with IBM watsonx Orchestrate and IBM
-Bob. The mandatory curriculum runs over two days; participants work in a new,
-empty `bobchestrate-ws` project.
+Bob. Participants work through the mandatory curriculum in a new, empty
+`bobchestrate-ws` project.
 
 ![Bobchestrate Workshop logo](docs/Bobchestrate_Workshop_logo_new.png)
 

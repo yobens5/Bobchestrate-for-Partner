@@ -6,10 +6,11 @@ This repository is the **Bobchestrate Workshop** — a hands-on learning experie
 
 Participants learn to create, configure, evaluate, and deploy agentic AI systems — from a simple "Hello World" agent to a full multi-agent orchestration system.
 
-## Workshop Schedule
+## Workshop Format
 
-- **Dates:** 10–11 August 2025
-- **Format:** Two-day hands-on workshop
+Keep the repository documentation reusable across workshop deliveries. Event
+dates, daily agendas, and session timings belong in event-specific facilitator
+materials, not in the participant guide.
 
 ## Language Requirements
 

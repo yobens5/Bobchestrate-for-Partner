@@ -7,8 +7,6 @@ IBM Bob as your development partner.
 
 ## Format
 
-- **Length:** Two days, approximately 3.5–4 hours per day including practice,
-  troubleshooting, breaks, and discussion
 - **Level:** Beginner to intermediate
 - **Tested ADK:** IBM watsonx Orchestrate ADK **2.12.0**
 - **Participant project:** a new, empty `bobchestrate-ws` folder
@@ -28,11 +26,10 @@ You need:
   [IBM Support](https://www.ibm.com/support/pages/node/7159462)
 - IBM Bob IDE, Python 3.12, and `uv`
 
-Complete the [Prerequisites](part0-prerequisites/README.md) before Day 1.
+Complete the [Prerequisites](part0-prerequisites/README.md) before beginning the
+workshop.
 
-## Two-day agenda
-
-### Day 1 — Build the customer-support system
+## Core workshop path
 
 | Part | Outcome |
 |---|---|
@@ -41,11 +38,6 @@ Complete the [Prerequisites](part0-prerequisites/README.md) before Day 1.
 | [3. First Agent](part2-first-agent/README.md) | Create, import, and test a native agent |
 | [4. Custom Tools](part3-custom-tools/README.md) | Add order-status and refund tools |
 | [5. Knowledge & Collaborators](part4-knowledge/README.md) | Add FAQs and an escalation agent |
-
-### Day 2 — Make it safer, evaluate it, and deploy
-
-| Part | Outcome |
-|---|---|
 | [6. Guidelines & Guardrails](part5-guidelines-guardrails/README.md) | Add behavioral guidance and input controls |
 | [7. Evaluation & Red-Teaming](part6-agent-evaluation/README.md) | Test expected behavior and adversarial prompts |
 | [8. Deployment](part7-deployment/README.md) | Promote the agent and generate webchat configuration |
@@ -56,8 +48,8 @@ customer-support agents created in Parts 3–8.
 
 ## Optional modules
 
-These modules are independent extensions and are not required for the two-day
-core:
+These modules are independent extensions and are not required for the core
+workshop:
 
 - [Multi-Agent Orchestration](part8-multi-agent-orchestration/README.md)
 - [MCP Servers](part10-mcp-servers/README.md)

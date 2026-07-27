@@ -117,4 +117,4 @@ approved business documentation.
 - [ ] Three sample questions were checked against the database schema
 - [ ] Data-access limitations are understood
 
-You have completed the mandatory two-day workshop path.
+You have completed the mandatory workshop path.

@@ -255,15 +255,18 @@ including about 19,000 prose words and 3,600 lines of fenced code. Declared
 module durations total approximately 305–315 minutes before normal workshop
 overhead, while the overview advertises 270–300 minutes. Part 8 alone contains
 about 993 code lines for a 30-minute exercise.
-**Resolution:** Decide the mandatory two-day path, then move reference material,
+**Resolution:** Decide the mandatory core path, then move reference material,
 complete source listings, advanced patterns, and optional exercises out of the
 participant's primary flow. A 40–50% reduction in core prose is recommended.
-**Workshop-owner confirmation (2026-07-27):** This is a two-day workshop.
-NL2SQL is mandatory. Multi-Agent Orchestration, MCP Servers, Agentic Workflows,
-and AI Gateway remain optional.
-**Fix:** Rebuilt the overview around a two-day agenda and rewrote participant
-pages around outcomes, short procedures, checkpoints, and collapsed
-troubleshooting. Full source listings now live in downloadable assets.
+**Workshop-owner confirmation (2026-07-27, superseded):** The upcoming delivery
+uses a two-day schedule. A later clarification confirmed that this schedule is
+event-specific and must not define the reusable workshop documentation. NL2SQL
+is mandatory. Multi-Agent Orchestration, MCP Servers, Agentic Workflows, and AI
+Gateway remain optional.
+**Fix:** Rebuilt the overview around a generic ordered core path and rewrote
+participant pages around outcomes, short procedures, checkpoints, and collapsed
+troubleshooting. Event dates, daily groupings, and timings are intentionally
+excluded. Full source listings now live in downloadable assets.
 Main-module prose fell from approximately 19,400 to 4,700 words, and fenced code
 from approximately 3,600 to 300 lines.
 **Verified against:** Local word/code-line count and duration audit.
@@ -305,6 +308,24 @@ dependency; all smoke tests pass.
 in the project plan.
 **Fix:** Replaced it with the hosted IBM CE NL2SQL Accelerator URL.
 **Verified against:** HTTP GET on 2026-07-27 returned `200 text/html`.
+
+### Finding 45 — Event-specific timing was presented as the canonical format
+
+**Files:** `AGENTS.md`, `README.md`, `docs/index.md`, and
+`docs/part9-nl2sql/README.md`
+**Status:** ✅ CLOSED
+**Original content:** The reusable workshop guide described the curriculum as a
+two-day workshop, divided the core path into Day 1 and Day 2, and included dates
+for a past delivery.
+**Resolution:** Keep the repository generic. Maintain the ordered mandatory
+curriculum and optional-module boundary, but move dates, timings, and daily
+groupings to event-specific facilitator materials.
+**Fix:** Removed the two-day language, dates, timing estimate, and daily agenda
+from the participant and contributor documentation. Preserved NL2SQL as
+mandatory and the empty `bobchestrate-ws` folder as the canonical participant
+workflow.
+**Verified against:** Workshop-owner clarification dated 2026-07-27 and local
+content audit.
 
 ---
 
