@@ -12,10 +12,20 @@ Production use requires security, privacy, legal, and compliance review.
 
 ## 1. Add behavioral guidelines
 
-Download
-[`customer-support-with-guidelines.yaml`](customer-support-with-guidelines.yaml)
-into `agents/customer-support-agent.yaml`, or add selected guidelines to your
-existing agent:
+Ask Bob:
+
+```text
+Review agents/customer-support-agent.yaml and add concise guidelines for:
+refunds above $10,000, sensitive information in a message, requests for another
+customer's data, and policy exceptions. Preserve the existing tools, knowledge
+base, and collaborator. Use collaborator delegation in the action text, not in
+a guideline tool field. Validate the updated YAML against ADK 2.12.0, show me
+the changes, and re-import the agent.
+```
+
+Compare the result with the tested
+[`customer-support-with-guidelines.yaml`](customer-support-with-guidelines.yaml).
+The key guideline pattern is:
 
 ```yaml
 guidelines:
@@ -35,7 +45,7 @@ guidelines:
 The optional `tool` field in a guideline must name an imported tool. Do not put
 a collaborator name in `tool`; describe collaborator delegation in `action`.
 
-Re-import:
+Manual re-import fallback:
 
 ```bash
 orchestrate agents import -f agents/customer-support-agent.yaml
@@ -43,15 +53,26 @@ orchestrate agents import -f agents/customer-support-agent.yaml
 
 ## 2. Add the input guardrail
 
-Download
-[`content_safety_plugin.py`](content_safety_plugin.py) into
-`tools/content_safety_plugin.py`.
+Ask Bob:
+
+```text
+Create tools/content_safety_plugin.py as an ADK 2.12.0 agent pre-invoke
+guardrail named content_safety_guardrail. For this workshop, detect a small,
+explicit set of sensitive-data and prompt-injection patterns without claiming
+complete security coverage. Add local tests for allowed input, sensitive data,
+and injection patterns. Run the tests, fix confirmed failures, import the
+plugin with requirements.txt, attach it under plugins.agent_pre_invoke in
+agents/customer-support-agent.yaml, and re-import the agent. Show me each result.
+```
+
+Review Bob's version against the tested
+[`content_safety_plugin.py`](content_safety_plugin.py).
 
 This workshop plugin detects a small set of sensitive-data and prompt-injection
 patterns. It is intentionally simple and must not be treated as a production
 security filter.
 
-Import it:
+Manual import and attachment fallback:
 
 ```bash
 orchestrate tools import -k python \
@@ -79,7 +100,17 @@ orchestrate agents import -f agents/customer-support-agent.yaml
 
 ## 3. Test guidelines and guardrails
 
-Start chat:
+Ask Bob:
+
+```text
+Inspect the updated agent, guidelines, and pre-invoke guardrail. Suggest a small
+test set covering normal support, high-value escalation, privacy, sensitive
+data, prompt injection, and one likely false positive. Start a chat so I can
+run each prompt. State whether the expected control is a tool, guideline,
+collaborator, or guardrail.
+```
+
+Manual chat fallback:
 
 ```bash
 orchestrate chat ask --agent-name customer_support_agent

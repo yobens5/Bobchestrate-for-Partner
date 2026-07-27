@@ -73,10 +73,16 @@ By the end of the core workshop, you will be able to:
 
 For each exercise:
 
-1. Ask Bob using the provided prompt or use the manual fallback.
-2. Review generated files before running commands.
-3. Import one component at a time.
-4. Run the checkpoint before continuing.
+1. Give Bob the task using the provided prompt.
+2. Let Bob inspect the project, consult the Orchestrate documentation MCP,
+   generate or update the files, and propose the commands it needs.
+3. Review the files and approve Bob's import or test commands.
+4. Ask Bob to suggest test prompts, then verify the observed behavior yourself.
+5. Use the documented CLI only as a fallback or to understand what Bob ran.
+
+Bob is the primary workshop interface, but it must not receive API keys or other
+secrets in chat. Enter secrets only in the dedicated environment or connection
+prompts.
 
 If you get stuck, include the command, exact error, operating system, and
 relevant file when asking Bob for help. More examples are available in

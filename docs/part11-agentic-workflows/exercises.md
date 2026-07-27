@@ -2,8 +2,9 @@
 
 ## Exercise 1: Add a review branch
 
-Extend the loan workflow so applications in a defined risk band return
-`manual_review` rather than approval or denial.
+Ask Bob to inspect the existing mappings and extend the loan workflow so
+applications in a defined risk band return `manual_review` rather than approval
+or denial.
 
 Requirements:
 
@@ -12,20 +13,25 @@ Requirements:
 - preserve the existing approval and denial paths
 - return a reason with every result
 
+Review Bob's proposed mapping, then let it update, validate, re-import, and
+suggest tests for all three outcomes.
+
 ## Exercise 2: Handle one tool failure
 
-Choose one MCP call and add bounded error handling:
+Ask Bob to choose one MCP call and propose bounded error handling:
 
 - detect the failure
 - retry at most once when appropriate
 - return a clear failure result if the retry fails
 - do not silently approve or deny an incomplete application
 
-Test both the success and failure paths.
+After reviewing the proposal, let Bob implement it, run local checks, re-import
+affected artifacts, and test both the success and failure paths.
 
 ## Exercise 3: Decide whether a workflow is appropriate
 
-For each use case, choose an agent, workflow, or agent calling a workflow:
+Ask Bob to recommend an agent, workflow, or agent calling a workflow for each
+use case:
 
 1. fixed expense-policy checks
 2. open-ended travel planning

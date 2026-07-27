@@ -8,7 +8,19 @@ agent's boundaries. Neither replaces human review or production monitoring.
 
 ## 1. Prepare the evaluation files
 
-Create `evaluation/` and download:
+Ask Bob:
+
+```text
+Inspect customer_support_agent and its actual tool schemas. Create
+evaluation/config.yaml, evaluation/test-cases.jsonl, and
+evaluation/red-team-prompts.jsonl for ADK 2.12.0. Include a normal order lookup,
+invalid order ID, refund with missing information, grounded FAQ question,
+escalation case, and safe refusal case. Validate every JSONL line and the YAML.
+Use placeholders for environment-specific URL values and never write an API key.
+Explain what I must fill in before running the evaluation.
+```
+
+Compare Bob's output with the tested starter files:
 
 - [`config.yaml`](evaluation/config.yaml)
 - [`test-cases.jsonl`](evaluation/test-cases.jsonl)
@@ -33,6 +45,18 @@ Review each expected result against the actual tool names and behavior in your
 project.
 
 ## 2. Run quick evaluation
+
+Ask Bob:
+
+```text
+Check that evaluation/config.yaml contains the required non-secret environment
+values, then run the ADK 2.12.0 quick evaluation against the tools directory.
+Inspect the generated results and summarize failed cases, unexpected tool calls,
+schema mismatches, invented information, and the smallest likely fix for each.
+Do not change the agent yet.
+```
+
+Manual fallback:
 
 ```bash
 orchestrate evaluations quick-eval \
@@ -73,7 +97,17 @@ List the attack plans supported by your installed ADK:
 orchestrate evaluations red-teaming list
 ```
 
-Generate a small workshop set:
+Ask Bob:
+
+```text
+List the red-team attacks supported by the installed ADK, then generate a small
+set for customer_support_agent using instruction_override, jailbreaking, and
+crescendo_prompt_leakage with two variants each. Use the existing evaluation
+data and agent directory. Run the generated attacks, inspect the results, and
+summarize successful attacks without changing files.
+```
+
+Manual fallback:
 
 ```bash
 orchestrate evaluations red-teaming plan \
@@ -85,7 +119,7 @@ orchestrate evaluations red-teaming plan \
   -n 2
 ```
 
-Run the generated attacks:
+Then run the generated attacks:
 
 ```bash
 orchestrate evaluations red-teaming run \
@@ -97,6 +131,15 @@ Review the results for successful instruction overrides, prompt leakage,
 fabricated customer data, and unsafe tool calls.
 
 ## 5. Fix and re-evaluate
+
+Ask Bob:
+
+```text
+Compare the functional and red-team results with the agent, tool, guideline,
+and guardrail files. Recommend the smallest evidence-based fix. After I approve
+it, update only the relevant artifact, validate and re-import it, rerun the
+failed cases, and explain whether the regression is fixed.
+```
 
 For each failure, change the smallest appropriate layer:
 
@@ -120,6 +163,7 @@ regression test.
 - [ ] Red-team attacks are generated and executed
 - [ ] Failures are reviewed rather than hidden or deleted
 - [ ] Fixed cases are rerun successfully
+- [ ] Bob's proposed fix was reviewed before files were changed
 
 ## Troubleshooting
 

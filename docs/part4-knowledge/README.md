@@ -7,15 +7,24 @@ This part builds on the agent and tools from [Part 4](../part3-custom-tools/READ
 
 ## 1. Add the FAQ knowledge base
 
-Download these tested files into `knowledge_bases/`:
+Place the workshop
+[`customer-support-faq.txt`](customer-support-faq.txt) in `knowledge_bases/`,
+then ask Bob:
 
-- [`customer-support-faq.txt`](customer-support-faq.txt)
-- [`faq-knowledge-base.yaml`](faq-knowledge-base.yaml)
+```text
+Inspect knowledge_bases/customer-support-faq.txt. Create
+knowledge_bases/faq-knowledge-base.yaml for a knowledge base named
+customer-support-faq using the project rules and ADK 2.12.0 documentation.
+Keep the document path relative to the YAML. Validate the file, import it into
+the active draft environment, and monitor its status until it is ready. Show me
+the commands and results.
+```
 
-The YAML defines a knowledge base named `customer-support-faq` and points to the
-FAQ document beside it.
+The tested YAML is available as
+[`faq-knowledge-base.yaml`](faq-knowledge-base.yaml). Review Bob's generated
+file against it rather than copying blindly.
 
-Import it:
+Manual import fallback:
 
 ```bash
 orchestrate knowledge-bases import \
@@ -28,79 +37,66 @@ Wait until indexing completes before testing.
 
 ## 2. Attach the knowledge base
 
-Add this field to `agents/customer-support-agent.yaml`:
+Ask Bob:
 
-```yaml
-knowledge_base:
-  - customer-support-faq
+```text
+Update agents/customer-support-agent.yaml to use customer-support-faq for
+shipping, returns, payment, and account questions. Tell the agent to say when
+the knowledge base does not contain an answer. Show me the YAML change,
+validate it, re-import the agent, and suggest three prompts that distinguish a
+grounded answer, an unknown answer, and a tool request.
 ```
 
-Also tell the agent to use the FAQ for shipping, returns, payment, and account
-questions, and to say when the FAQ does not contain an answer.
-
-Re-import and test:
+Manual fallback: add `customer-support-faq` under `knowledge_base:`, update the
+instructions, then run:
 
 ```bash
 orchestrate agents import -f agents/customer-support-agent.yaml
 orchestrate chat ask --agent-name customer_support_agent
 ```
 
-Try:
-
-```text
-What is your return policy?
-```
-
-The answer should be grounded in the FAQ rather than invented.
+Try `What is your return policy?`. The answer should be grounded in the FAQ
+rather than invented.
 
 ## 3. Add an escalation collaborator
 
-Download [`escalation-agent.yaml`](escalation-agent.yaml) into `agents/`, or ask
-Bob:
+Ask Bob:
 
 ```text
 Create agents/escalation-agent.yaml for a native agent named escalation_agent.
 It handles refunds above the main agent's limit, policy exceptions, serious
 complaints, and requests for a manager. Reuse the two customer-support tools and
-customer-support-faq knowledge base. Validate it against ADK 2.12.0.
+customer-support-faq knowledge base. Validate and import it. Then update
+agents/customer-support-agent.yaml to use it as a collaborator for those exact
+cases, validate and re-import the main agent, and verify both agents are listed.
 ```
 
-Import it:
+The tested files are
+[`escalation-agent.yaml`](escalation-agent.yaml) and
+[`customer-support-agent.yaml`](customer-support-agent.yaml).
+
+Manual import fallback:
 
 ```bash
 orchestrate agents import -f agents/escalation-agent.yaml
-```
-
-Add it to the main agent:
-
-```yaml
-collaborators:
-  - escalation_agent
-```
-
-Update the main instructions to delegate:
-
-- refunds above $10,000
-- policy exceptions
-- requests for a manager
-- serious complaints or legal threats
-
-Then re-import:
-
-```bash
 orchestrate agents import -f agents/customer-support-agent.yaml
 ```
 
-The complete tested example is available as
-[`customer-support-agent.yaml`](customer-support-agent.yaml).
-
 ## 4. Test the complete flow
 
-```bash
-orchestrate chat ask --agent-name customer_support_agent
+Ask Bob:
+
+```text
+Review customer_support_agent, its tools, knowledge base, and collaborator.
+Suggest a minimal routing test set with one tool prompt, one grounded FAQ
+prompt, one unknown FAQ prompt, one escalation prompt, and one request that
+must stay with the main agent. Start a chat so I can run them and explain the
+expected route for each.
 ```
 
-Test one prompt from each path:
+Manual fallback: run
+`orchestrate chat ask --agent-name customer_support_agent`, then test one prompt
+from each path:
 
 | Path | Prompt |
 |---|---|

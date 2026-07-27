@@ -327,6 +327,30 @@ workflow.
 **Verified against:** Workshop-owner clarification dated 2026-07-27 and local
 content audit.
 
+### Finding 46 — The shortened workshop no longer used Bob as the primary path
+
+**Files:** Workshop index; Parts 1 and 3–12, including optional exercise pages;
+Bob prompt guide
+**Status:** ✅ CLOSED
+**Original content:** The concise rewrite retained Bob for a few initial file
+generation tasks but presented many imports, updates, tests, evaluations, and
+deployment steps as direct CLI procedures. This obscured the workshop's main
+learning goal: using Bob as the development partner throughout the lifecycle.
+The prompt guide also retained references to the unsupported `enable_cot`
+field.
+**Resolution:** Make Bob the default interface for artifact creation,
+validation, import, testing, analysis, and iteration. Keep exact CLI commands
+as visible fallbacks, require review before execution, and keep secrets and
+live-deployment approval under participant control.
+**Fix:** Added concise Bob-first prompts throughout the mandatory and optional
+modules. The prompts ask Bob to consult the ADK documentation MCP, create or
+update files, validate and import them using `.venv`, verify results, and
+suggest normal, edge, and failure-path tests. Added a reusable task pattern to
+the prompt guide, corrected the obsolete reasoning-field prompt, and added a
+tested Part 4 fallback agent YAML.
+**Verified against:** Local content audit of every module README, ADK 2.12.0
+schema validation, link validation, and strict MkDocs build.
+
 ---
 
 ## Cross-platform (macOS & Windows) Findings — Plan 3

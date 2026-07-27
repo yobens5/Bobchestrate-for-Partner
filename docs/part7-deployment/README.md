@@ -19,10 +19,31 @@ Do not deploy until:
 
 Record any accepted limitation before continuing.
 
+Ask Bob to assemble the evidence:
+
+```text
+Perform a read-only deployment readiness review for customer_support_agent.
+Check the latest evaluation and red-team results, imported tools and agents,
+knowledge-base status, unresolved failures, and tracked files for likely
+secrets. Summarize pass, fail, and unknown items. Do not deploy anything.
+```
+
 ## 2. Verify the draft artifacts
 
 All import commands target draft automatically. Re-import only artifacts changed
 after evaluation:
+
+Ask Bob:
+
+```text
+Using the existing .venv, import or re-import only the customer-support
+artifacts changed since evaluation: Python tools, knowledge base, escalation
+agent, then customer_support_agent. Respect dependency order. Verify the tools,
+knowledge base, and agents are present, then start a draft chat and suggest one
+final smoke-test prompt for each capability.
+```
+
+Manual fallback:
 
 ```bash
 orchestrate tools import -k python \
@@ -62,6 +83,19 @@ orchestrate chat ask --agent-name customer_support_agent
 
 For SaaS or on-premises environments:
 
+Ask Bob:
+
+```text
+Show me the exact ADK command that will deploy customer_support_agent from
+draft to live and explain what it changes. Wait for my explicit confirmation.
+After I approve, run it and verify the agent's live status.
+```
+
+Deployment is an external change. Review Bob's target environment and command
+before approving it.
+
+Manual fallback:
+
 ```bash
 orchestrate agents deploy --name customer_support_agent
 orchestrate agents list
@@ -72,7 +106,17 @@ agents remain available locally.
 
 ## 4. Generate webchat configuration
 
-Live:
+Ask Bob:
+
+```text
+Generate the webchat embed configuration for the live
+customer_support_agent. Create a minimal local HTML example that includes a
+root element and the generated script. Do not include credentials, publish the
+file, or make the chat public. Explain which authentication setting the host
+application still needs.
+```
+
+Manual fallback for live:
 
 ```bash
 orchestrate channels webchat embed \
@@ -80,7 +124,7 @@ orchestrate channels webchat embed \
   --env live
 ```
 
-Draft testing:
+For draft testing:
 
 ```bash
 orchestrate channels webchat embed \
@@ -107,6 +151,15 @@ After deployment:
   unanswered questions
 - add observed failures to the evaluation dataset
 - re-evaluate before deploying an updated version
+
+Ask Bob to help turn observed behavior into regressions:
+
+```text
+Review the exported or pasted workshop conversation logs without retaining
+personal data. Group recurring failures by tool, knowledge, routing, safety,
+and response quality. Suggest one evaluation case per confirmed failure and
+identify which artifact should be reviewed. Do not edit or redeploy yet.
+```
 
 If the deployed agent should no longer be available:
 

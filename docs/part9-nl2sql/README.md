@@ -6,6 +6,10 @@ against the workshop PostgreSQL database.
 This is a mandatory standalone use case. It does not rename or modify the
 customer-support system from Parts 3–8.
 
+The accelerator performs database discovery and initial agent generation in
+its own UI. Bob resumes as the development interface after the generated agent
+is available in the participant project or Orchestrate environment.
+
 ```text
 PostgreSQL → Data discovery → NL2SQL configuration → Orchestrate draft agent
 ```
@@ -104,7 +108,17 @@ data-access boundaries, and current safeguards. Recommend one small improvement
 and cite the ADK documentation that supports it.
 ```
 
-Possible follow-up work includes guidelines for allowed query types, clearer
+Choose one recommendation, then ask:
+
+```text
+Implement the approved improvement in the generated NL2SQL project. Preserve
+its existing database tools and data-access boundaries. Validate every changed
+artifact, import or re-import it into draft using the existing .venv, and
+suggest test prompts for a valid query, an unanswerable question, restricted
+data, and ambiguous business language. Show me the changes and import results.
+```
+
+Possible improvements include guidelines for allowed query types, clearer
 refusals for restricted data, or a collaborator that explains results using
 approved business documentation.
 
@@ -116,5 +130,6 @@ approved business documentation.
 - [ ] The agent was created in draft
 - [ ] Three sample questions were checked against the database schema
 - [ ] Data-access limitations are understood
+- [ ] Bob reviewed and tested one approved improvement
 
 You have completed the mandatory workshop path.

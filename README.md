@@ -4,6 +4,10 @@ A hands-on workshop for building AI agents with IBM watsonx Orchestrate and IBM
 Bob. Participants work through the mandatory curriculum in a new, empty
 `bobchestrate-ws` project.
 
+Bob is the primary development interface: participants ask it to create,
+validate, import, test, and improve artifacts. CLI examples remain available as
+fallbacks and as a way to understand the commands Bob runs.
+
 ![Bobchestrate Workshop logo](docs/Bobchestrate_Workshop_logo_new.png)
 
 ## Workshop documentation

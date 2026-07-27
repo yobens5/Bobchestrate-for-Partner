@@ -2,6 +2,23 @@
 
 This guide contains useful prompts to help you work with Bob throughout the workshop and beyond.
 
+## Workshop Task Pattern
+
+In the workshop, Bob is expected to do the work with you—not only explain it.
+Adapt this compact pattern for each artifact:
+
+```text
+Inspect the relevant project files and custom rules. Consult the watsonx
+Orchestrate documentation MCP for ADK 2.12.0 syntax. Create or update the
+requested artifacts, show me what changed, and validate them. After I review
+them, import them into the active draft environment using the existing .venv
+and verify they are listed. Suggest a small test set with normal, edge, and
+failure cases, then start the appropriate chat or test command.
+```
+
+Review generated files and commands before approving them. Never paste API keys
+or other secrets into Bob chat; enter them only in dedicated credential prompts.
+
 ## General Agent Development
 
 ### Understanding Concepts
@@ -60,7 +77,7 @@ Bob, add error handling guidance to these agent instructions: [paste instruction
 
 ### Agent Configuration
 ```
-Bob, explain what the 'enable_cot' configuration option does
+Bob, explain when to use hide_reasoning in an ADK 2.12.0 native-agent YAML
 ```
 
 ```
@@ -293,7 +310,7 @@ Bob, create a planner-style agent with structured output
 ```
 
 ```
-Bob, build an agent that uses chain-of-thought reasoning
+Bob, create a planner-style agent and keep internal reasoning hidden from users
 ```
 
 ### MCP Servers

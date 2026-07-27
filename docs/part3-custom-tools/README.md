@@ -31,13 +31,33 @@ Review Bob's output, or download the tested workshop files:
 Place the Python files under `tools/` and `requirements.txt` at the project
 root.
 
-Syntax check:
+Ask Bob to review and test what it created:
+
+```text
+Review the two generated tools against the ADK documentation. Check their
+schemas, docstrings, validation, and structured responses. Run a Python syntax
+check and create or run small local tests for valid and invalid inputs. Fix only
+confirmed problems and summarize the results.
+```
+
+Manual syntax check:
 
 ```bash
 python -m py_compile tools/check_order_status.py tools/process_refund.py
 ```
 
 ## 2. Import the tools
+
+Ask Bob:
+
+```text
+Using the existing .venv, import tools/check_order_status.py and
+tools/process_refund.py into the active draft environment with the root
+requirements.txt. Verify that both exact tool names appear in the tools list.
+Show me the commands and results.
+```
+
+Manual fallback:
 
 ```bash
 orchestrate tools import -k python \
@@ -55,55 +75,46 @@ Confirm that `check_order_status` and `process_refund` appear.
 
 ## 3. Create the customer-support agent
 
-Create `agents/customer-support-agent.yaml`:
+Ask Bob:
 
-```yaml
-spec_version: v1
-kind: native
-name: customer_support_agent
-description: Checks order status and handles simulated refund requests
-llm: groq/openai/gpt-oss-120b
-instructions: |
-  You are a concise and empathetic customer-support assistant.
-
-  For order status:
-  1. Ask for the order ID if it is missing.
-  2. Call check_order_status.
-  3. Explain the returned status clearly.
-
-  For refunds:
-  1. Collect the order ID, reason, and amount.
-  2. Confirm the details with the customer.
-  3. Call process_refund only after confirmation.
-
-  Never invent order or refund data. Explain validation errors and ask the
-  customer to correct the input.
-tools:
-  - check_order_status
-  - process_refund
+```text
+Create agents/customer-support-agent.yaml for a native agent named
+customer_support_agent. Give it the imported check_order_status and
+process_refund tools. It must collect missing inputs, confirm refund details
+before processing, explain validation errors, and never invent backend data.
+Use the project model and ADK 2.12.0 schema. Review the YAML with me, then import
+it into draft and verify it is listed.
 ```
 
-Import and test:
+The tested fallback is
+[`customer-support-agent.yaml`](customer-support-agent.yaml).
+If importing manually:
 
 ```bash
 orchestrate agents import -f agents/customer-support-agent.yaml
+```
+
+## 4. Test with Bob
+
+Ask Bob:
+
+```text
+Inspect the customer_support_agent instructions and tool schemas. Suggest a
+compact test set covering a valid order lookup, an invalid ID, a refund with
+missing details, a confirmed refund, and an unrelated request. Start a chat
+with the agent so I can run the prompts, and tell me which tool calls and
+clarifying questions to expect.
+```
+
+Manual chat fallback:
+
+```bash
 orchestrate chat ask --agent-name customer_support_agent
 ```
 
-Try:
-
-```text
-What is the status of order ORD-12345?
-```
-
-Then:
-
-```text
-I need a refund for order ORD-12345 because the product arrived damaged.
-The amount is $99.99.
-```
-
-The agent should call the correct tool and should not invent missing inputs.
+At minimum, try `What is the status of order ORD-12345?` and a refund request
+with order ID, reason, and amount. The agent should call the correct tool and
+should not invent missing inputs.
 
 ## Checkpoint
 
@@ -111,6 +122,7 @@ The agent should call the correct tool and should not invent missing inputs.
 - [ ] Both tools appear in `orchestrate tools list`
 - [ ] The agent imports successfully
 - [ ] Order and refund prompts call the correct tools
+- [ ] Bob proposed normal, edge, and error-path tests
 
 ## Troubleshooting
 

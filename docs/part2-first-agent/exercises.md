@@ -4,14 +4,15 @@ Complete these only after `hello_world_agent` passes the main checkpoint.
 
 ## Exercise 1: Change the persona
 
-Create `agents/workshop_guide.yaml` for an agent that:
+Ask Bob to create `agents/workshop_guide.yaml` for an agent that:
 
 - welcomes participants
 - explains the nine mandatory parts
 - answers in no more than four sentences
 - says when it does not know an answer
 
-Import and test:
+Ask Bob to validate and import the file, then suggest prompts that test every
+requirement. Manual fallback:
 
 ```bash
 orchestrate agents import -f agents/workshop_guide.yaml
@@ -43,12 +44,13 @@ Expected observations:
 - `hidden: true` prevents normal discovery in the UI
 - the description is too vague for collaborator routing
 
-Fix the file, import it, and explain why each change was needed.
+After reviewing the diagnosis, ask Bob to fix the file, validate and import it,
+suggest one test for each change, and explain why the change was needed.
 
 ## Exercise 3: Add starter prompts
 
-Add two starter prompts to `workshop_guide`. Each prompt needs a unique `id`,
-title, subtitle, and prompt:
+Ask Bob to add two starter prompts to `workshop_guide`. Each prompt needs a
+unique `id`, title, subtitle, and prompt:
 
 ```yaml
 starter_prompts:
@@ -59,8 +61,8 @@ starter_prompts:
       prompt: What will I build in this workshop?
 ```
 
-Create a second prompt, re-import the agent, and confirm both appear in webchat
-configuration.
+Ask Bob to create the second prompt, validate and re-import the agent, generate
+draft webchat configuration, and help you confirm that both prompts appear.
 
 [Return to Part 3](README.md) or
 [continue to Part 4](../part3-custom-tools/README.md).

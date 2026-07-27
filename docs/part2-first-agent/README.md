@@ -46,6 +46,17 @@ Review the file before importing it. Confirm:
 
 ## 2. Import it
 
+Ask Bob:
+
+```text
+Review agents/hello-agent.yaml against the project rules and ADK 2.12.0
+documentation. If it is valid, import it into the active draft environment
+using the existing .venv, then verify that hello_world_agent is listed. Show me
+the command and result.
+```
+
+Manual fallback:
+
 ```bash
 orchestrate agents import -f agents/hello-agent.yaml
 orchestrate agents list
@@ -54,6 +65,16 @@ orchestrate agents list
 The agent should appear in the draft environment.
 
 ## 3. Test it
+
+Ask Bob:
+
+```text
+Suggest three short chat prompts that test hello_world_agent's greeting, stated
+capabilities, and boundaries. Then start a chat with the agent so I can try
+them. Tell me what behavior I should observe for each prompt.
+```
+
+Manual fallback:
 
 ```bash
 orchestrate chat ask --agent-name hello_world_agent
@@ -70,8 +91,15 @@ Exit chat with `Ctrl+C`.
 
 ## 4. Make one change
 
-Update the instructions so HelloBot also explains one benefit of agentic AI,
-then re-import the same file:
+Ask Bob:
+
+```text
+Update agents/hello-agent.yaml so HelloBot also explains one practical benefit
+of agentic AI. Show me the change, validate the file, re-import it, and suggest
+one prompt that proves the updated behavior is active.
+```
+
+Manual fallback: update the instructions, save the file, and re-import it:
 
 ```bash
 orchestrate agents import -f agents/hello-agent.yaml

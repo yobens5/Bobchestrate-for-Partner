@@ -120,9 +120,9 @@ Bob should mention watsonx Orchestrate agents and its MCP tools.
 
 ## 7. Connect the workshop environment
 
-Your instructor supplies the watsonx Orchestrate instance URL and API key.
-Treat the API key like a password: do not paste it into chat, save it in source
-files, or commit it.
+Use the watsonx Orchestrate instance URL and API key from your own provisioned
+environment. Treat the API key like a password: do not paste it into chat, save
+it in source files, or commit it.
 
 In the watsonx Orchestrate extension:
 
@@ -156,6 +156,16 @@ An empty agent list is a successful result.
     or run `orchestrate env activate <environment-name>` again.
 
 ## Setup checkpoint
+
+Ask Bob to perform the non-secret checks:
+
+```text
+Inspect this workshop workspace and verify the setup without changing files.
+Use the existing .venv. Check the Python and ADK versions, active Orchestrate
+environment, expected workspace folders, and access to both Orchestrate MCP
+servers. Run safe list or version commands where useful. Summarize anything I
+must fix, but do not ask me to paste an API key into chat.
+```
 
 Your project should now contain a structure similar to:
 

@@ -7,7 +7,20 @@ An MCP server groups related tools behind a standard protocol. Orchestrate
 imports the server as a toolkit; agents reference individual tools using the
 `toolkit-name:tool-name` prefix.
 
-## 1. Download the starter
+## 1. Ask Bob to build the starter
+
+Ask Bob in Code mode:
+
+```text
+Create a local Python MCP product-catalog server under toolkits/ with tools for
+search, product details, inventory, and recommendations using small mock data.
+Also create requirements.txt, direct smoke tests, and an ADK 2.12.0 MCP toolkit
+YAML. Create agents/product-assistant-agent.yaml using the correctly prefixed
+tool names. Run local syntax and smoke tests, validate the YAML files, and
+summarize the artifacts. Do not import yet.
+```
+
+Use these tested files as fallbacks or comparisons.
 
 Save under `toolkits/`:
 
@@ -27,6 +40,16 @@ The server exposes:
 - `get_recommendations`
 
 ## 2. Test locally
+
+Ask Bob:
+
+```text
+Install the declared toolkit dependencies in the existing .venv, inspect the
+MCP server and smoke tests, then run the tests. Fix only confirmed local
+failures and show me the result for each of the four tools.
+```
+
+Manual fallback:
 
 ```bash
 python -m pip install -r toolkits/requirements.txt
@@ -50,7 +73,16 @@ tools:
   - "*"
 ```
 
-Import and verify:
+Ask Bob:
+
+```text
+Review toolkits/product-catalog-toolkit.yaml against the ADK 2.12.0 MCP toolkit
+schema. If valid, import it into the active draft environment using the
+existing .venv. Verify the toolkit and all four product-catalog-prefixed tools
+are listed.
+```
+
+Manual import fallback:
 
 ```bash
 orchestrate toolkits import \
@@ -74,7 +106,16 @@ tools:
   - product-catalog:get_recommendations
 ```
 
-Import and test:
+Ask Bob:
+
+```text
+Review agents/product-assistant-agent.yaml and compare every referenced tool
+with the imported prefixed names. If they match, import the agent, verify it is
+listed, and suggest prompts that exercise search, details, inventory,
+recommendations, and a missing product. Start a chat so I can run them.
+```
+
+Manual fallback:
 
 ```bash
 orchestrate agents import -f agents/product-assistant-agent.yaml

@@ -9,6 +9,17 @@ copying a model name from an old example.
 
 ## 1. Inspect available models
 
+Ask Bob:
+
+```text
+Using the active environment and existing .venv, list the available Orchestrate
+models. Help me compare candidates by exact identifier, tool-calling support,
+region or data-handling constraints, rate limits, expected cost ownership, and
+the evaluation cases they must pass. Do not request or store provider API keys.
+```
+
+Manual fallback:
+
 ```bash
 orchestrate models list
 ```
@@ -26,7 +37,16 @@ Never store provider API keys in YAML, scripts, or chat messages.
 
 ## 2. Create a retry policy
 
-Create `models/retry-policy.yaml`:
+Ask Bob:
+
+```text
+Create models/retry-policy.yaml for ADK 2.12.0 as a model policy named
+workshop_model_retry. Use the tested workshop model as one target, two retries,
+and only transient 503 and 504 status codes. Validate the schema, show me the
+file, import it, and verify it is listed.
+```
+
+The expected policy is:
 
 ```yaml
 spec_version: v1
@@ -44,7 +64,7 @@ policy:
     - model_name: groq/openai/gpt-oss-120b
 ```
 
-Import it:
+Manual import fallback:
 
 ```bash
 orchestrate models policy import -f models/retry-policy.yaml
@@ -56,7 +76,17 @@ policy files.
 
 ## 3. Apply the policy
 
-In a copy of an evaluated agent, replace its direct model:
+Ask Bob:
+
+```text
+Create a copy of an evaluated workshop agent and change only its llm reference
+to workshop_model_retry. Show me the diff, validate and import the copied agent,
+then identify the exact baseline evaluation cases to rerun. Run them after I
+approve and compare tool selection, response quality, latency, and safety
+behavior with the original.
+```
+
+The copied agent should reference:
 
 ```yaml
 llm: workshop_model_retry
@@ -69,7 +99,17 @@ latency, or safety behavior.
 ## 4. Optional fallback exercise
 
 If an instructor has configured and approved a second model, create a fallback
-policy using the exact names from `orchestrate models list`:
+policy using the exact names from `orchestrate models list`. Ask Bob:
+
+```text
+Using only model identifiers currently listed in this environment, create a
+two-target fallback policy with the approved primary and backup models. Show me
+the data-handling and cost assumptions that require instructor confirmation.
+After approval, validate and import the policy and propose a controlled test of
+both the normal and fallback paths.
+```
+
+Manual YAML fallback:
 
 ```yaml
 spec_version: v1

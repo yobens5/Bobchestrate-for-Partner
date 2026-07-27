@@ -15,16 +15,30 @@ travel_concierge
 
 All tools in this example use simulated data.
 
-## 1. Download the starter files
+## 1. Ask Bob to build the system
 
-Save the Python files under `tools/`:
+Ask Bob:
+
+```text
+Build a simulated multi-agent travel system for ADK 2.12.0. Create four
+specialist agents—flight_specialist, hotel_specialist, activity_planner, and
+budget_advisor—with distinct descriptions and mock Python tools. Create
+travel_concierge as their orchestrator with explicit routing and synthesis
+instructions. Put agents under agents/, tools under tools/, and dependencies in
+requirements.txt. Add small local tests, run syntax and test checks, and
+validate every YAML file. Do not import yet; summarize the artifacts for review.
+```
+
+Use these tested starter files if Bob needs a fallback or comparison.
+
+Python files under `tools/`:
 
 - [`flight_tools.py`](flight_tools.py)
 - [`hotel_tools.py`](hotel_tools.py)
 - [`activity_tools.py`](activity_tools.py)
 - [`budget_tools.py`](budget_tools.py)
 
-Save the YAML files under `agents/`:
+YAML files under `agents/`:
 
 - [`flight-specialist-agent.yaml`](flight-specialist-agent.yaml)
 - [`hotel-specialist-agent.yaml`](hotel-specialist-agent.yaml)
@@ -39,6 +53,16 @@ to choose a collaborator.
 
 ## 2. Import tools
 
+Ask Bob:
+
+```text
+Using the existing .venv and root requirements.txt, import the four travel tool
+files into the active draft environment. Verify every expected tool is listed
+and stop on the first unexplained failure.
+```
+
+Manual fallback:
+
 ```bash
 orchestrate tools import -k python -f tools/flight_tools.py -r requirements.txt
 orchestrate tools import -k python -f tools/hotel_tools.py -r requirements.txt
@@ -48,6 +72,16 @@ orchestrate tools list
 ```
 
 ## 3. Import specialists, then the concierge
+
+Ask Bob:
+
+```text
+Import the four travel specialist agents first and travel_concierge last.
+Validate each YAML before import, preserve dependency order, and verify all five
+agents are listed. Show me the commands and results.
+```
+
+Manual fallback:
 
 ```bash
 orchestrate agents import -f agents/flight-specialist-agent.yaml
@@ -61,6 +95,17 @@ orchestrate agents list
 Import collaborators before the agent that references them.
 
 ## 4. Test routing
+
+Ask Bob:
+
+```text
+Inspect the five travel agents and suggest a concise routing test set: one
+prompt per specialist, one ambiguous prompt, and one combined request. Start a
+chat with travel_concierge and tell me the expected collaborator route for each
+test without inventing real booking confirmation.
+```
+
+Manual chat fallback:
 
 ```bash
 orchestrate chat ask --agent-name travel_concierge
