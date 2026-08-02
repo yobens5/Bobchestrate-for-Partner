@@ -1,4 +1,4 @@
-# Part 4 — Optional Exercises
+# Part 3 — Optional Exercises
 
 Complete these after both customer-support tools work.
 
@@ -51,7 +51,7 @@ Ask Bob to inspect the two tool schemas and create three prompts:
 
 If the agent selects the wrong tool, ask Bob to diagnose the smallest relevant
 docstring or instruction change. Review it before Bob updates, validates,
-re-imports, and records the prompt as a Part 7 evaluation case.
+re-imports, and records the prompt as a Part 6 evaluation case.
 
-[Return to Part 4](README.md) or
-[continue to Part 5](../part4-knowledge/README.md).
+[Return to Part 3](README.md) or
+[continue to Part 4](../part4-knowledge/README.md).

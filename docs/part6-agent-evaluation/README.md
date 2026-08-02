@@ -1,4 +1,4 @@
-# Part 7: Agent Evaluations & Red-Teaming
+# Part 6: Agent Evaluations & Red-Teaming
 
 **Outcome:** A repeatable functional evaluation and a small adversarial test run
 for `customer_support_agent`.
@@ -78,7 +78,7 @@ failures.
 
 ## 3. Add one observed test
 
-Choose a prompt that behaved incorrectly in Part 6. Ask Bob:
+Choose a prompt that behaved incorrectly in Part 5. Ask Bob:
 
 ```text
 Add one evaluation record for this failure to evaluation/test-cases.jsonl.
@@ -159,7 +159,7 @@ regression test.
 
 !!! tip "Stuck?"
     Copy the tested datasets and attack files for this part from the
-    [reference solution](../solution/README.md#part-7-evaluation-red-teaming),
+    [reference solution](../solution/README.md#part-6-evaluation-red-teaming),
     then continue.
 
 ## Checkpoint
@@ -189,4 +189,4 @@ regression test.
     Each record must occupy one line and be valid JSON. Comments are not JSON;
     remove them if the command does not accept comment lines.
 
-[Continue to Part 8: Deployment →](../part7-deployment/README.md)
+[Continue to Part 7: Deployment →](../part7-deployment/README.md)

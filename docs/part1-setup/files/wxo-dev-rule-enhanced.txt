@@ -1,4 +1,4 @@
-# watsonx Orchestrate Workshop Rule
+# watsonx Orchestrate Workshop Workspace Rule
 
 Apply this rule when working in this project.
 

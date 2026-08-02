@@ -419,6 +419,34 @@ Reference Solution rule so it downloads with the required `.md` filename.
 **Verified against:** Strict MkDocs build and a generated-site audit confirming
 that every download link resolves to an emitted static asset.
 
+### Finding 51 — Bob mode and workspace-rule copies diverged across the workshop
+
+**Files:** `.bob/custom_modes.yaml`, `.bob/rules/wxo-dev-rule-enhanced.md`,
+Part 1 Bob configuration assets, the former Part 2 Custom Rules module,
+Reference Solution Bob configuration assets, workshop navigation, and core-part
+cross-references
+**Status:** ✅ CLOSED
+**Original content:** The active Bob mode delegated project conventions to the
+workspace rule, while the participant mode export and Reference Solution mode
+duplicated older instructions. Three materially different rule copies were
+distributed. The active and Reference Solution rules also allowed current MCP
+documentation to override the workshop behavior, conflicting with the tested
+ADK 2.12.0 requirement. Rule installation occupied a separate core part even
+though it is required Bob setup.
+**Resolution:** Keep responsibilities separate: the custom mode defines the WXO
+specialist role, live-asset discovery behavior, and permitted capabilities;
+the workspace rule applies ADK 2.12.0 version policy, project conventions,
+safety requirements, and known pitfalls across all Bob modes. Install both in
+Part 1 and remove the standalone Custom Rules part.
+**Fix:** Made all active, participant, and Reference Solution mode copies
+byte-identical. Made all rule copies byte-identical and preserved the ADK 2.12.0
+pin. Moved the downloadable rule and its verification checkpoint into Part 1,
+removed the obsolete rules module and its test-agent artifact, and renumbered
+the remaining core workshop path from Parts 2–8.
+**Verified against:** Official IBM Bob documentation for rule and custom-mode
+semantics; local checksum comparison of distributed mode and rule copies;
+strict MkDocs build, internal-link audit, and configuration parsing.
+
 ---
 
 ## Cross-platform (macOS & Windows) Findings — Plan 3

@@ -1,4 +1,4 @@
-# Part 3: Building Your First Agent
+# Part 2: Building Your First Agent
 
 **Outcome:** A native `hello_world_agent` imported and tested in the draft
 environment.
@@ -109,7 +109,7 @@ Test again and confirm that the new behavior appears.
 
 !!! tip "Stuck?"
     Copy the tested files for this part from the
-    [reference solution](../solution/README.md#part-3-first-agent) and import
+    [reference solution](../solution/README.md#part-2-first-agent) and import
     them, then continue.
 
 ## Checkpoint
@@ -137,6 +137,6 @@ Test again and confirm that the new behavior appears.
     Confirm that you saved and re-imported the same file, then start a fresh
     chat session.
 
-For more practice, use the [Part 3 exercises](exercises.md).
+For more practice, use the [Part 2 exercises](exercises.md).
 
-[Continue to Part 4: Custom Tools →](../part3-custom-tools/README.md)
+[Continue to Part 3: Custom Tools →](../part3-custom-tools/README.md)

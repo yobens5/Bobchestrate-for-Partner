@@ -1,4 +1,4 @@
-# Part 3 — Optional Exercises
+# Part 2 — Optional Exercises
 
 Complete these only after `hello_world_agent` passes the main checkpoint.
 
@@ -64,5 +64,5 @@ starter_prompts:
 Ask Bob to create the second prompt, validate and re-import the agent, generate
 draft webchat configuration, and help you confirm that both prompts appear.
 
-[Return to Part 3](README.md) or
-[continue to Part 4](../part3-custom-tools/README.md).
+[Return to Part 2](README.md) or
+[continue to Part 3](../part3-custom-tools/README.md).

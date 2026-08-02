@@ -102,7 +102,13 @@ What watsonx Orchestrate MCP servers are available?
 Confirm that Bob reports both the ADK and ADK documentation servers. You can
 also inspect them from the Command Palette under **MCP Servers**.
 
-## 6. Import the WXO Agent Architect mode
+## 6. Configure Bob for the workshop
+
+The custom mode gives Bob a watsonx Orchestrate role and the tools it needs.
+The workspace rule applies the workshop's ADK 2.12.0 conventions, safety
+requirements, and known pitfalls in every Bob mode.
+
+### Import the WXO Agent Architect mode
 
 1. Click <a href="files/wxo-agent-architect-export.yaml" download="wxo-agent-architect-export.yaml">Download the WXO Agent Architect YAML file</a>.
    Your browser should save it automatically in your **Downloads** folder. If
@@ -112,13 +118,40 @@ also inspect them from the Command Palette under **MCP Servers**.
 3. Select **Import** and choose the YAML file from your **Downloads** folder.
 4. After the import completes, select **WXO Agent Architect** in Bob chat.
 
+### Install the workspace rule
+
+<a href="files/wxo-dev-rule-enhanced.txt" download="wxo-dev-rule-enhanced.md">Download the workshop workspace rule</a>.
+The downloaded file is named `wxo-dev-rule-enhanced.md`.
+
+Move it from **Downloads** into `.bob/rules/`:
+
+=== "Windows PowerShell"
+
+    ```powershell
+    New-Item -ItemType Directory -Force -Path .bob\rules
+    Move-Item "$env:USERPROFILE\Downloads\wxo-dev-rule-enhanced.md" `
+      .bob\rules\wxo-dev-rule-enhanced.md -Force
+    ```
+
+=== "macOS"
+
+    ```bash
+    mkdir -p .bob/rules
+    mv ~/Downloads/wxo-dev-rule-enhanced.md .bob/rules/
+    ```
+
+Start a new Bob task after installing the rule.
+
 Checkpoint:
 
 ```text
-What can you help me build in WXO Agent Architect mode?
+Read the workspace rule in .bob/rules/. Summarize the ADK version, folder,
+naming, model, documentation-lookup, and safety conventions you will follow.
+Do not create or change files.
 ```
 
-Bob should mention watsonx Orchestrate agents and its MCP tools.
+Bob should mention ADK 2.12.0, the workshop folders, `snake_case`,
+`groq/openai/gpt-oss-120b`, the documentation MCP, and credential safety.
 
 ## 7. Connect the workshop environment
 
@@ -175,6 +208,8 @@ Your project should now contain a structure similar to:
 bobchestrate-ws/
 ├── .venv/
 ├── .bob/
+│   └── rules/
+│       └── wxo-dev-rule-enhanced.md
 ├── agents/
 ├── tools/
 ├── toolkits/
@@ -191,6 +226,7 @@ Before continuing, confirm:
 - `orchestrate --version` reports ADK 2.12.0
 - `orchestrate agents list` succeeds
 - WXO Agent Architect mode is selected
+- `.bob/rules/wxo-dev-rule-enhanced.md` exists
 - Bob can access the two Orchestrate MCP servers
 
 !!! tip "Stuck?"
@@ -217,4 +253,4 @@ Before continuing, confirm:
     Open **MCP Servers** from the Command Palette. Restart any stopped server
     and confirm that its status is green.
 
-[Continue to Part 2: Bob Custom Rules →](../part2b-bob-custom-rules/README.md)
+[Continue to Part 2: Building Your First Agent →](../part2-first-agent/README.md)

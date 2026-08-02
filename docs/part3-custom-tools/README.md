@@ -1,4 +1,4 @@
-# Part 4: Adding Custom Tools
+# Part 3: Adding Custom Tools
 
 **Outcome:** `customer_support_agent` can check an order and process a simulated
 refund.
@@ -120,7 +120,7 @@ should not invent missing inputs.
 
 !!! tip "Stuck?"
     Copy the tested files for this part from the
-    [reference solution](../solution/README.md#part-4-custom-tools) and import
+    [reference solution](../solution/README.md#part-3-custom-tools) and import
     them, then continue.
 
 ## Checkpoint
@@ -143,6 +143,6 @@ should not invent missing inputs.
     Pass the root `requirements.txt` with `-r`, even when the example uses only
     the standard library.
 
-Use the [Part 4 exercises](exercises.md) for additional practice.
+Use the [Part 3 exercises](exercises.md) for additional practice.
 
-[Continue to Part 5: Knowledge & Collaborators →](../part4-knowledge/README.md)
+[Continue to Part 4: Knowledge & Collaborators →](../part4-knowledge/README.md)

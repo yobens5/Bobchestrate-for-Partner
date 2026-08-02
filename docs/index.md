@@ -33,18 +33,17 @@ workshop.
 
 | Part | Outcome |
 |---|---|
-| [1. Setup](part1-setup/README.md) | Prepare Bob IDE, Python, ADK, MCP servers, and the workshop environment |
-| [2. Bob Custom Rules](part2b-bob-custom-rules/README.md) | Give Bob the project conventions it should follow |
-| [3. First Agent](part2-first-agent/README.md) | Create, import, and test a native agent |
-| [4. Custom Tools](part3-custom-tools/README.md) | Add order-status and refund tools |
-| [5. Knowledge & Collaborators](part4-knowledge/README.md) | Add FAQs and an escalation agent |
-| [6. Guidelines & Guardrails](part5-guidelines-guardrails/README.md) | Add behavioral guidance and input controls |
-| [7. Evaluation & Red-Teaming](part6-agent-evaluation/README.md) | Test expected behavior and adversarial prompts |
-| [8. Deployment](part7-deployment/README.md) | Promote the agent and generate webchat configuration |
-| [9. NL2SQL Accelerator](part9-nl2sql/README.md) | Discover a database and generate an editable NL2SQL agent |
+| [1. Setup](part1-setup/README.md) | Prepare Bob IDE, its workspace rule, Python, ADK, MCP servers, and the workshop environment |
+| [2. First Agent](part2-first-agent/README.md) | Create, import, and test a native agent |
+| [3. Custom Tools](part3-custom-tools/README.md) | Add order-status and refund tools |
+| [4. Knowledge & Collaborators](part4-knowledge/README.md) | Add FAQs and an escalation agent |
+| [5. Guidelines & Guardrails](part5-guidelines-guardrails/README.md) | Add behavioral guidance and input controls |
+| [6. Evaluation & Red-Teaming](part6-agent-evaluation/README.md) | Test expected behavior and adversarial prompts |
+| [7. Deployment](part7-deployment/README.md) | Promote the agent and generate webchat configuration |
+| [8. NL2SQL Accelerator](part9-nl2sql/README.md) | Discover a database and generate an editable NL2SQL agent |
 
 NL2SQL is a mandatory standalone use case. It does not modify or rename the
-customer-support agents created in Parts 3–8.
+customer-support agents created in Parts 2–7.
 
 ## Optional modules
 

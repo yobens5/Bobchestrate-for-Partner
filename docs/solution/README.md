@@ -52,6 +52,7 @@ your-project/
 | <a href="workspace_config.yaml" download="workspace_config.yaml">workspace_config.yaml</a> | `workspace_config.yaml` |
 | <a href="bob-config/mcp.json" download="mcp.json">bob-config/mcp.json</a> | `.bob/mcp.json` |
 | <a href="bob-config/custom_modes.yaml" download="custom_modes.yaml">bob-config/custom_modes.yaml</a> | `.bob/custom_modes.yaml` |
+| <a href="bob-config/rules/wxo-dev-rule-enhanced.txt" download="wxo-dev-rule-enhanced.md">bob-config/rules/wxo-dev-rule-enhanced.md</a> | `.bob/rules/wxo-dev-rule-enhanced.md` |
 | <a href="scripts/add-wxo-env.sh" download="add-wxo-env.sh">scripts/add-wxo-env.sh</a> | `add-wxo-env.sh` (optional helper) |
 
 Edit `.bob/mcp.json` and replace `<ABSOLUTE_PATH_TO_YOUR_WORKSPACE>` with the
@@ -63,16 +64,7 @@ full path to your project folder, then reload the Bob IDE window.
 ./add-wxo-env.sh
 ```
 
-### Part 2: Bob Custom Rules
-
-| File | Copy to |
-|---|---|
-| <a href="bob-config/rules/wxo-dev-rule-enhanced.txt" download="wxo-dev-rule-enhanced.md">bob-config/rules/wxo-dev-rule-enhanced.md</a> | `.bob/rules/wxo-dev-rule-enhanced.md` |
-| <a href="agents/test_rules_agent.agent.yaml" download="test_rules_agent.agent.yaml">agents/test_rules_agent.agent.yaml</a> | `agents/test_rules_agent.agent.yaml` |
-
-The agent is the optional verification artifact from step 4 of that part.
-
-### Part 3: First Agent
+### Part 2: First Agent
 
 | File | Copy to |
 |---|---|
@@ -82,7 +74,7 @@ The agent is the optional verification artifact from step 4 of that part.
 orchestrate agents import -f agents/hello-agent.yaml
 ```
 
-### Part 4: Custom Tools
+### Part 3: Custom Tools
 
 | File | Copy to |
 |---|---|
@@ -97,7 +89,7 @@ orchestrate tools import -k python -f tools/process_refund.py -r requirements.tx
 orchestrate agents import -f agents/customer_support_agent.yaml
 ```
 
-### Part 5: Knowledge & Collaborators
+### Part 4: Knowledge & Collaborators
 
 | File | Copy to |
 |---|---|
@@ -115,7 +107,7 @@ orchestrate agents import -f agents/customer_support_agent.yaml
 
 Wait for the knowledge base to finish indexing before testing FAQ answers.
 
-### Part 6: Guidelines & Guardrails
+### Part 5: Guidelines & Guardrails
 
 | File | Copy to |
 |---|---|
@@ -130,7 +122,7 @@ orchestrate agents import -f agents/customer_support_agent.yaml
 This is the final state of the main agent: tools, knowledge base, collaborator,
 guidelines, and the pre-invoke guardrail plugin.
 
-### Part 7: Evaluation & Red-Teaming
+### Part 6: Evaluation & Red-Teaming
 
 | File | Copy to |
 |---|---|
@@ -151,10 +143,10 @@ scenarios. The attack set covers instruction override, crescendo, emotional
 appeal, role playing, prompt leakage, jailbreaking, topic derailment, and
 unsafe topics.
 
-### Part 8: Deployment
+### Part 7: Deployment
 
-Deployment produces no new files. Use the Part 6 agent state above, then follow
-[Part 8](../part7-deployment/README.md).
+Deployment produces no new files. Use the Part 5 agent state above, then follow
+[Part 7](../part7-deployment/README.md).
 
 ## Known differences from the walkthrough text
 
@@ -165,9 +157,9 @@ the examples embedded in each part. A few things differ:
   instructions write `customer-support-agent.yaml`. Only the `name:` field
   inside the YAML matters to the platform.
 - The greeting agent here is named `hello_agent`, while
-  [Part 3](../part2-first-agent/README.md) uses `hello_world_agent`.
+  [Part 2](../part2-first-agent/README.md) uses `hello_world_agent`.
 - The guardrail plugin here is `data_access_guardrail`;
-  [Part 6](../part5-guidelines-guardrails/README.md) builds
+  [Part 5](../part5-guidelines-guardrails/README.md) builds
   `content_safety_guardrail`. They solve overlapping problems in different ways
   — either one satisfies the checkpoint.
 - The knowledge base is built from `FAQ.pdf`, and the evaluation datasets are

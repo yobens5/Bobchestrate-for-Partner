@@ -34,9 +34,8 @@ All workshop content, CLI commands, YAML schemas, and code examples have been ve
 ├── docs/
 │   ├── index.md                     # MkDocs site entry point
 │   ├── part0-prerequisites/         # Pre-workshop requirements
-│   ├── part1-setup/                 # Environment setup & Bob IDE configuration
+│   ├── part1-setup/                 # Environment, Bob mode, and workspace-rule setup
 │   ├── part2-first-agent/           # Hello World agent basics
-│   ├── part2b-bob-custom-rules/     # Bob custom development rules
 │   ├── part3-custom-tools/          # Python tools (@tool decorator)
 │   ├── part4-knowledge/             # Knowledge bases & agent collaborators
 │   ├── part5-guidelines-guardrails/ # Guidelines, guardrails & plugins
@@ -86,7 +85,7 @@ Bob is provisioned via a **support ticket submitted by an admin**. This eliminat
 
 ## NL2SQL Module — Key Decisions
 
-The NL2SQL module (Part 10) is kept **separate from the main agent storyline** — the workshop agents (Parts 1–9) will **not** be adapted or renamed to fit the NL2SQL use case. This decision was made to avoid the high effort of a full theme merge.
+The NL2SQL module (Part 8) is kept **separate from the main agent storyline** — the customer-support agents (Parts 2–7) will **not** be adapted or renamed to fit the NL2SQL use case. This decision was made to avoid the high effort of a full theme merge.
 
 - The NL2SQL exercises use their own dedicated agents and database.
 - **Database:** Use Yohan's **PostgreSQL** database instance (not Db2); reprovision it before the workshop.

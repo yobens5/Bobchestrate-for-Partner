@@ -1,10 +1,10 @@
-# Part 9: NL2SQL Agent with the IBM CE Accelerator
+# Part 8: NL2SQL Agent with the IBM CE Accelerator
 
 **Outcome:** An editable draft agent that answers natural-language questions
 against the workshop PostgreSQL database.
 
 This is a mandatory standalone use case. It does not rename or modify the
-customer-support system from Parts 3–8.
+customer-support system from Parts 2–7.
 
 The accelerator performs database discovery and initial agent generation in
 its own UI. Bob resumes as the development interface after the generated agent

@@ -1,9 +1,9 @@
-# Part 5: Knowledge Bases & Collaborators
+# Part 4: Knowledge Bases & Collaborators
 
 **Outcome:** The customer-support agent answers approved FAQs and delegates
 exceptions to `escalation_agent`.
 
-This part builds on the agent and tools from [Part 4](../part3-custom-tools/README.md).
+This part builds on the agent and tools from [Part 3](../part3-custom-tools/README.md).
 
 ## 1. Add the FAQ knowledge base
 
@@ -109,7 +109,7 @@ The third prompt should delegate to `escalation_agent`.
 
 !!! tip "Stuck?"
     Copy the tested files for this part from the
-    [reference solution](../solution/README.md#part-5-knowledge-collaborators)
+    [reference solution](../solution/README.md#part-4-knowledge-collaborators)
     and import them, then continue.
 
 ## Checkpoint
@@ -132,4 +132,4 @@ The third prompt should delegate to `escalation_agent`.
     and has a clear description. State the delegation conditions explicitly in
     the main agent's instructions.
 
-[Continue to Part 6: Guidelines & Guardrails →](../part5-guidelines-guardrails/README.md)
+[Continue to Part 5: Guidelines & Guardrails →](../part5-guidelines-guardrails/README.md)

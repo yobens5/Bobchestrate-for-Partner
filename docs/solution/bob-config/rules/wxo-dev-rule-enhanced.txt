@@ -1,64 +1,17 @@
-# watsonx Orchestrate Development Rule
+# watsonx Orchestrate Workshop Workspace Rule
 
-## 0. Where knowledge lives (read this first)
+Apply this rule when working in this project.
 
-This file carries **project conventions and known pitfalls** — the things retrieval won't save you from because you won't think to look them up. It is **not** API reference.
+## Version and documentation policy
 
-- For schemas, CLI syntax, YAML formats, flow node types, eval configs, and code examples: **search the `watsonx-orchestrate-adk-docs` MCP server first** (`SearchIbmWatsonxOrchestrateAdk` tool). Do this *before* writing any agent YAML, tool, flow, knowledge base, plugin, or evaluation config — not only when uncertain.
-- To inspect the live platform (existing tools, agents, imports): use the `watsonx-orchestrate-adk` MCP server.
-- **If the docs MCP contradicts this file, the MCP wins.** The docs track the current ADK release; this file may lag.
-
-### Tool usage boundary — MCP vs CLI
-
-| Purpose | Use |
-|---|---|
-| Look up documentation, schemas, examples | `watsonx-orchestrate-adk-docs` MCP (`SearchIbmWatsonxOrchestrateAdk`) — **documentation only, cannot touch the live platform** |
-| Interact with the live Orchestrate platform (import, list, create, deploy) | `orchestrate` CLI commands, run inside the project venv |
-
-> **Rule:** The `watsonx-orchestrate-adk-docs` MCP is **documentation-only**. To actually import a tool, create an agent, deploy, or query the live platform, use `orchestrate` CLI commands run inside the project's **virtual environment**.
-
-**Running `orchestrate` CLI commands:** Always activate the project venv first so the correct ADK version is used:
-
-```bash
-# macOS / Linux
-source .venv/bin/activate
-orchestrate <subcommand> ...
-```
-
-```powershell
-# Windows (PowerShell)
-.venv\Scripts\Activate.ps1
-orchestrate <subcommand> ...
-```
-
-Never run `orchestrate` commands outside the venv — a system-wide install may be a different version or absent entirely.
-
-## 1. Project Structure
-
-```
-agents/          # Agent YAML configs
-tools/           # Python tools and agentic workflows (flows)
-toolkits/        # MCP and Python toolkit specs
-knowledge_bases/ # KB configs + document files
-models/          # LLM model configs
-connections/     # API connection configs
-channels/        # Channel configs (Slack, Teams, Web)
-plugins/         # Guardrail plugins
-evaluation/      # Test datasets and eval configs
-import-all.sh    # Deploy everything
-requirements.txt # Python deps — NEVER include ibm-watsonx-orchestrate
-.env.example     # Env template — never commit .env
-```
-
-## 2. Environment & Auth
-
-Pick ONE auth method in `.env` (see the docs MCP for full templates):
-
-- **SaaS / Trial:** `WO_DEVELOPER_EDITION_SOURCE=orchestrate` + `WO_INSTANCE` + `WO_API_KEY`
-- **myIBM (on-prem/purchased):** `WO_DEVELOPER_EDITION_SOURCE=myibm` + `WO_ENTITLEMENT_KEY` + `GROQ_API_KEY` + `WATSONX_APIKEY` + `WATSONX_SPACE_ID`
-- **Custom registry:** `WO_DEVELOPER_EDITION_SOURCE=custom` + `REGISTRY_URL` / `REGISTRY_USERNAME` / `REGISTRY_PASSWORD`
-
-**NEVER** use `ORCHESTRATE_API_KEY`, `ORCHESTRATE_ENVIRONMENT`, or `TIMEOUT_SECONDS` — these are plausible-looking names that do not exist in the ADK.
+- The workshop targets **IBM watsonx Orchestrate ADK 2.12.0**.
+- Run all `orchestrate` commands from the project `.venv`.
+- Search `watsonx-orchestrate-adk-docs` before generating ADK syntax, and state
+  that the requested version is 2.12.0.
+- Use `watsonx-orchestrate-adk` to inspect the connected platform.
+- If current documentation differs from ADK 2.12.0, do not silently migrate the
+  workshop. Explain the difference and preserve the tested workshop version.
+- Validate generated YAML with the installed ADK before importing it.
 
 ### Remote session refresh
 
@@ -83,49 +36,68 @@ The activation command may prompt for the WXO API key. The user must enter it
 locally; never ask for or echo credentials in chat. Retry the failed command
 only after the user confirms that activation succeeded.
 
-## 3. Core Conventions
+Activate the environment when needed:
 
-1. Agent, tool, and KB names: **`snake_case` only** — `customer_support_agent`, never `customerSupportAgent` or `customer support agent`
-2. Default LLM: `groq/openai/gpt-oss-120b`
-3. Every tool parameter and return value needs **explicit type hints** — `Dict[str, Any]` not `dict`, `List[str]` not `list`
-4. Google-style docstrings with types in parens (`param (str):`); the docstring return type must match the signature exactly
-5. `@tool` with **no parentheses** for plain tools; tools return status dicts (`{"status": "success"|"error", ...}`) and catch their own exceptions
-6. Use `--safe` on imports to prevent accidental overwrites; never commit `.env` or credentials — use connections
-7. Use **flows (agentic workflows)** for deterministic sequences, **agents** for dynamic reasoning, **Python toolkits** for high-frequency related tools
-8. Debug with `orchestrate observability traces search --last 1h`
+```bash
+# macOS
+source .venv/bin/activate
+```
 
-## 4. Known Pitfalls
+```powershell
+# Windows PowerShell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.venv\Scripts\Activate.ps1
+```
 
-These are mistakes a model makes *confidently* — check this list before importing anything.
+## Project layout
 
-### Agent YAML
-- In `guidelines`, the `tool:` field must name a **tool** — never a collaborator agent. Hand-offs to collaborators are expressed in the `action:` text only.
-- `knowledge_base:` entries must exactly match the imported KB name.
-- Reference plugins in agent YAML **only after** the plugin files are imported (`orchestrate tools import` first, then attach).
+```text
+agents/           # Native-agent YAML
+tools/            # Python tools, plugins, and flows
+toolkits/         # MCP toolkit packages and specs
+knowledge_bases/  # Knowledge-base specs and documents
+models/           # Model and model-policy specs
+connections/      # Connection definitions without credentials
+evaluation/       # Evaluation and red-team datasets
+requirements.txt  # Tool runtime dependencies
+```
 
-### Python tools & testing
-- The `@tool` decorator changes return behaviour — **never import decorated functions in tests**. Copy the business logic into the test file without the decorator.
-- Python toolkit tools share one persistent process — they must be **thread-safe** (no global mutable state).
+## Workshop conventions
 
-### Flows (agentic workflows)
-- **Always call `map_input`** on every node input — missing mappings cause "required property" errors at runtime.
-- Tool names inside flows **must include the toolkit prefix**: `"loan-processing:check_credit_score"`, not `"check_credit_score"`.
-- Import flows as flow-kind tools (`orchestrate tools import -k flow ...`); test through an agent that uses the flow — `compile_deploy()` is local-only.
+1. Agent names use `snake_case`.
+2. Default model: `groq/openai/gpt-oss-120b`.
+3. Native-agent YAML includes `spec_version: v1`, `kind: native`, `name`,
+   `description`, `llm`, and clear instructions.
+4. Python tools use `@tool`, explicit types, complete docstrings, input
+   validation, and structured results.
+5. Never include `ibm-watsonx-orchestrate` in a tool's `requirements.txt`; the
+   runtime provides it.
+6. Never write API keys or personal data into code, YAML, tests, or chat.
+7. Review generated files and show the exact import command before executing it.
 
-### MCP toolkits
-- Agents reference MCP/toolkit tools as `toolkit-name:tool-name` — always prefixed, in both `tools:` and `guidelines`.
+## Known pitfalls
 
-### Knowledge bases
-- Documents must be **external files** referenced by `path:` — inline content is not supported.
-- The status command is `orchestrate knowledge-bases status --name X` — there is **no `get`** subcommand.
+- Python-tool imports require `-r requirements.txt`.
+- A guideline's `tool:` field names an imported tool, not a collaborator.
+  Describe collaborator handoff in `action`.
+- Knowledge-base and collaborator references must exactly match imported names.
+- MCP tools use `toolkit-name:tool-name` under the agent's `tools:` field.
+- Local MCP toolkit YAML requires `spec_version: v1`; its `command` runs inside
+  the Orchestrate runtime.
+- Every required flow-tool argument needs an explicit `map_input()`.
+- Import flows with `orchestrate tools import -k flow -f <file>`.
+- Import pre/post-invoke plugins as Python tools before attaching them under
+  `plugins:`.
+- Evaluation configuration uses `test_paths`; pass the tools directory with the
+  quick-eval `-t` option.
+- Imports update draft automatically. Deploy an agent with
+  `orchestrate agents deploy --name <agent_name>`.
 
-### Guardrail plugins
-- Decorator must be `@tool(description="...", kind=PythonToolKind.AGENTPREINVOKE)` (or `AGENTPOSTINVOKE`). Bare `@tool` and `@plugin` are both wrong for plugins.
+## Completion check
 
-### Evaluation
-- Config uses `test_paths:` — **not** `dataset_path:`.
-- Do **not** configure `metrics:` — they are auto-computed.
-- Do **not** put `tools_path` in the config — pass it with the `-t` CLI flag.
+Before reporting success:
 
-### Dependencies
-- **Never** include `ibm-watsonx-orchestrate` in `requirements.txt` — the runtime provides it.
+- validate syntax and schema
+- show the imported artifact in the matching `orchestrate ... list` output
+- run the module's checkpoint
+- report warnings and unresolved limitations rather than hiding them

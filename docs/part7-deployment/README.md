@@ -1,4 +1,4 @@
-# Part 8: Testing & Deployment
+# Part 7: Testing & Deployment
 
 **Outcome:** The evaluated customer-support agent is deployed to the live
 environment and its webchat configuration can be generated.
@@ -173,7 +173,7 @@ using it in a shared environment.
 !!! tip "Stuck?"
     Deployment adds no new files. If your agent is not in the expected state,
     restore it from the
-    [reference solution](../solution/README.md#part-6-guidelines-guardrails)
+    [reference solution](../solution/README.md#part-5-guidelines-guardrails)
     and re-import before promoting it.
 
 ## Checkpoint
@@ -184,4 +184,4 @@ using it in a shared environment.
 - [ ] Webchat configuration is generated for the intended environment
 - [ ] Monitoring ownership and rollback criteria are recorded
 
-[Continue to Part 9: NL2SQL Accelerator →](../part9-nl2sql/README.md)
+[Continue to Part 8: NL2SQL Accelerator →](../part9-nl2sql/README.md)
