@@ -371,6 +371,36 @@ documentation, which states that remote authentication expires every two hours
 and that rerunning `orchestrate env activate <environment-name>` reauthenticates
 the environment; local YAML/configuration and content checks.
 
+### Finding 48 — Part 2 rule link opened rendered HTML instead of downloading the file
+
+**Files:** `docs/part2b-bob-custom-rules/README.md` and the Part 2 rule asset
+**Status:** ✅ CLOSED
+**Original content:** The Part 2 download link targeted
+`wxo-dev-rule-enhanced.md`. MkDocs treated the Markdown asset as a documentation
+page, so the link opened rendered HTML instead of downloading the rule file.
+**Resolution:** Publish the downloadable rule as a non-Markdown static asset and
+set the browser download filename to `wxo-dev-rule-enhanced.md`.
+**Fix:** Added `wxo-dev-rule-enhanced.txt`, updated the Part 2 and legacy links
+with `download="wxo-dev-rule-enhanced.md"`, and kept the installation destination
+as `.bob/rules/wxo-dev-rule-enhanced.md`.
+**Verified against:** MkDocs documentation stating that non-Markdown files under
+`docs/` are copied unchanged, plus a local strict site build and output-path
+check.
+
+### Finding 49 — Part 1 agent-mode download steps did not explain browser saving
+
+**File:** `docs/part1-setup/README.md`
+**Status:** ✅ CLOSED
+**Original content:** The setup step said “Download” but did not tell
+participants to save the linked YAML file locally before importing it, which can
+lead to the browser displaying the YAML instead of providing a file for Bob.
+**Resolution:** Give explicit right-click/Save Link As instructions, use the
+Downloads folder as the known location, and place mode selection after import.
+**Fix:** Updated Step 6 to explain right-clicking the agent YAML link, saving it
+to Downloads, importing that local file from **Modes**, and selecting
+**WXO Agent Architect** only after the import completes.
+**Verified against:** Local Part 1 content review and strict MkDocs build.
+
 ---
 
 ## Cross-platform (macOS & Windows) Findings — Plan 3

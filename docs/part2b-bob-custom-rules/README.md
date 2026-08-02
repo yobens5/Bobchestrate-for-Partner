@@ -23,8 +23,7 @@ syntax and schemas should still come from the
 
 ## 2. Install the workshop rule
 
-Download
-[`wxo-dev-rule-enhanced.md`](wxo-dev-rule-enhanced.md) and save it as:
+<a href="wxo-dev-rule-enhanced.txt" download="wxo-dev-rule-enhanced.md">Download the workshop rule file</a> and save it as:
 
 ```text
 .bob/rules/wxo-dev-rule-enhanced.md

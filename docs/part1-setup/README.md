@@ -104,11 +104,14 @@ also inspect them from the Command Palette under **MCP Servers**.
 
 ## 6. Import the WXO Agent Architect mode
 
-1. Download
-   [`wxo-agent-architect-export.yaml`](files/wxo-agent-architect-export.yaml).
+1. Right-click
+   [`wxo-agent-architect-export.yaml`](files/wxo-agent-architect-export.yaml)
+   and choose **Save Link As…** (or **Download Linked File** on macOS).
+   Save the file in your **Downloads** folder. Do not open the link normally;
+   the browser may display the YAML instead of saving it.
 2. Open the Command Palette and select **Modes**.
-3. Select **Import** and choose the downloaded YAML file.
-4. Select **WXO Agent Architect** in Bob chat.
+3. Select **Import** and choose the YAML file from your **Downloads** folder.
+4. After the import completes, select **WXO Agent Architect** in Bob chat.
 
 Checkpoint:
 
