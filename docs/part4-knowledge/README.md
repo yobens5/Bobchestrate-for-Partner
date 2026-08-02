@@ -7,8 +7,9 @@ This part builds on the agent and tools from [Part 4](../part3-custom-tools/READ
 
 ## 1. Add the FAQ knowledge base
 
-Place the workshop
-[`customer-support-faq.txt`](customer-support-faq.txt) in `knowledge_bases/`,
+Download the workshop
+<a href="customer-support-faq.txt" download="customer-support-faq.txt">customer-support-faq.txt</a>
+to your browser's default download folder, then place it in `knowledge_bases/`,
 then ask Bob:
 
 ```text
@@ -21,8 +22,8 @@ the commands and results.
 ```
 
 The tested YAML is available as
-[`faq-knowledge-base.yaml`](faq-knowledge-base.yaml). Review Bob's generated
-file against it rather than copying blindly.
+<a href="faq-knowledge-base.yaml" download="faq-knowledge-base.yaml">faq-knowledge-base.yaml</a>.
+Review Bob's generated file against it rather than copying blindly.
 
 Manual import fallback:
 
@@ -72,8 +73,8 @@ cases, validate and re-import the main agent, and verify both agents are listed.
 ```
 
 The tested files are
-[`escalation-agent.yaml`](escalation-agent.yaml) and
-[`customer-support-agent.yaml`](customer-support-agent.yaml).
+<a href="escalation-agent.yaml" download="escalation-agent.yaml">escalation-agent.yaml</a>
+and <a href="customer-support-agent.yaml" download="customer-support-agent.yaml">customer-support-agent.yaml</a>.
 
 Manual import fallback:
 

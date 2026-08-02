@@ -24,7 +24,7 @@ the changes, and re-import the agent.
 ```
 
 Compare the result with the tested
-[`customer-support-with-guidelines.yaml`](customer-support-with-guidelines.yaml).
+<a href="customer-support-with-guidelines.yaml" download="customer-support-with-guidelines.yaml">customer-support-with-guidelines.yaml</a>.
 The key guideline pattern is:
 
 ```yaml
@@ -66,7 +66,7 @@ agents/customer-support-agent.yaml, and re-import the agent. Show me each result
 ```
 
 Review Bob's version against the tested
-[`content_safety_plugin.py`](content_safety_plugin.py).
+<a href="content_safety_plugin.py" download="content_safety_plugin.py">content_safety_plugin.py</a>.
 
 This workshop plugin detects a small set of sensitive-data and prompt-injection
 patterns. It is intentionally simple and must not be treated as a production

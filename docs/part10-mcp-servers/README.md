@@ -24,13 +24,13 @@ Use these tested files as fallbacks or comparisons.
 
 Save under `toolkits/`:
 
-- [`product_catalog_server.py`](product_catalog_server.py)
-- [`product-catalog-toolkit.yaml`](product-catalog-toolkit.yaml)
-- [`requirements.txt`](requirements.txt)
-- [`simple_test.py`](simple_test.py)
+- <a href="product_catalog_server.py" download="product_catalog_server.py">product_catalog_server.py</a>
+- <a href="product-catalog-toolkit.yaml" download="product-catalog-toolkit.yaml">product-catalog-toolkit.yaml</a>
+- <a href="requirements.txt" download="requirements.txt">requirements.txt</a>
+- <a href="simple_test.py" download="simple_test.py">simple_test.py</a>
 
-Save [`product-assistant-agent.yaml`](product-assistant-agent.yaml) under
-`agents/`.
+Download <a href="product-assistant-agent.yaml" download="product-assistant-agent.yaml">product-assistant-agent.yaml</a>
+and save it under `agents/`.
 
 The server exposes:
 

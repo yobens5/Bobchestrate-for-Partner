@@ -34,8 +34,8 @@ hello_world_agent. It should greet users and briefly introduce itself. Use the
 project rules and validate the YAML against ADK 2.12.0 before saving it.
 ```
 
-Alternatively, copy the YAML above or download
-[`hello-agent-EXAMPLE.yaml`](hello-agent-EXAMPLE.yaml).
+Alternatively, copy the YAML above or
+<a href="hello-agent-EXAMPLE.yaml" download="hello-agent-EXAMPLE.yaml">download hello-agent-EXAMPLE.yaml</a>.
 
 Review the file before importing it. Confirm:
 

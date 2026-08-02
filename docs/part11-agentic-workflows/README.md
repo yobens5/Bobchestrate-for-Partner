@@ -24,13 +24,13 @@ Use these tested files as fallbacks or comparisons.
 
 Save under `tools/`:
 
-- [`loan_processing_server.py`](tools/loan_processing_server.py)
-- [`loan-processing-toolkit.yaml`](tools/loan-processing-toolkit.yaml)
-- [`loan_approval_workflow.py`](tools/loan_approval_workflow.py)
-- [`requirements.txt`](tools/requirements.txt)
+- <a href="tools/loan_processing_server.py" download="loan_processing_server.py">loan_processing_server.py</a>
+- <a href="tools/loan-processing-toolkit.yaml" download="loan-processing-toolkit.yaml">loan-processing-toolkit.yaml</a>
+- <a href="tools/loan_approval_workflow.py" download="loan_approval_workflow.py">loan_approval_workflow.py</a>
+- <a href="tools/requirements.txt" download="requirements.txt">requirements.txt</a>
 
-Save
-[`loan-processor-agent.yaml`](agents/loan-processor-agent.yaml) under `agents/`.
+Download <a href="agents/loan-processor-agent.yaml" download="loan-processor-agent.yaml">loan-processor-agent.yaml</a>
+and save it under `agents/`.
 
 The workflow performs:
 

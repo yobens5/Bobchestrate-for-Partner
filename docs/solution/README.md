@@ -49,10 +49,10 @@ your-project/
 
 | File | Copy to |
 |---|---|
-| [`workspace_config.yaml`](workspace_config.yaml) | `workspace_config.yaml` |
-| [`bob-config/mcp.json`](bob-config/mcp.json) | `.bob/mcp.json` |
-| [`bob-config/custom_modes.yaml`](bob-config/custom_modes.yaml) | `.bob/custom_modes.yaml` |
-| [`scripts/add-wxo-env.sh`](scripts/add-wxo-env.sh) | `add-wxo-env.sh` (optional helper) |
+| <a href="workspace_config.yaml" download="workspace_config.yaml">workspace_config.yaml</a> | `workspace_config.yaml` |
+| <a href="bob-config/mcp.json" download="mcp.json">bob-config/mcp.json</a> | `.bob/mcp.json` |
+| <a href="bob-config/custom_modes.yaml" download="custom_modes.yaml">bob-config/custom_modes.yaml</a> | `.bob/custom_modes.yaml` |
+| <a href="scripts/add-wxo-env.sh" download="add-wxo-env.sh">scripts/add-wxo-env.sh</a> | `add-wxo-env.sh` (optional helper) |
 
 Edit `.bob/mcp.json` and replace `<ABSOLUTE_PATH_TO_YOUR_WORKSPACE>` with the
 full path to your project folder, then reload the Bob IDE window.
@@ -67,8 +67,8 @@ full path to your project folder, then reload the Bob IDE window.
 
 | File | Copy to |
 |---|---|
-| [`bob-config/rules/wxo-dev-rule-enhanced.md`](bob-config/rules/wxo-dev-rule-enhanced.md) | `.bob/rules/wxo-dev-rule-enhanced.md` |
-| [`agents/test_rules_agent.agent.yaml`](agents/test_rules_agent.agent.yaml) | `agents/test_rules_agent.agent.yaml` |
+| <a href="bob-config/rules/wxo-dev-rule-enhanced.txt" download="wxo-dev-rule-enhanced.md">bob-config/rules/wxo-dev-rule-enhanced.md</a> | `.bob/rules/wxo-dev-rule-enhanced.md` |
+| <a href="agents/test_rules_agent.agent.yaml" download="test_rules_agent.agent.yaml">agents/test_rules_agent.agent.yaml</a> | `agents/test_rules_agent.agent.yaml` |
 
 The agent is the optional verification artifact from step 4 of that part.
 
@@ -76,7 +76,7 @@ The agent is the optional verification artifact from step 4 of that part.
 
 | File | Copy to |
 |---|---|
-| [`agents/hello-agent.yaml`](agents/hello-agent.yaml) | `agents/hello-agent.yaml` |
+| <a href="agents/hello-agent.yaml" download="hello-agent.yaml">agents/hello-agent.yaml</a> | `agents/hello-agent.yaml` |
 
 ```bash
 orchestrate agents import -f agents/hello-agent.yaml
@@ -86,10 +86,10 @@ orchestrate agents import -f agents/hello-agent.yaml
 
 | File | Copy to |
 |---|---|
-| [`tools/check_order_status.py`](tools/check_order_status.py) | `tools/check_order_status.py` |
-| [`tools/process_refund.py`](tools/process_refund.py) | `tools/process_refund.py` |
-| [`requirements.txt`](requirements.txt) | `requirements.txt` |
-| [`agents/customer_support_agent.part4.yaml`](agents/customer_support_agent.part4.yaml) | `agents/customer_support_agent.yaml` |
+| <a href="tools/check_order_status.py" download="check_order_status.py">tools/check_order_status.py</a> | `tools/check_order_status.py` |
+| <a href="tools/process_refund.py" download="process_refund.py">tools/process_refund.py</a> | `tools/process_refund.py` |
+| <a href="requirements.txt" download="requirements.txt">requirements.txt</a> | `requirements.txt` |
+| <a href="agents/customer_support_agent.part4.yaml" download="customer_support_agent.part4.yaml">agents/customer_support_agent.part4.yaml</a> | `agents/customer_support_agent.yaml` |
 
 ```bash
 orchestrate tools import -k python -f tools/check_order_status.py -r requirements.txt
@@ -101,10 +101,10 @@ orchestrate agents import -f agents/customer_support_agent.yaml
 
 | File | Copy to |
 |---|---|
-| [`knowledge-bases/FAQ.pdf`](knowledge-bases/FAQ.pdf) | `knowledge-bases/FAQ.pdf` |
-| [`knowledge-bases/customer-support-faq.yaml`](knowledge-bases/customer-support-faq.yaml) | `knowledge-bases/customer-support-faq.yaml` |
-| [`agents/escalation-agent.yaml`](agents/escalation-agent.yaml) | `agents/escalation-agent.yaml` |
-| [`agents/customer_support_agent.part5.yaml`](agents/customer_support_agent.part5.yaml) | `agents/customer_support_agent.yaml` |
+| <a href="knowledge-bases/FAQ.pdf" download="FAQ.pdf">knowledge-bases/FAQ.pdf</a> | `knowledge-bases/FAQ.pdf` |
+| <a href="knowledge-bases/customer-support-faq.yaml" download="customer-support-faq.yaml">knowledge-bases/customer-support-faq.yaml</a> | `knowledge-bases/customer-support-faq.yaml` |
+| <a href="agents/escalation-agent.yaml" download="escalation-agent.yaml">agents/escalation-agent.yaml</a> | `agents/escalation-agent.yaml` |
+| <a href="agents/customer_support_agent.part5.yaml" download="customer_support_agent.part5.yaml">agents/customer_support_agent.part5.yaml</a> | `agents/customer_support_agent.yaml` |
 
 ```bash
 orchestrate knowledge-bases import -f knowledge-bases/customer-support-faq.yaml
@@ -119,8 +119,8 @@ Wait for the knowledge base to finish indexing before testing FAQ answers.
 
 | File | Copy to |
 |---|---|
-| [`tools/data_access_guardrail.py`](tools/data_access_guardrail.py) | `tools/data_access_guardrail.py` |
-| [`agents/customer_support_agent.yaml`](agents/customer_support_agent.yaml) | `agents/customer_support_agent.yaml` |
+| <a href="tools/data_access_guardrail.py" download="data_access_guardrail.py">tools/data_access_guardrail.py</a> | `tools/data_access_guardrail.py` |
+| <a href="agents/customer_support_agent.yaml" download="customer_support_agent.yaml">agents/customer_support_agent.yaml</a> | `agents/customer_support_agent.yaml` |
 
 ```bash
 orchestrate tools import -k python -f tools/data_access_guardrail.py -r requirements.txt
@@ -134,7 +134,7 @@ guidelines, and the pre-invoke guardrail plugin.
 
 | File | Copy to |
 |---|---|
-| [`evaluation/config.yaml`](evaluation/config.yaml) | `evaluation/config.yaml` |
+| <a href="evaluation/config.yaml" download="config.yaml">evaluation/config.yaml</a> | `evaluation/config.yaml` |
 | `evaluation/datasets/*.json` (12 files) | `evaluation/datasets/` |
 | `evaluation/red-teaming-attacks/*.json` (24 files) | `evaluation/red-teaming-attacks/` |
 

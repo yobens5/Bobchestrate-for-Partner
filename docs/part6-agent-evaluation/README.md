@@ -20,11 +20,13 @@ Use placeholders for environment-specific URL values and never write an API key.
 Explain what I must fill in before running the evaluation.
 ```
 
-Compare Bob's output with the tested starter files:
+Download the tested starter files to your browser's default download folder:
 
-- [`config.yaml`](evaluation/config.yaml)
-- [`test-cases.jsonl`](evaluation/test-cases.jsonl)
-- [`red-team-prompts.jsonl`](evaluation/red-team-prompts.jsonl)
+- <a href="evaluation/config.yaml" download="config.yaml">config.yaml</a>
+- <a href="evaluation/test-cases.jsonl" download="test-cases.jsonl">test-cases.jsonl</a>
+- <a href="evaluation/red-team-prompts.jsonl" download="red-team-prompts.jsonl">red-team-prompts.jsonl</a>
+
+Compare Bob's output with the downloaded files.
 
 Edit `evaluation/config.yaml`:
 

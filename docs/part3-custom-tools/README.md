@@ -24,9 +24,11 @@ locally. Also create requirements.txt for runtime dependencies.
 
 Review Bob's output, or download the tested workshop files:
 
-- [`check_order_status.py`](check_order_status.py)
-- [`process_refund.py`](process_refund.py)
-- [`requirements.txt`](requirements.txt)
+Click a file to download it to your browser's default download folder:
+
+- <a href="check_order_status.py" download="check_order_status.py">check_order_status.py</a>
+- <a href="process_refund.py" download="process_refund.py">process_refund.py</a>
+- <a href="requirements.txt" download="requirements.txt">requirements.txt</a>
 
 Place the Python files under `tools/` and `requirements.txt` at the project
 root.
@@ -87,7 +89,7 @@ it into draft and verify it is listed.
 ```
 
 The tested fallback is
-[`customer-support-agent.yaml`](customer-support-agent.yaml).
+<a href="customer-support-agent.yaml" download="customer-support-agent.yaml">customer-support-agent.yaml</a>.
 If importing manually:
 
 ```bash

@@ -394,12 +394,30 @@ check.
 **Original content:** The setup step said “Download” but did not tell
 participants to save the linked YAML file locally before importing it, which can
 lead to the browser displaying the YAML instead of providing a file for Bob.
-**Resolution:** Give explicit right-click/Save Link As instructions, use the
-Downloads folder as the known location, and place mode selection after import.
-**Fix:** Updated Step 6 to explain right-clicking the agent YAML link, saving it
-to Downloads, importing that local file from **Modes**, and selecting
-**WXO Agent Architect** only after the import completes.
+**Resolution:** Make the YAML link download automatically, retain a
+right-click/Save Link As fallback, use the Downloads folder as the known
+location, and place mode selection after import.
+**Fix:** Updated Step 6 with a browser `download` link for the agent YAML,
+retained the right-click fallback, and instructed participants to import the
+local file from **Modes** before selecting **WXO Agent Architect**.
 **Verified against:** Local Part 1 content review and strict MkDocs build.
+
+### Finding 50 — Local workshop artifact links did not consistently download
+
+**Files:** Participant pages for Parts 3–8 and optional modules, plus
+`docs/solution/README.md`
+**Status:** ✅ CLOSED
+**Original content:** Several local YAML, Python, JSONL, text, PDF, shell, and
+configuration links were ordinary Markdown links or plain source references, so
+the browser could open the file instead of downloading it.
+**Resolution:** Use same-origin browser download links for local workshop
+artifacts while preserving normal navigation for external installer and website
+links.
+**Fix:** Added `download` attributes to local artifact links throughout the
+participant modules and Reference Solution. Added a static `.txt` copy of the
+Reference Solution rule so it downloads with the required `.md` filename.
+**Verified against:** Strict MkDocs build and a generated-site audit confirming
+that every download link resolves to an emitted static asset.
 
 ---
 

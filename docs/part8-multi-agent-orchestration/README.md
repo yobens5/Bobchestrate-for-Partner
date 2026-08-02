@@ -33,20 +33,21 @@ Use these tested starter files if Bob needs a fallback or comparison.
 
 Python files under `tools/`:
 
-- [`flight_tools.py`](flight_tools.py)
-- [`hotel_tools.py`](hotel_tools.py)
-- [`activity_tools.py`](activity_tools.py)
-- [`budget_tools.py`](budget_tools.py)
+- <a href="flight_tools.py" download="flight_tools.py">flight_tools.py</a>
+- <a href="hotel_tools.py" download="hotel_tools.py">hotel_tools.py</a>
+- <a href="activity_tools.py" download="activity_tools.py">activity_tools.py</a>
+- <a href="budget_tools.py" download="budget_tools.py">budget_tools.py</a>
 
 YAML files under `agents/`:
 
-- [`flight-specialist-agent.yaml`](flight-specialist-agent.yaml)
-- [`hotel-specialist-agent.yaml`](hotel-specialist-agent.yaml)
-- [`activity-planner-agent.yaml`](activity-planner-agent.yaml)
-- [`budget-advisor-agent.yaml`](budget-advisor-agent.yaml)
-- [`travel-concierge-agent.yaml`](travel-concierge-agent.yaml)
+- <a href="flight-specialist-agent.yaml" download="flight-specialist-agent.yaml">flight-specialist-agent.yaml</a>
+- <a href="hotel-specialist-agent.yaml" download="hotel-specialist-agent.yaml">hotel-specialist-agent.yaml</a>
+- <a href="activity-planner-agent.yaml" download="activity-planner-agent.yaml">activity-planner-agent.yaml</a>
+- <a href="budget-advisor-agent.yaml" download="budget-advisor-agent.yaml">budget-advisor-agent.yaml</a>
+- <a href="travel-concierge-agent.yaml" download="travel-concierge-agent.yaml">travel-concierge-agent.yaml</a>
 
-Save [`requirements.txt`](requirements.txt) at the project root.
+Download <a href="requirements.txt" download="requirements.txt">requirements.txt</a>
+and save it at the project root.
 
 Review each specialist's description. The orchestrator uses those descriptions
 to choose a collaborator.
