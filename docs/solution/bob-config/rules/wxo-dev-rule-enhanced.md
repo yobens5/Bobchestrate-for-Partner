@@ -60,6 +60,29 @@ Pick ONE auth method in `.env` (see the docs MCP for full templates):
 
 **NEVER** use `ORCHESTRATE_API_KEY`, `ORCHESTRATE_ENVIRONMENT`, or `TIMEOUT_SECONDS` — these are plausible-looking names that do not exist in the ADK.
 
+### Remote session refresh
+
+Remote watsonx Orchestrate authentication expires every two hours. If an
+`orchestrate` command reports an authentication, token, or session-expired
+error, stop retrying and ask the user to refresh the session in a terminal from
+the project virtual environment:
+
+```bash
+source .venv/bin/activate
+orchestrate env activate <environment-name>
+```
+
+On Windows PowerShell:
+
+```powershell
+.venv\Scripts\Activate.ps1
+orchestrate env activate <environment-name>
+```
+
+The activation command may prompt for the WXO API key. The user must enter it
+locally; never ask for or echo credentials in chat. Retry the failed command
+only after the user confirms that activation succeeded.
+
 ## 3. Core Conventions
 
 1. Agent, tool, and KB names: **`snake_case` only** — `customer_support_agent`, never `customerSupportAgent` or `customer support agent`

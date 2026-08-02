@@ -351,6 +351,26 @@ tested Part 4 fallback agent YAML.
 **Verified against:** Local content audit of every module README, ADK 2.12.0
 schema validation, link validation, and strict MkDocs build.
 
+### Finding 47 — Bob guidance omitted remote-session expiry recovery
+
+**Files:** `.bob/custom_modes.yaml`, `.bob/rules/wxo-dev-rule-enhanced.md`,
+and the corresponding reference and participant Bob configuration assets
+**Status:** ✅ CLOSED
+**Original content:** The Bob custom mode and development rule did not explain
+that remote Orchestrate authentication expires every two hours or tell Bob how
+to recover when a CLI command reports an expired session.
+**Resolution:** Tell Bob to stop retrying, ask the user to run
+`orchestrate env activate <environment-name>` in a terminal from the project
+virtual environment, keep API keys local, and retry only after the user confirms
+activation.
+**Fix:** Added the recovery behavior to the active `.bob/` custom mode and rule,
+the reference solution, the Part 1 custom-mode export, and the maintained Part 2
+rule.
+**Verified against:** Current official IBM watsonx Orchestrate ADK
+documentation, which states that remote authentication expires every two hours
+and that rerunning `orchestrate env activate <environment-name>` reauthenticates
+the environment; local YAML/configuration and content checks.
+
 ---
 
 ## Cross-platform (macOS & Windows) Findings — Plan 3

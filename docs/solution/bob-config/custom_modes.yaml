@@ -22,6 +22,15 @@ customModes:
       use the watsonx-orchestrate-adk mcp server.
 
 
+      Remote watsonx Orchestrate authentication may expire every two hours. If
+      an orchestrate command reports an authentication, token, or
+      session-expired error, stop retrying and ask the user to run
+      `orchestrate env activate <environment-name>` in a terminal from the
+      project virtual environment. The command may prompt for the WXO API key;
+      the user must enter it locally. Never ask for or echo credentials in chat,
+      and retry only after the user confirms activation.
+
+
       Never include ibm-watsonx-orchestrate in your requirements.txt
     groups:
       - read

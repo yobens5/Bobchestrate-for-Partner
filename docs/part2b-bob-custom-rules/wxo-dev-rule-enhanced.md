@@ -13,6 +13,29 @@ Apply this rule when working in this project.
   workshop. Explain the difference and preserve the tested workshop version.
 - Validate generated YAML with the installed ADK before importing it.
 
+### Remote session refresh
+
+Remote watsonx Orchestrate authentication expires every two hours. If an
+`orchestrate` command reports an authentication, token, or session-expired
+error, stop retrying and ask the user to refresh the session in a terminal from
+the project virtual environment:
+
+```bash
+source .venv/bin/activate
+orchestrate env activate <environment-name>
+```
+
+On Windows PowerShell:
+
+```powershell
+.venv\Scripts\Activate.ps1
+orchestrate env activate <environment-name>
+```
+
+The activation command may prompt for the WXO API key. The user must enter it
+locally; never ask for or echo credentials in chat. Retry the failed command
+only after the user confirms that activation succeeded.
+
 Activate the environment when needed:
 
 ```bash
