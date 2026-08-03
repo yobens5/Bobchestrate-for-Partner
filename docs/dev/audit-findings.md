@@ -519,8 +519,9 @@ Windows environments.
 `mcp==1.28.0` SDK, enable `--system-certs`, and document CA-bundle and temporary
 TLS troubleshooting guidance.
 **Fix:** Updated the setup checkpoint and troubleshooting section, and updated
-the reference JSON configuration with the validated dependency pin, system
-certificate support, and a 120-second documentation-server timeout.
+the Windows-only fallback JSON configuration with the validated dependency pin,
+system certificate support, and a 120-second documentation-server timeout;
+the regular cross-platform `mcp.json` remains unchanged.
 **Verified against:** Supplied Windows validation report, current `mcp-proxy`
 CLI documentation via Context7, and local JSON/content review.
 

@@ -58,6 +58,10 @@ your-project/
 Edit `.bob/mcp.json` and replace `<ABSOLUTE_PATH_TO_YOUR_WORKSPACE>` with the
 full path to your project folder, then reload the Bob IDE window.
 
+Use `bob-config/mcp.json` for the regular setup. Windows users should use the
+<a href="bob-config/mcp-windows-fallback.json" download="mcp.json">Windows fallback mcp.json</a>
+only if the regular MCP setup does not work.
+
 `add-wxo-env.sh` registers and activates an environment interactively:
 
 ```bash

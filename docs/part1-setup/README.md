@@ -300,6 +300,12 @@ Before continuing, confirm:
 
 ??? question "Windows MCP documentation server fails to start"
 
+    Use this Windows-only fallback only if the regular MCP setup does not work.
+    Download the
+    <a href="../solution/bob-config/mcp-windows-fallback.json" download="mcp.json">Windows fallback mcp.json</a>
+    and replace `.bob/mcp.json`, then reload Bob. Do not use this fallback on
+    macOS.
+
     A common Windows cause is an incompatible `mcp` SDK selected by
     `mcp-proxy`. Because its dependency range has no upper bound, the resolver
     can select an SDK that causes `ImportError: cannot import name
