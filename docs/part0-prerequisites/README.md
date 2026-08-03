@@ -1,5 +1,11 @@
 # Prerequisites
 
+## What we will implement
+
+This part prepares the accounts, software, and access needed for the workshop.
+You will not build an agent yet; you will leave with a ready workspace path for
+building, testing, evaluating, and deploying one in the later parts.
+
 Before starting the workshop, make sure you have the following:
 
 ## Accounts & Access

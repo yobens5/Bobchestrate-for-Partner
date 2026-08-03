@@ -7,6 +7,12 @@ An MCP server groups related tools behind a standard protocol. Orchestrate
 imports the server as a toolkit; agents reference individual tools using the
 `toolkit-name:tool-name` prefix.
 
+## What we will implement
+
+You will build a local MCP product-catalog server, import it as a toolkit, and
+connect its prefixed search, details, inventory, and recommendation tools to a
+native Orchestrate agent.
+
 ## 1. Ask Bob to build the starter
 
 Ask Bob in Code mode:
@@ -109,10 +115,8 @@ tools:
 Ask Bob:
 
 ```text
-Review agents/product-assistant-agent.yaml and compare every referenced tool
-with the imported prefixed names. If they match, import the agent, verify it is
-listed, and suggest prompts that exercise search, details, inventory,
-recommendations, and a missing product. Start a chat so I can run them.
+Show me examples of questions I can ask product_assistant_agent to test product
+search, details, inventory checks, recommendations, and missing-product handling.
 ```
 
 Manual fallback:

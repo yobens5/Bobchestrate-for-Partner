@@ -5,6 +5,15 @@ exceptions to `escalation_agent`.
 
 This part builds on the agent and tools from [Part 3](../part3-custom-tools/README.md).
 
+## What we will implement
+
+You will create an FAQ knowledge base, attach it to the customer-support agent,
+and add an escalation collaborator for exceptions that need another agent.
+
+A knowledge base is a collection of approved documents that the agent retrieves
+to ground answers. A collaborator is another agent that handles a defined class
+of requests delegated by the main agent.
+
 ## 1. Add the FAQ knowledge base
 
 Download the workshop
@@ -88,11 +97,8 @@ orchestrate agents import -f agents/customer-support-agent.yaml
 Ask Bob:
 
 ```text
-Review customer_support_agent, its tools, knowledge base, and collaborator.
-Suggest a minimal routing test set with one tool prompt, one grounded FAQ
-prompt, one unknown FAQ prompt, one escalation prompt, and one request that
-must stay with the main agent. Start a chat so I can run them and explain the
-expected route for each.
+Show me examples of questions I can ask customer_support_agent to test its
+tools, knowledge base, FAQ answers, escalation path, and routing.
 ```
 
 Manual fallback: run

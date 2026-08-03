@@ -3,6 +3,12 @@
 **Outcome:** A new `bobchestrate-ws` project connected to the workshop
 watsonx Orchestrate environment.
 
+## What we will implement
+
+You will create the participant workspace, Python environment, ADK 2.13.0
+installation, Bob workshop configuration, MCP connections, and active
+watsonx Orchestrate environment used by the later parts.
+
 ## 1. Verify prerequisites
 
 Complete [Prerequisites](../part0-prerequisites/README.md), then open a terminal:

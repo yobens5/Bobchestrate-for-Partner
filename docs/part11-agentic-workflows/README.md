@@ -6,6 +6,12 @@ Use a workflow when routing and parameter mapping should be configured in
 advance. Use an agent when the model must decide dynamically what to do next.
 Actual latency and cost depend on the tools and models used.
 
+## What we will implement
+
+You will build four mock loan-processing tools, connect them in a deterministic
+`@flow` workflow, and expose that workflow through a native loan-processor
+agent.
+
 ## 1. Ask Bob to build the workflow
 
 Ask Bob:
@@ -95,10 +101,8 @@ Confirm that `loan_approval_workflow` appears.
 Ask Bob:
 
 ```text
-Validate and import agents/loan-processor-agent.yaml, then suggest a valid loan
-request, missing-input case, adverse decision case, and boundary-value case.
-Start a chat so I can test them. Explain which workflow outputs should appear
-in each response.
+Show me examples of loan requests I can send to loan_processor_agent to test
+valid approvals, missing inputs, adverse decisions, and boundary values.
 ```
 
 Manual fallback:

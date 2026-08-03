@@ -6,6 +6,12 @@ for `customer_support_agent`.
 Evaluation checks known behavior. Red-teaming deliberately tries to break the
 agent's boundaries. Neither replaces human review or production monitoring.
 
+## What we will implement
+
+You will create a repeatable functional evaluation dataset, run it against the
+customer-support agent, generate adversarial red-team tests, and re-evaluate
+after fixing confirmed failures.
+
 ## 1. Prepare the evaluation files
 
 Ask Bob:

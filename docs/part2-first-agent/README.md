@@ -3,6 +3,14 @@
 **Outcome:** A native `hello_world_agent` imported and tested in the draft
 environment.
 
+## What we will implement
+
+You will define a minimal native agent, import it into the draft environment,
+test its greeting behavior, and update its instructions once.
+
+An agent is an AI component with instructions and a model. In this workshop,
+the agent can respond to a user but has no custom tools or knowledge base yet.
+
 ## Minimal native-agent structure
 
 ADK 2.13.0 requires `spec_version`, `name`, and `description` when importing a
@@ -69,9 +77,7 @@ The agent should appear in the draft environment.
 Ask Bob:
 
 ```text
-Suggest three short chat prompts that test hello_world_agent's greeting, stated
-capabilities, and boundaries. Then start a chat with the agent so I can try
-them. Tell me what behavior I should observe for each prompt.
+Show me examples of questions I can ask hello_world_agent.
 ```
 
 Manual fallback:

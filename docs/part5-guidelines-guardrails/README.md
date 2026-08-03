@@ -10,6 +10,12 @@ blocks obvious sensitive-data input.
 These examples are educational controls, not proof of regulatory compliance.
 Production use requires security, privacy, legal, and compliance review.
 
+## What we will implement
+
+You will add behavioral guidelines and a small input guardrail plugin to the
+customer-support agent, then test how it handles exceptions, privacy, and
+prompt-injection patterns.
+
 ## 1. Add behavioral guidelines
 
 Ask Bob:
@@ -103,11 +109,8 @@ orchestrate agents import -f agents/customer-support-agent.yaml
 Ask Bob:
 
 ```text
-Inspect the updated agent, guidelines, and pre-invoke guardrail. Suggest a small
-test set covering normal support, high-value escalation, privacy, sensitive
-data, prompt injection, and one likely false positive. Start a chat so I can
-run each prompt. State whether the expected control is a tool, guideline,
-collaborator, or guardrail.
+Show me examples of questions I can ask customer_support_agent to test its
+guidelines, guardrails, escalation rules, and privacy controls.
 ```
 
 Manual chat fallback:

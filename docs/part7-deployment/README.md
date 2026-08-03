@@ -6,6 +6,12 @@ environment and its webchat configuration can be generated.
 Deployment makes an agent available to users. It does not by itself make the
 workshop example production-ready.
 
+## What we will implement
+
+You will review evaluation evidence, verify the draft artifacts, promote the
+customer-support agent to the live environment, generate webchat configuration,
+and review basic monitoring and recovery steps.
+
 ## 1. Pre-deployment check
 
 Do not deploy until:

@@ -525,6 +525,26 @@ the regular cross-platform `mcp.json` remains unchanged.
 **Verified against:** Supplied Windows validation report, current `mcp-proxy`
 CLI documentation via Context7, and local JSON/content review.
 
+### Finding 57 — Module introductions did not preview implementation or define shared concepts
+
+**Files:** All module overview pages under `docs/part*/README.md`
+**Status:** ✅ CLOSED
+**Original content:** Module pages generally began with an outcome, but they did
+not consistently tell participants what they would implement or define the
+shared terms **agent**, **tool**, **knowledge**, **evaluation**, **red-teaming**,
+and **deployment**. This made it harder for beginners to connect the modules
+into one lifecycle.
+**Resolution:** Add a short, content-specific **What we will implement** section
+near the start of every module overview. Define or explain only the concepts
+introduced by that module, rather than repeating a universal glossary.
+**Fix:** Updated all 13 English module overview pages with tailored openings for
+setup, agents, tools, knowledge bases, guardrails, evaluation, deployment,
+orchestration, NL2SQL, MCP, workflows, and model policies. No Hebrew module
+files or translation convention are present in this checkout, so there was no
+Hebrew source page to update.
+**Verified against:** Repository-wide opening-section audit, local Markdown
+whitespace checks, and the strict MkDocs build.
+
 ---
 
 ## Cross-platform (macOS & Windows) Findings — Plan 3

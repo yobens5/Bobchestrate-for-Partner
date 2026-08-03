@@ -6,6 +6,12 @@ against the workshop PostgreSQL database.
 This is a mandatory standalone use case. It does not rename or modify the
 customer-support system from Parts 2–7.
 
+## What we will implement
+
+You will discover the workshop PostgreSQL schema, generate an editable natural-
+language-to-SQL draft agent, validate and deploy it, then test questions against
+the discovered tables and metadata.
+
 The accelerator performs database discovery and initial agent generation in
 its own UI. Bob resumes as the development interface after the generated agent
 is available in the participant project or Orchestrate environment.

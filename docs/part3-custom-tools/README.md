@@ -3,7 +3,13 @@
 **Outcome:** `customer_support_agent` can check an order and process a simulated
 refund.
 
-A Python tool is a typed function decorated with `@tool`. Its name, docstring,
+## What we will implement
+
+You will build two typed Python tools, import them, and connect them to a
+customer-support agent that checks orders and processes confirmed simulated
+refunds.
+
+A Python tool is a callable function decorated with `@tool`. Its name, docstring,
 arguments, and return type tell the agent when and how to call it.
 
 ## 1. Create the tools
@@ -101,11 +107,7 @@ orchestrate agents import -f agents/customer-support-agent.yaml
 Ask Bob:
 
 ```text
-Inspect the customer_support_agent instructions and tool schemas. Suggest a
-compact test set covering a valid order lookup, an invalid ID, a refund with
-missing details, a confirmed refund, and an unrelated request. Start a chat
-with the agent so I can run the prompts, and tell me which tool calls and
-clarifying questions to expect.
+Show me examples of questions I can ask customer_support_agent.
 ```
 
 Manual chat fallback:

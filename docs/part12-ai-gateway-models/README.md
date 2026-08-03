@@ -7,6 +7,12 @@ Model availability, identifiers, prices, and provider requirements change.
 Always start from the models available in the connected environment rather than
 copying a model name from an old example.
 
+## What we will implement
+
+You will inspect available models, create a validated retry policy, apply it to
+a copy of an evaluated agent, and compare the original and policy-based agents
+against the same behavior and safety cases.
+
 ## 1. Inspect available models
 
 Ask Bob:

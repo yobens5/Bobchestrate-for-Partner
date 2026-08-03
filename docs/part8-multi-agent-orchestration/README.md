@@ -5,6 +5,12 @@
 Use collaborators when responsibilities have distinct tools, instructions, or
 ownership. Avoid extra layers that do not improve routing.
 
+## What we will implement
+
+You will build four specialist agents with mock tools and a `travel_concierge`
+orchestrator that routes a request to the right specialist and combines the
+results.
+
 ```text
 travel_concierge
 ├── flight_specialist
