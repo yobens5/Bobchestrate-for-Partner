@@ -9,7 +9,7 @@ Adapt this compact pattern for each artifact:
 
 ```text
 Inspect the relevant project files and custom rules. Consult the watsonx
-Orchestrate documentation MCP for ADK 2.12.0 syntax. Create or update the
+Orchestrate documentation MCP for ADK 2.13.0 syntax. Create or update the
 requested artifacts, show me what changed, and validate them. After I review
 them, import them into the active draft environment using the existing .venv
 and verify they are listed. Suggest a small test set with normal, edge, and
@@ -77,7 +77,7 @@ Bob, add error handling guidance to these agent instructions: [paste instruction
 
 ### Agent Configuration
 ```
-Bob, explain when to use hide_reasoning in an ADK 2.12.0 native-agent YAML
+Bob, explain when to use hide_reasoning in an ADK 2.13.0 native-agent YAML
 ```
 
 ```

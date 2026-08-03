@@ -15,7 +15,7 @@ then ask Bob:
 ```text
 Inspect knowledge_bases/customer-support-faq.txt. Create
 knowledge_bases/faq-knowledge-base.yaml for a knowledge base named
-customer-support-faq using the project rules and ADK 2.12.0 documentation.
+customer-support-faq using the project rules and ADK 2.13.0 documentation.
 Keep the document path relative to the YAML. Validate the file, import it into
 the active draft environment, and monitor its status until it is ready. Show me
 the commands and results.

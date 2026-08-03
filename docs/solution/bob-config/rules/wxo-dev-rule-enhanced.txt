@@ -4,12 +4,12 @@ Apply this rule when working in this project.
 
 ## Version and documentation policy
 
-- The workshop targets **IBM watsonx Orchestrate ADK 2.12.0**.
+- The workshop targets **IBM watsonx Orchestrate ADK 2.13.0**.
 - Run all `orchestrate` commands from the project `.venv`.
 - Search `watsonx-orchestrate-adk-docs` before generating ADK syntax, and state
-  that the requested version is 2.12.0.
+  that the requested version is 2.13.0.
 - Use `watsonx-orchestrate-adk` to inspect the connected platform.
-- If current documentation differs from ADK 2.12.0, do not silently migrate the
+- If current documentation differs from ADK 2.13.0, do not silently migrate the
   workshop. Explain the difference and preserve the tested workshop version.
 - Validate generated YAML with the installed ADK before importing it.
 

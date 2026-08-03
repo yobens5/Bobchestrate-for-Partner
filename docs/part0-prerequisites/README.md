@@ -99,6 +99,11 @@ Submit your request here:
 
 [User Onboarding Request](https://supportcontent.ibm.com/support/pages/bob-enterprise-subscription-%E2%80%93-user-onboarding-request-0)
 
+### Alternative: Bob IDE trial
+
+If a Bob Enterprise Account is not available, use the Bob IDE trial as a
+backup: [download Bob IDE](https://bob.ibm.com/download).
+
 ---
 
 Ready? Head to [Part 1: Setup & Environment](../part1-setup/README.md) →

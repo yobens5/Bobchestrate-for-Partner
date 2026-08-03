@@ -40,7 +40,7 @@ core part and rejoin from there.
 
 ## Tested environment
 
-Workshop commands and examples target **IBM watsonx Orchestrate ADK 2.12.0**.
+Workshop commands and examples target **IBM watsonx Orchestrate ADK 2.13.0**.
 See [AGENTS.md](AGENTS.md) for repository conventions and
 [the audit ledger](docs/dev/audit-findings.md) for verified findings and fixes.
 

@@ -3,7 +3,7 @@
 This file tracks all quality issues found in the Bobchestrate workshop docs (`docs/part1` through `docs/part9`).
 It covers CLI commands, YAML schemas, platform compatibility, UX clarity, and anything else that could block or mislead a workshop participant.
 
-Audit started: 2025-07 · ADK version under test: **2.12.0**
+Audit started: 2025-07 · ADK version under test: **2.13.0**
 Source of truth for CLI/API: official ADK docs via `watsonx-orchestrate-adk-docs` MCP server.
 
 ---
@@ -22,13 +22,13 @@ Source of truth for CLI/API: official ADK docs via `watsonx-orchestrate-adk-docs
 ## Full Workshop Review — 2026-07-27
 
 This review covers the English workshop, with special attention to macOS and
-Windows usability, internal consistency, ADK 2.12.0 compatibility, and the
+Windows usability, internal consistency, ADK 2.13.0 compatibility, and the
 amount of material participants are expected to read during the workshop.
 
 Verification used:
 
-- the repository's installed `venv/bin/orchestrate` CLI (**ADK 2.12.0**)
-- local ADK 2.12.0 Pydantic schema validation
+- the repository's installed `venv/bin/orchestrate` CLI (**ADK 2.13.0**)
+- local ADK 2.13.0 Pydantic schema validation
 - local Markdown-link, word-count, and consistency checks
 - current official IBM, Python, Astral `uv`, and Microsoft documentation
 
@@ -44,7 +44,7 @@ skip a module or send the participant backwards.
 titles, cross-references, next-step links, image captions, and the root README.
 **Fix:** Aligned all core titles, exercise titles, optional-module titles, and
 next-step links with the MkDocs navigation.
-**Verified against:** Local navigation and link audit; ADK 2.12.0 is not
+**Verified against:** Local navigation and link audit; ADK 2.13.0 is not
 applicable to this editorial finding.
 
 ### Finding 28 — Root README links and repository tree are stale
@@ -77,18 +77,18 @@ Part 1's empty `bobchestrate-ws` participant project is now the documented path.
 `bobchestrate-ws` folder is the canonical participant workflow.
 **Verified against:** Local documentation review.
 
-### Finding 30 — First-agent field reference and complete example fail ADK 2.12.0
+### Finding 30 — First-agent field reference and complete example fail ADK 2.13.0
 
 **File:** `docs/part2-first-agent/README.md`
 **Status:** ✅ CLOSED
 **Original content:** The page says `spec_version`, `kind`, `name`, and `llm`
 are the four mandatory fields and describes `description` as optional. The
 complete example's starter prompts omit their required `id` fields.
-**Resolution:** Describe the actual ADK 2.12.0 requirements and defaults, add
+**Resolution:** Describe the actual ADK 2.13.0 requirements and defaults, add
 stable prompt IDs, and validate every example before publication.
 **Fix:** Corrected required/default field guidance, added starter-prompt IDs,
-and validated all native-agent examples with ADK 2.12.0.
-**Verified against:** Installed ADK 2.12.0 agent Pydantic model and local YAML
+and validated all native-agent examples with ADK 2.13.0.
+**Verified against:** Installed ADK 2.13.0 agent Pydantic model and local YAML
 validation.
 
 ### Finding 31 — Customer-support names and file paths drift between modules
@@ -118,7 +118,7 @@ tool filenames with `tools/check_order_status.py` and
 requirements file exists in the canonical participant project.
 **Fix:** Added `-r requirements.txt` to both deployment imports and added the
 workshop requirements file.
-**Verified against:** `venv/bin/orchestrate tools import --help`, ADK 2.12.0,
+**Verified against:** `venv/bin/orchestrate tools import --help`, ADK 2.13.0,
 where `--requirements-file / -r` is required for Python tools.
 
 ### Finding 33 — MCP agent creation, import, and test names do not form one runnable path
@@ -129,13 +129,13 @@ where `--requirements-file / -r` is required for Python tools.
 **Original content:** The instructions leave literal `<toolkit_name>`
 placeholders, create `product-assistant-agent.yaml`, import
 `product-catalog-agent.yaml`, and test `product_catalog_agent`. The bundled
-native agent places the toolkit under `toolkits:`, which ADK 2.12.0 rejects for
+native agent places the toolkit under `toolkits:`, which ADK 2.13.0 rejects for
 this agent style.
 **Resolution:** Use the imported toolkit's prefixed tool names under `tools:`
 and use `product_assistant` plus one filename throughout.
 **Fix:** Replaced placeholders with `product-catalog:<tool>`, aligned the agent
 name and filename, and updated the bundled native agent to use `tools:`.
-**Verified against:** Installed ADK 2.12.0 agent validation and the page's own
+**Verified against:** Installed ADK 2.13.0 agent validation and the page's own
 toolkit-import output.
 
 ### Finding 34 — NL2SQL discovery and agent-generation steps are reversed
@@ -159,8 +159,8 @@ before agent generation, validation, and deployment.
 uses `kind: model`.
 **Resolution:** Use `kind: model` consistently.
 **Fix:** Updated all three main policy examples and validated six embedded
-model-policy examples with the ADK 2.12.0 model.
-**Verified against:** ADK 2.12.0 CLI and official IBM model-policy
+model-policy examples with the ADK 2.13.0 model.
+**Verified against:** ADK 2.13.0 CLI and official IBM model-policy
 documentation.
 
 ### Finding 36 — Windows support becomes incomplete in later modules
@@ -177,7 +177,7 @@ commands and replace the invalid chat command with
 **Fix:** Removed platform-specific filtering where unnecessary, added
 PowerShell connection loops and local Python commands, replaced `diff` with the
 cross-platform IDE comparison flow, and corrected the chat command.
-**Verified against:** ADK 2.12.0 CLI help and local macOS/Windows command review.
+**Verified against:** ADK 2.13.0 CLI help and local macOS/Windows command review.
 
 ### Finding 37 — Python and PowerShell setup guidance needs one tested path
 
@@ -221,11 +221,11 @@ example output and a Bob prompt for 2.10.1, and says the product assistant came
 from “Part 6” even though it belongs to a later optional MCP module.
 **Resolution:** Make the core evaluation exercise use the customer-support
 agent produced by preceding modules and standardize version-specific guidance
-on ADK 2.12.0.
+on ADK 2.13.0.
 **Fix:** Reworked the examples and bundled datasets around
-`customer_support_agent`, standardized `wxo_lite_version` on 2.12.0, and removed
+`customer_support_agent`, standardized `wxo_lite_version` on 2.13.0, and removed
 the stale multi-page version output.
-**Verified against:** Local workshop sequence and installed ADK 2.12.0.
+**Verified against:** Local workshop sequence and installed ADK 2.13.0.
 
 ### Finding 40 — Some examples overstate production, compliance, and performance readiness
 
@@ -348,7 +348,7 @@ update files, validate and import them using `.venv`, verify results, and
 suggest normal, edge, and failure-path tests. Added a reusable task pattern to
 the prompt guide, corrected the obsolete reasoning-field prompt, and added a
 tested Part 4 fallback agent YAML.
-**Verified against:** Local content audit of every module README, ADK 2.12.0
+**Verified against:** Local content audit of every module README, ADK 2.13.0
 schema validation, link validation, and strict MkDocs build.
 
 ### Finding 47 — Bob guidance omitted remote-session expiry recovery
@@ -431,15 +431,15 @@ workspace rule, while the participant mode export and Reference Solution mode
 duplicated older instructions. Three materially different rule copies were
 distributed. The active and Reference Solution rules also allowed current MCP
 documentation to override the workshop behavior, conflicting with the tested
-ADK 2.12.0 requirement. Rule installation occupied a separate core part even
+ADK 2.13.0 requirement. Rule installation occupied a separate core part even
 though it is required Bob setup.
 **Resolution:** Keep responsibilities separate: the custom mode defines the WXO
 specialist role, live-asset discovery behavior, and permitted capabilities;
-the workspace rule applies ADK 2.12.0 version policy, project conventions,
+the workspace rule applies ADK 2.13.0 version policy, project conventions,
 safety requirements, and known pitfalls across all Bob modes. Install both in
 Part 1 and remove the standalone Custom Rules part.
 **Fix:** Made all active, participant, and Reference Solution mode copies
-byte-identical. Made all rule copies byte-identical and preserved the ADK 2.12.0
+byte-identical. Made all rule copies byte-identical and preserved the ADK 2.13.0
 pin. Moved the downloadable rule and its verification checkpoint into Part 1,
 removed the obsolete rules module and its test-agent artifact, and renumbered
 the remaining core workshop path from Parts 2–8.
@@ -447,17 +447,94 @@ the remaining core workshop path from Parts 2–8.
 semantics; local checksum comparison of distributed mode and rule copies;
 strict MkDocs build, internal-link audit, and configuration parsing.
 
+### Finding 52 — Bob IDE trial guidance appeared in Part 1 instead of prerequisites
+
+**Files:** `docs/part0-prerequisites/README.md` and
+`docs/part1-setup/README.md`
+**Status:** ✅ CLOSED
+**Original content:** Part 1 told participants to download Bob IDE “if needed”
+after instructing them to open it, while Prerequisites only documented the
+enterprise-account request.
+**Resolution:** Keep the Bob Enterprise Account request as the primary path and
+document the Bob IDE trial as its backup under Prerequisites.
+**Fix:** Added a labeled Bob IDE trial fallback to Prerequisites and removed the
+out-of-order download sentence from Part 1.
+**Verified against:** Local content review and link/reference search.
+
+### Finding 53 — Part 1 lacked a terminal fallback for virtual-environment creation
+
+**File:** `docs/part1-setup/README.md`
+**Status:** ✅ CLOSED
+**Original content:** Step 3 documented only the Bob IDE **Python: Create
+Environment** command. It included activation commands for an existing `.venv`,
+but not instructions for creating the environment when the IDE command was
+unavailable.
+**Resolution:** Add a platform-specific terminal fallback while keeping the
+Bob IDE flow as the primary path.
+**Fix:** Added `python -m venv .venv` for Windows and
+`python3 -m venv .venv` for macOS, followed by the existing activation guidance.
+**Verified against:** Python standard-library `venv` command syntax and local
+Part 1 content review.
+
+### Finding 54 — Part 1 lacked a manual ADK package-installation fallback
+
+**File:** `docs/part1-setup/README.md`
+**Status:** ✅ CLOSED
+**Original content:** Step 4 required the Bob IDE ADK extension and did not
+provide a manual installation path for participants who could not use the
+extension.
+**Resolution:** Add a platform-specific `pip` fallback that installs the
+version-pinned `ibm-watsonx-orchestrate` package into the existing `.venv`.
+**Fix:** Added direct `.venv` Python commands for Windows and macOS, followed by
+the existing `orchestrate --version` verification.
+**Verified against:** Current IBM watsonx Orchestrate ADK documentation via
+Context7 and local Part 1 content review.
+
+### Finding 55 — Workshop version references were inconsistent
+
+**Files:** Repository guidance, participant modules, Bob configuration assets,
+and evaluation configuration files
+**Status:** ✅ CLOSED
+**Original content:** The workshop's ADK version references were not aligned
+across the root guidance, module instructions, downloadable Bob assets, and
+evaluation YAML files.
+**Resolution:** Use ADK 2.13.0 as the single workshop version throughout the
+repository.
+**Fix:** Updated all version references and version-pinned installation and
+evaluation examples to 2.13.0.
+**Verified against:** Repository-wide version-reference search and current IBM
+watsonx Orchestrate ADK installation guidance via Context7.
+
+### Finding 56 — MCP health checks and Windows recovery guidance were incomplete
+
+**Files:** `docs/part1-setup/README.md` and
+`docs/solution/bob-config/mcp.json`
+**Status:** ✅ CLOSED
+**Original content:** Part 1 asked participants to inspect MCP servers but did
+not require both servers to be green and connected before continuing. The
+reference documentation-server configuration also left `mcp-proxy`'s `mcp`
+dependency unpinned and did not enable system certificate discovery for managed
+Windows environments.
+**Resolution:** Add an explicit MCP health checkpoint, pin the compatible
+`mcp==1.28.0` SDK, enable `--system-certs`, and document CA-bundle and temporary
+TLS troubleshooting guidance.
+**Fix:** Updated the setup checkpoint and troubleshooting section, and updated
+the reference JSON configuration with the validated dependency pin, system
+certificate support, and a 120-second documentation-server timeout.
+**Verified against:** Supplied Windows validation report, current `mcp-proxy`
+CLI documentation via Context7, and local JSON/content review.
+
 ---
 
 ## Cross-platform (macOS & Windows) Findings — Plan 3
 
-The items below were identified during the Plan 3 audit (July 2025, ADK 2.12.0).
+The items below were identified during the Plan 3 audit (July 2025, ADK 2.13.0).
 Each item is tracked with a status and will be fixed in order.
 
 ---
 
 
-## Part 2 Field Audit — Findings (2025-07, ADK 2.12.0)
+## Part 2 Field Audit — Findings (2025-07, ADK 2.13.0)
 
 ---
 

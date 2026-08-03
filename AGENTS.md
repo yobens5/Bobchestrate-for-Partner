@@ -21,9 +21,9 @@ The workshop documentation is maintained in **both English and Hebrew**.
 
 ## Tested ADK Version
 
-> **IBM watsonx Orchestrate ADK `2.12.0`**
+> **IBM watsonx Orchestrate ADK `2.13.0`**
 
-All workshop content, CLI commands, YAML schemas, and code examples have been verified against ADK version **2.12.0**. If you are running a different version, some commands or schema fields may behave differently — consult the [ADK release notes](https://developer.watson-orchestrate.ibm.com/release/release) for changes.
+All workshop content, CLI commands, YAML schemas, and code examples have been verified against ADK version **2.13.0**. If you are running a different version, some commands or schema fields may behave differently — consult the [ADK release notes](https://developer.watson-orchestrate.ibm.com/release/release) for changes.
 
 ## Repository Structure
 

@@ -35,9 +35,6 @@ cd bobchestrate-ws
 Open IBM Bob IDE, sign in with your IBM ID, and select
 **File → Open Folder → bobchestrate-ws**. Trust the workspace when prompted.
 
-Download Bob IDE from [bob.ibm.com/download](https://bob.ibm.com/download) if
-needed.
-
 ## 3. Create the virtual environment
 
 1. Open the Command Palette:
@@ -45,6 +42,27 @@ needed.
 2. Select **Python: Create Environment**.
 3. Choose **Venv**, then the Python 3.12 interpreter.
 4. Open a new terminal and confirm that `(.venv)` appears in its prompt.
+
+### Terminal fallback
+
+If **Python: Create Environment** is unavailable, open a terminal in
+`bobchestrate-ws` and create the environment manually. Use the command for
+your operating system:
+
+=== "Windows PowerShell or Command Prompt"
+
+    ```powershell
+    python -m venv .venv
+    ```
+
+=== "macOS"
+
+    ```bash
+    python3 -m venv .venv
+    ```
+
+These commands use the Python 3.12 installation verified in Step 1. Then
+activate `.venv` using the platform command below.
 
 If automatic activation fails:
 
@@ -69,7 +87,7 @@ If automatic activation fails:
 
 The PowerShell change applies only to the current terminal session.
 
-## 4. Install ADK 2.12.0
+## 4. Install ADK 2.13.0
 
 1. Open Extensions (`Cmd+Shift+X` or `Ctrl+Shift+X`).
 2. Install **IBM watsonx Orchestrate ADK**.
@@ -81,7 +99,27 @@ The PowerShell change applies only to the current terminal session.
 orchestrate --version
 ```
 
-The first line must show `ADK Version: 2.12.0`. Ask the instructor before
+### Terminal fallback
+
+If the ADK extension installation is unavailable, install the pinned package
+directly into `.venv` from a terminal in `bobchestrate-ws`:
+
+=== "Windows PowerShell or Command Prompt"
+
+    ```powershell
+    .\.venv\Scripts\python.exe -m pip install ibm-watsonx-orchestrate==2.13.0
+    ```
+
+=== "macOS"
+
+    ```bash
+    ./.venv/bin/python -m pip install ibm-watsonx-orchestrate==2.13.0
+    ```
+
+Then activate `.venv` using the platform command in Step 3 and run
+`orchestrate --version` to confirm the installation.
+
+The first line must show `ADK Version: 2.13.0`. Ask the instructor before
 continuing if another version is installed.
 
 ## 5. Initialise the workspace and MCP servers
@@ -91,7 +129,12 @@ Use the Command Palette to run:
 1. **watsonx Orchestrate: Initialise Workspace**
 2. **watsonx Orchestrate: Install WXO MCP Servers**
 
-Enter `2.12.0` when the MCP installer asks for a version.
+Enter `2.13.0` when the MCP installer asks for a version.
+
+Open **Settings → MCP** and confirm that both
+`watsonx-orchestrate-adk` and `watsonx-orchestrate-adk-docs` are **green** and
+show **Connected**. If either server is not green and connected, stop and ask
+the instructor for help before continuing.
 
 Open Bob chat and ask:
 
@@ -105,7 +148,7 @@ also inspect them from the Command Palette under **MCP Servers**.
 ## 6. Configure Bob for the workshop
 
 The custom mode gives Bob a watsonx Orchestrate role and the tools it needs.
-The workspace rule applies the workshop's ADK 2.12.0 conventions, safety
+The workspace rule applies the workshop's ADK 2.13.0 conventions, safety
 requirements, and known pitfalls in every Bob mode.
 
 ### Import the WXO Agent Architect mode
@@ -150,7 +193,7 @@ naming, model, documentation-lookup, and safety conventions you will follow.
 Do not create or change files.
 ```
 
-Bob should mention ADK 2.12.0, the workshop folders, `snake_case`,
+Bob should mention ADK 2.13.0, the workshop folders, `snake_case`,
 `groq/openai/gpt-oss-120b`, the documentation MCP, and credential safety.
 
 ## 7. Connect the workshop environment
@@ -223,7 +266,7 @@ Empty folders are expected.
 
 Before continuing, confirm:
 
-- `orchestrate --version` reports ADK 2.12.0
+- `orchestrate --version` reports ADK 2.13.0
 - `orchestrate agents list` succeeds
 - WXO Agent Architect mode is selected
 - `.bob/rules/wxo-dev-rule-enhanced.md` exists
@@ -250,7 +293,37 @@ Before continuing, confirm:
 
 ??? question "Bob cannot access the MCP servers"
 
-    Open **MCP Servers** from the Command Palette. Restart any stopped server
-    and confirm that its status is green.
+    Open **Settings → MCP** and confirm that both
+    `watsonx-orchestrate-adk` and `watsonx-orchestrate-adk-docs` are green and
+    connected. Restart any stopped server. If either server remains unhealthy,
+    ask the instructor for help instead of continuing.
+
+??? question "Windows MCP documentation server fails to start"
+
+    A common Windows cause is an incompatible `mcp` SDK selected by
+    `mcp-proxy`. Because its dependency range has no upper bound, the resolver
+    can select an SDK that causes `ImportError: cannot import name
+    'request_ctx'`. Reconfigure the documentation server with the compatible
+    SDK pin and system certificate support. In PowerShell, use:
+
+    ```powershell
+    uvx --system-certs `
+      --with mcp==1.28.0 `
+      mcp-proxy `
+      --transport streamablehttp `
+      https://developer.watson-orchestrate.ibm.com/mcp
+    ```
+
+    If the error is certificate-related, prefer the organization's CA bundle:
+
+    ```text
+    --verify-ssl C:\path\to\company-ca-bundle.pem
+    ```
+
+    Use `--verify-ssl false` only as a temporary diagnostic workaround, not as
+    the permanent configuration. The Watsonx endpoint may still be healthy;
+    this workaround only diagnoses local certificate trust. After updating the
+    server, return to **Settings → MCP** and confirm that both servers are green
+    and connected.
 
 [Continue to Part 2: Building Your First Agent →](../part2-first-agent/README.md)

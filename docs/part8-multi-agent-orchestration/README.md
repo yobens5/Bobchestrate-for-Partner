@@ -20,7 +20,7 @@ All tools in this example use simulated data.
 Ask Bob:
 
 ```text
-Build a simulated multi-agent travel system for ADK 2.12.0. Create four
+Build a simulated multi-agent travel system for ADK 2.13.0. Create four
 specialist agents—flight_specialist, hotel_specialist, activity_planner, and
 budget_advisor—with distinct descriptions and mock Python tools. Create
 travel_concierge as their orchestrator with explicit routing and synthesis

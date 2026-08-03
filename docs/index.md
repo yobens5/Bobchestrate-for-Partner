@@ -8,11 +8,11 @@ IBM Bob as your development partner.
 ## Format
 
 - **Level:** Beginner to intermediate
-- **Tested ADK:** IBM watsonx Orchestrate ADK **2.12.0**
+- **Tested ADK:** IBM watsonx Orchestrate ADK **2.13.0**
 - **Participant project:** a new, empty `bobchestrate-ws` folder
 
 !!! warning "Use the tested version"
-    Commands and YAML examples target ADK 2.12.0. If your version differs,
+    Commands and YAML examples target ADK 2.13.0. If your version differs,
     consult the [ADK release notes](https://developer.watson-orchestrate.ibm.com/release/release).
 
 ## Before the workshop

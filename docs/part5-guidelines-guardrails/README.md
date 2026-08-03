@@ -19,7 +19,7 @@ Review agents/customer-support-agent.yaml and add concise guidelines for:
 refunds above $10,000, sensitive information in a message, requests for another
 customer's data, and policy exceptions. Preserve the existing tools, knowledge
 base, and collaborator. Use collaborator delegation in the action text, not in
-a guideline tool field. Validate the updated YAML against ADK 2.12.0, show me
+a guideline tool field. Validate the updated YAML against ADK 2.13.0, show me
 the changes, and re-import the agent.
 ```
 
@@ -56,7 +56,7 @@ orchestrate agents import -f agents/customer-support-agent.yaml
 Ask Bob:
 
 ```text
-Create tools/content_safety_plugin.py as an ADK 2.12.0 agent pre-invoke
+Create tools/content_safety_plugin.py as an ADK 2.13.0 agent pre-invoke
 guardrail named content_safety_guardrail. For this workshop, detect a small,
 explicit set of sensitive-data and prompt-injection patterns without claiming
 complete security coverage. Add local tests for allowed input, sensitive data,
