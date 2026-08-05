@@ -104,6 +104,13 @@ On the reservation form you will be asked to choose a purpose. Select **Pilot** 
 !!! tip "Where to find your Opportunity ID"
     Your Opportunity ID is the CRM opportunity number associated with the partner engagement. Ask your IBM contact or account team if you do not have it.
 
+### Backup: IBM watsonx Orchestrate Trial
+
+If TechZone is unavailable, sign up for a free IBM watsonx Orchestrate trial account:
+
+[Start watsonx Orchestrate Trial](https://www.ibm.com/account/reg/us-en/signup?formid=urx-52753)
+
+The trial provides enough capacity to complete all workshop exercises. Use it only if the TechZone reservation cannot be completed in time.
 
 ---
 
