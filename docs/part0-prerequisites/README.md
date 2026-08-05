@@ -97,6 +97,13 @@ uv --version
 
 When opening the collection, select the **"watsonx Orchestrate Trial with CE"** reservation from the list, then pick **Americas** as the region.
 
+**Reservation type — use Pilot:**
+
+On the reservation form you will be asked to choose a purpose. Select **Pilot** and enter your **Opportunity ID** in the field provided. Using Pilot with an Opportunity ID is required for partner workshop access; selecting a different purpose (e.g. "Education" or "Test") may result in the reservation being rejected.
+
+!!! tip "Where to find your Opportunity ID"
+    Your Opportunity ID is the CRM opportunity number associated with the partner engagement. Ask your IBM contact or account team if you do not have it.
+
 
 ---
 

@@ -9,9 +9,30 @@ You will create the participant workspace, Python environment, ADK 2.13.0
 installation, Bob workshop configuration, MCP connections, and active
 watsonx Orchestrate environment used by the later parts.
 
+!!! info "Everything runs inside Bob IDE"
+    All terminal commands and Command Palette actions in this workshop are
+    performed **inside IBM Bob IDE** — not in a separate system terminal.
+
+    **How to open a terminal in Bob IDE** (same as VS Code):
+
+    - Menu: **Terminal → New Terminal**
+    - Keyboard: `` Ctrl+` `` (backtick) on Windows/Linux, `` Ctrl+` `` on macOS
+
+    The terminal opens at the bottom of the editor, already pointed at your
+    project folder.
+
+    **How to open the Command Palette:**
+
+    - **macOS:** `Cmd+Shift+P`
+    - **Windows:** `Ctrl+Shift+P`
+
+    The Command Palette is a quick-search bar at the top of Bob IDE where you
+    type a command name and press Enter to run it — you will use it throughout
+    this workshop.
+
 ## 1. Verify prerequisites
 
-Complete [Prerequisites](../part0-prerequisites/README.md), then open a terminal:
+Complete [Prerequisites](../part0-prerequisites/README.md), then open a terminal in Bob IDE:
 
 === "Windows PowerShell"
 
@@ -41,13 +62,20 @@ cd bobchestrate-ws
 Open IBM Bob IDE, sign in with your IBM ID, and select
 **File → Open Folder → bobchestrate-ws**. Trust the workspace when prompted.
 
-## 3. Create the virtual environment
+## 3. Install the ADK extension
 
-1. Open the Command Palette:
-   `Cmd+Shift+P` on macOS or `Ctrl+Shift+P` on Windows.
-2. Select **Python: Create Environment**.
-3. Choose **Venv**, then the Python 3.12 interpreter.
-4. Open a new terminal and confirm that `(.venv)` appears in its prompt.
+1. Open the Extensions panel: `Cmd+Shift+X` on macOS or `Ctrl+Shift+X` on Windows.
+2. Search for and install **IBM watsonx Orchestrate ADK**.
+
+The extension must be installed before creating the virtual environment so
+that Bob IDE can detect it during the next step.
+
+## 4. Create the virtual environment
+
+1. Open the Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`).
+2. Type **Python: Create Environment** and press Enter.
+3. Choose **Venv**, then select the **Python 3.12** interpreter.
+4. Open a new terminal in Bob IDE and confirm that `(.venv)` appears in its prompt.
 
 ### Terminal fallback
 
@@ -93,13 +121,11 @@ If automatic activation fails:
 
 The PowerShell change applies only to the current terminal session.
 
-## 4. Install ADK 2.13.0
+## 5. Install ADK 2.13.0 into the virtual environment
 
-1. Open Extensions (`Cmd+Shift+X` or `Ctrl+Shift+X`).
-2. Install **IBM watsonx Orchestrate ADK**.
-3. In the status bar, select the red ADK status indicator and install the ADK
-   into `.venv`.
-4. Confirm the installed version:
+In the Bob IDE status bar, select the red **ADK** status indicator and choose
+to install the ADK into `.venv`. Then confirm the installed version in the
+terminal:
 
 ```bash
 orchestrate --version
@@ -122,15 +148,16 @@ directly into `.venv` from a terminal in `bobchestrate-ws`:
     ./.venv/bin/python -m pip install ibm-watsonx-orchestrate==2.13.0
     ```
 
-Then activate `.venv` using the platform command in Step 3 and run
+Then activate `.venv` using the platform command in Step 4 and run
 `orchestrate --version` to confirm the installation.
 
 The first line must show `ADK Version: 2.13.0`. Ask the instructor before
 continuing if another version is installed.
 
-## 5. Initialise the workspace and MCP servers
+## 6. Initialise the workspace and MCP servers
 
-Use the Command Palette to run:
+Open the Command Palette (`Cmd+Shift+P` on macOS / `Ctrl+Shift+P` on Windows)
+and run each of the following commands in order:
 
 1. **watsonx Orchestrate: Initialise Workspace**
 2. **watsonx Orchestrate: Install WXO MCP Servers**
@@ -149,9 +176,10 @@ What watsonx Orchestrate MCP servers are available?
 ```
 
 Confirm that Bob reports both the ADK and ADK documentation servers. You can
-also inspect them from the Command Palette under **MCP Servers**.
+also inspect them from the Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`)
+by typing **MCP Servers**.
 
-## 6. Configure Bob for the workshop
+## 7. Configure Bob for the workshop
 
 The custom mode gives Bob a watsonx Orchestrate role and the tools it needs.
 The workspace rule applies the workshop's ADK 2.13.0 conventions, safety
@@ -163,7 +191,7 @@ requirements, and known pitfalls in every Bob mode.
    Your browser should save it automatically in your **Downloads** folder. If
    it opens the YAML instead, right-click the link and choose **Save Link As…**
    (or **Download Linked File** on macOS).
-2. Open the Command Palette and select **Modes**.
+2. Open the Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`) and type **Modes**, then press Enter.
 3. Select **Import** and choose the YAML file from your **Downloads** folder.
 4. After the import completes, select **WXO Agent Architect** in Bob chat.
 
@@ -202,7 +230,7 @@ Do not create or change files.
 Bob should mention ADK 2.13.0, the workshop folders, `snake_case`,
 `groq/openai/gpt-oss-120b`, the documentation MCP, and credential safety.
 
-## 7. Connect the workshop environment
+## 8. Connect the workshop environment
 
 Use the watsonx Orchestrate instance URL and API key from your own provisioned
 environment. Treat the API key like a password: do not paste it into chat, save
@@ -286,7 +314,7 @@ Before continuing, confirm:
 
 ??? question "`orchestrate: command not found`"
 
-    Activate `.venv` using the platform command in Step 3. If the ADK is still
+    Activate `.venv` using the platform command in Step 4. If the ADK is still
     absent, reinstall it from the extension's status indicator.
 
 ??? question "Authentication failed"
