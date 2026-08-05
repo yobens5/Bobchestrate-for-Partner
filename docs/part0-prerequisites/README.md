@@ -92,8 +92,10 @@ uv --version
 
 ## 1. Create a watsonx Orchestrate Instance on TechZone
 
-- [Reserve environment (direct)](https://techzone.ibm.com/collection/6939fccc3fc778c2abfc1e25/environments?platform=69fe3e8a6a38f6a7c980166c)
-- [watsonx Overview collection](https://techzone.ibm.com/collection/69c6bb3c694109c9b9a8abac/journey-watsonx-overview?platform=69caeeed05954196b4ae266c)
+- [Reserve environment (direct)](https://techzone.ibm.com/collection/69c6bb3c694109c9b9a8abac/journey-watsonx-overview?platform=69caeeed05954196b4ae266c)
+- [watsonx Overview collection](https://techzone.ibm.com/collection/69c6bb3c694109c9b9a8abac/journey-watsonx-overview)
+
+When creating the reservation, select **"watsonx Orchestrate Trial with CE"** as the reservation name.
 
 
 ---
