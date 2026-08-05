@@ -92,10 +92,10 @@ uv --version
 
 ## 1. Create a watsonx Orchestrate Instance on TechZone
 
-- [Reserve environment (direct)](https://techzone.ibm.com/collection/69c6bb3c694109c9b9a8abac/journey-watsonx-overview?platform=69caeeed05954196b4ae266c)
+- [Reserve environment (direct)](https://techzone.ibm.com/collection/69c6bb3c694109c9b9a8abac/journey-watsonx-overview?platform=69fc8b4940c49f77fbbc67b7)
 - [watsonx Overview collection](https://techzone.ibm.com/collection/69c6bb3c694109c9b9a8abac/journey-watsonx-overview)
 
-When opening the collection, select the **"watsonx Orchestrate Trial with CE"** reservation from the list, then pick **Americas** as the region.
+When opening the collection, select the **"watsonx Orchestrate essentials plan"** reservation from the list, then pick **Americas** as the region.
 
 **Reservation type — use Pilot:**
 
