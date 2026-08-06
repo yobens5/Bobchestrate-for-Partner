@@ -62,3 +62,9 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # On timeout this action cancels a deployment that is still
+          # progressing, turning a slow publish into a hard failure. The 10
+          # minute default is not enough when Pages is running slowly, so allow
+          # 30 minutes and let the deployment finish.
+          timeout: 1800000
