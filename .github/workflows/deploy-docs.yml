@@ -13,7 +13,10 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  # Queue deployments instead of cancelling them. Cancelling a run mid-deploy
+  # leaves the Pages backend holding an in-progress deployment, which makes the
+  # next run fail with "due to in progress deployment".
+  cancel-in-progress: false
 
 jobs:
   build:
