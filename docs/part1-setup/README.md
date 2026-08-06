@@ -156,11 +156,9 @@ continuing if another version is installed.
 
 ## 6. Initialise the workspace and MCP servers
 
-Open the Command Palette (`Cmd+Shift+P` on macOS / `Ctrl+Shift+P` on Windows)
-and run each of the following commands in order:
-
-1. **watsonx Orchestrate: Initialise Workspace**
-2. **watsonx Orchestrate: Install WXO MCP Servers**
+1. Click the **Extensions** icon in the left sidebar and open the **watsonx Orchestrate** extension.
+2. Click the **Initialise Workspace** button in the extension panel.
+3. Open the Command Palette (`Cmd+Shift+P` on macOS / `Ctrl+Shift+P` on Windows), type **watsonx Orchestrate: Install WXO MCP Servers**, and press Enter.
 
 Enter `2.13.0` when the MCP installer asks for a version.
 
@@ -191,8 +189,8 @@ requirements, and known pitfalls in every Bob mode.
    Your browser should save it automatically in your **Downloads** folder. If
    it opens the YAML instead, right-click the link and choose **Save Link As…**
    (or **Download Linked File** on macOS).
-2. Open the Command Palette (`Cmd+Shift+P` / `Ctrl+Shift+P`) and type **Modes**, then press Enter.
-3. Select **Import** and choose the YAML file from your **Downloads** folder.
+2. Open **Bob Settings** (gear icon ⚙️ in the bottom-right corner) and select **Modes**.
+3. Click the **import icon** (↓ down arrow) and choose the YAML file from your **Downloads** folder.
 4. After the import completes, select **WXO Agent Architect** in Bob chat.
 
 ### Install the workspace rule
@@ -230,18 +228,17 @@ Do not create or change files.
 Bob should mention ADK 2.13.0, the workshop folders, `snake_case`,
 `groq/openai/gpt-oss-120b`, the documentation MCP, and credential safety.
 
-## 8. Connect the workshop environment
+## 8. Connect Orchestrate environment
 
 Use the watsonx Orchestrate instance URL and API key from your own provisioned
 environment. Treat the API key like a password: do not paste it into chat, save
 it in source files, or commit it.
 
-In the watsonx Orchestrate extension:
-
-1. Open **Environment Manager** and select **Add**.
-2. Enter a short environment name and the supplied instance URL.
-3. Select the environment and choose **Activate**.
-4. Paste the API key only into the activation prompt.
+1. Click the **Extensions** icon in the left sidebar, then click on the **watsonx Orchestrate** extension under **Installed**.
+2. In the extension panel, open **Environment Manager** and select **Add**.
+3. Enter a short environment name and the supplied instance URL.
+4. Select the environment and choose **Activate**.
+5. Paste the API key only into the activation prompt.
 
 Verify the connection:
 

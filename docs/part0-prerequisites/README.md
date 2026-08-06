@@ -19,6 +19,38 @@ Before starting the workshop, make sure you have the following:
 
 ## Software Prerequisites
 
+### Homebrew (macOS)
+
+> **macOS only — Windows users skip this section.**
+
+Homebrew is the recommended package manager for macOS. It is used to install
+Python, `uv`, and other workshop dependencies.
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+The installer may prompt for your macOS password. After it finishes, follow
+any printed instructions to add Homebrew to your `PATH` (typically needed on
+Apple Silicon Macs):
+
+```bash
+# Apple Silicon (M1/M2/M3) — add to ~/.zprofile then reload
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Intel Macs — Homebrew is already on PATH, no extra step needed
+```
+
+Verify the installation:
+
+```bash
+brew --version
+```
+
+
+---
+
 ### Python 3.12
 
 The workshop is tested with **Python 3.12**. Use Python 3.12 for all workshop
@@ -111,6 +143,19 @@ If TechZone is unavailable, sign up for a free IBM watsonx Orchestrate trial acc
 [Start watsonx Orchestrate Trial](https://www.ibm.com/account/reg/us-en/signup?formid=urx-52753)
 
 The trial provides enough capacity to complete all workshop exercises. Use it only if the TechZone reservation cannot be completed in time.
+
+### Collect your instance URL and API key
+
+Once your watsonx Orchestrate instance is ready and you have opened it:
+
+1. Click your **account icon** in the top-right corner of the watsonx Orchestrate UI.
+2. Select **Settings**.
+3. Go to **API details**.
+4. Copy the **Instance URL** and save it in a safe place (e.g. a local notes file).
+5. Click **Generate API key**, copy the key immediately, and save it alongside the URL.
+
+!!! warning "Save both values now"
+    The API key is shown only once. If you navigate away without copying it you will need to generate a new one. You will need both the Instance URL and the API key in Part 1 to connect Bob to your Orchestrate environment.
 
 ---
 
