@@ -13,7 +13,7 @@ the agent can respond to a user but has no custom tools or knowledge base yet.
 
 ## Minimal native-agent structure
 
-ADK 2.13.0 requires `spec_version`, `name`, and `description` when importing a
+ADK 2.14.0 requires `spec_version`, `name`, and `description` when importing a
 native-agent YAML file. The workshop also writes `kind` and `llm` explicitly so
 the configuration is easy to review.
 
@@ -39,7 +39,7 @@ Ask Bob:
 ```text
 Create agents/hello-agent.yaml for a native watsonx Orchestrate agent named
 hello_world_agent. It should greet users and briefly introduce itself. Use the
-project rules and validate the YAML against ADK 2.13.0 before saving it.
+project rules and validate the YAML against ADK 2.14.0 before saving it.
 ```
 
 Alternatively, copy the YAML above or
@@ -57,7 +57,7 @@ Review the file before importing it. Confirm:
 Ask Bob:
 
 ```text
-Review agents/hello-agent.yaml against the project rules and ADK 2.13.0
+Review agents/hello-agent.yaml against the project rules and ADK 2.14.0
 documentation. If it is valid, import it into the active draft environment
 using the existing .venv, then verify that hello_world_agent is listed. Show me
 the command and result.
@@ -131,7 +131,7 @@ Test again and confirm that the new behavior appears.
 
     Check indentation and confirm that `spec_version`, `name`, and
     `description` are present. Ask Bob to validate the exact file against ADK
-    2.13.0 rather than rewriting it from memory.
+    2.14.0 rather than rewriting it from memory.
 
 ??? question "The agent is missing from the list"
 

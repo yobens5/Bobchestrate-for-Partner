@@ -19,7 +19,7 @@ Ask Bob:
 ```text
 Inspect customer_support_agent and its actual tool schemas. Create
 evaluation/config.yaml, evaluation/test-cases.jsonl, and
-evaluation/red-team-prompts.jsonl for ADK 2.13.0. Include a normal order lookup,
+evaluation/red-team-prompts.jsonl for ADK 2.14.0. Include a normal order lookup,
 invalid order ID, refund with missing information, grounded FAQ question,
 escalation case, and safe refusal case. Validate every JSONL line and the YAML.
 Use placeholders for environment-specific URL values and never write an API key.
@@ -39,7 +39,7 @@ Edit `evaluation/config.yaml`:
 - replace `<region>` and `<instance-id>` in `auth_config.url`
 - replace `<environment-name>` with the name shown by
   `orchestrate env list`
-- keep `wxo_lite_version: 2.13.0`
+- keep `wxo_lite_version: 2.14.0`
 
 Never put an API key in this file.
 
@@ -58,7 +58,7 @@ Ask Bob:
 
 ```text
 Check that evaluation/config.yaml contains the required non-secret environment
-values, then run the ADK 2.13.0 quick evaluation against the tools directory.
+values, then run the ADK 2.14.0 quick evaluation against the tools directory.
 Inspect the generated results and summarize failed cases, unexpected tool calls,
 schema mismatches, invented information, and the smallest likely fix for each.
 Do not change the agent yet.

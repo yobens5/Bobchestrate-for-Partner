@@ -20,7 +20,7 @@ Ask Bob in Code mode:
 ```text
 Create a local Python MCP product-catalog server under toolkits/ with tools for
 search, product details, inventory, and recommendations using small mock data.
-Also create requirements.txt, direct smoke tests, and an ADK 2.13.0 MCP toolkit
+Also create requirements.txt, direct smoke tests, and an ADK 2.14.0 MCP toolkit
 YAML. Create agents/product-assistant-agent.yaml using the correctly prefixed
 tool names. Run local syntax and smoke tests, validate the YAML files, and
 summarize the artifacts. Do not import yet.
@@ -82,7 +82,7 @@ tools:
 Ask Bob:
 
 ```text
-Review toolkits/product-catalog-toolkit.yaml against the ADK 2.13.0 MCP toolkit
+Review toolkits/product-catalog-toolkit.yaml against the ADK 2.14.0 MCP toolkit
 schema. If valid, import it into the active draft environment using the
 existing .venv. Verify the toolkit and all four product-catalog-prefixed tools
 are listed.

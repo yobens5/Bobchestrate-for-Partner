@@ -46,7 +46,7 @@ Never store provider API keys in YAML, scripts, or chat messages.
 Ask Bob:
 
 ```text
-Create models/retry-policy.yaml for ADK 2.13.0 as a model policy named
+Create models/retry-policy.yaml for ADK 2.14.0 as a model policy named
 workshop_model_retry. Use the tested workshop model as one target, two retries,
 and only transient 503 and 504 status codes. Validate the schema, show me the
 file, import it, and verify it is listed.
@@ -77,7 +77,7 @@ orchestrate models policy import -f models/retry-policy.yaml
 orchestrate models list
 ```
 
-The policy uses `kind: model`; `kind: model_policy` is not valid for ADK 2.13.0
+The policy uses `kind: model`; `kind: model_policy` is not valid for ADK 2.14.0
 policy files.
 
 ## 3. Apply the policy

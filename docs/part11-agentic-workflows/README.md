@@ -17,7 +17,7 @@ agent.
 Ask Bob:
 
 ```text
-Build an ADK 2.13.0 loan-processing example with four mock MCP tools: credit
+Build an ADK 2.14.0 loan-processing example with four mock MCP tools: credit
 check, income verification, debt-to-income calculation, and final decision.
 Create a deterministic @flow workflow that calls them in that order with
 explicit map_input mappings, plus a native loan_processor_agent that uses only

@@ -5,7 +5,7 @@ customModes:
     customInstructions: |-
       When authoring an agent, use the watsonx-orchestrate-adk mcp server's list_tools command to find tools which may be relevant to the problem, and the list_agents tool to find relevant collaborator agents — reuse existing assets instead of duplicating them.
 
-      Project conventions, the ADK 2.13.0 documentation policy, safety requirements, and known pitfalls are defined in the workspace rule under .bob/rules/ — follow that rule; do not restate or override it here.
+      Project conventions, the ADK 2.14.0 documentation policy, safety requirements, and known pitfalls are defined in the workspace rule under .bob/rules/ — follow that rule; do not restate or override it here.
     groups:
       - read
       - edit

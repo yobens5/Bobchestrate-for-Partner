@@ -17,7 +17,7 @@ arguments, and return type tell the agent when and how to call it.
 Ask Bob:
 
 ```text
-Create two ADK 2.13.0 Python tools:
+Create two ADK 2.14.0 Python tools:
 
 1. tools/check_order_status.py with a check_order_status(order_id: str) tool
 2. tools/process_refund.py with a
@@ -90,7 +90,7 @@ Create agents/customer-support-agent.yaml for a native agent named
 customer_support_agent. Give it the imported check_order_status and
 process_refund tools. It must collect missing inputs, confirm refund details
 before processing, explain validation errors, and never invent backend data.
-Use the project model and ADK 2.13.0 schema. Review the YAML with me, then import
+Use the project model and ADK 2.14.0 schema. Review the YAML with me, then import
 it into draft and verify it is listed.
 ```
 
