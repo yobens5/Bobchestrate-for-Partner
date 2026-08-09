@@ -185,7 +185,7 @@ orchestrate evaluations red-teaming plan \
   -d evaluation/datasets \
   -g agents \
   -t customer_support_agent \
-  -o evaluation/red-team-attacks \
+  -o evaluation/red-teaming-attacks \
   -n 2
 ```
 
@@ -197,8 +197,8 @@ Then run the generated attacks:
 
 ```bash
 orchestrate evaluations red-teaming run \
-  -a evaluation/red-team-attacks \
-  -o evaluation/red-team-results
+  -a evaluation/red-teaming-attacks \
+  -o evaluation/red-teaming-results
 ```
 
 Review the results for successful instruction overrides, prompt leakage,

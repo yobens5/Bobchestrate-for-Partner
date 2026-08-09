@@ -122,8 +122,11 @@ tools:
 Ask Bob:
 
 ```text
-Show me examples of questions I can ask product_assistant to test product
-search, details, inventory checks, recommendations, and missing-product handling.
+Validate agents/product-assistant-agent.yaml against the ADK 2.14.0 native
+agent schema, import it into the active draft environment, and verify
+product_assistant is listed. Then show me examples of questions I can ask it
+to test product search, details, inventory checks, recommendations, and
+missing-product handling.
 ```
 
 Manual fallback:

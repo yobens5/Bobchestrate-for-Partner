@@ -203,5 +203,7 @@ built yourself. The remaining differences are cosmetic or structural:
 - **Credentials of any kind.** No API keys, tokens, or `.env` files. The Part 1
   files use placeholders you fill in yourself.
 - **Optional modules.** Multi-agent orchestration, MCP servers, agentic
-  workflows, AI gateway models, and NL2SQL ship their own files inside their
-  own part folders.
+  workflows, and AI gateway models ship their own files inside their own part
+  folders.
+- **NL2SQL.** Mandatory, but ships its own files inside its own part folder
+  rather than this catalog.

@@ -97,17 +97,17 @@ For SaaS or on-premises environments:
 Ask Bob:
 
 ```text
-Show me the exact ADK command that will deploy customer_support_agent from
-draft to live and explain what it changes. Wait for my explicit confirmation.
-After I approve, run it and verify the agent's live status.
+Deploy all agents for this workshop — escalation_agent first, then
+customer_support_agent — from draft to live. After each deployment, verify
+the agent's live status and report any errors.
 ```
 
-Deployment is an external change. Review Bob's target environment and command
-before approving it.
+Bob will deploy both agents in dependency order and confirm live status for each.
 
-Manual fallback:
+Manual commands:
 
 ```bash
+orchestrate agents deploy --name escalation_agent
 orchestrate agents deploy --name customer_support_agent
 orchestrate agents list
 ```
@@ -149,6 +149,20 @@ Use the generated configuration in an HTML page that has:
 - an element with `id="root"`
 - the generated script inside `<body>`
 - the authentication mechanism required by your deployment
+
+### Testing the embedded chat locally
+
+By default, the webchat widget requires authentication and will refuse to load
+in a plain HTML file. To test it locally without a full auth setup:
+
+1. Open the **Orchestrate UI**
+2. Click the **user icon** in the top-right corner
+3. Choose **Settings**
+4. Go to the **Embed Security** tab
+5. **Disable** the Security toggle
+
+With Security disabled, the embed script will load without requiring a token.
+Re-enable it before using the widget in any shared or production environment.
 
 Do not publish workshop credentials or a publicly accessible unauthenticated
 chat.
