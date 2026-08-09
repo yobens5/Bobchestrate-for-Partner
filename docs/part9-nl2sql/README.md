@@ -25,12 +25,17 @@ PostgreSQL → Data discovery → NL2SQL configuration → Orchestrate draft age
 Open the verified
 [IBM CE NL2SQL Accelerator](https://agent-builder.2clsicnm3dwo.us-south.codeengine.appdomain.cloud/).
 
-Use only the shared database connection supplied by the instructor. Do not
-enter personal or production database credentials during the workshop.
+This step runs entirely in the accelerator's own web UI, not in Bob IDE.
 
 ## 2. Run data discovery
 
-Under **Database Connection**, keep the pre-filled workshop PostgreSQL values.
+Expand **Database Connection**. The workshop PostgreSQL values are normally
+already filled in — if they are, change nothing and start discovery.
+
+If the fields are empty, ask the instructor for the shared workshop database
+values and enter those. Do not enter personal or production database
+credentials.
+
 Start discovery and wait for it to complete.
 
 <video controls width="100%">
@@ -44,14 +49,19 @@ SQL quality.
 
 ## 3. Connect watsonx Orchestrate
 
-Under **WXO Settings**, enter:
+Expand **WXO Settings** and fill in the three fields. These are the **same two
+credentials you saved in
+[Prerequisites](../part0-prerequisites/README.md#collect-your-instance-url-and-api-key)**
+and used in Part 1 — there is no separate key to create here:
 
-- the workshop watsonx Orchestrate instance URL
-- your IBM Cloud API key
-- environment `draft`
+| Field in the accelerator | What to enter |
+|---|---|
+| **WXO URL** | Your Instance URL, pasted whole |
+| **WXO API Key** | Your watsonx Orchestrate API key |
+| **Environment Name** | `draft` |
 
-Treat the API key like a password. Enter it only in the accelerator's WXO
-settings form.
+Treat the API key like a password. Enter it only in this form, never in Bob
+chat.
 
 Select **Generate Agent**.
 

@@ -30,6 +30,19 @@ watsonx Orchestrate environment used by the later parts.
     type a command name and press Enter to run it — you will use it throughout
     this workshop.
 
+!!! info "Two different sidebars — you will need both"
+    Bob IDE has a narrow strip of icons down the far-left edge (the **Activity
+    Bar**). Two of those icons matter here and they are easy to mix up:
+
+    - The **Extensions** icon (four squares) opens the extension
+      *marketplace* — you use it once, in Step 3, to install the ADK extension.
+    - The **watsonx Orchestrate** icon opens the extension's own *panel*, which
+      contains **Explorer**, **Initialise Workspace**, and **Environment
+      Manager**. This is where Steps 6 and 8 happen.
+
+    Clicking the extension's name under **Extensions → Installed** only opens
+    its description page. It does **not** contain the buttons you need.
+
 ## 1. Create the participant project
 
 Create a new empty folder called **`bobchestrate-ws`** anywhere on your machine.
@@ -128,54 +141,98 @@ The PowerShell change applies only to the current terminal session.
 
 ## 5. Install ADK 2.14.0 into the virtual environment
 
-In the Bob IDE status bar — located in the **bottom-right corner**, next to the Settings (gear) icon — select the red **ADK** status indicator and choose
-to install the ADK into `.venv`. Then confirm the installed version in the
-terminal:
+In the Bob IDE status bar — located in the **bottom-right corner**, next to the
+Settings (gear) icon — the ADK extension shows a status indicator. It is **red**
+until the ADK is installed. Click it and choose the option to install the ADK
+into the `.venv` you created in Step 4.
+
+When the install finishes, the indicator turns green and shows the installed
+version:
 
 ![ADK status bar showing ADK 2.14.0 installed](images/adk-status-bar.png)
+
+Confirm the version in the terminal:
 
 ```bash
 orchestrate --version
 ```
 
-### Terminal fallback
+The first line must show `ADK Version: 2.14.0`.
 
-If the ADK extension installation is unavailable, install the pinned package
-directly into `.venv` from a terminal in `bobchestrate-ws`:
+!!! warning "If the version is not 2.14.0, or the button did not work"
+    The extension installs the newest ADK, which may be later than the version
+    this workshop is tested against. Either way, do not stop here and do not
+    ask the instructor — the next step installs the correct pinned version and
+    fixes both cases.
+
+### Add the evaluation dependencies
+
+**Everyone runs this step**, including participants for whom the extension
+button worked.
+
+Part 6 uses `orchestrate evaluations`, which needs an extra package that the
+ADK install does **not** include by default. The command below adds it, and at
+the same time pins the ADK to 2.14.0 — so it is also the fix if the extension
+installed a different version, or the way to install the ADK from scratch if
+the extension button was unavailable.
+
+Run it from a terminal in `bobchestrate-ws`:
 
 === "Windows PowerShell or Command Prompt"
 
     ```powershell
-    .\.venv\Scripts\python.exe -m pip install ibm-watsonx-orchestrate==2.14.0
+    .\.venv\Scripts\python.exe -m pip install "ibm-watsonx-orchestrate[agentops]==2.14.0"
     ```
 
 === "macOS"
 
     ```bash
-    ./.venv/bin/python -m pip install ibm-watsonx-orchestrate==2.14.0
+    ./.venv/bin/python -m pip install "ibm-watsonx-orchestrate[agentops]==2.14.0"
     ```
 
-Then activate `.venv` using the platform command in Step 4 and run
-`orchestrate --version` to confirm the installation.
+The command writes directly into `.venv`, so it works whether or not `.venv` is
+active in your terminal. Now activate `.venv` using the platform command in
+Step 4 and verify both results:
 
-The first line must show `ADK Version: 2.14.0`. Ask the instructor before
-continuing if another version is installed.
+```bash
+orchestrate --version
+```
+
+```bash
+orchestrate evaluations red-teaming list
+```
+
+The first must report `ADK Version: 2.14.0`. The second must print a list of
+attack plan names. If the second prints `No module named 'agentops'`, your
+terminal is using a different Python than `.venv` — activate `.venv` and try
+again.
+
+!!! danger "Do not run the `--upgrade` command the ADK suggests"
+    If you ever hit the `agentops` error, the ADK prints
+    `pip install --upgrade "ibm-watsonx-orchestrate[agentops]"`. Running that
+    moves you off 2.14.0 and breaks the workshop. Always install with the
+    `==2.14.0` pin shown above.
 
 ## 6. Initialise the workspace and MCP servers
 
-1. Click the **Extensions** icon in the left sidebar and open the **watsonx Orchestrate** extension.
-2. Click the **Initialise Workspace** button in the extension panel.
+1. Click the **watsonx Orchestrate** icon in the Activity Bar (the strip of
+   icons down the far-left edge). This opens the extension's own panel, titled
+   **WATSONX ORCHESTRATE**. Do not use **Extensions → Installed** for this —
+   that page has no buttons.
+2. The panel shows *"No workspace found. Please initialise a workspace to begin
+   building."* Click **Initialise Workspace**.
 
-    ![Initialise Workspace button in the watsonx Orchestrate extension panel](images/initialise-workspace.png)
+    ![The watsonx Orchestrate panel with the Initialise Workspace button](images/initialise-workspace.png)
 
 3. Open the Command Palette (`Cmd+Shift+P` on macOS / `Ctrl+Shift+P` on Windows), type **watsonx Orchestrate: Install WXO MCP Servers**, and press Enter.
 
 Enter `2.14.0` when the MCP installer asks for a version.
 
-Open **Settings → MCP** and confirm that both
-`watsonx-orchestrate-adk` and `watsonx-orchestrate-adk-docs` are **green** and
-show **Connected**. If either server is not green and connected, stop and ask
-the instructor for help before continuing.
+Open **Bob Settings** (the ⚙️ gear in the **bottom-right** corner of the window,
+next to the ADK indicator — not the VS Code settings gear) and select **MCP**.
+Confirm that both `watsonx-orchestrate-adk` and `watsonx-orchestrate-adk-docs`
+are **green** and show **Connected**. If either server is not green and
+connected, stop and ask the instructor for help before continuing.
 
 Open Bob chat and ask:
 
@@ -201,20 +258,27 @@ requirements, and known pitfalls in every Bob mode.
    (or **Download Linked File** on macOS).
 2. Open **Bob Settings** (gear icon ⚙️ in the bottom-right corner) and select **Modes**.
 3. Click the **import icon** (↓ down arrow) and choose the YAML file from your **Downloads** folder.
-4. After the import completes, select **WXO Agent Architect** in Bob chat.
+4. After the import completes, open Bob chat and use the **mode selector** in
+   the chat input box — the small dropdown on the bottom-left of the box that
+   shows the current mode (for example **Agent ⌄**). Select
+   **WXO Agent Architect** from the list.
 
 ### Install the workspace rule
 
 <a href="files/wxo-dev-rule-enhanced.txt" download="wxo-dev-rule-enhanced.md">Download the workshop workspace rule</a>.
-The downloaded file is named `wxo-dev-rule-enhanced.md`.
 
-Move it from **Downloads** into `.bob/rules/`:
+Now check what actually landed in your **Downloads** folder. A normal
+left-click saves it as `wxo-dev-rule-enhanced.md`, but if you used
+**Save Link As…** your browser may have kept the original `.txt` extension.
+
+Move it from **Downloads** into `.bob/rules/`, using the terminal that is open
+in your `bobchestrate-ws` project:
 
 === "Windows PowerShell"
 
     ```powershell
     New-Item -ItemType Directory -Force -Path .bob\rules
-    Move-Item "$env:USERPROFILE\Downloads\wxo-dev-rule-enhanced.md" `
+    Move-Item "$env:USERPROFILE\Downloads\wxo-dev-rule-enhanced.*" `
       .bob\rules\wxo-dev-rule-enhanced.md -Force
     ```
 
@@ -222,8 +286,13 @@ Move it from **Downloads** into `.bob/rules/`:
 
     ```bash
     mkdir -p .bob/rules
-    mv ~/Downloads/wxo-dev-rule-enhanced.md .bob/rules/
+    mv ~/Downloads/wxo-dev-rule-enhanced.* .bob/rules/wxo-dev-rule-enhanced.md
     ```
+
+Both commands accept either extension and always leave the file named
+`wxo-dev-rule-enhanced.md`, which is the name Bob looks for. If the command
+reports "No such file", the download did not reach your Downloads folder — check
+your browser's download bar and repeat the download.
 
 Start a new Bob task after installing the rule.
 
@@ -240,18 +309,38 @@ Bob should mention ADK 2.14.0, the workshop folders, `snake_case`,
 
 ## 8. Connect Orchestrate environment
 
-Use the watsonx Orchestrate instance URL and API key from your own provisioned
-environment. Treat the API key like a password: do not paste it into chat, save
-it in source files, or commit it.
+You need the **Instance URL** and **API key** you saved in
+[Prerequisites](../part0-prerequisites/README.md#collect-your-instance-url-and-api-key).
+These are your own values from the environment you provisioned — nobody hands
+them to you during the workshop. Treat the API key like a password: do not paste
+it into Bob chat, save it in source files, or commit it.
 
-1. Click the **Extensions** icon in the left sidebar, then click on the **watsonx Orchestrate** extension under **Installed**.
-2. In the extension panel, open **Environment Manager** and select **Add**.
+1. Click the **watsonx Orchestrate** icon in the Activity Bar (the same icon you
+   used in Step 6 — *not* Extensions → Installed).
+2. Scroll to the **ENVIRONMENT MANAGER** section at the bottom of that panel and
+   click **Add ＋**.
 
-    ![Environment Manager showing the Add button and Activate option](images/environment-manager-add-environment.png)
+    ![The Environment Manager section, showing the Add and Activate buttons](images/environment-manager-add-environment.png)
 
-3. Enter a short environment name and the supplied instance URL.
-4. Select the environment and choose **Activate**.
-5. Paste the API key only into the activation prompt.
+3. Bob prompts you for two values, one after the other, in an input box at the
+   **top** of the window:
+
+    | Prompt | What to enter |
+    |---|---|
+    | Environment name | A short name you invent, e.g. `bobchestrate-demo`. Write it down — later commands ask for it. |
+    | Instance URL | The Instance URL you saved in Prerequisites, pasted whole. |
+
+4. Your new environment now appears in the **Environment:** dropdown. Select it,
+   then click **Activate**.
+
+    ![The environment selected in the Environment Manager dropdown](images/environment-manager-api-key.png)
+
+5. Bob prompts for the API key. Paste it into **this prompt only**. The
+   characters appear masked.
+
+6. A notification confirms the environment is active:
+
+    ![Notification reading Environment "bobchestrate-demo" is now active](images/environment-manager-extension-view.png)
 
 Verify the connection:
 
@@ -304,15 +393,24 @@ bobchestrate-ws/
 ├── toolkits/
 ├── connections/
 ├── models/
-├── knowledge_bases/
+├── knowledge-bases/
 └── workspace_config.yaml
 ```
 
-Empty folders are expected.
+Empty folders are expected. Later parts add two more folders — `evaluation/` in
+Part 6 and, if you take the optional MCP module, files under `toolkits/`. You do
+not need to create them now.
+
+!!! note "`knowledge-bases` uses a hyphen"
+    The folder on disk is `knowledge-bases`, while the setting that points at it
+    inside `workspace_config.yaml` is spelled `knowledge_bases`. That is normal —
+    check your own `workspace_config.yaml` and use whichever folder name it
+    lists.
 
 Before continuing, confirm:
 
 - `orchestrate --version` reports ADK 2.14.0
+- `orchestrate evaluations red-teaming list` prints a list of attack names
 - `orchestrate agents list` succeeds
 - WXO Agent Architect mode is selected
 - `.bob/rules/wxo-dev-rule-enhanced.md` exists
@@ -328,6 +426,16 @@ Before continuing, confirm:
 
     Activate `.venv` using the platform command in Step 4. If the ADK is still
     absent, reinstall it from the extension's status indicator.
+
+    This is the most common error in every later part too. Each **new** terminal
+    must have `.venv` active — look for `(.venv)` at the start of the prompt
+    before running any `orchestrate` command.
+
+??? question "`No module named 'agentops'`"
+
+    The evaluation dependencies are missing. Install them with the pinned
+    command in [Step 5](#add-the-evaluation-dependencies). Do **not** use the
+    `--upgrade` form the error message suggests — it moves you off ADK 2.14.0.
 
 ??? question "Authentication failed"
 
@@ -349,8 +457,21 @@ Before continuing, confirm:
     Use this Windows-only fallback only if the regular MCP setup does not work.
     Download the
     <a href="../solution/bob-config/mcp-windows-fallback.json" download="mcp.json">Windows fallback mcp.json</a>
-    and replace `.bob/mcp.json`, then reload Bob. Do not use this fallback on
-    macOS.
+    and replace `.bob/mcp.json`. Do not use this fallback on macOS.
+
+    **You must edit the file before reloading Bob.** It ships with a
+    placeholder:
+
+    ```json
+    "WXO_MCP_WORKING_DIRECTORY": "<ABSOLUTE_PATH_TO_YOUR_WORKSPACE>"
+    ```
+
+    Replace the placeholder — quotes included — with the full path to your
+    `bobchestrate-ws` folder, for example
+    `C:\\Users\\yourname\\bobchestrate-ws`. In Bob IDE you can copy that path by
+    right-clicking the project folder in the file Explorer and choosing **Copy
+    Path**. Leaving the placeholder in place stops the ADK MCP server from
+    starting. Reload Bob after saving.
 
     A common Windows cause is an incompatible `mcp` SDK selected by
     `mcp-proxy`. Because its dependency range has no upper bound, the resolver

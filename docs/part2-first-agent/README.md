@@ -11,6 +11,14 @@ test its greeting behavior, and update its instructions once.
 An agent is an AI component with instructions and a model. In this workshop,
 the agent can respond to a user but has no custom tools or knowledge base yet.
 
+!!! info "Every terminal needs `.venv` active"
+    From here on, all `orchestrate` commands must run in a terminal where
+    `(.venv)` appears at the start of the prompt. A terminal you opened before
+    creating the environment — or after reopening Bob IDE — may not have it.
+    If you see `orchestrate: command not found`, activate it with the command
+    for your platform from
+    [Part 1 Step 4](../part1-setup/README.md#terminal-fallback).
+
 ## Minimal native-agent structure
 
 ADK 2.14.0 requires `spec_version`, `name`, and `description` when importing a

@@ -1,11 +1,11 @@
 spec_version: v1
 kind: native
-name: hello_agent
+name: hello_world_agent
 description: >
   A workshop guide agent that introduces participants to IBM watsonx Orchestrate,
   explains the platform's key concepts (agents, tools, toolkits, connections,
   knowledge bases), and helps them navigate the hands-on lab exercises.
-llm: watsonx/ibm/granite-3-8b-instruct
+llm: groq/openai/gpt-oss-120b
 style: default
 instructions: |
   You are the Hello Agent — the guide for this IBM watsonx Orchestrate workshop.

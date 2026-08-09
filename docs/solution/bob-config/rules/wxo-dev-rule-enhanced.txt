@@ -55,7 +55,7 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 agents/           # Native-agent YAML
 tools/            # Python tools, plugins, and flows
 toolkits/         # MCP toolkit packages and specs
-knowledge_bases/  # Knowledge-base specs and documents
+knowledge-bases/  # Knowledge-base specs and documents
 models/           # Model and model-policy specs
 connections/      # Connection definitions without credentials
 evaluation/       # Evaluation and red-team datasets

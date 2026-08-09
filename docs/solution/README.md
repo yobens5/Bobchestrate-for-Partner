@@ -56,7 +56,13 @@ your-project/
 | <a href="scripts/add-wxo-env.sh" download="add-wxo-env.sh">scripts/add-wxo-env.sh</a> | `add-wxo-env.sh` (optional helper) |
 
 Edit `.bob/mcp.json` and replace `<ABSOLUTE_PATH_TO_YOUR_WORKSPACE>` with the
-full path to your project folder, then reload the Bob IDE window.
+full path to your project folder, then reload the Bob IDE window. Leaving the
+placeholder in place stops the ADK MCP server from starting.
+
+The rule file is stored with a `.txt` extension so the documentation site
+serves it. Whatever your browser saves it as, rename it to
+`wxo-dev-rule-enhanced.md` inside `.bob/rules/` — that is the name Bob looks
+for.
 
 Use `bob-config/mcp.json` for the regular setup. Windows users should use the
 <a href="bob-config/mcp-windows-fallback.json" download="mcp.json">Windows fallback mcp.json</a>
@@ -115,16 +121,23 @@ Wait for the knowledge base to finish indexing before testing FAQ answers.
 
 | File | Copy to |
 |---|---|
-| <a href="tools/data_access_guardrail.py" download="data_access_guardrail.py">tools/data_access_guardrail.py</a> | `tools/data_access_guardrail.py` |
+| <a href="tools/content_safety_plugin.py" download="content_safety_plugin.py">tools/content_safety_plugin.py</a> | `tools/content_safety_plugin.py` |
 | <a href="agents/customer_support_agent.yaml" download="customer_support_agent.yaml">agents/customer_support_agent.yaml</a> | `agents/customer_support_agent.yaml` |
 
 ```bash
-orchestrate tools import -k python -f tools/data_access_guardrail.py -r requirements.txt
+orchestrate tools import -k python -f tools/content_safety_plugin.py -r requirements.txt
 orchestrate agents import -f agents/customer_support_agent.yaml
 ```
 
 This is the final state of the main agent: tools, knowledge base, collaborator,
 guidelines, and the pre-invoke guardrail plugin.
+
+!!! note "A second guardrail is included"
+    <a href="tools/data_access_guardrail.py" download="data_access_guardrail.py">tools/data_access_guardrail.py</a>
+    is an alternative pre-invoke plugin that focuses on unauthorized data
+    access rather than content safety. The agent above does not reference it.
+    To try it instead, import it and change `plugin_name` to
+    `data_access_guardrail`.
 
 ### Part 6: Evaluation & Red-Teaming
 
@@ -134,8 +147,11 @@ guidelines, and the pre-invoke guardrail plugin.
 | `evaluation/datasets/*.json` (12 files) | `evaluation/datasets/` |
 | `evaluation/red-teaming-attacks/*.json` (24 files) | `evaluation/red-teaming-attacks/` |
 
-Fill in `<region>`, `<instance-id>`, and `<environment-name>` in
-`evaluation/config.yaml` before running. Never add an API key to that file.
+These commands need the evaluation dependencies from
+[Part 1 Step 5](../part1-setup/README.md#add-the-evaluation-dependencies).
+`evaluation/config.yaml` needs no editing: the ADK reuses the environment you
+activated in Part 1. Do not add an `auth_config` block — it overrides the
+authentication token the ADK already holds. Never add an API key to that file.
 
 ```bash
 orchestrate evaluations quick-eval -c evaluation/config.yaml -t tools
@@ -155,23 +171,25 @@ Deployment produces no new files. Use the Part 5 agent state above, then follow
 ## Known differences from the walkthrough text
 
 This snapshot is one completed run of the workshop, not a regenerated copy of
-the examples embedded in each part. A few things differ:
+the examples embedded in each part. Agent, tool, knowledge-base, and plugin
+**names** match the walkthrough, so you can mix files from here with files you
+built yourself. The remaining differences are cosmetic or structural:
 
-- Agent files use `customer_support_agent.yaml` (underscores); the part
+- Agent **filenames** use underscores (`customer_support_agent.yaml`); the part
   instructions write `customer-support-agent.yaml`. Only the `name:` field
-  inside the YAML matters to the platform.
-- The greeting agent here is named `hello_agent`, while
-  [Part 2](../part2-first-agent/README.md) uses `hello_world_agent`.
-- The guardrail plugin here is `data_access_guardrail`;
-  [Part 5](../part5-guidelines-guardrails/README.md) builds
-  `content_safety_guardrail`. They solve overlapping problems in different ways
-  — either one satisfies the checkpoint.
-- The knowledge base is built from `FAQ.pdf`, and the evaluation datasets are
-  one JSON file per case (the layout the ADK's red-teaming commands produce)
-  rather than a single JSONL file.
+  inside the YAML matters to the platform — but if you copy a file from here,
+  use the filename in the import command you run.
+- The knowledge base is built from `FAQ.pdf` rather than the
+  `customer-support-faq.txt` used in
+  [Part 4](../part4-knowledge/README.md). The knowledge-base name is
+  `customer_support_faq` in both.
+- The instructions and guidelines here are longer and more detailed than the
+  minimal examples in the parts. Both satisfy the checkpoints.
 - `agents/customer_support_agent.part4.yaml` and `.part5.yaml` are the final
   agent with the later parts' sections removed, so each one imports cleanly at
   that stage of the workshop.
+- `tools/data_access_guardrail.py` is an extra alternative guardrail that no
+  agent here references. See the note under Part 5 above.
 
 ## Not included
 

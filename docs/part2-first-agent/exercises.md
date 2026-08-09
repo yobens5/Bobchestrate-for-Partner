@@ -7,7 +7,7 @@ Complete these only after `hello_world_agent` passes the main checkpoint.
 Ask Bob to create `agents/workshop_guide.yaml` for an agent that:
 
 - welcomes participants
-- explains the nine mandatory parts
+- explains the eight mandatory parts
 - answers in no more than four sentences
 - says when it does not know an answer
 

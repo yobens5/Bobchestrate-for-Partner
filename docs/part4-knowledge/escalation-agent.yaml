@@ -49,7 +49,7 @@ tools:
 
 # And access the same knowledge base
 knowledge_base:
-  - customer-support-faq
+  - customer_support_faq
 
 # Agent configuration
 hidden: false

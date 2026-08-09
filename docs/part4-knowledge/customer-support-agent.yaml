@@ -10,7 +10,7 @@ instructions: |
   Your capabilities:
   - Check order status using the check_order_status tool
   - Process refund requests using the process_refund tool (up to $10,000)
-  - Answer questions using the customer-support-faq knowledge base
+  - Answer questions using the customer_support_faq knowledge base
   - Escalate complex issues to the escalation_agent
   
   When answering questions:
@@ -56,7 +56,7 @@ tools:
 
 # Knowledge bases this agent can access
 knowledge_base:
-  - customer-support-faq
+  - customer_support_faq
 
 # Collaborator agents this agent can delegate to
 collaborators:

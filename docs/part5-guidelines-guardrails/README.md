@@ -73,6 +73,23 @@ agents/customer-support-agent.yaml, and re-import the agent. Show me each result
 
 Review Bob's version against the tested
 <a href="content_safety_plugin.py" download="content_safety_plugin.py">content_safety_plugin.py</a>.
+If you use the tested file instead of Bob's, move it into `tools/`:
+
+=== "Windows PowerShell"
+
+    ```powershell
+    Move-Item "$env:USERPROFILE\Downloads\content_safety_plugin.py" tools\ -Force
+    ```
+
+=== "macOS"
+
+    ```bash
+    mv ~/Downloads/content_safety_plugin.py tools/
+    ```
+
+The file is named `content_safety_plugin.py`, but the guardrail it defines is
+named `content_safety_guardrail` — that second name is what appears in
+`orchestrate tools list` and what you reference in the agent YAML.
 
 This workshop plugin detects a small set of sensitive-data and prompt-injection
 patterns. It is intentionally simple and must not be treated as a production

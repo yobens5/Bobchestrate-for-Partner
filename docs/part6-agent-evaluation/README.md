@@ -12,56 +12,110 @@ You will create a repeatable functional evaluation dataset, run it against the
 customer-support agent, generate adversarial red-team tests, and re-evaluate
 after fixing confirmed failures.
 
+!!! warning "Check this before you start"
+    The evaluation commands live in a package that the base ADK install does
+    not include. Run this first:
+
+    ```bash
+    orchestrate evaluations red-teaming list
+    ```
+
+    If it prints a list of attack names, you are ready. If it prints
+    `No module named 'agentops'`, install the dependencies as described in
+    [Part 1 Step 5](../part1-setup/README.md#add-the-evaluation-dependencies)
+    — using the `==2.14.0` pin, **not** the `--upgrade` command in the error
+    message.
+
 ## 1. Prepare the evaluation files
 
 Ask Bob:
 
 ```text
-Inspect customer_support_agent and its actual tool schemas. Create
-evaluation/config.yaml, evaluation/test-cases.jsonl, and
-evaluation/red-team-prompts.jsonl for ADK 2.14.0. Include a normal order lookup,
-invalid order ID, refund with missing information, grounded FAQ question,
-escalation case, and safe refusal case. Validate every JSONL line and the YAML.
-Use placeholders for environment-specific URL values and never write an API key.
-Explain what I must fill in before running the evaluation.
+Inspect customer_support_agent and its actual tool schemas. Create an ADK 2.14.0
+evaluation setup: evaluation/config.yaml plus one JSON dataset file per case
+under evaluation/datasets/. Each dataset file needs the ADK fields agent, goals,
+goal_details, story, and starting_sentence. Cover a normal order lookup, an
+invalid order ID, and a refund that the tool rejects. Validate every file. Do
+not add an auth_config block and never write an API key — the ADK reuses the
+environment I activated in Part 1.
 ```
 
-Download the tested starter files to your browser's default download folder:
+Download the tested starter files:
 
 - <a href="evaluation/config.yaml" download="config.yaml">config.yaml</a>
-- <a href="evaluation/test-cases.jsonl" download="test-cases.jsonl">test-cases.jsonl</a>
-- <a href="evaluation/red-team-prompts.jsonl" download="red-team-prompts.jsonl">red-team-prompts.jsonl</a>
+- <a href="evaluation/datasets/happy_path_01_order_status.json" download="happy_path_01_order_status.json">happy_path_01_order_status.json</a>
+- <a href="evaluation/datasets/edge_case_01_invalid_order_id.json" download="edge_case_01_invalid_order_id.json">edge_case_01_invalid_order_id.json</a>
+- <a href="evaluation/datasets/error_scenario_01_refund_invalid_reason.json" download="error_scenario_01_refund_invalid_reason.json">error_scenario_01_refund_invalid_reason.json</a>
+
+`config.yaml` goes in `evaluation/`; the three dataset files go in
+`evaluation/datasets/`. Run this in the Bob IDE terminal, from your
+`bobchestrate-ws` folder:
+
+=== "Windows PowerShell"
+
+    ```powershell
+    New-Item -ItemType Directory -Force -Path evaluation\datasets
+    Move-Item "$env:USERPROFILE\Downloads\config.yaml" evaluation\ -Force
+    Move-Item "$env:USERPROFILE\Downloads\happy_path_01_order_status.json" `
+      evaluation\datasets\ -Force
+    Move-Item "$env:USERPROFILE\Downloads\edge_case_01_invalid_order_id.json" `
+      evaluation\datasets\ -Force
+    Move-Item "$env:USERPROFILE\Downloads\error_scenario_01_refund_invalid_reason.json" `
+      evaluation\datasets\ -Force
+    ```
+
+=== "macOS"
+
+    ```bash
+    mkdir -p evaluation/datasets
+    mv ~/Downloads/config.yaml evaluation/
+    mv ~/Downloads/happy_path_01_order_status.json \
+       ~/Downloads/edge_case_01_invalid_order_id.json \
+       ~/Downloads/error_scenario_01_refund_invalid_reason.json \
+       evaluation/datasets/
+    ```
+
+You should end up with:
+
+```text
+bobchestrate-ws/
+└── evaluation/
+    ├── config.yaml
+    └── datasets/
+        ├── happy_path_01_order_status.json
+        ├── edge_case_01_invalid_order_id.json
+        └── error_scenario_01_refund_invalid_reason.json
+```
 
 Compare Bob's output with the downloaded files.
 
-Edit `evaluation/config.yaml`:
-
-- replace `<region>` and `<instance-id>` in `auth_config.url`
-- replace `<environment-name>` with the name shown by
-  `orchestrate env list`
-- keep `wxo_lite_version: 2.14.0`
-
-Never put an API key in this file.
+!!! info "There is nothing to fill in"
+    `config.yaml` needs no editing. The ADK takes the service URL, the
+    environment name, and the authentication token from the environment you
+    activated in Part 1. If you add an `auth_config` block by hand, it replaces
+    those values *including the token*, and the evaluation then fails to
+    authenticate.
 
 The functional dataset contains:
 
 - a normal order-status request
 - an invalid order ID
-- a refund request with missing required information
+- a refund the tool rejects because the reason is too short
 
 Review each expected result against the actual tool names and behavior in your
-project.
+project. If your tools return different values than the tested ones, update the
+`keywords` and `response` fields to match what your agent actually says.
 
 ## 2. Run quick evaluation
 
 Ask Bob:
 
 ```text
-Check that evaluation/config.yaml contains the required non-secret environment
-values, then run the ADK 2.14.0 quick evaluation against the tools directory.
-Inspect the generated results and summarize failed cases, unexpected tool calls,
-schema mismatches, invented information, and the smallest likely fix for each.
-Do not change the agent yet.
+Run the ADK 2.14.0 quick evaluation using evaluation/config.yaml against the
+tools directory, with the environment I activated in Part 1. Inspect the
+generated results and summarize failed cases, unexpected tool calls, schema
+mismatches, invented information, and the smallest likely fix for each. Do not
+change the agent yet.
 ```
 
 Manual fallback:
@@ -87,15 +141,18 @@ failures.
 Choose a prompt that behaved incorrectly in Part 5. Ask Bob:
 
 ```text
-Add one evaluation record for this failure to evaluation/test-cases.jsonl.
-Match the existing JSONL format and the actual customer_support_agent tool
-names. Validate that every non-comment line is valid JSON.
+Add one evaluation case for this failure as a new JSON file in
+evaluation/datasets/. Match the structure of the existing dataset files and the
+actual customer_support_agent tool names, then add the new file to test_paths in
+evaluation/config.yaml. Validate that the file is valid JSON.
 
 Failure:
 <paste prompt, observed response, and expected behavior>
 ```
 
-Run quick evaluation again and confirm that the new case appears in the result.
+Each case is its own file, and `config.yaml` must list it under `test_paths` or
+it will not run. Run quick evaluation again and confirm that the new case
+appears in the result.
 
 ## 4. Generate red-team attacks
 
@@ -105,14 +162,17 @@ List the attack plans supported by your installed ADK:
 orchestrate evaluations red-teaming list
 ```
 
+Use only names that appear in that list — the attack names differ between ADK
+versions.
+
 Ask Bob:
 
 ```text
 List the red-team attacks supported by the installed ADK, then generate a small
 set for customer_support_agent using instruction_override, jailbreaking, and
-crescendo_prompt_leakage with two variants each. Use the existing evaluation
-data and agent directory. Run the generated attacks, inspect the results, and
-summarize successful attacks without changing files.
+crescendo_prompt_leakage with two variants each. Use evaluation/datasets as the
+dataset path and agents as the agent directory. Run the generated attacks,
+inspect the results, and summarize successful attacks without changing files.
 ```
 
 Manual fallback:
@@ -120,12 +180,16 @@ Manual fallback:
 ```bash
 orchestrate evaluations red-teaming plan \
   -a "instruction_override,jailbreaking,crescendo_prompt_leakage" \
-  -d evaluation/red-team-prompts.jsonl \
+  -d evaluation/datasets \
   -g agents \
   -t customer_support_agent \
   -o evaluation/red-team-attacks \
   -n 2
 ```
+
+The `-d` option takes the **same dataset files** you evaluated in Step 2, not a
+list of attack prompts. The generator uses each case as the starting point for
+an attack, which is why the generated filenames repeat your dataset names.
 
 Then run the generated attacks:
 
@@ -137,6 +201,12 @@ orchestrate evaluations red-teaming run \
 
 Review the results for successful instruction overrides, prompt leakage,
 fabricated customer data, and unsafe tool calls.
+
+!!! tip "Extra prompts to try by hand"
+    <a href="evaluation/red-team-prompts.jsonl" download="red-team-prompts.jsonl">red-team-prompts.jsonl</a>
+    is a list of twenty adversarial prompts with the behavior each one should
+    produce. It is **not** an input to any command — paste the prompts into
+    `orchestrate chat ask` yourself when you want to probe the agent manually.
 
 ## 5. Fix and re-evaluate
 
@@ -170,7 +240,7 @@ regression test.
 
 ## Checkpoint
 
-- [ ] The configuration points to the correct SaaS environment
+- [ ] `orchestrate evaluations red-teaming list` runs without an import error
 - [ ] Quick evaluation produces results
 - [ ] At least one observed behavior is preserved as a test
 - [ ] Red-team attacks are generated and executed
@@ -180,19 +250,30 @@ regression test.
 
 ## Troubleshooting
 
+??? question "`No module named 'agentops'`"
+
+    The evaluation dependencies are not installed. Follow
+    [Part 1 Step 5](../part1-setup/README.md#add-the-evaluation-dependencies).
+    Use the `==2.14.0` pin, not the `--upgrade` command the error suggests.
+
 ??? question "Evaluation cannot authenticate"
 
-    Confirm the URL and environment name in `config.yaml`, then reactivate the
-    environment with `orchestrate env activate <environment-name>`.
+    First check that `evaluation/config.yaml` has **no** `auth_config` block —
+    adding one by hand overrides the token the ADK obtained when you activated
+    the environment. Then reactivate with
+    `orchestrate env activate <environment-name>` and confirm with
+    `orchestrate agents list`.
 
 ??? question "The target agent is not found"
 
     Confirm that `agents/customer-support-agent.yaml` contains
     `name: customer_support_agent` and that `-g agents` points to its directory.
 
-??? question "A JSONL file is rejected"
+??? question "A dataset file is rejected"
 
-    Each record must occupy one line and be valid JSON. Comments are not JSON;
-    remove them if the command does not accept comment lines.
+    Each case is a single JSON file containing `agent`, `goals`, `goal_details`,
+    `story`, and `starting_sentence`. JSON does not allow comments or trailing
+    commas. Every file you want to run must also be listed under `test_paths`
+    in `evaluation/config.yaml`.
 
 [Continue to Part 7: Deployment →](../part7-deployment/README.md)

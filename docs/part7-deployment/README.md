@@ -19,7 +19,7 @@ Do not deploy until:
 - `customer_support_agent` passes the agreed functional tests
 - red-team results have no unresolved critical failures
 - both Python tools are imported and working
-- `customer-support-faq` has finished indexing
+- `customer_support_faq` has finished indexing
 - `escalation_agent` is available
 - no API key or personal data is stored in project files
 
@@ -65,7 +65,7 @@ orchestrate tools import -k python \
   -r requirements.txt
 
 orchestrate knowledge-bases import \
-  -f knowledge_bases/faq-knowledge-base.yaml
+  -f knowledge-bases/faq-knowledge-base.yaml
 
 orchestrate agents import -f agents/escalation-agent.yaml
 orchestrate agents import -f agents/customer-support-agent.yaml

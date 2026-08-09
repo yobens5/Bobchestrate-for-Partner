@@ -1,3 +1,0 @@
-{"input": "What is the status of order ORD-12345?", "expected_output": "check_order_status tool called with order_id='ORD-12345'", "metadata": {"category": "happy_path", "tool": "check_order_status"}}
-{"input": "Check order INVALID-999", "expected_output": "A clear validation error explaining the required ORD-12345 format", "metadata": {"category": "edge_case", "tool": "check_order_status"}}
-{"input": "I need a refund", "expected_output": "The agent asks for the missing order ID, reason, and amount before calling process_refund", "metadata": {"category": "error", "tool": "process_refund"}}

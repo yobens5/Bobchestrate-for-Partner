@@ -1,12 +1,12 @@
 # Evaluation configuration for the workshop SaaS environment.
 #
-# Fill in the two placeholders below before running. Never put an API key in
-# this file — authenticate with `orchestrate env activate <name> --api-key ...`
-# and the ADK supplies the token itself.
-
-auth_config:
-  url: https://api.<region>.watson-orchestrate.cloud.ibm.com/instances/<instance-id>
-  tenant_name: <environment-name>
+# There is nothing to fill in. The ADK reads the service URL, the environment
+# name, and the authentication token from the environment you activated in
+# Part 1 with `orchestrate env activate <name>`.
+#
+# Do not add an auth_config block by hand: it replaces those values including
+# the token, which makes the evaluation fail to authenticate. Never put an API
+# key in this file.
 
 test_paths:
   - evaluation/datasets/happy_path_01_check_order_shipped.json

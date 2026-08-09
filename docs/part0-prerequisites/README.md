@@ -154,8 +154,33 @@ Once your watsonx Orchestrate instance is ready and you have opened it:
 4. Copy the **Instance URL** and save it in a safe place (e.g. a local notes file).
 5. Click **Generate API key**, copy the key immediately, and save it alongside the URL.
 
+The Instance URL looks like this:
+
+```text
+https://api.us-south.watson-orchestrate.cloud.ibm.com/instances/20250101-1234-5678-abcd-1234567890ab
+```
+
 !!! warning "Save both values now"
-    The API key is shown only once. If you navigate away without copying it you will need to generate a new one. You will need both the Instance URL and the API key in Part 1 to connect Bob to your Orchestrate environment.
+    The API key is shown only once. If you navigate away without copying it you will need to generate a new one.
+
+#### These are the only two credentials the workshop needs
+
+You will be asked for the same two values in several places. There is no second
+key and no separate IBM Cloud key to create — whenever a step asks for "the API
+key" or "the instance URL", it means these:
+
+| Value | Where you use it |
+|---|---|
+| **Instance URL** | [Part 1 §8](../part1-setup/README.md#8-connect-orchestrate-environment) (Environment Manager → Add) and [Part 8 §3](../part9-nl2sql/README.md#3-connect-watsonx-orchestrate) (accelerator field **WXO URL**) |
+| **API key** | [Part 1 §8](../part1-setup/README.md#8-connect-orchestrate-environment) (activation prompt) and [Part 8 §3](../part9-nl2sql/README.md#3-connect-watsonx-orchestrate) (accelerator field **WXO API Key**) |
+
+Part 6 needs neither: the evaluation commands reuse the environment you
+activate in Part 1.
+
+!!! danger "Never paste the API key into Bob chat"
+    Type it only into the Environment Manager activation prompt or the
+    accelerator's own password field. Do not save it in a project file and do
+    not commit it.
 
 ---
 

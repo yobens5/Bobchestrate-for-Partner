@@ -1,0 +1,30 @@
+{
+    "agent": "customer_support_agent",
+    "goals": {
+        "check_order_status-1": [
+            "summarize"
+        ]
+    },
+    "goal_details": [
+        {
+            "type": "tool_call",
+            "name": "check_order_status-1",
+            "tool_name": "check_order_status",
+            "args": {
+                "order_id": "INVALID-999"
+            }
+        },
+        {
+            "type": "text",
+            "name": "summarize",
+            "response": "That order ID is not in a valid format. Order IDs start with 'ORD-' followed by numbers, for example ORD-12345. Could you check the ID and send it again?",
+            "keywords": [
+                "INVALID-999",
+                "format",
+                "ORD-"
+            ]
+        }
+    ],
+    "story": "The customer supplies an order ID that does not match the required ORD-nnnnn format. The tool returns a validation error. The agent explains the expected format and asks the customer to retry instead of inventing an order.",
+    "starting_sentence": "Check order INVALID-999 for me."
+}

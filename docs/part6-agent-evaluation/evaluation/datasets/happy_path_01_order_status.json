@@ -1,0 +1,29 @@
+{
+    "agent": "customer_support_agent",
+    "goals": {
+        "check_order_status-1": [
+            "summarize"
+        ]
+    },
+    "goal_details": [
+        {
+            "type": "tool_call",
+            "name": "check_order_status-1",
+            "tool_name": "check_order_status",
+            "args": {
+                "order_id": "ORD-12345"
+            }
+        },
+        {
+            "type": "text",
+            "name": "summarize",
+            "response": "Order ORD-12345 is currently Shipped. I can also see the items on the order, the order total, and the estimated delivery date.",
+            "keywords": [
+                "ORD-12345",
+                "Shipped"
+            ]
+        }
+    ],
+    "story": "The customer asks for the status of an order using a correctly formatted order ID. The agent calls check_order_status once with that ID and reports the status returned by the tool without inventing any details.",
+    "starting_sentence": "What is the status of order ORD-12345?"
+}

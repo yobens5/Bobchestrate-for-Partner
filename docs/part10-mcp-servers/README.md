@@ -21,9 +21,9 @@ Ask Bob in Code mode:
 Create a local Python MCP product-catalog server under toolkits/ with tools for
 search, product details, inventory, and recommendations using small mock data.
 Also create requirements.txt, direct smoke tests, and an ADK 2.14.0 MCP toolkit
-YAML. Create agents/product-assistant-agent.yaml using the correctly prefixed
-tool names. Run local syntax and smoke tests, validate the YAML files, and
-summarize the artifacts. Do not import yet.
+YAML. Create agents/product-assistant-agent.yaml for an agent named product_assistant,
+using the correctly prefixed tool names. Run local syntax and smoke tests,
+validate the YAML files, and summarize the artifacts. Do not import yet.
 ```
 
 Use these tested files as fallbacks or comparisons.
@@ -115,7 +115,7 @@ tools:
 Ask Bob:
 
 ```text
-Show me examples of questions I can ask product_assistant_agent to test product
+Show me examples of questions I can ask product_assistant to test product
 search, details, inventory checks, recommendations, and missing-product handling.
 ```
 

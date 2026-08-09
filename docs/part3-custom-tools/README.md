@@ -30,14 +30,39 @@ locally. Also create requirements.txt for runtime dependencies.
 
 Review Bob's output, or download the tested workshop files:
 
-Click a file to download it to your browser's default download folder:
+Click each file to download it to your browser's default download folder:
 
 - <a href="check_order_status.py" download="check_order_status.py">check_order_status.py</a>
 - <a href="process_refund.py" download="process_refund.py">process_refund.py</a>
 - <a href="requirements.txt" download="requirements.txt">requirements.txt</a>
 
-Place the Python files under `tools/` and `requirements.txt` at the project
-root.
+The two Python files go in `tools/`; `requirements.txt` goes in the project
+root. Run these in the Bob IDE terminal, from your `bobchestrate-ws` folder:
+
+=== "Windows PowerShell"
+
+    ```powershell
+    Move-Item "$env:USERPROFILE\Downloads\check_order_status.py" tools\ -Force
+    Move-Item "$env:USERPROFILE\Downloads\process_refund.py" tools\ -Force
+    Move-Item "$env:USERPROFILE\Downloads\requirements.txt" . -Force
+    ```
+
+=== "macOS"
+
+    ```bash
+    mv ~/Downloads/check_order_status.py ~/Downloads/process_refund.py tools/
+    mv ~/Downloads/requirements.txt .
+    ```
+
+Afterwards the relevant part of your project looks like this:
+
+```text
+bobchestrate-ws/
+├── requirements.txt          ← project root
+└── tools/
+    ├── check_order_status.py
+    └── process_refund.py
+```
 
 Ask Bob to review and test what it created:
 
@@ -107,7 +132,8 @@ orchestrate agents import -f agents/customer-support-agent.yaml
 Ask Bob:
 
 ```text
-Show me examples of questions I can ask customer_support_agent.
+Show me examples of questions I can ask customer_support_agent. Include a
+normal case, an edge case, and a case that should produce a validation error.
 ```
 
 Manual chat fallback:

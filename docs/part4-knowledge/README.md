@@ -17,30 +17,51 @@ of requests delegated by the main agent.
 ## 1. Add the FAQ knowledge base
 
 Download the workshop
-<a href="customer-support-faq.txt" download="customer-support-faq.txt">customer-support-faq.txt</a>
-to your browser's default download folder, then place it in `knowledge_bases/`,
-then ask Bob:
+<a href="customer-support-faq.txt" download="customer-support-faq.txt">customer-support-faq.txt</a>,
+then move it from your Downloads folder into `knowledge-bases/`. Run this in the
+Bob IDE terminal, from your `bobchestrate-ws` folder:
+
+=== "Windows PowerShell"
+
+    ```powershell
+    Move-Item "$env:USERPROFILE\Downloads\customer-support-faq.txt" `
+      knowledge-bases\ -Force
+    ```
+
+=== "macOS"
+
+    ```bash
+    mv ~/Downloads/customer-support-faq.txt knowledge-bases/
+    ```
+
+!!! note "If `knowledge-bases/` does not exist"
+    Open `workspace_config.yaml` and check the folder listed under
+    `knowledge_bases:`. Use that folder name in the commands on this page. If
+    the folder is missing entirely, create it with `mkdir knowledge-bases`.
+
+Then ask Bob:
 
 ```text
-Inspect knowledge_bases/customer-support-faq.txt. Create
-knowledge_bases/faq-knowledge-base.yaml for a knowledge base named
-customer-support-faq using the project rules and ADK 2.14.0 documentation.
+Inspect knowledge-bases/customer-support-faq.txt. Create
+knowledge-bases/faq-knowledge-base.yaml for a knowledge base named
+customer_support_faq using the project rules and ADK 2.14.0 documentation.
 Keep the document path relative to the YAML. Validate the file, import it into
 the active draft environment, and monitor its status until it is ready. Show me
 the commands and results.
 ```
 
 The tested YAML is available as
-<a href="faq-knowledge-base.yaml" download="faq-knowledge-base.yaml">faq-knowledge-base.yaml</a>.
+<a href="faq-knowledge-base.yaml" download="faq-knowledge-base.yaml">faq-knowledge-base.yaml</a>
+(save it into `knowledge-bases/` as well).
 Review Bob's generated file against it rather than copying blindly.
 
 Manual import fallback:
 
 ```bash
 orchestrate knowledge-bases import \
-  -f knowledge_bases/faq-knowledge-base.yaml
+  -f knowledge-bases/faq-knowledge-base.yaml
 
-orchestrate knowledge-bases status -n customer-support-faq
+orchestrate knowledge-bases status -n customer_support_faq
 ```
 
 Wait until indexing completes before testing.
@@ -50,14 +71,14 @@ Wait until indexing completes before testing.
 Ask Bob:
 
 ```text
-Update agents/customer-support-agent.yaml to use customer-support-faq for
+Update agents/customer-support-agent.yaml to use customer_support_faq for
 shipping, returns, payment, and account questions. Tell the agent to say when
 the knowledge base does not contain an answer. Show me the YAML change,
 validate it, re-import the agent, and suggest three prompts that distinguish a
 grounded answer, an unknown answer, and a tool request.
 ```
 
-Manual fallback: add `customer-support-faq` under `knowledge_base:`, update the
+Manual fallback: add `customer_support_faq` under `knowledge_base:`, update the
 instructions, then run:
 
 ```bash
@@ -76,7 +97,7 @@ Ask Bob:
 Create agents/escalation-agent.yaml for a native agent named escalation_agent.
 It handles refunds above the main agent's limit, policy exceptions, serious
 complaints, and requests for a manager. Reuse the two customer-support tools and
-customer-support-faq knowledge base. Validate and import it. Then update
+customer_support_faq knowledge base. Validate and import it. Then update
 agents/customer-support-agent.yaml to use it as a collaborator for those exact
 cases, validate and re-import the main agent, and verify both agents are listed.
 ```

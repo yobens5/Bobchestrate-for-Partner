@@ -1,0 +1,32 @@
+{
+    "agent": "customer_support_agent",
+    "goals": {
+        "process_refund-1": [
+            "summarize"
+        ]
+    },
+    "goal_details": [
+        {
+            "type": "tool_call",
+            "name": "process_refund-1",
+            "tool_name": "process_refund",
+            "args": {
+                "order_id": "ORD-12345",
+                "reason": "broken",
+                "amount": 49.99
+            }
+        },
+        {
+            "type": "text",
+            "name": "summarize",
+            "response": "The refund could not be submitted because the reason given is too short. Please describe the problem in at least ten characters, for example 'arrived with a cracked screen', and I will resubmit the request.",
+            "keywords": [
+                "ORD-12345",
+                "reason",
+                "detailed"
+            ]
+        }
+    ],
+    "story": "The customer requests a refund and gives a one-word reason. The process_refund tool rejects it because the reason is shorter than ten characters. The agent explains the validation error in plain language and asks for a fuller reason rather than reporting a successful refund.",
+    "starting_sentence": "I want a refund on order ORD-12345 for $49.99. Reason: broken."
+}

@@ -1,10 +1,15 @@
-# Evaluation configuration for the workshop SaaS environment
-test_paths:
-  - evaluation/test-cases.jsonl
+# Evaluation configuration for the workshop.
+#
+# There is nothing to fill in here. The ADK reads the service URL, the
+# environment name, and the authentication token from the environment you
+# activated in Part 1, so this file only lists what to test.
+#
+# Never put an API key in this file.
 
-auth_config:
-  url: https://api.<region>.watson-orchestrate.ibm.com/instances/<instance-id>
-  tenant_name: <environment-name>
+test_paths:
+  - evaluation/datasets/happy_path_01_order_status.json
+  - evaluation/datasets/edge_case_01_invalid_order_id.json
+  - evaluation/datasets/error_scenario_01_refund_invalid_reason.json
 
 output_dir: evaluation/results/
 enable_verbose_logging: true

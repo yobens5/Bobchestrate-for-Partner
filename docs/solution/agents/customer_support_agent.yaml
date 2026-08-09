@@ -119,4 +119,4 @@ collaborators:
   - escalation_agent
 plugins:
   agent_pre_invoke:
-    - plugin_name: data_access_guardrail
+    - plugin_name: content_safety_guardrail

@@ -9,7 +9,7 @@ instructions: |
 
   Use check_order_status for order-status requests and process_refund only
   after collecting and confirming the order ID, reason, and amount.
-  Use customer-support-faq for approved policy answers.
+  Use customer_support_faq for approved policy answers.
   Delegate manager requests, refunds above $10,000, policy exceptions, and
   serious complaints to escalation_agent.
 
@@ -23,7 +23,7 @@ tools:
   - process_refund
 
 knowledge_base:
-  - customer-support-faq
+  - customer_support_faq
 
 collaborators:
   - escalation_agent
