@@ -300,12 +300,14 @@ Checkpoint:
 
 ```text
 Read the workspace rule in .bob/rules/. Summarize the ADK version, folder,
-naming, model, documentation-lookup, and safety conventions you will follow.
-Do not create or change files.
+naming, model, documentation-lookup, tool-preference, and safety conventions you
+will follow. Do not create or change files.
 ```
 
 Bob should mention ADK 2.14.0, the workshop folders, `snake_case`,
-`groq/openai/gpt-oss-120b`, the documentation MCP, and credential safety.
+`groq/openai/gpt-oss-120b`, the documentation MCP, credential safety, and that
+it uses the `watsonx-orchestrate-adk` MCP server first and falls back to the
+`orchestrate` CLI only when the MCP server cannot do the job.
 
 ## 8. Connect Orchestrate environment
 

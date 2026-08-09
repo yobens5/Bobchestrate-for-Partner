@@ -8,17 +8,18 @@ Apply this rule when working in this project.
 - Run all `orchestrate` commands from the project `.venv`.
 - Search `watsonx-orchestrate-adk-docs` before generating ADK syntax, and state
   that the requested version is 2.14.0.
-- Use `watsonx-orchestrate-adk` to inspect the connected platform.
+- Use `watsonx-orchestrate-adk` to inspect and change the connected platform —
+  see *Tool preference* below.
 - If current documentation differs from ADK 2.14.0, do not silently migrate the
   workshop. Explain the difference and preserve the tested workshop version.
 - Validate generated YAML with the installed ADK before importing it.
 
 ### Remote session refresh
 
-Remote watsonx Orchestrate authentication expires every two hours. If an
-`orchestrate` command reports an authentication, token, or session-expired
-error, stop retrying and ask the user to refresh the session in a terminal from
-the project virtual environment:
+Remote watsonx Orchestrate authentication expires every two hours. If an MCP
+tool or `orchestrate` command reports an authentication, token, or
+session-expired error, stop retrying and ask the user to refresh the session in
+a terminal from the project virtual environment:
 
 ```bash
 source .venv/bin/activate
@@ -48,6 +49,41 @@ source .venv/bin/activate
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .venv\Scripts\Activate.ps1
 ```
+
+## Tool preference: ADK MCP first, CLI fallback
+
+The `watsonx-orchestrate-adk` MCP server is the primary interface to the
+platform. Never skip it and go straight to a terminal command.
+
+1. **Try the MCP tool first** for every Orchestrate operation — listing,
+   creating, importing, exporting, deploying, and chat testing.
+2. **Retry once** when a call fails for a transient reason: timeout, connection
+   reset, or the server still starting.
+3. **Fall back to the CLI** only when MCP genuinely cannot do the job — the
+   server is disabled or not connected, no tool covers the operation, or the
+   call keeps failing with a transport, timeout, or internal error. Then run the
+   equivalent `orchestrate` command from the project `.venv`.
+4. **Say which path you used.** On fallback, state in one line that the MCP call
+   failed, quote the error, and show the CLI command you ran instead.
+5. An authentication, token, or session-expired error is **not** an MCP failure.
+   Do not fall back to the CLI — follow *Remote session refresh* above.
+
+| Operation | MCP tool | CLI fallback |
+|---|---|---|
+| Discover reusable assets | `list_agents`, `list_tools` | `orchestrate agents list`, `orchestrate tools list` |
+| Import an agent | `import_agent` | `orchestrate agents import -f <file>` |
+| Import a Python tool | `import_tool` | `orchestrate tools import -k python -f <file> -r requirements.txt` |
+| Import a flow tool | `import_tool` | `orchestrate tools import -k flow -f <file>` |
+| Deploy an agent | `deploy_agent` | `orchestrate agents deploy --name <agent_name>` |
+| Knowledge bases | `list_knowledge_bases`, `import_knowledge_bases` | `orchestrate knowledge-bases list`, `orchestrate knowledge-bases import -f <file>` |
+| Toolkits | `list_toolkits`, `import_toolkit`, `add_toolkit` | `orchestrate toolkits list`, `orchestrate toolkits import -f <spec.yaml>`, `orchestrate toolkits add …` |
+| Connections | `list_connections`, `create_connection`, `configure_connection`, `set_credentials_connection` | `orchestrate connections list`, `orchestrate connections set-credentials …` |
+| Models | `list_models`, `import_model`, `import_model_policy` | `orchestrate models list`, `orchestrate models policy import -f <file>` |
+| Test a chat turn | `chat_with_agent` | `orchestrate chat ask --agent-name <name>` |
+| Webchat embed | `generate_webchat_embed` | `orchestrate channels webchat embed --agent-name <name>` |
+
+Evaluation and red-teaming have no MCP tools in ADK 2.14.0. Run
+`orchestrate evaluations …` directly; that is the normal path, not a fallback.
 
 ## Project layout
 
@@ -98,6 +134,7 @@ requirements.txt  # Tool runtime dependencies
 Before reporting success:
 
 - validate syntax and schema
-- show the imported artifact in the matching `orchestrate ... list` output
+- show the imported artifact in the matching list output — `list_agents`,
+  `list_tools`, `list_knowledge_bases`, … or the `orchestrate ... list` fallback
 - run the module's checkpoint
 - report warnings and unresolved limitations rather than hiding them

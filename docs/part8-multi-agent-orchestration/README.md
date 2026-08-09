@@ -21,6 +21,13 @@ travel_concierge
 
 All tools in this example use simulated data.
 
+!!! tip "Confirm Bob's mode if you're starting fresh"
+    Starting this module in a new window or after a break? Check the mode
+    selector in the chat input box and confirm it still reads **WXO Agent
+    Architect** before asking Bob anything. Reimport it from
+    [Part 1 Step 7](../part1-setup/README.md#import-the-wxo-agent-architect-mode)
+    if needed.
+
 ## 1. Ask Bob to build the system
 
 Ask Bob:

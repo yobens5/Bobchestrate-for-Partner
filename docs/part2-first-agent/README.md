@@ -19,6 +19,15 @@ the agent can respond to a user but has no custom tools or knowledge base yet.
     for your platform from
     [Part 1 Step 4](../part1-setup/README.md#terminal-fallback).
 
+!!! info "Every Bob chat needs WXO Agent Architect mode"
+    Before asking Bob anything, check the mode selector in the chat input box
+    (bottom-left, showing the current mode). If it does not read **WXO Agent
+    Architect** — this can happen after reopening Bob IDE or opening a new
+    window — select it from the dropdown, or reimport it from
+    [Part 1 Step 7](../part1-setup/README.md#import-the-wxo-agent-architect-mode).
+    The custom mode gives Bob the watsonx Orchestrate role and tools this
+    workshop depends on.
+
 ## Minimal native-agent structure
 
 ADK 2.14.0 requires `spec_version`, `name`, and `description` when importing a

@@ -19,6 +19,40 @@ Source of truth for CLI/API: official ADK docs via `watsonx-orchestrate-adk-docs
 
 ---
 
+## Bob Configuration Updates — 2026-08-09
+
+### Finding 29 — Bob bypassed the ADK MCP server and went straight to the CLI
+
+**Files:** `.bob/rules/wxo-dev-rule-enhanced.md`,
+`docs/part1-setup/files/wxo-dev-rule-enhanced.txt`,
+`docs/solution/bob-config/rules/wxo-dev-rule-enhanced.txt`,
+`.bob/custom_modes.yaml`,
+`docs/part1-setup/files/wxo-agent-architect-export.yaml`,
+`docs/solution/bob-config/custom_modes.yaml`
+**Status:** ✅ CLOSED
+**Original content:** The rule said only "Use `watsonx-orchestrate-adk` to
+inspect the connected platform", and the custom mode named the MCP server only
+for `list_tools` / `list_agents` during agent authoring. Nothing told Bob to
+prefer the MCP server for the remaining operations, so it could run
+`orchestrate` terminal commands instead of the MCP tools.
+**Resolution:** State an explicit order of preference — ADK MCP first, retry
+once on a transient failure, CLI only when MCP cannot do the job — with an
+MCP-tool-to-CLI mapping table, and require Bob to say when it falls back. An
+expired session is excluded: it routes to *Remote session refresh* instead of a
+CLI fallback.
+**Fix:** Added a "Tool preference: ADK MCP first, CLI fallback" section to the
+workspace rule, updated the completion check to accept the MCP list tools, and
+added the same instruction to the WXO Agent Architect mode. Also aligned the
+`.bob` rule copy's project layout with the docs (`knowledge-bases/`) so all
+three rule copies are byte-identical.
+**Verified against:** `ibm-watsonx-orchestrate-mcp-server` 2.14.0 — the mapping
+table uses tool names read from the package's registered tool list
+(`src/__init__.py` → `__all_tools__`). That list contains no evaluation or
+red-teaming tools, which is why the rule keeps `orchestrate evaluations …` as
+the normal CLI path rather than a fallback.
+
+---
+
 ## Full Workshop Review — 2026-07-27
 
 This review covers the English workshop, with special attention to macOS and

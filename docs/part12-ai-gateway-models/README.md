@@ -13,6 +13,13 @@ You will inspect available models, create a validated retry policy, apply it to
 a copy of an evaluated agent, and compare the original and policy-based agents
 against the same behavior and safety cases.
 
+!!! tip "Confirm Bob's mode if you're starting fresh"
+    Starting this module in a new window or after a break? Check the mode
+    selector in the chat input box and confirm it still reads **WXO Agent
+    Architect** before asking Bob anything. Reimport it from
+    [Part 1 Step 7](../part1-setup/README.md#import-the-wxo-agent-architect-mode)
+    if needed.
+
 ## 1. Inspect available models
 
 Ask Bob:

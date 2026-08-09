@@ -116,6 +116,11 @@ The result may include a chart:
 
 ## 6. Continue with Bob
 
+!!! tip "Confirm Bob's mode before continuing"
+    You just worked in the accelerator's own UI, outside Bob IDE. Before asking
+    Bob anything below, check the mode selector in the chat input box and
+    confirm it still reads **WXO Agent Architect**.
+
 The generated agent is editable. In Bob, ask:
 
 ```text
