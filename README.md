@@ -24,12 +24,12 @@ The core path is:
 4. [Part 3 — Custom Tools](docs/part3-custom-tools/README.md)
 5. [Part 4 — Knowledge and Collaborators](docs/part4-knowledge/README.md)
 6. [Part 5 — Guidelines and Guardrails](docs/part5-guidelines-guardrails/README.md)
-7. [Part 6 — Agent Evaluation](docs/part6-agent-evaluation/README.md)
-8. [Part 7 — Deployment](docs/part7-deployment/README.md)
-9. [Part 8 — NL2SQL Accelerator](docs/part9-nl2sql/README.md)
+7. [Part 6 — Deployment](docs/part7-deployment/README.md)
+8. [Part 7 — NL2SQL Accelerator](docs/part9-nl2sql/README.md)
 
-Optional modules cover multi-agent orchestration, MCP servers, deterministic
-agentic workflows, and AI Gateway model routing.
+Optional modules cover agent evaluation and red-teaming, multi-agent
+orchestration, MCP servers, deterministic agentic workflows, and AI Gateway
+model routing.
 
 ## Reference solution
 

@@ -1,4 +1,4 @@
-# Part 6: Agent Evaluations & Red-Teaming
+# Optional Module: Agent Evaluations & Red-Teaming
 
 **Outcome:** A repeatable functional evaluation and a small adversarial test run
 for `customer_support_agent`.
@@ -36,8 +36,10 @@ evaluation setup: evaluation/config.yaml plus one JSON dataset file per case
 under evaluation/datasets/. Each dataset file needs the ADK fields agent, goals,
 goal_details, story, and starting_sentence. Cover a normal order lookup, an
 invalid order ID, and a refund that the tool rejects. Validate every file. Do
-not add an auth_config block and never write an API key — the ADK reuses the
-environment I activated in Part 1.
+not add an auth_config block and never write an API key — the ADK authenticates
+using whichever `orchestrate` environment is currently active (check with
+`orchestrate env list` if unsure), so config.yaml needs no credentials of its
+own.
 ```
 
 Download the tested starter files:
@@ -112,10 +114,10 @@ Ask Bob:
 
 ```text
 Run the ADK 2.14.0 quick evaluation using evaluation/config.yaml against the
-tools directory, with the environment I activated in Part 1. Inspect the
-generated results and summarize failed cases, unexpected tool calls, schema
-mismatches, invented information, and the smallest likely fix for each. Do not
-change the agent yet.
+tools directory, using whichever orchestrate environment is currently active.
+Inspect the generated results and summarize failed cases, unexpected tool
+calls, schema mismatches, invented information, and the smallest likely fix
+for each. Do not change the agent yet.
 ```
 
 Manual fallback:
@@ -234,8 +236,8 @@ relevant red-team attack. Keep the failed case in the dataset so it becomes a
 regression test.
 
 !!! tip "Stuck?"
-    Copy the tested datasets and attack files for this part from the
-    [reference solution](../solution/README.md#part-6-evaluation-red-teaming),
+    Copy the tested datasets and attack files for this module from the
+    [reference solution](../solution/README.md#agent-evaluations-red-teaming-optional),
     then continue.
 
 ## Checkpoint
@@ -275,5 +277,3 @@ regression test.
     `story`, and `starting_sentence`. JSON does not allow comments or trailing
     commas. Every file you want to run must also be listed under `test_paths`
     in `evaluation/config.yaml`.
-
-[Continue to Part 7: Deployment →](../part7-deployment/README.md)

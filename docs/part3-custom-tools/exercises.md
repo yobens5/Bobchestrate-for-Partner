@@ -50,8 +50,9 @@ Ask Bob to inspect the two tool schemas and create three prompts:
 3. should not call either tool
 
 If the agent selects the wrong tool, ask Bob to diagnose the smallest relevant
-docstring or instruction change. Review it before Bob updates, validates,
-re-imports, and records the prompt as a Part 6 evaluation case.
+docstring or instruction change. Review it before Bob updates, validates, and
+re-imports. If you take the optional Agent Evaluations & Red-Teaming module,
+record the prompt as an evaluation case there.
 
 [Return to Part 3](README.md) or
 [continue to Part 4](../part4-knowledge/README.md).

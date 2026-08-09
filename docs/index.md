@@ -38,9 +38,8 @@ workshop.
 | [3. Custom Tools](part3-custom-tools/README.md) | Add order-status and refund tools |
 | [4. Knowledge & Collaborators](part4-knowledge/README.md) | Add FAQs and an escalation agent |
 | [5. Guidelines & Guardrails](part5-guidelines-guardrails/README.md) | Add behavioral guidance and input controls |
-| [6. Evaluation & Red-Teaming](part6-agent-evaluation/README.md) | Test expected behavior and adversarial prompts |
-| [7. Deployment](part7-deployment/README.md) | Promote the agent and generate webchat configuration |
-| [8. NL2SQL Accelerator](part9-nl2sql/README.md) | Discover a database and generate an editable NL2SQL agent |
+| [6. Deployment](part7-deployment/README.md) | Promote the agent and generate webchat configuration |
+| [7. NL2SQL Accelerator](part9-nl2sql/README.md) | Discover a database and generate an editable NL2SQL agent |
 
 NL2SQL is a mandatory standalone use case. It does not modify or rename the
 customer-support agents created in Parts 2–7.
@@ -50,6 +49,7 @@ customer-support agents created in Parts 2–7.
 These modules are independent extensions and are not required for the core
 workshop:
 
+- [Agent Evaluations & Red-Teaming](part6-agent-evaluation/README.md)
 - [Multi-Agent Orchestration](part8-multi-agent-orchestration/README.md)
 - [MCP Servers](part10-mcp-servers/README.md)
 - [Agentic Workflows](part11-agentic-workflows/README.md)
@@ -63,7 +63,6 @@ By the end of the core workshop, you will be able to:
 - build and import Python tools
 - attach knowledge bases and collaborators
 - add guidelines and guardrail plugins
-- create evaluation datasets and run red-team checks
 - deploy a tested draft agent
 - generate an NL2SQL agent from discovered database metadata
 - use Bob to create, review, and troubleshoot Orchestrate artifacts

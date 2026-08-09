@@ -139,7 +139,16 @@ guidelines, and the pre-invoke guardrail plugin.
     To try it instead, import it and change `plugin_name` to
     `data_access_guardrail`.
 
-### Part 6: Evaluation & Red-Teaming
+### Part 6: Deployment
+
+Deployment produces no new files. Use the Part 5 agent state above, then follow
+[Part 6](../part7-deployment/README.md).
+
+### Agent Evaluations & Red-Teaming (Optional)
+
+Not required before deployment — Part 6 accepts the manual Part 5 test
+evidence as an alternative. Use these files if you take the optional
+[Agent Evaluations & Red-Teaming](../part6-agent-evaluation/README.md) module.
 
 | File | Copy to |
 |---|---|
@@ -162,11 +171,6 @@ The datasets cover six happy paths, three edge cases, and three error
 scenarios. The attack set covers instruction override, crescendo, emotional
 appeal, role playing, prompt leakage, jailbreaking, topic derailment, and
 unsafe topics.
-
-### Part 7: Deployment
-
-Deployment produces no new files. Use the Part 5 agent state above, then follow
-[Part 7](../part7-deployment/README.md).
 
 ## Known differences from the walkthrough text
 

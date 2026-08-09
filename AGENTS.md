@@ -39,7 +39,7 @@ All workshop content, CLI commands, YAML schemas, and code examples have been ve
 │   ├── part3-custom-tools/          # Python tools (@tool decorator)
 │   ├── part4-knowledge/             # Knowledge bases & agent collaborators
 │   ├── part5-guidelines-guardrails/ # Guidelines, guardrails & plugins
-│   ├── part6-agent-evaluation/      # Evaluation datasets & red-teaming
+│   ├── part6-agent-evaluation/      # Optional: Evaluation datasets & red-teaming
 │   ├── part7-deployment/            # Testing, deployment & webchat embed
 │   ├── part8-multi-agent-orchestration/ # Multi-agent travel planning system
 │   ├── part9-nl2sql/                # NL-to-SQL advanced exercise
@@ -85,11 +85,20 @@ Bob is provisioned via a **support ticket submitted by an admin**. This eliminat
 
 ## NL2SQL Module — Key Decisions
 
-The NL2SQL module (Part 8) is kept **separate from the main agent storyline** — the customer-support agents (Parts 2–7) will **not** be adapted or renamed to fit the NL2SQL use case. This decision was made to avoid the high effort of a full theme merge.
+The NL2SQL module (Part 7) is kept **separate from the main agent storyline** — the customer-support agents (Parts 2–6) will **not** be adapted or renamed to fit the NL2SQL use case. This decision was made to avoid the high effort of a full theme merge.
 
 - The NL2SQL exercises use their own dedicated agents and database.
 - **Database:** Use Yohan's **PostgreSQL** database instance (not Db2); reprovision it before the workshop.
 - **Agent template:** Maria's NL2SQL agent template is hosted at https://agent-builder.2clsicnm3dwo.us-south.codeengine.appdomain.cloud/ — see `docs/dev/audit-findings.md` → Plan 5 for action items.
+
+## Agent Evaluation Module — Key Decision
+
+`part6-agent-evaluation/` is an **optional module**, not part of the core
+curriculum. The core path is now Parts 1–7 (Setup through NL2SQL); Deployment
+and NL2SQL were renumbered down by one (Part 7→6 and Part 8→7) to close the
+gap. Part 6 (Deployment) no longer hard-requires evaluation or red-team
+results — it accepts manual test evidence from Part 5 as an alternative. See
+`docs/dev/audit-findings.md` for the full list of files touched by this move.
 
 ## Key Conventions
 

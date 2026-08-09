@@ -168,13 +168,16 @@ The first line must show `ADK Version: 2.14.0`.
 ### Add the evaluation dependencies
 
 **Everyone runs this step**, including participants for whom the extension
-button worked.
+button worked and those planning to skip the optional evaluation module.
 
-Part 6 uses `orchestrate evaluations`, which needs an extra package that the
-ADK install does **not** include by default. The command below adds it, and at
-the same time pins the ADK to 2.14.0 — so it is also the fix if the extension
-installed a different version, or the way to install the ADK from scratch if
-the extension button was unavailable.
+The optional Agent Evaluations & Red-Teaming module uses `orchestrate
+evaluations`, which needs an extra package that the ADK install does **not**
+include by default. The command below adds it, and at the same time pins the
+ADK to 2.14.0 — so it is also the fix if the extension installed a different
+version, or the way to install the ADK from scratch if the extension button
+was unavailable. Run it now regardless of whether you plan to do the
+evaluation module later: the version pin is required for the rest of the
+workshop either way.
 
 Run it from a terminal in `bobchestrate-ws`:
 
@@ -399,9 +402,10 @@ bobchestrate-ws/
 └── workspace_config.yaml
 ```
 
-Empty folders are expected. Later parts add two more folders — `evaluation/` in
-Part 6 and, if you take the optional MCP module, files under `toolkits/`. You do
-not need to create them now.
+Empty folders are expected. If you take the optional Agent Evaluations &
+Red-Teaming module you will add an `evaluation/` folder, and if you take the
+optional MCP module you will add files under `toolkits/`. You do not need to
+create them now.
 
 !!! note "`knowledge-bases` uses a hyphen"
     The folder on disk is `knowledge-bases`, while the setting that points at it

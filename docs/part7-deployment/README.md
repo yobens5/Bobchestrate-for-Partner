@@ -1,6 +1,6 @@
-# Part 7: Testing & Deployment
+# Part 6: Testing & Deployment
 
-**Outcome:** The evaluated customer-support agent is deployed to the live
+**Outcome:** The tested customer-support agent is deployed to the live
 environment and its webchat configuration can be generated.
 
 Deployment makes an agent available to users. It does not by itself make the
@@ -8,16 +8,19 @@ workshop example production-ready.
 
 ## What we will implement
 
-You will review evaluation evidence, verify the draft artifacts, promote the
-customer-support agent to the live environment, generate webchat configuration,
-and review basic monitoring and recovery steps.
+You will verify the draft artifacts, promote the customer-support agent to the
+live environment, generate webchat configuration, and review basic monitoring
+and recovery steps.
 
 ## 1. Pre-deployment check
 
 Do not deploy until:
 
-- `customer_support_agent` passes the agreed functional tests
-- red-team results have no unresolved critical failures
+- `customer_support_agent` passes the manual test cases from
+  [Part 5](../part5-guidelines-guardrails/README.md#3-test-guidelines-and-guardrails)
+  — or, if you completed the optional
+  [Agent Evaluations & Red-Teaming](../part6-agent-evaluation/README.md)
+  module, its functional and red-team results
 - both Python tools are imported and working
 - `customer_support_faq` has finished indexing
 - `escalation_agent` is available
@@ -29,9 +32,11 @@ Ask Bob to assemble the evidence:
 
 ```text
 Perform a read-only deployment readiness review for customer_support_agent.
-Check the latest evaluation and red-team results, imported tools and agents,
-knowledge-base status, unresolved failures, and tracked files for likely
-secrets. Summarize pass, fail, and unknown items. Do not deploy anything.
+If an evaluation/ folder with results exists, check the latest evaluation and
+red-team results; otherwise note that no automated evaluation was run. Check
+imported tools and agents, knowledge-base status, unresolved failures, and
+tracked files for likely secrets. Summarize pass, fail, and unknown items. Do
+not deploy anything.
 ```
 
 ## 2. Verify the draft artifacts
@@ -155,8 +160,10 @@ After deployment:
 - review conversations and errors in the Orchestrate UI
 - track failed tool calls, escalation rate, response latency, and recurring
   unanswered questions
-- add observed failures to the evaluation dataset
-- re-evaluate before deploying an updated version
+- if you completed the optional
+  [Agent Evaluations & Red-Teaming](../part6-agent-evaluation/README.md)
+  module, add observed failures to its evaluation dataset and re-evaluate
+  before deploying an updated version
 
 Ask Bob to help turn observed behavior into regressions:
 
@@ -186,8 +193,8 @@ using it in a shared environment.
 
 - [ ] Draft artifacts and knowledge status are verified
 - [ ] A final draft chat succeeds
-- [ ] The evaluated agent is deployed to live
+- [ ] The tested agent is deployed to live
 - [ ] Webchat configuration is generated for the intended environment
 - [ ] Monitoring ownership and rollback criteria are recorded
 
-[Continue to Part 8: NL2SQL Accelerator →](../part9-nl2sql/README.md)
+[Continue to Part 7: NL2SQL Accelerator →](../part9-nl2sql/README.md)

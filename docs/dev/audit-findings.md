@@ -19,6 +19,61 @@ Source of truth for CLI/API: official ADK docs via `watsonx-orchestrate-adk-docs
 
 ---
 
+## Curriculum Restructuring — 2026-08-09
+
+### Finding 31 — Agent Evaluations & Red-Teaming moved from core curriculum to optional module
+
+**Files:** `mkdocs.yml`, `README.md`, `AGENTS.md`, `docs/index.md`,
+`docs/solution/README.md`, `docs/part0-prerequisites/README.md`,
+`docs/part1-setup/README.md`, `docs/part3-custom-tools/exercises.md`,
+`docs/part5-guidelines-guardrails/README.md`,
+`docs/part6-agent-evaluation/README.md`,
+`docs/part6-agent-evaluation/exercises.md`, `docs/part7-deployment/README.md`,
+`docs/part9-nl2sql/README.md`
+**Status:** ✅ CLOSED
+**Original content:** Agent Evaluations & Red-Teaming was mandatory core Part
+6, gating deployment (Part 7's checklist required passing evaluation and
+red-team results before promoting the agent to live).
+**Resolution (workshop-owner decision, 2026-08-09):** Move Agent Evaluations &
+Red-Teaming to an optional module, alongside Multi-Agent Orchestration, MCP
+Servers, Agentic Workflows, and AI Gateway Models. Close the numbering gap so
+the core path stays contiguous.
+**Fix:**
+- Renumbered the core path: Deployment Part 7→6, NL2SQL Part 8→7. The
+  `part7-deployment/` and `part9-nl2sql/` folder names are unchanged — only
+  their displayed "Part N" label moved, matching the existing precedent that
+  folder numbers don't have to match nav position (e.g.
+  `part8-multi-agent-orchestration/` was already optional).
+- `part6-agent-evaluation/` keeps its folder name but its H1 changed from
+  "Part 6: …" to "Optional Module: Agent Evaluations & Red-Teaming", matching
+  the other optional modules' heading convention, and its trailing
+  "Continue to Part 7" link was removed (optional modules have no forward
+  link in this repo's convention).
+- `mkdocs.yml` nav: dropped the standalone "Part 6 - Agent Evaluations" entry,
+  renamed "Part 7 - Deployment" / "Part 8 - NL2SQL Accelerator" down by one,
+  and added "Agent Evaluations & Red-Teaming (Optional)" as the first entry in
+  the optional-modules group.
+- Part 7/Deployment's pre-deployment checklist and Bob prompt no longer
+  hard-require evaluation/red-team results — they accept the manual Part 5
+  test evidence as an alternative, and the Bob prompt checks for an
+  `evaluation/` folder before relying on it.
+- All prose that told Bob or the participant "Part 6" for the reason a value
+  is already set (e.g. "the ADK reuses the environment I activated in Part 1"
+  callers, evaluation-dependency install framing, prerequisite credential
+  table) was reworded to name the optional module instead of a part number
+  that no longer belongs to it.
+- `docs/solution/README.md`: renamed its "Part 7: Deployment" section to
+  "Part 6", and moved the evaluation/red-team file catalog out of the numbered
+  core sequence into its own "Agent Evaluations & Red-Teaming (Optional)"
+  section directly after it — file paths and download links are unchanged.
+- Part 1's evaluation-dependency pip install step remains **mandatory for
+  everyone**, reworded to explain why: it also pins the ADK to 2.14.0, which
+  the whole workshop needs regardless of whether the optional module is taken.
+**Verified against:** Local link and cross-reference audit of every file
+listed above; no CLI/schema behavior changed.
+
+---
+
 ## Bob Configuration Updates — 2026-08-09
 
 ### Finding 29 — Bob bypassed the ADK MCP server and went straight to the CLI
@@ -50,6 +105,23 @@ table uses tool names read from the package's registered tool list
 (`src/__init__.py` → `__all_tools__`). That list contains no evaluation or
 red-teaming tools, which is why the rule keeps `orchestrate evaluations …` as
 the normal CLI path rather than a fallback.
+
+### Finding 30 — Part 6 Bob prompts assumed Bob knew the workshop's part structure
+
+**Files:** `docs/part6-agent-evaluation/README.md`
+**Status:** ✅ CLOSED
+**Original content:** The Step 1 and Step 2 "Ask Bob" prompts told Bob "the ADK
+reuses the environment I activated in Part 1" / "with the environment I
+activated in Part 1." Bob receives only the pasted prompt text, not the
+workshop's document structure, so "Part 1" names a section Bob has no way to
+resolve — the instruction only made sense to the human participant reading the
+page.
+**Resolution:** State the mechanism as a fact Bob can act on and verify itself,
+without depending on the workshop's part numbering.
+**Fix:** Reworded both prompts to say the ADK authenticates using whichever
+`orchestrate` environment is currently active (pointing to `orchestrate env
+list` as the way to check), instead of citing "Part 1."
+**Verified against:** Local prompt-text review; no CLI/schema behavior changed.
 
 ---
 

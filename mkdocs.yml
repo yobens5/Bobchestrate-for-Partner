@@ -85,13 +85,13 @@ nav:
       - Overview: part4-knowledge/README.md
   - Part 5 - Guidelines & Guardrails:
       - Overview: part5-guidelines-guardrails/README.md
-  - Part 6 - Agent Evaluations:
+  - Part 6 - Deployment:
+      - Overview: part7-deployment/README.md
+  - Part 7 - NL2SQL Accelerator:
+      - Overview: part9-nl2sql/README.md
+  - Agent Evaluations & Red-Teaming (Optional):
       - Overview: part6-agent-evaluation/README.md
       - Exercises: part6-agent-evaluation/exercises.md
-  - Part 7 - Deployment:
-      - Overview: part7-deployment/README.md
-  - Part 8 - NL2SQL Accelerator:
-      - Overview: part9-nl2sql/README.md
   - Multi-Agent Orchestration (Optional):
       - Overview: part8-multi-agent-orchestration/README.md
   - MCP Servers (Optional):

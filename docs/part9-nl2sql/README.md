@@ -1,4 +1,4 @@
-# Part 8: NL2SQL Agent with the IBM CE Accelerator
+# Part 7: NL2SQL Agent with the IBM CE Accelerator
 
 **Outcome:** An editable draft agent that answers natural-language questions
 against the workshop PostgreSQL database.

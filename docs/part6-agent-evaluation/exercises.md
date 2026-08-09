@@ -1,4 +1,4 @@
-# Part 6 — Optional Exercises
+# Agent Evaluations & Red-Teaming — Optional Exercises
 
 ## Exercise 1: Expand functional coverage
 
@@ -41,5 +41,4 @@ Choose one genuine failure and ask Bob to:
 Review Bob's proposed fix before it changes files. Ask it to write a short note
 containing the failure, root cause, change, and result.
 
-[Return to Part 6](README.md) or
-[continue to Part 7](../part7-deployment/README.md).
+[Return to the Agent Evaluations & Red-Teaming module](README.md).

@@ -171,11 +171,11 @@ key" or "the instance URL", it means these:
 
 | Value | Where you use it |
 |---|---|
-| **Instance URL** | [Part 1 §8](../part1-setup/README.md#8-connect-orchestrate-environment) (Environment Manager → Add) and [Part 8 §3](../part9-nl2sql/README.md#3-connect-watsonx-orchestrate) (accelerator field **WXO URL**) |
-| **API key** | [Part 1 §8](../part1-setup/README.md#8-connect-orchestrate-environment) (activation prompt) and [Part 8 §3](../part9-nl2sql/README.md#3-connect-watsonx-orchestrate) (accelerator field **WXO API Key**) |
+| **Instance URL** | [Part 1 §8](../part1-setup/README.md#8-connect-orchestrate-environment) (Environment Manager → Add) and [Part 7 §3](../part9-nl2sql/README.md#3-connect-watsonx-orchestrate) (accelerator field **WXO URL**) |
+| **API key** | [Part 1 §8](../part1-setup/README.md#8-connect-orchestrate-environment) (activation prompt) and [Part 7 §3](../part9-nl2sql/README.md#3-connect-watsonx-orchestrate) (accelerator field **WXO API Key**) |
 
-Part 6 needs neither: the evaluation commands reuse the environment you
-activate in Part 1.
+The optional Agent Evaluations & Red-Teaming module needs neither: its
+evaluation commands reuse the environment you activate in Part 1.
 
 !!! danger "Never paste the API key into Bob chat"
     Type it only into the Environment Manager activation prompt or the
