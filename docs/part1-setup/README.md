@@ -515,4 +515,21 @@ Before continuing, confirm:
     server, return to **Settings → MCP** and confirm that both servers are green
     and connected.
 
+??? question "MCP documentation server still fails after trying the above fixes"
+
+    If `uvx mcp-proxy` continues to fail on any platform, replace the
+    `watsonx-orchestrate-adk-docs` entry in `.bob/mcp.json` with the minimal
+    native HTTP transport config and reload Bob:
+
+    ```json
+    "watsonx-orchestrate-adk-docs": {
+      "type": "streamable-http",
+      "url": "https://developer.watson-orchestrate.ibm.com/mcp"
+    }
+    ```
+
+    This bypasses `mcp-proxy` entirely and lets Bob connect to the documentation
+    server directly. Confirm the server turns green in **Settings → MCP** before
+    continuing.
+
 [Continue to Part 2: Building Your First Agent →](../part2-first-agent/README.md)
