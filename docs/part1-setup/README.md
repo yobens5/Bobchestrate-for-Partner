@@ -141,6 +141,8 @@ The PowerShell change applies only to the current terminal session.
 
 ## 5. Install ADK 2.14.0 into the virtual environment
 
+### Primary: Bob IDE extension
+
 In the Bob IDE status bar — located in the **bottom-right corner**, next to the
 Settings (gear) icon — the ADK extension shows a status indicator. It is **red**
 until the ADK is installed. Click it and choose the option to install the ADK
@@ -159,27 +161,11 @@ orchestrate --version
 
 The first line must show `ADK Version: 2.14.0`.
 
-!!! warning "If the version is not 2.14.0, or the button did not work"
-    The extension installs the newest ADK, which may be later than the version
-    this workshop is tested against. Either way, do not stop here and do not
-    ask the instructor — the next step installs the correct pinned version and
-    fixes both cases.
+### Backup: install via pip directly into `.venv`
 
-### Add the evaluation dependencies
-
-**Everyone runs this step**, including participants for whom the extension
-button worked and those planning to skip the optional evaluation module.
-
-The optional Agent Evaluations & Red-Teaming module uses `orchestrate
-evaluations`, which needs an extra package that the ADK install does **not**
-include by default. The command below adds it, and at the same time pins the
-ADK to 2.14.0 — so it is also the fix if the extension installed a different
-version, or the way to install the ADK from scratch if the extension button
-was unavailable. Run it now regardless of whether you plan to do the
-evaluation module later: the version pin is required for the rest of the
-workshop either way.
-
-Run it from a terminal in `bobchestrate-ws`:
+If the extension button did not work, or the installed version is not 2.14.0,
+run the following command from a terminal in `bobchestrate-ws`. It installs the
+correct pinned version directly into `.venv`:
 
 === "Windows PowerShell or Command Prompt"
 
@@ -194,8 +180,32 @@ Run it from a terminal in `bobchestrate-ws`:
     ```
 
 The command writes directly into `.venv`, so it works whether or not `.venv` is
-active in your terminal. Now activate `.venv` using the platform command in
-Step 4 and verify both results:
+active in your terminal.
+
+### Add the evaluation dependencies
+
+**Everyone runs this step**, including participants for whom the extension
+button worked.
+
+The optional Agent Evaluations & Red-Teaming module uses `orchestrate
+evaluations`, which needs an extra package that the ADK install does **not**
+include by default. If you used the pip backup above, this package is already
+included — skip to the verification step below. If you used the extension
+button, run the same pip command now to add it and pin the version:
+
+=== "Windows PowerShell or Command Prompt"
+
+    ```powershell
+    .\.venv\Scripts\python.exe -m pip install "ibm-watsonx-orchestrate[agentops]==2.14.0"
+    ```
+
+=== "macOS"
+
+    ```bash
+    ./.venv/bin/python -m pip install "ibm-watsonx-orchestrate[agentops]==2.14.0"
+    ```
+
+Now activate `.venv` using the platform command in Step 4 and verify both results:
 
 ```bash
 orchestrate --version
