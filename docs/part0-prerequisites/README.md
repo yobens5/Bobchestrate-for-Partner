@@ -122,7 +122,19 @@ uv --version
 
 ---
 
-## 1. Create a watsonx Orchestrate Instance on TechZone
+## 1. Create a watsonx Orchestrate Instance
+
+### Primary: IBM watsonx Orchestrate Trial
+
+Sign up for a free IBM watsonx Orchestrate trial account:
+
+[Start watsonx Orchestrate Trial](https://www.ibm.com/account/reg/us-en/signup?formid=urx-52753)
+
+The trial provides enough capacity to complete all workshop exercises.
+
+### Backup 1: TechZone — Pilot reservation
+
+If you have an IBM Opportunity ID, you can reserve a watsonx Orchestrate environment on TechZone:
 
 - [Reserve environment (direct)](https://techzone.ibm.com/collection/69c6bb3c694109c9b9a8abac/journey-watsonx-overview?platform=69fc8b4940c49f77fbbc67b7)
 - [watsonx Overview collection](https://techzone.ibm.com/collection/69c6bb3c694109c9b9a8abac/journey-watsonx-overview)
@@ -131,18 +143,18 @@ When opening the collection, select the **"watsonx Orchestrate essentials plan"*
 
 **Reservation type — use Pilot:**
 
-On the reservation form you will be asked to choose a purpose. Select **Pilot** and enter your **Opportunity ID** in the field provided. Using Pilot with an Opportunity ID is required for partner workshop access; selecting a different purpose (e.g. "Education" or "Test") may result in the reservation being rejected.
+On the reservation form you will be asked to choose a purpose. Select **Pilot** and enter your **Opportunity ID** in the field provided. Using Pilot with an Opportunity ID is required for partner workshop access; selecting a different purpose may result in the reservation being rejected.
 
 !!! tip "Where to find your Opportunity ID"
     Your Opportunity ID is the CRM opportunity number associated with the partner engagement. Ask your IBM contact or account team if you do not have it.
 
-### Backup: IBM watsonx Orchestrate Trial
+### Backup 2: TechZone — Test environment (12 hours)
 
-If TechZone is unavailable, sign up for a free IBM watsonx Orchestrate trial account:
+If you do not have an Opportunity ID, use this direct reservation link:
 
-[Start watsonx Orchestrate Trial](https://www.ibm.com/account/reg/us-en/signup?formid=urx-52753)
+[Reserve watsonx Orchestrate — Test (12 hours)](https://techzone.ibm.com/my/reservations/create/67eead855c0ed683f94057fa)
 
-The trial provides enough capacity to complete all workshop exercises. Use it only if the TechZone reservation cannot be completed in time.
+On the reservation form, select **Test** as the purpose. This provisions a fully functional watsonx Orchestrate environment valid for **12 hours** — enough to complete the full workshop in a single session.
 
 ### Collect your instance URL and API key
 
