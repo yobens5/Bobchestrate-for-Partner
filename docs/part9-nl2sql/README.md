@@ -36,6 +36,11 @@ If the fields are empty, ask the instructor for the shared workshop database
 values and enter those. Do not enter personal or production database
 credentials.
 
+!!! important "Connection environment — select IBM Cloud"
+    When the **Connection Environment** option appears, select **IBM Cloud**
+    instead of **Local**. The workshop database is hosted on IBM Cloud; using
+    the Local option will cause the connection to fail.
+
 Start discovery and wait for it to complete.
 
 <video controls width="100%">

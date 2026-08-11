@@ -77,10 +77,10 @@ nav:
       - Overview: part1-setup/README.md
   - Part 2 - First Agent:
       - Overview: part2-first-agent/README.md
-      - Exercises: part2-first-agent/exercises.md
+      - Exercises (Optional): part2-first-agent/exercises.md
   - Part 3 - Custom Tools:
       - Overview: part3-custom-tools/README.md
-      - Exercises: part3-custom-tools/exercises.md
+      - Exercises (Optional): part3-custom-tools/exercises.md
   - Part 4 - Knowledge:
       - Overview: part4-knowledge/README.md
   - Part 5 - Guidelines & Guardrails:
@@ -91,14 +91,14 @@ nav:
       - Overview: part9-nl2sql/README.md
   - Agent Evaluations & Red-Teaming (Optional):
       - Overview: part6-agent-evaluation/README.md
-      - Exercises: part6-agent-evaluation/exercises.md
+      - Exercises (Optional): part6-agent-evaluation/exercises.md
   - Multi-Agent Orchestration (Optional):
       - Overview: part8-multi-agent-orchestration/README.md
   - MCP Servers (Optional):
       - Overview: part10-mcp-servers/README.md
   - Agentic Workflows (Optional):
       - Overview: part11-agentic-workflows/README.md
-      - Exercises: part11-agentic-workflows/exercises.md
+      - Exercises (Optional): part11-agentic-workflows/exercises.md
   - AI Gateway Models (Optional):
       - Overview: part12-ai-gateway-models/README.md
       - Model Selection Guide: part12-ai-gateway-models/model-selection-guide.md
