@@ -28,7 +28,10 @@ structured dictionary responses. This is workshop code, so simulate the backend
 locally. Also create requirements.txt for runtime dependencies.
 ```
 
-Review Bob's output, or download the tested workshop files:
+Review Bob's output, or use the fallback below if you prefer to start from tested files.
+
+<details>
+<summary>🗂️ Fallback: download the tested workshop files instead</summary>
 
 Click each file to download it to your browser's default download folder:
 
@@ -53,6 +56,8 @@ root. Run these in the Bob IDE terminal, from your `bobchestrate-ws` folder:
     mv ~/Downloads/check_order_status.py ~/Downloads/process_refund.py tools/
     mv ~/Downloads/requirements.txt .
     ```
+
+</details>
 
 Afterwards the relevant part of your project looks like this:
 
