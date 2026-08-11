@@ -245,7 +245,24 @@ Open **Bob Settings** (the ⚙️ gear in the **bottom-right** corner of the win
 next to the ADK indicator — not the VS Code settings gear) and select **MCP**.
 Confirm that both `watsonx-orchestrate-adk` and `watsonx-orchestrate-adk-docs`
 are **green** and show **Connected**. If either server is not green and
-connected, stop and ask the instructor for help before continuing.
+connected, try the native HTTP fallback below before asking the instructor.
+
+??? tip "MCP documentation server not connecting? Use the native HTTP fallback"
+
+    If `watsonx-orchestrate-adk-docs` stays red or fails to start, replace its
+    entry in `.bob/mcp.json` with the minimal native HTTP transport config and
+    reload Bob:
+
+    ```json
+    "watsonx-orchestrate-adk-docs": {
+      "type": "streamable-http",
+      "url": "https://developer.watson-orchestrate.ibm.com/mcp"
+    }
+    ```
+
+    This bypasses `mcp-proxy` entirely. Confirm the server turns green in
+    **Settings → MCP** before continuing. See the
+    [Troubleshooting](#troubleshooting) section for Windows-specific fixes.
 
 Open Bob chat and ask:
 
@@ -468,6 +485,23 @@ Before continuing, confirm:
     connected. Restart any stopped server. If either server remains unhealthy,
     ask the instructor for help instead of continuing.
 
+??? question "MCP documentation server still fails after trying the above fixes"
+
+    If `uvx mcp-proxy` continues to fail on any platform, replace the
+    `watsonx-orchestrate-adk-docs` entry in `.bob/mcp.json` with the minimal
+    native HTTP transport config and reload Bob:
+
+    ```json
+    "watsonx-orchestrate-adk-docs": {
+      "type": "streamable-http",
+      "url": "https://developer.watson-orchestrate.ibm.com/mcp"
+    }
+    ```
+
+    This bypasses `mcp-proxy` entirely and lets Bob connect to the documentation
+    server directly. Confirm the server turns green in **Settings → MCP** before
+    continuing.
+
 ??? question "Windows MCP documentation server fails to start"
 
     Use this Windows-only fallback only if the regular MCP setup does not work.
@@ -514,22 +548,5 @@ Before continuing, confirm:
     this workaround only diagnoses local certificate trust. After updating the
     server, return to **Settings → MCP** and confirm that both servers are green
     and connected.
-
-??? question "MCP documentation server still fails after trying the above fixes"
-
-    If `uvx mcp-proxy` continues to fail on any platform, replace the
-    `watsonx-orchestrate-adk-docs` entry in `.bob/mcp.json` with the minimal
-    native HTTP transport config and reload Bob:
-
-    ```json
-    "watsonx-orchestrate-adk-docs": {
-      "type": "streamable-http",
-      "url": "https://developer.watson-orchestrate.ibm.com/mcp"
-    }
-    ```
-
-    This bypasses `mcp-proxy` entirely and lets Bob connect to the documentation
-    server directly. Confirm the server turns green in **Settings → MCP** before
-    continuing.
 
 [Continue to Part 2: Building Your First Agent →](../part2-first-agent/README.md)
